@@ -5,7 +5,7 @@ OBJ = "￼"
 API_KEY = "AIzaSyD2gljUDG3_u3AThk4c021cVTlrR1EuD_c"
 PROJEKT = "wissen-rd"
 APP_URL = "https://wissen.vjbackhaus.de/"
-KB_VERSION = "1.4"
+KB_VERSION = "1.5"
 
 def U(): return str(uuid.uuid4()).upper()
 
@@ -131,10 +131,15 @@ def bauen(vorlesen: bool):
     setvar("Treffer", out(d, "Wörterbuch"))
     g = U()
     act("repeat.each", GroupingIdentifier=g, WFControlFlowMode=0, WFInput=att(var("Antwort")))
+    # Erst nur „document“ abfragen (fehlt bei „kein Treffer“ – ein langer Pfad würde dann abbrechen)
+    dok = U()
+    act("getvalueforkey", UUID=dok, WFInput=att(var("Repeat Item", dict_coerce=True)),
+        WFDictionaryKey="document", WFGetDictionaryValueType="Value")
+    w = U(); wenn_start(w, WFCondition=100, WFInput=bedingung_input(out(dok, "Wörterbuchwert")))
     t = U()
-    act("getvalueforkey", UUID=t, WFInput=att(var("Repeat Item", dict_coerce=True)),
-        WFDictionaryKey="document.fields.titel.stringValue", WFGetDictionaryValueType="Value")
-    w = U(); wenn_start(w, WFCondition=100, WFInput=bedingung_input(out(t, "Wörterbuchwert")))
+    act("getvalueforkey", UUID=t, WFInput=att({**out(dok, "Wörterbuchwert"), "Aggrandizements": [
+        {"Type": "WFCoercionVariableAggrandizement", "CoercionItemClass": "WFDictionaryContentItem"}]}),
+        WFDictionaryKey="fields.titel.stringValue", WFGetDictionaryValueType="Value")
     # Punkte im Titel durch optisch gleiches Zeichen ersetzen (Punkt = Pfadtrenner im Wörterbuch)
     rt = U()
     act("text.replace", UUID=rt, WFInput=tok(out(t, "Wörterbuchwert")), WFReplaceTextFind=".",

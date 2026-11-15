@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.2.1 (Build 10) – 2026-11-15
+- Siri-Kurzbefehl v1.5: Absturz bei „kein Treffer“ behoben (Schlüsselpfad „document“)
+
 ## v1.2.0 (Build 9) – 2026-11-15
 - Lernschleife: nicht erkannte Siri-Begriffe per Tipp einem Eintrag zuordnen; Klangsuche (Kölner Phonetik)
 

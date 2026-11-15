@@ -1,6 +1,6 @@
 // Service Worker – Cache-Name enthält die Version, damit jede neue Version sauber übernommen wird.
 // Die Zeile CACHE wird von version-erhoehen.sh automatisch angepasst.
-const CACHE = "wissen-rd-1.2.0-b9";
+const CACHE = "wissen-rd-1.2.1-b10";
 const SHELL = [
   "./", "index.html", "css/style.css", "manifest.webmanifest",
   "js/version.js", "js/app.js", "js/text.js", "js/bereiche.js", "js/firebase-config.js",
