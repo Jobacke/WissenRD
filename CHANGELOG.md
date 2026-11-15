@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.2.0 (Build 9) – 2026-11-15
+- Lernschleife: nicht erkannte Siri-Begriffe per Tipp einem Eintrag zuordnen; Klangsuche (Kölner Phonetik)
+
 ## v1.1.5 (Build 8) – 2026-11-15
 - Siri-Kurzbefehl v1.4: Frage „Wie lautet das Thema?“
 

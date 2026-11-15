@@ -145,16 +145,59 @@ function zeigeSuche(q) {
   if (!norm(q)) return zeigeStart();
   // Genau ein exakter Treffer (z. B. vom Kurzbefehl) → direkt öffnen
   const exakt = t.filter(x => x._punkte === 100);
-  if (startParam && exakt.length === 1 && norm(q) === norm(startParam)) {
+  const vonSiri = !!startParam && norm(q) === norm(startParam);
+  if (vonSiri && exakt.length === 1) {
     history.replaceState(null, "", "#/e/" + exakt[0].id);
     return zeigeEintrag(exakt[0].id);
   }
+  // Lernschleife: kein exakter Treffer → Begriff einem Eintrag zuordnen
+  const lernen = !exakt.length && norm(q).length >= 2 && st.eintraege.length ? lernBlock(q, t, vonSiri) : "";
   inhalt.innerHTML = `
+    ${vonSiri ? lernen : ""}
     <h3>${t.length} Treffer für „${esc(q)}“</h3>
     <section class="liste">${t.map(eintragZeile).join("")}</section>
     ${t.length ? "" : `<p class="leise">Nichts gefunden.</p>`}
-    <a class="primaer breit" href="#/neu/">＋ „${esc(q)}“ als neuen Eintrag anlegen</a>`;
-  inhalt.querySelector("a.primaer").onclick = () => { sessionStorage.setItem("neuTitel", q); };
+    ${!vonSiri && lernen ? `<details class="lernen-klein"><summary>„${esc(q)}“ einem Eintrag als Suchbegriff zuordnen</summary>${lernen}</details>` : ""}
+    <a class="primaer breit" id="neu-aus-suche" href="#/neu/">＋ „${esc(q)}“ als neuen Eintrag anlegen</a>`;
+  $("#neu-aus-suche").onclick = () => { sessionStorage.setItem("neuTitel", q); };
+  inhalt.querySelectorAll("button.lern").forEach(b => (b.onclick = () => lerneBegriff(b.dataset.id, q)));
+  const ok = $("#lern-ok");
+  if (ok) ok.onclick = () => {
+    const id = $("#lern-auswahl").value;
+    if (!id) return hinweis("Bitte einen Eintrag auswählen", true);
+    lerneBegriff(id, q);
+  };
+}
+
+function lernBlock(q, treffer, prominent) {
+  const vorschlaege = treffer.slice(0, 4);
+  const optionen = Object.entries(BEREICHE).map(([k, b]) => {
+    const l = st.eintraege.filter(e => e.bereich === k);
+    return l.length ? `<optgroup label="${b.icon} ${esc(b.name)}">${l.map(e =>
+      `<option value="${esc(e.id)}">${esc(e.titel)}${e.kurz && e.kurz !== e.titel ? " (" + esc(e.kurz) + ")" : ""}</option>`).join("")}</optgroup>` : "";
+  }).join("");
+  return `<section class="karte lernen${prominent ? " siri" : ""}">
+    <h3>${prominent ? `🎙️ Siri hat „${esc(q)}“ verstanden` : `„${esc(q)}“ zuordnen`}</h3>
+    <p class="leise">Zu welchem Eintrag gehört das? „${esc(q)}“ wird dort als Suchbegriff gespeichert – beim nächsten Mal findet Siri den Eintrag direkt.</p>
+    ${vorschlaege.length ? `<div class="chips">${vorschlaege.map(e =>
+      `<button class="chip lern" data-id="${esc(e.id)}">${esc(e.kurz || e.titel)}</button>`).join("")}</div>` : ""}
+    <div class="lern-zeile"><select id="lern-auswahl"><option value="">anderer Eintrag …</option>${optionen}</select>
+      <button id="lern-ok" class="sekundaer">Zuordnen</button></div>
+  </section>`;
+}
+
+async function lerneBegriff(id, begriff) {
+  const alt = st.eintraege.find(x => x.id === id);
+  if (!alt) return;
+  begriff = begriff.trim();
+  if ((alt.schluessel || []).includes(norm(begriff))) { location.hash = "#/e/" + id; return; }
+  try {
+    await speichere({ ...alt, suchbegriffe: [...(alt.suchbegriffe || []), begriff] }, alt);
+    hinweis(`„${begriff}“ gehört jetzt zu ${alt.kurz || alt.titel}`);
+    location.hash = "#/e/" + id;
+  } catch (err) {
+    hinweis("Speichern fehlgeschlagen: " + (err.code === "permission-denied" ? "keine Schreibrechte" : err.message), true);
+  }
 }
 
 function zeigeBereich(k) {

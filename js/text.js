@@ -99,6 +99,36 @@ export function htmlAusText(text, telefon = false) {
   return html;
 }
 
+// ---------- Kölner Phonetik (Klangähnlichkeit, für deutsche Aussprache) ----------
+export function koelner(wort) {
+  const t = String(wort || "").toLowerCase()
+    .replace(/ä/g, "a").replace(/ö/g, "o").replace(/ü/g, "u").replace(/ß/g, "s").replace(/[^a-z]/g, "");
+  const hat = (menge, z) => !!z && menge.includes(z);
+  let code = "";
+  for (let i = 0; i < t.length; i++) {
+    const c = t[i], v = t[i - 1] || "", n = t[i + 1] || "";
+    if (hat("aeijouy", c)) code += "0";
+    else if (c === "h") continue;
+    else if (c === "b") code += "1";
+    else if (c === "p") code += n === "h" ? "3" : "1";
+    else if (c === "d" || c === "t") code += hat("csz", n) ? "8" : "2";
+    else if (hat("fvw", c)) code += "3";
+    else if (hat("gkq", c)) code += "4";
+    else if (c === "c") {
+      if (i === 0) code += hat("ahkloqrux", n) ? "4" : "8";
+      else code += hat("sz", v) ? "8" : (hat("ahkoqux", n) ? "4" : "8");
+    }
+    else if (c === "x") code += hat("ckq", v) ? "8" : "48";
+    else if (c === "l") code += "5";
+    else if (c === "m" || c === "n") code += "6";
+    else if (c === "r") code += "7";
+    else if (c === "s" || c === "z") code += "8";
+  }
+  let out = "";
+  for (const z of code) if (z !== out[out.length - 1]) out += z;
+  return out ? out[0] + out.slice(1).replace(/0/g, "") : "";
+}
+
 // ---------- Suche ----------
 function levenshtein(a, b) {
   if (Math.abs(a.length - b.length) > 2) return 99;
@@ -113,6 +143,7 @@ function levenshtein(a, b) {
 export function suche(eintraege, anfrage) {
   const q = norm(anfrage);
   if (!q) return [];
+  const qKlang = q.length >= 3 ? koelner(q) : "";
   const treffer = [];
   for (const e of eintraege) {
     const keys = e.schluessel || schluesselFuer(e);
@@ -120,6 +151,7 @@ export function suche(eintraege, anfrage) {
     if (keys.includes(q)) p = 100;
     else if (keys.some(k => k.startsWith(q))) p = 70;
     else if (keys.some(k => k.includes(q))) p = 50;
+    else if (qKlang.length >= 2 && keys.some(k => koelner(k) === qKlang)) p = 45;
     else if (q.length >= 5 && keys.some(k => levenshtein(k, q) <= (q.length > 8 ? 2 : 1))) p = 40;
     else if (q.length >= 3 && norm((e.abschnitte || []).map(a => a.text).join(" ")).includes(q)) p = 10;
     if (p) treffer.push({ e, p });

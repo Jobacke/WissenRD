@@ -120,3 +120,12 @@ input[type=range] { padding: 0; }
 .toast.sichtbar { opacity: 1; transform: translateX(-50%); }
 .toast.fehler { background: #9b1c1c; }
 .login { max-width: 420px; margin: 2em auto; }
+
+/* Lernschleife (v1.2) */
+.lernen { margin: 0 0 14px; border-left: 4px solid var(--navy2); }
+.lernen.siri { border-left-color: var(--rot); }
+.lernen h3 { margin-top: 0; text-transform: none; letter-spacing: 0; color: var(--text); font-size: 1.05rem; }
+button.chip { border: 0; cursor: pointer; font-weight: 600; color: var(--text); }
+.lern-zeile { display: flex; gap: 8px; margin-top: 10px; align-items: center; }
+.lern-zeile select { margin: 0; flex: 1; }
+details.lernen-klein summary { cursor: pointer; color: var(--leise); margin: 12px 0; }
