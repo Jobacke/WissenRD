@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.0.1 (Build 2) – 2026-11-15
+- Vorlesen flüssiger (größere Textstücke), beste deutsche Stimme wird automatisch gewählt
+
 ## v1.0.0 (Build 1) – 2026-11-15
 - Erste Version: Bereiche, Suche (auch bei Diktierfehlern), Eintrag anlegen/bearbeiten/löschen
 - Vorlesen mit einstellbarer Geschwindigkeit und Stimme

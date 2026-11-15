@@ -378,9 +378,10 @@ function zeigeEinstellungen() {
   const fuelleStimmen = () => {
     const sel = $("#stimme"); if (!sel) return;
     const gew = localStorage.getItem("stimme") || "";
-    const st2 = speechSynthesis.getVoices().filter(v => v.lang.startsWith("de"));
-    sel.innerHTML = `<option value="">Standard (Deutsch)</option>` +
-      st2.map(v => `<option ${v.name === gew ? "selected" : ""}>${esc(v.name)}</option>`).join("");
+    const st2 = speechSynthesis.getVoices().filter(v => v.lang.replace("_", "-").startsWith("de"));
+    const auto = besteStimme();
+    sel.innerHTML = `<option value="">Automatisch (${esc(auto ? auto.name : "Deutsch")})</option>` +
+      st2.map(v => `<option value="${esc(v.name)}" ${v.name === gew ? "selected" : ""}>${esc(v.name)}${v.localService ? "" : " ☁️"}</option>`).join("");
   };
   fuelleStimmen();
   speechSynthesis.onvoiceschanged = fuelleStimmen;
@@ -423,18 +424,36 @@ function zeigeEinstellungen() {
 }
 
 // ---------------- Vorlesen ----------------
+// Beste deutsche Stimme: gewählte > Premium/Erweitert > Google > irgendeine deutsche
+function besteStimme() {
+  const alle = speechSynthesis.getVoices().filter(v => v.lang.replace("_", "-").startsWith("de"));
+  const name = localStorage.getItem("stimme");
+  return alle.find(v => v.name === name)
+    || alle.find(v => /premium|erweitert|enhanced|siri/i.test(v.name + " " + v.voiceURI))
+    || alle.find(v => /google/i.test(v.name))
+    || alle.find(v => v.lang.replace("_", "-") === "de-DE") || alle[0] || null;
+}
+// Text in größere Stücke teilen (ca. 250 Zeichen, an Satzgrenzen) – flüssiger als Satz für Satz,
+// aber kurz genug, dass Chrome/iOS lange Texte nicht abbrechen
+function stuecke(text, max = 250) {
+  const saetze = text.match(/[^.!?]+[.!?]*\s*/g) || [text];
+  const out = []; let akt = "";
+  for (const s of saetze) {
+    if ((akt + s).length > max && akt) { out.push(akt.trim()); akt = ""; }
+    akt += s;
+  }
+  if (akt.trim()) out.push(akt.trim());
+  return out;
+}
 function vorlesen(text) {
   stoppeVorlesen();
   const rate = parseFloat(localStorage.getItem("rate") || "1.0");
-  const name = localStorage.getItem("stimme");
-  const stimme = speechSynthesis.getVoices().find(v => v.name === name)
-    || speechSynthesis.getVoices().find(v => v.lang === "de-DE");
-  // In Sätze teilen – iOS bricht sehr lange Texte sonst ab
-  const saetze = text.match(/[^.!?]+[.!?]*/g) || [text];
-  saetze.forEach((s, i) => {
-    const u = new SpeechSynthesisUtterance(s.trim());
+  const stimme = besteStimme();
+  const teile = stuecke(text);
+  teile.forEach((s, i) => {
+    const u = new SpeechSynthesisUtterance(s);
     u.lang = "de-DE"; u.rate = rate; if (stimme) u.voice = stimme;
-    if (i === saetze.length - 1) u.onend = setzeKnopf;
+    if (i === teile.length - 1) u.onend = setzeKnopf;
     speechSynthesis.speak(u);
   });
   setzeKnopf(true);
