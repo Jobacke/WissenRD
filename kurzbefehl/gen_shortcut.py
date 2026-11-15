@@ -5,7 +5,7 @@ OBJ = "￼"
 API_KEY = "AIzaSyD2gljUDG3_u3AThk4c021cVTlrR1EuD_c"
 PROJEKT = "wissen-rd"
 APP_URL = "https://wissen.vjbackhaus.de/"
-KB_VERSION = "1.3"
+KB_VERSION = "1.4"
 
 def U(): return str(uuid.uuid4()).upper()
 
@@ -81,7 +81,7 @@ def bauen(vorlesen: bool):
     # --- Teil B: Frage + Normalisierung (identisch zur App) ---
     # Siri-Sprachdialog: Siri fragt „Welches Thema?“ und hört die Antwort ab
     u = U()
-    act("ask", UUID=u, WFAskActionPrompt="Welches Thema?", WFInputType="Text")
+    act("ask", UUID=u, WFAskActionPrompt="Wie lautet das Thema?", WFInputType="Text")
     setvar("Frage", out(u, "Eingabe"))
     u = U(); act("text.changecase", UUID=u, WFCaseType="lowercase", text=tok(var("Frage")))
     vorher = u

@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.1.5 (Build 8) – 2026-11-15
+- Siri-Kurzbefehl v1.4: Frage „Wie lautet das Thema?“
+
 ## v1.1.4 (Build 7) – 2026-11-15
 - Kurzbefehl „Wissen hören“ in „Wissen vorlesen“ umbenannt (Siri startete sonst Musik)
 
