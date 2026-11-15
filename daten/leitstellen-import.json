@@ -1,0 +1,369 @@
+{
+ "app": "Wissen RD",
+ "titel": "Import Leitstellen",
+ "hinweis": "Integrierte Leitstellen München, Fürstenfeldbruck, Erding, Oberland, Rosenheim. Recherche 15.11.2026 – Funkgruppen und Nummern mit Stand der Quelle prüfen.",
+ "eintraege": [
+  {
+   "id": "leitstelle-muenchen",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle München",
+   "kurz": "ILS München",
+   "suchbegriffe": [
+    "Leitstelle München",
+    "ILS M",
+    "Rettungsleitstelle München",
+    "Leitstelle Feuerwache 4",
+    "RD Betten M",
+    "RD_Betten_M"
+   ],
+   "siehe": [
+    "RD_1_M – Rettungsdienst Nord (ILS München)",
+    "RD_2_M – Rettungsdienst Süd (ILS München)",
+    "Übersicht Leitstellen",
+    "LMU Klinikum – Campus Großhadern",
+    "LMU Klinikum – Campus Innenstadt",
+    "TUM Klinikum Rechts der Isar",
+    "München Klinik Bogenhausen",
+    "München Klinik Harlaching",
+    "München Klinik Neuperlach",
+    "München Klinik Schwabing",
+    "Rotkreuzklinikum München",
+    "Klinikum Dritter Orden München-Nymphenburg",
+    "Krankenhaus Barmherzige Brüder München",
+    "Helios Klinikum München West",
+    "Helios Klinik München Perlach",
+    "Krankenhaus Martha-Maria München",
+    "TUM Klinikum Deutsches Herzzentrum",
+    "kbo-Isar-Amper-Klinikum Haar (Neurologie / Psychiatrie)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "- Rettungsdienst: Stadt **und** Landkreis München (Rettungsdienstbereich München)\n- Feuerwehr: Stadt München\n- Betrieb durch die Berufsfeuerwehr München; Sitz seit 2017 in der Feuerwache 4"
+    },
+    {
+     "titel": "Telefon",
+     "text": "- **Notfallrettung (Disponent):** 089 515191-66943\n- **Krankentransport:** 089 515191-66941\n- **Betten / MANV / Sonderbetten:** 089 515191-66666\n- Feuerwehr: 089 515191-66966\n(Servicenummern laut Taschenkarte, Stand Juni 2017 – Aktualität prüfen)"
+    },
+    {
+     "titel": "Funk / Kanäle",
+     "text": "- **RD_1_M** – Rettungsdienst Nord, Kurzwahl **2513**\n- **RD_2_M** – Rettungsdienst Süd, Kurzwahl **2514**\n(Kurzwahlen laut eigener Geräteprogrammierung, Stand 11/2026; die Taschenkarte von 2017 nennt noch 2766/2767)\n- **RD_Betten_M** – Bettenanforderung / Rückmeldung ohne Transport (Kurzwahl in der Quelle nicht angegeben)\n- BF_1_M (FW Nord) 2751 · BF_2_M (FW Süd) 2752\nDie zugeteilte Gruppe steht im Navi-Datensatz des Einsatzes."
+    },
+    {
+     "titel": "Besonderheiten",
+     "text": "- **Einsatzübernahme:** Status 3 (Status 0 nur bei Rückfragen oder Datenübertragungsstörung, dann Sprechaufforderung abwarten)\n- **Nach Transport:** zurück auf die Original-Digitalfunkgruppe, Status 1\n- **Ohne Transport:** auf RD_Betten_M, Status 5 → Rückmeldung (z. B. kein Eingreifen, Einsatznummer von der ILS) → zurück auf Original-Gruppe, Status 1\n- **Dringender Sprechwunsch:** digital Status 0\n- **Bettenanforderung:** RD_Betten_M, Status 5; Sonderbetten: Status 0 bzw. 089 515191-66666\n- **Angaben für IVENA:** Fachbereich, Fachgebiet, Behandlungsdringlichkeit (Notfallversorgung / stationär / ambulant), voraussichtliche Eintreffzeit, Geschlecht, Alter, Name\n- Patientennummer und Transportziel kommen über die Dat-Box ans Navi\n- Führt eine Übersicht über freie Betten für Brandverletzte an bayerischen Krankenhäusern\n- In die ILS eingebettet: Koordinierungsstelle für die bayerischen Intensivtransporthubschrauber (KITH)"
+    },
+    {
+     "titel": "Kliniken aus der App im Bereich",
+     "text": "- LMU Klinikum – Campus Großhadern\n- LMU Klinikum – Campus Innenstadt\n- TUM Klinikum Rechts der Isar\n- München Klinik Bogenhausen\n- München Klinik Harlaching\n- München Klinik Neuperlach\n- München Klinik Schwabing\n- Rotkreuzklinikum München\n- Klinikum Dritter Orden München-Nymphenburg\n- Krankenhaus Barmherzige Brüder München\n- Helios Klinikum München West\n- Helios Klinik München Perlach\n- Krankenhaus Martha-Maria München\n- TUM Klinikum Deutsches Herzzentrum\n- kbo-Isar-Amper-Klinikum Haar (Neurologie / Psychiatrie)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Telefonnummern und Funkgruppen ohne Gewähr – Stand der jeweiligen Quelle beachten und mit der aktuellen Funkgeräte-Programmierung / Wachen-Info abgleichen. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle München. Rettungsdienst Nord R D 1 M, Kurzwahl 2513. Rettungsdienst Süd R D 2 M, Kurzwahl 2514. Betten über R D Betten M, Status 5. Notfallrettung 089 515191 66943. Betten und MANV 089 515191 66666.",
+   "quelle": "ILS München: Taschenkarte Einsatzablauf Rettungsdienst (Stand Juni 2017, stadt.muenchen.de) · stadt.muenchen.de – Integrierte Leitstelle · bayern.de – Einweihung ILS München 27.07.2017 · lmu-klinikum.de – Notfallmedizin (KITH)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-rd1m",
+   "bereich": "leitstelle",
+   "titel": "RD_1_M – Rettungsdienst Nord (ILS München)",
+   "kurz": "RD_1_M",
+   "suchbegriffe": [
+    "RD 1 M",
+    "RD1M",
+    "RD 1",
+    "Rettungsdienst Nord",
+    "RD Nord München",
+    "Gruppe RD 1 M"
+   ],
+   "siehe": [
+    "Integrierte Leitstelle München"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Digitalfunkgruppe Rettungsdienst **Nord** der Integrierten Leitstelle München (Stadt und Landkreis München). Welche Wachen / Gebiete Nord bzw. Süd zugeordnet sind: nicht ermittelt – bei der ILS bzw. Wache erfragen."
+    },
+    {
+     "titel": "Telefon",
+     "text": "- Notfallrettung (Disponent): 089 515191-66943\n- Betten / MANV: 089 515191-66666"
+    },
+    {
+     "titel": "Funk / Kanäle",
+     "text": "- **RD_1_M** – Kurzwahl Sepura **2513**\n- Gegenstück: RD_2_M (Kurzwahl 2514)\n- Betten / Rückmeldung ohne Transport: **RD_Betten_M**"
+    },
+    {
+     "titel": "Besonderheiten",
+     "text": "- **Einsatzübernahme:** Status 3 (Status 0 nur bei Rückfragen oder Datenübertragungsstörung, dann Sprechaufforderung abwarten)\n- **Nach Transport:** zurück auf die Original-Digitalfunkgruppe, Status 1\n- **Ohne Transport:** auf RD_Betten_M, Status 5 → Rückmeldung (z. B. kein Eingreifen, Einsatznummer von der ILS) → zurück auf Original-Gruppe, Status 1\n- **Dringender Sprechwunsch:** digital Status 0\n- **Bettenanforderung:** RD_Betten_M, Status 5; Sonderbetten: Status 0 bzw. 089 515191-66666\n- **Angaben für IVENA:** Fachbereich, Fachgebiet, Behandlungsdringlichkeit (Notfallversorgung / stationär / ambulant), voraussichtliche Eintreffzeit, Geschlecht, Alter, Name"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Telefonnummern und Funkgruppen ohne Gewähr – Stand der jeweiligen Quelle beachten und mit der aktuellen Funkgeräte-Programmierung / Wachen-Info abgleichen. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "R D 1 M, Rettungsdienst Nord der Leitstelle München, Kurzwahl 2 5 1 3. Betten über R D Betten M mit Status 5. Nach Transport zurück auf die Original-Gruppe, Status 1.",
+   "quelle": "ILS München: Taschenkarte Einsatzablauf Rettungsdienst (Stand Juni 2017, stadt.muenchen.de) · Kurzwahl: eigene Angabe (Geräteprogrammierung, Stand 11/2026)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-rd2m",
+   "bereich": "leitstelle",
+   "titel": "RD_2_M – Rettungsdienst Süd (ILS München)",
+   "kurz": "RD_2_M",
+   "suchbegriffe": [
+    "RD 2 M",
+    "RD2M",
+    "RD 2",
+    "Rettungsdienst Süd",
+    "RD Süd München",
+    "Gruppe RD 2 M"
+   ],
+   "siehe": [
+    "Integrierte Leitstelle München"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Digitalfunkgruppe Rettungsdienst **Süd** der Integrierten Leitstelle München (Stadt und Landkreis München). Welche Wachen / Gebiete Nord bzw. Süd zugeordnet sind: nicht ermittelt – bei der ILS bzw. Wache erfragen."
+    },
+    {
+     "titel": "Telefon",
+     "text": "- Notfallrettung (Disponent): 089 515191-66943\n- Betten / MANV: 089 515191-66666"
+    },
+    {
+     "titel": "Funk / Kanäle",
+     "text": "- **RD_2_M** – Kurzwahl Sepura **2514**\n- Gegenstück: RD_1_M (Kurzwahl 2513)\n- Betten / Rückmeldung ohne Transport: **RD_Betten_M**"
+    },
+    {
+     "titel": "Besonderheiten",
+     "text": "- **Einsatzübernahme:** Status 3 (Status 0 nur bei Rückfragen oder Datenübertragungsstörung, dann Sprechaufforderung abwarten)\n- **Nach Transport:** zurück auf die Original-Digitalfunkgruppe, Status 1\n- **Ohne Transport:** auf RD_Betten_M, Status 5 → Rückmeldung (z. B. kein Eingreifen, Einsatznummer von der ILS) → zurück auf Original-Gruppe, Status 1\n- **Dringender Sprechwunsch:** digital Status 0\n- **Bettenanforderung:** RD_Betten_M, Status 5; Sonderbetten: Status 0 bzw. 089 515191-66666\n- **Angaben für IVENA:** Fachbereich, Fachgebiet, Behandlungsdringlichkeit (Notfallversorgung / stationär / ambulant), voraussichtliche Eintreffzeit, Geschlecht, Alter, Name"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Telefonnummern und Funkgruppen ohne Gewähr – Stand der jeweiligen Quelle beachten und mit der aktuellen Funkgeräte-Programmierung / Wachen-Info abgleichen. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "R D 2 M, Rettungsdienst Süd der Leitstelle München, Kurzwahl 2 5 1 4. Betten über R D Betten M mit Status 5. Nach Transport zurück auf die Original-Gruppe, Status 1.",
+   "quelle": "ILS München: Taschenkarte Einsatzablauf Rettungsdienst (Stand Juni 2017, stadt.muenchen.de) · Kurzwahl: eigene Angabe (Geräteprogrammierung, Stand 11/2026)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-ffb",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Fürstenfeldbruck",
+   "kurz": "ILS FFB",
+   "suchbegriffe": [
+    "Leitstelle FFB",
+    "Leitstelle Fürstenfeldbruck",
+    "ILS Fürstenfeldbruck",
+    "Leitstelle Maisach",
+    "ILS Maisach",
+    "RD FFB",
+    "RD_FFB"
+   ],
+   "siehe": [
+    "Klinikum Starnberg (Kreisklinik Starnberg)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "- Landkreise **Dachau, Fürstenfeldbruck, Landsberg am Lech und Starnberg** (Zweckverband für Rettungsdienst und Feuerwehralarmierung Fürstenfeldbruck)\n- rund 641.000 Einwohner, 84 Städte und Gemeinden, 14 Rettungswachen, 32 RTW, 10 Notarztstandorte\n- **Neuer Standort Maisach / Gernlinden:** eingeweiht am 09.05.2026, Echtbetrieb laut Landratsamt spätestens ab Juli 2026 (vorher Fürstenfeldbruck)"
+    },
+    {
+     "titel": "Telefon",
+     "text": "- Leitstelle: 08141 22700-600\n- Alarm-Anrufe: 08141 22700-651\n(beide laut Taschenkarte KFV Landsberg, Stand April 2021 – nach dem Umzug nach Maisach prüfen)\n- Krankentransport: 19222 (Notruftafel Landratsamt Fürstenfeldbruck)"
+    },
+    {
+     "titel": "Funk / Kanäle",
+     "text": "- **RD_FFB** – Kurzwahl 2063 (Taschenkarte KFV Landsberg, Stand Dezember 2018)\n- Rettungsdienst-Gruppen für Dachau, Landsberg, Starnberg: nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Besonderheiten",
+     "text": "- Die 2024 geplante Fusion mit der ILS Oberland in Maisach wurde abgesagt – die ILS Oberland bleibt in Weilheim\n- Klinikum Starnberg liegt im Bereich der ILS FFB, nicht der ILS München"
+    },
+    {
+     "titel": "Kliniken aus der App im Bereich",
+     "text": "- Klinikum Starnberg (Kreisklinik Starnberg)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Telefonnummern und Funkgruppen ohne Gewähr – Stand der jeweiligen Quelle beachten und mit der aktuellen Funkgeräte-Programmierung / Wachen-Info abgleichen. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Fürstenfeldbruck, seit 2026 in Maisach. Zuständig für Dachau, Fürstenfeldbruck, Landsberg und Starnberg. Telefon 08141 22700 600. Funkgruppe R D F F B, Kurzwahl 2063.",
+   "quelle": "Verbandssatzung ZRF Fürstenfeldbruck (Oberbayerisches Amtsblatt 2020) · Landratsamt Fürstenfeldbruck – Einweihung ILS Maisach (Mai 2026) · KFV Landsberg – Taschenkarte Digitalfunk (12/2018, 04/2021) · Kreisbote – Fusion ILS Oberland/FFB abgesagt",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-erding",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Erding",
+   "kurz": "ILS Erding",
+   "suchbegriffe": [
+    "Leitstelle Erding",
+    "ILS ED",
+    "Leitstelle ED",
+    "RD Erding Leitstelle"
+   ],
+   "siehe": [
+    "Klinikum Ebersberg München Ost (Kreisklinik Ebersberg)",
+    "Klinikum Landkreis Erding"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "- Landkreise **Erding, Freising und Ebersberg**\n- Gebäude 2009 in Erding angebaut; Umbau / Erweiterung geplant (Ausschreibungen 2022 und 2023)"
+    },
+    {
+     "titel": "Telefon",
+     "text": "- Krankentransport: 08123 19222 (seit 19.05.2015 nur mit Vorwahl, für die Landkreise Erding, Freising und Ebersberg)\n- Direktnummer für Rettungsdienst-Rückfragen: nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Funk / Kanäle",
+     "text": "- Digitalfunkgruppen Rettungsdienst: nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Besonderheiten",
+     "text": "- Klinikum Ebersberg und Klinikum Erding liegen im Bereich der ILS Erding"
+    },
+    {
+     "titel": "Kliniken aus der App im Bereich",
+     "text": "- Klinikum Ebersberg München Ost (Kreisklinik Ebersberg)\n- Klinikum Landkreis Erding"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Telefonnummern und Funkgruppen ohne Gewähr – Stand der jeweiligen Quelle beachten und mit der aktuellen Funkgeräte-Programmierung / Wachen-Info abgleichen. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Erding. Zuständig für Erding, Freising und Ebersberg. Krankentransport 08123 19222.",
+   "quelle": "EU-Ausschreibung Fachplanung Leitstellentechnik ILS Erding (TED 2022 und 2023) · Landkreis Erding – Amtsblatt Nr. 22 vom 27.05.2015",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-oberland",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Oberland",
+   "kurz": "ILS Oberland",
+   "suchbegriffe": [
+    "Leitstelle Oberland",
+    "Leitstelle Weilheim",
+    "ILS Weilheim",
+    "RD WM",
+    "RD_WM"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "- Landkreise **Bad Tölz-Wolfratshausen, Garmisch-Partenkirchen und Weilheim-Schongau** (ZRF Oberland)\n- Sitz: Weilheim, Johannes-Damrich-Straße 5a; betrieben vom BRK\n- Die geplante Zusammenlegung mit der ILS Fürstenfeldbruck wurde abgesagt – die ILS bleibt in Weilheim"
+    },
+    {
+     "titel": "Telefon",
+     "text": "- Leitstelle Oberland: 08861 9258-5100 (Taschenkarte KFV Landsberg, Stand Dezember 2018 – prüfen)"
+    },
+    {
+     "titel": "Funk / Kanäle",
+     "text": "- **RD_WM** (Landkreis Weilheim) – Kurzwahl 3073 (Taschenkarte KFV Landsberg, Stand Dezember 2018)\n- Gruppen für Bad Tölz-Wolfratshausen und Garmisch-Partenkirchen: nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Besonderheiten",
+     "text": "- Landkreis **Miesbach gehört nicht** zur ILS Oberland, sondern zur ILS Rosenheim"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Telefonnummern und Funkgruppen ohne Gewähr – Stand der jeweiligen Quelle beachten und mit der aktuellen Funkgeräte-Programmierung / Wachen-Info abgleichen. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Oberland in Weilheim. Zuständig für Bad Tölz Wolfratshausen, Garmisch Partenkirchen und Weilheim Schongau. Telefon 08861 9258 5100. Funkgruppe R D W M, Kurzwahl 3073.",
+   "quelle": "Landkreis Weilheim-Schongau – Antworten zur ILS / Pressemitteilung 177/2024 · Bayerischer Landtag Drucksache 19/4346 · Kreisbote – Fusion ILS Oberland/FFB abgesagt · KFV Landsberg – Taschenkarte Digitalfunk (12/2018)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-rosenheim",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Rosenheim",
+   "kurz": "ILS Rosenheim",
+   "suchbegriffe": [
+    "Leitstelle Rosenheim",
+    "ILS RO",
+    "Leitstelle RO",
+    "Leitstelle Miesbach"
+   ],
+   "siehe": [
+    "Krankenhaus Agatharied"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "- **Stadt Rosenheim, Landkreis Rosenheim und Landkreis Miesbach** (Zweckverband für Rettungsdienst und Feuerwehralarmierung Rosenheim)\n- Organisatorisch Stabsstelle der Stadt Rosenheim"
+    },
+    {
+     "titel": "Telefon",
+     "text": "- Telefon für Rettungsdienst-Rückfragen / Krankentransport: nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Funk / Kanäle",
+     "text": "- Digitalfunkgruppen Rettungsdienst: nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Besonderheiten",
+     "text": "- Krankenhaus Agatharied (Landkreis Miesbach) liegt im Bereich der ILS Rosenheim"
+    },
+    {
+     "titel": "Kliniken aus der App im Bereich",
+     "text": "- Krankenhaus Agatharied"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Telefonnummern und Funkgruppen ohne Gewähr – Stand der jeweiligen Quelle beachten und mit der aktuellen Funkgeräte-Programmierung / Wachen-Info abgleichen. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Rosenheim. Zuständig für Stadt und Landkreis Rosenheim sowie Landkreis Miesbach.",
+   "quelle": "Pressemitteilung daxenfeuer.de (Landratsamt Rosenheim) · Stadt Rosenheim – Organigramm Stand 01.01.2026",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-uebersicht",
+   "bereich": "leitstelle",
+   "titel": "Übersicht Leitstellen",
+   "kurz": "Leitstellen",
+   "suchbegriffe": [
+    "Leitstellen",
+    "ILS",
+    "Integrierte Leitstellen",
+    "Welche Leitstelle",
+    "Leitstelle Landkreis",
+    "Leitstellenbereiche"
+   ],
+   "siehe": [
+    "Integrierte Leitstelle München",
+    "RD_1_M – Rettungsdienst Nord (ILS München)",
+    "RD_2_M – Rettungsdienst Süd (ILS München)",
+    "Integrierte Leitstelle Fürstenfeldbruck",
+    "Integrierte Leitstelle Erding",
+    "Integrierte Leitstelle Oberland",
+    "Integrierte Leitstelle Rosenheim"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Welcher Landkreis – welche ILS",
+     "text": "- **ILS München:** Stadt München, Landkreis München (Rettungsdienst) – RD_1_M (Nord, 2513), RD_2_M (Süd, 2514)\n- **ILS Fürstenfeldbruck (Maisach):** Dachau, Fürstenfeldbruck, Landsberg am Lech, Starnberg\n- **ILS Erding:** Erding, Freising, Ebersberg\n- **ILS Oberland (Weilheim):** Bad Tölz-Wolfratshausen, Garmisch-Partenkirchen, Weilheim-Schongau\n- **ILS Rosenheim:** Stadt und Landkreis Rosenheim, Landkreis Miesbach"
+    },
+    {
+     "titel": "Merke",
+     "text": "- Starnberg → ILS FFB · Ebersberg → ILS Erding · Miesbach / Agatharied → ILS Rosenheim\n- In Bayern gibt es eine Integrierte Leitstelle je Rettungsdienstbereich"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Telefonnummern und Funkgruppen ohne Gewähr – Stand der jeweiligen Quelle beachten und mit der aktuellen Funkgeräte-Programmierung / Wachen-Info abgleichen. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Leitstellen. München: Stadt und Landkreis München. Fürstenfeldbruck in Maisach: Dachau, Fürstenfeldbruck, Landsberg, Starnberg. Erding: Erding, Freising, Ebersberg. Oberland in Weilheim: Bad Tölz Wolfratshausen, Garmisch Partenkirchen, Weilheim Schongau. Rosenheim: Stadt und Landkreis Rosenheim und Miesbach.",
+   "quelle": "Zusammenstellung aus den Leitstellen-Einträgen",
+   "stand": "2026-11"
+  }
+ ]
+}

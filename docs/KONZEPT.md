@@ -104,7 +104,8 @@ Variante B „Wissensbuch“ in Neon-Rubin auf dunklem Grund (`#1b1d20`), im Sti
 | 1.1.4–1.2.1 | Kurzbefehl „Wissen vorlesen“, Lernschleife für Siri-Begriffe, Klangsuche (Kölner Phonetik) | ✅ |
 | 1.3 | Bereich Maßnahmen, ÄLRD-Bayern-Inhalte (83 Einträge) | ✅ |
 | 1.4 | Offline-Anzeige, Kliniken München/Umland, Übersichten nach Versorgungsmöglichkeit | ✅ |
-| später | Leitstellen; Favoriten / „Zuletzt angesehen“; Lernmodus mit Verbindung zur Quiz-App | offen |
+| 1.4 (Daten) | Leitstellen rund um München | ✅ |
+| später | Favoriten / „Zuletzt angesehen“; Lernmodus mit Verbindung zur Quiz-App | offen |
 
 ## 9. Datenpflege
 
@@ -112,5 +113,6 @@ Variante B „Wissensbuch“ in Neon-Rubin auf dunklem Grund (`#1b1d20`), im Sti
 |---|---|---|---|
 | ÄLRD Bayern (Medikamente, Algorithmen, Maßnahmen …) | `daten/gen_aelrd.py` | `daten/aelrd-bayern-import.json` | geplante Aufgabe „ÄLRD-Leitlinien-Check Wissen RD“, monatlich am 1. um 19:37 |
 | Kliniken München und Umland inkl. Übersichten | `daten/gen_kliniken.py` | `daten/kliniken-muenchen-import.json` | geplante Aufgabe „Kliniken-Check Wissen RD“, jährlich am 10. Januar |
+| Leitstellen (ILS München mit RD_1_M / RD_2_M, FFB, Erding, Oberland, Rosenheim) | `daten/gen_leitstellen.py` | `daten/leitstellen-import.json` | von Hand – Funkgruppen mit der Geräte-Programmierung abgleichen |
 
 Ablauf bei Änderungen: Generator anpassen → `python3 daten/gen_….py daten/….json` → in der App ⚙️ → Import. Der Import überschreibt Einträge mit gleicher ID und behält eigene Suchbegriffe. Nur Angaben aus offiziellen Quellen (ÄLRD Bayern, DKG-Krankenhausverzeichnis, Klinikseiten); nicht Ermittelbares wird ausdrücklich als „nicht ermittelt“ markiert.

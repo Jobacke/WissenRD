@@ -85,6 +85,7 @@ Auf den Geräten erscheint danach eine rote Leiste **„Neue Version verfügbar�
 | `daten/beispiel-eintraege.json` | Muster-Einträge zum Import |
 | `daten/gen_aelrd.py` → `daten/aelrd-bayern-import.json` | ÄLRD-Bayern-Inhalte (Generator + Importdatei) |
 | `daten/gen_kliniken.py` → `daten/kliniken-muenchen-import.json` | Kliniken München/Umland + Übersichten nach Versorgungsmöglichkeit |
+| `daten/gen_leitstellen.py` → `daten/leitstellen-import.json` | Integrierte Leitstellen rund um München |
 | `icons/` | App-Icon (SVG-Vorlage + PNGs) |
 
 > Keine Patientendaten eintragen. Maßgeblich sind immer die aktuell gültigen SAA/ÄLRD-Vorgaben.
