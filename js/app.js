@@ -1,0 +1,468 @@
+// Wissen RD – Hauptlogik
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+import {
+  getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, sendPasswordResetEmail,
+  setPersistence, browserLocalPersistence
+} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+import {
+  initializeFirestore, persistentLocalCache, persistentMultipleTabManager,
+  collection, doc, onSnapshot, writeBatch, serverTimestamp, increment
+} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+import { firebaseConfig } from "./firebase-config.js";
+import { BEREICHE } from "./bereiche.js";
+import {
+  norm, schluesselFuer, slugFuer, markdownFuer, vorlesetextFuer, htmlAusText, suche
+} from "./text.js";
+
+const VERSION = `v${self.APP_VERSION} (Build ${self.APP_BUILD})`;
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = initializeFirestore(app, {
+  localCache: persistentLocalCache({ tabManager: persistentMultipleTabManager() })
+});
+
+const $ = s => document.querySelector(s);
+const inhalt = $("#inhalt");
+const st = { user: null, eintraege: [], geladen: false, datenversion: 0, abmelden: [] };
+
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c =>
+  ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+function hinweis(text, fehler = false) {
+  const t = $("#toast");
+  t.textContent = text;
+  t.className = "toast sichtbar" + (fehler ? " fehler" : "");
+  clearTimeout(hinweis._t);
+  hinweis._t = setTimeout(() => (t.className = "toast"), 3500);
+}
+
+// ---------------- Start & Anmeldung ----------------
+$("#version").textContent = VERSION;
+
+// ?q=ACS aus dem Kurzbefehl → Suche
+const startParam = new URLSearchParams(location.search).get("q");
+if (startParam) {
+  history.replaceState(null, "", location.pathname + "#/suche/" + encodeURIComponent(startParam));
+}
+
+setPersistence(auth, browserLocalPersistence).catch(() => {});
+onAuthStateChanged(auth, user => {
+  st.abmelden.forEach(f => f());
+  st.abmelden = [];
+  st.user = user;
+  document.body.classList.toggle("angemeldet", !!user);
+  if (!user) { st.eintraege = []; st.geladen = false; zeigeLogin(); return; }
+  st.abmelden.push(onSnapshot(collection(db, "eintraege"), snap => {
+    st.eintraege = snap.docs.map(d => ({ id: d.id, ...d.data() }))
+      .sort((a, b) => a.titel.localeCompare(b.titel, "de"));
+    const ersterLauf = !st.geladen;
+    st.geladen = true;
+    // Formulare nicht durch Live-Updates überschreiben
+    if (ersterLauf || !/^#\/(neu|bearbeiten|einstellungen)/.test(location.hash)) route();
+  }, err => hinweis("Laden fehlgeschlagen: " + err.message, true)));
+  st.abmelden.push(onSnapshot(doc(db, "meta", "stand"), d => {
+    st.datenversion = d.exists() ? d.data().datenversion || 0 : 0;
+    $("#datenstand").textContent = "Daten #" + st.datenversion;
+  }));
+});
+
+function zeigeLogin() {
+  inhalt.innerHTML = `
+    <section class="karte login">
+      <h2>Anmelden</h2>
+      <p class="leise">Die Wissensdatenbank ist nur für dich zugänglich.</p>
+      <label>E-Mail<input id="l-mail" type="email" autocomplete="username"></label>
+      <label>Passwort<input id="l-pw" type="password" autocomplete="current-password"></label>
+      <button id="l-go" class="primaer">Anmelden</button>
+      <button id="l-reset" class="link">Passwort vergessen?</button>
+    </section>`;
+  $("#l-go").onclick = async () => {
+    try { await signInWithEmailAndPassword(auth, $("#l-mail").value.trim(), $("#l-pw").value); }
+    catch (e) { hinweis("Anmeldung fehlgeschlagen", true); }
+  };
+  $("#l-pw").onkeydown = ev => { if (ev.key === "Enter") $("#l-go").click(); };
+  $("#l-reset").onclick = async () => {
+    const m = $("#l-mail").value.trim();
+    if (!m) return hinweis("Bitte zuerst E-Mail eintragen", true);
+    await sendPasswordResetEmail(auth, m).catch(() => {});
+    hinweis("Falls die Adresse existiert, kommt eine E-Mail.");
+  };
+}
+
+// ---------------- Routing ----------------
+window.addEventListener("hashchange", () => { stoppeVorlesen(); route(); });
+function route() {
+  if (!st.user) return;
+  const h = decodeURIComponent(location.hash.slice(1) || "/");
+  const [, teil, rest = ""] = h.split("/");
+  const sucheFeld = $("#suche");
+  if (teil !== "suche" && document.activeElement !== sucheFeld) sucheFeld.value = "";
+  if (!st.geladen) { inhalt.innerHTML = `<p class="leise mitte">Lade Wissen …</p>`; return; }
+  switch (teil) {
+    case "": return zeigeStart();
+    case "suche": sucheFeld.value = rest; return zeigeSuche(rest);
+    case "b": return zeigeBereich(rest);
+    case "e": return zeigeEintrag(rest);
+    case "neu": return zeigeEditor(null, rest);
+    case "bearbeiten": return zeigeEditor(rest);
+    case "einstellungen": return zeigeEinstellungen();
+    default: return zeigeStart();
+  }
+}
+
+$("#suche").addEventListener("input", ev => {
+  const q = ev.target.value;
+  history.replaceState(null, "", "#/suche/" + encodeURIComponent(q));
+  zeigeSuche(q);
+});
+
+// ---------------- Ansichten ----------------
+function eintragZeile(e) {
+  const b = BEREICHE[e.bereich] || { icon: "📌", name: e.bereich };
+  return `<a class="zeile" href="#/e/${esc(e.id)}">
+    <span class="z-icon">${b.icon}</span>
+    <span class="z-text"><strong>${esc(e.titel)}</strong>${e.kurz && e.kurz !== e.titel ? ` <span class="kurz">${esc(e.kurz)}</span>` : ""}
+    <small>${esc(b.name)}</small></span><span class="pfeil">›</span></a>`;
+}
+
+function zeigeStart() {
+  const kacheln = Object.entries(BEREICHE).map(([k, b]) => {
+    const n = st.eintraege.filter(e => e.bereich === k).length;
+    return `<a class="kachel" href="#/b/${k}"><span class="k-icon">${b.icon}</span>
+      <span>${b.name}</span><small>${n}</small></a>`;
+  }).join("");
+  const zuletzt = [...st.eintraege]
+    .sort((a, b) => (b.geaendert?.seconds || 0) - (a.geaendert?.seconds || 0)).slice(0, 5);
+  inhalt.innerHTML = `
+    <section class="kacheln">${kacheln}</section>
+    <a class="primaer breit" href="#/neu/">＋ Neuer Eintrag</a>
+    <h3>Zuletzt geändert</h3>
+    <section class="liste">${zuletzt.map(eintragZeile).join("") || `<p class="leise">Noch keine Einträge – lege den ersten an oder importiere die Beispieldaten (⚙️).</p>`}</section>`;
+}
+
+function zeigeSuche(q) {
+  const t = suche(st.eintraege, q);
+  if (!norm(q)) return zeigeStart();
+  // Genau ein exakter Treffer (z. B. vom Kurzbefehl) → direkt öffnen
+  const exakt = t.filter(x => x._punkte === 100);
+  if (startParam && exakt.length === 1 && norm(q) === norm(startParam)) {
+    history.replaceState(null, "", "#/e/" + exakt[0].id);
+    return zeigeEintrag(exakt[0].id);
+  }
+  inhalt.innerHTML = `
+    <h3>${t.length} Treffer für „${esc(q)}“</h3>
+    <section class="liste">${t.map(eintragZeile).join("")}</section>
+    ${t.length ? "" : `<p class="leise">Nichts gefunden.</p>`}
+    <a class="primaer breit" href="#/neu/">＋ „${esc(q)}“ als neuen Eintrag anlegen</a>`;
+  inhalt.querySelector("a.primaer").onclick = () => { sessionStorage.setItem("neuTitel", q); };
+}
+
+function zeigeBereich(k) {
+  const b = BEREICHE[k];
+  if (!b) return zeigeStart();
+  const liste = st.eintraege.filter(e => e.bereich === k);
+  inhalt.innerHTML = `
+    <h2>${b.icon} ${b.name}</h2>
+    <section class="liste">${liste.map(eintragZeile).join("") || `<p class="leise">Noch leer.</p>`}</section>
+    <a class="primaer breit" href="#/neu/${k}">＋ Neuer Eintrag in ${b.name}</a>`;
+}
+
+function zeigeEintrag(id) {
+  const e = st.eintraege.find(x => x.id === id);
+  if (!e) { inhalt.innerHTML = `<p class="leise mitte">Eintrag nicht gefunden.</p>`; return; }
+  const b = BEREICHE[e.bereich] || { icon: "📌", name: e.bereich };
+  const tel = !!b.telefon;
+  const abschnitte = (e.abschnitte || []).filter(a => a.text && a.text.trim()).map(a => `
+    <section class="abschnitt"><h4>${esc(a.titel)}</h4>${htmlAusText(a.text, tel)}</section>`).join("");
+  const siehe = (e.siehe || []).map(s => `<a class="chip" href="#/suche/${encodeURIComponent(s)}">${esc(s)}</a>`).join("");
+  const geaendert = e.geaendert?.toDate ? e.geaendert.toDate().toLocaleString("de-DE") : "";
+  inhalt.innerHTML = `
+    <article class="eintrag">
+      <a class="badge" href="#/b/${esc(e.bereich)}">${b.icon} ${esc(b.name)}</a>
+      <h2>${esc(e.titel)}${e.kurz && e.kurz !== e.titel ? ` <span class="kurz">${esc(e.kurz)}</span>` : ""}</h2>
+      <div class="aktionen">
+        <button id="vorlesen" class="primaer">🔊 Vorlesen</button>
+        <a class="sekundaer" href="#/bearbeiten/${esc(e.id)}">✏️ Bearbeiten</a>
+      </div>
+      ${abschnitte || `<p class="leise">Noch kein Inhalt.</p>`}
+      ${siehe ? `<section class="abschnitt"><h4>Siehe auch</h4><div class="chips">${siehe}</div></section>` : ""}
+      <footer class="meta">${e.quelle ? "Quelle: " + esc(e.quelle) + "<br>" : ""}
+        ${e.stand ? "Stand: " + esc(e.stand) + " · " : ""}Rev. ${e.revision || 1}${geaendert ? " · geändert " + geaendert : ""}</footer>
+    </article>`;
+  $("#vorlesen").onclick = () => {
+    if (speechSynthesis.speaking) { stoppeVorlesen(); return; }
+    vorlesen(e.vorlesen || vorlesetextFuer(e));
+  };
+}
+
+// ---------------- Editor ----------------
+function zeigeEditor(id, bereichVorgabe) {
+  const alt = id ? st.eintraege.find(x => x.id === id) : null;
+  if (id && !alt) return zeigeStart();
+  const startBereich = alt?.bereich || (BEREICHE[bereichVorgabe] ? bereichVorgabe : "diagnose");
+  const neuTitel = sessionStorage.getItem("neuTitel") || "";
+  sessionStorage.removeItem("neuTitel");
+  const e = alt ? structuredClone({ ...alt, geaendert: null, erstellt: null }) : {
+    bereich: startBereich, titel: neuTitel, kurz: "", suchbegriffe: [], siehe: [],
+    abschnitte: BEREICHE[startBereich].vorlage.map(t => ({ titel: t, text: "" })),
+    sprechtext: "", quelle: "", stand: new Date().toISOString().slice(0, 7)
+  };
+  let abschnitteBeruehrt = !!alt;
+
+  inhalt.innerHTML = `
+    <section class="karte editor">
+      <h2>${alt ? "Eintrag bearbeiten" : "Neuer Eintrag"}</h2>
+      <label>Bereich<select id="f-bereich">${Object.entries(BEREICHE).map(([k, b]) =>
+        `<option value="${k}" ${k === e.bereich ? "selected" : ""}>${b.icon} ${b.name}</option>`).join("")}</select></label>
+      <label>Titel<input id="f-titel" value="${esc(e.titel)}" placeholder="z. B. Akutes Koronarsyndrom"></label>
+      <label>Kurzform / Abkürzung<input id="f-kurz" value="${esc(e.kurz)}" placeholder="z. B. ACS"></label>
+      <label>Weitere Suchbegriffe <small>(kommagetrennt – so, wie du es zu Siri sagen würdest)</small>
+        <input id="f-such" value="${esc((e.suchbegriffe || []).join(", "))}" placeholder="Herzinfarkt, STEMI, Brustschmerz"></label>
+      <div id="f-abschnitte"></div>
+      <button id="f-plus" class="sekundaer">＋ Abschnitt</button>
+      <p class="leise">Formatierung: Zeile mit „- “ = Aufzählung, **fett**.</p>
+      <label>Eigener Vorlesetext <small>(optional – sonst wird der Inhalt vorgelesen)</small>
+        <textarea id="f-sprech" rows="3">${esc(e.sprechtext)}</textarea></label>
+      <label>Siehe auch <small>(kommagetrennt)</small><input id="f-siehe" value="${esc((e.siehe || []).join(", "))}"></label>
+      <label>Quelle<input id="f-quelle" value="${esc(e.quelle)}" placeholder="z. B. SAA ÄLRD Bayern 2025"></label>
+      <label>Stand<input id="f-stand" value="${esc(e.stand)}" placeholder="JJJJ-MM"></label>
+      <div class="aktionen">
+        <button id="f-speichern" class="primaer">💾 Speichern</button>
+        <a class="sekundaer" href="${alt ? "#/e/" + esc(alt.id) : "#/"}">Abbrechen</a>
+        ${alt ? `<button id="f-loeschen" class="gefahr">🗑 Löschen</button>` : ""}
+      </div>
+    </section>`;
+
+  const box = $("#f-abschnitte");
+  const zeichne = () => {
+    box.innerHTML = e.abschnitte.map((a, i) => `
+      <div class="abschnitt-edit">
+        <div class="ae-kopf">
+          <input data-i="${i}" data-f="titel" value="${esc(a.titel)}">
+          <button data-i="${i}" data-a="hoch" title="nach oben">↑</button>
+          <button data-i="${i}" data-a="runter" title="nach unten">↓</button>
+          <button data-i="${i}" data-a="weg" title="entfernen">✕</button>
+        </div>
+        <textarea data-i="${i}" data-f="text" rows="${Math.max(3, (a.text.match(/\n/g) || []).length + 2)}">${esc(a.text)}</textarea>
+      </div>`).join("");
+  };
+  zeichne();
+  box.addEventListener("input", ev => {
+    const i = ev.target.dataset.i, f = ev.target.dataset.f;
+    if (i !== undefined && f) { e.abschnitte[i][f] = ev.target.value; abschnitteBeruehrt = true; }
+  });
+  box.addEventListener("click", ev => {
+    const i = +ev.target.dataset.i, a = ev.target.dataset.a;
+    if (!a) return;
+    const L = e.abschnitte;
+    if (a === "weg") L.splice(i, 1);
+    if (a === "hoch" && i > 0) [L[i - 1], L[i]] = [L[i], L[i - 1]];
+    if (a === "runter" && i < L.length - 1) [L[i + 1], L[i]] = [L[i], L[i + 1]];
+    abschnitteBeruehrt = true;
+    zeichne();
+  });
+  $("#f-plus").onclick = () => { e.abschnitte.push({ titel: "Neuer Abschnitt", text: "" }); zeichne(); };
+  $("#f-bereich").onchange = ev => {
+    e.bereich = ev.target.value;
+    if (!abschnitteBeruehrt) {
+      e.abschnitte = BEREICHE[e.bereich].vorlage.map(t => ({ titel: t, text: "" }));
+      zeichne();
+    }
+  };
+  const liste = s => s.split(",").map(x => x.trim()).filter(Boolean);
+
+  $("#f-speichern").onclick = async () => {
+    e.titel = $("#f-titel").value.trim();
+    if (!e.titel) return hinweis("Titel fehlt", true);
+    e.kurz = $("#f-kurz").value.trim();
+    e.suchbegriffe = liste($("#f-such").value);
+    e.siehe = liste($("#f-siehe").value);
+    e.sprechtext = $("#f-sprech").value.trim();
+    e.quelle = $("#f-quelle").value.trim();
+    e.stand = $("#f-stand").value.trim();
+    try {
+      const neueId = await speichere(e, alt);
+      hinweis("Gespeichert");
+      location.hash = "#/e/" + neueId;
+    } catch (err) {
+      hinweis("Speichern fehlgeschlagen: " + (err.code === "permission-denied" ? "keine Schreibrechte" : err.message), true);
+    }
+  };
+  if (alt) $("#f-loeschen").onclick = async () => {
+    if (!confirm(`„${alt.titel}“ endgültig löschen?`)) return;
+    try {
+      const b = writeBatch(db);
+      b.delete(doc(db, "eintraege", alt.id));
+      b.set(doc(db, "meta", "stand"), { datenversion: increment(1), geaendert: serverTimestamp() }, { merge: true });
+      await b.commit();
+      hinweis("Gelöscht");
+      location.hash = "#/b/" + alt.bereich;
+    } catch (err) { hinweis("Löschen fehlgeschlagen: " + err.message, true); }
+  };
+}
+
+function bereinigt(e) {
+  return {
+    bereich: e.bereich, titel: e.titel, kurz: e.kurz || "",
+    suchbegriffe: e.suchbegriffe || [], siehe: e.siehe || [],
+    abschnitte: (e.abschnitte || []).map(a => ({ titel: a.titel || "", text: a.text || "" })),
+    sprechtext: e.sprechtext || "", quelle: e.quelle || "", stand: e.stand || ""
+  };
+}
+
+function eindeutigeId(e) {
+  const basis = slugFuer(e);
+  let id = basis, n = 2;
+  while (st.eintraege.some(x => x.id === id)) id = basis + "-" + n++;
+  return id;
+}
+
+// Speichert einen Eintrag inkl. der für Siri vorberechneten Felder
+async function speichere(e, alt, batch = null) {
+  const id = alt?.id || e.id && !st.eintraege.some(x => x.id === e.id) && e.id || eindeutigeId(e);
+  const daten = bereinigt(e);
+  daten.revision = (alt?.revision || 0) + 1;
+  daten.schluessel = schluesselFuer(daten);
+  daten.markdown = markdownFuer(daten);
+  daten.vorlesen = vorlesetextFuer(daten);
+  daten.geaendert = serverTimestamp();
+  daten.geaendertVon = st.user?.email || "";
+  if (!alt) daten.erstellt = serverTimestamp();
+  const eigen = !batch;
+  const b = batch || writeBatch(db);
+  b.set(doc(db, "eintraege", id), daten, { merge: true });
+  if (eigen) {
+    b.set(doc(db, "meta", "stand"), { datenversion: increment(1), geaendert: serverTimestamp() }, { merge: true });
+    await b.commit();
+  }
+  return id;
+}
+
+// ---------------- Einstellungen ----------------
+function zeigeEinstellungen() {
+  const rate = localStorage.getItem("rate") || "1.0";
+  inhalt.innerHTML = `
+    <section class="karte">
+      <h2>⚙️ Einstellungen</h2>
+      <dl class="info">
+        <dt>App-Version</dt><dd>${VERSION} · ${self.APP_DATUM}</dd>
+        <dt>Datenstand</dt><dd>#${st.datenversion} · ${st.eintraege.length} Einträge</dd>
+        <dt>Angemeldet</dt><dd>${esc(st.user.email)}</dd>
+      </dl>
+      <h3>Vorlesen</h3>
+      <label>Geschwindigkeit <output id="rate-w">${rate}</output>
+        <input id="rate" type="range" min="0.7" max="1.5" step="0.1" value="${rate}"></label>
+      <label>Stimme<select id="stimme"></select></label>
+      <button id="test-stimme" class="sekundaer">🔊 Test</button>
+
+      <h3>Daten</h3>
+      <div class="aktionen">
+        <button id="export" class="sekundaer">⬇️ Export (JSON)</button>
+        <label class="sekundaer datei">⬆️ Import (JSON)<input id="import" type="file" accept=".json,application/json" hidden></label>
+      </div>
+      <p class="leise">Import überschreibt Einträge mit gleicher ID. Beispieldaten: <code>daten/beispiel-eintraege.json</code></p>
+
+      <h3>Für den Siri-Kurzbefehl</h3>
+      <dl class="info klein">
+        <dt>API-Key</dt><dd><code>${esc(firebaseConfig.apiKey)}</code></dd>
+        <dt>Projekt-ID</dt><dd><code>${esc(firebaseConfig.projectId)}</code></dd>
+        <dt>App-URL</dt><dd><code>${esc(location.origin + location.pathname)}</code></dd>
+      </dl>
+
+      <h3>Änderungsprotokoll</h3>
+      <pre id="changelog" class="changelog">lädt …</pre>
+      <button id="abmelden" class="gefahr">Abmelden</button>
+    </section>`;
+
+  $("#rate").oninput = ev => { localStorage.setItem("rate", ev.target.value); $("#rate-w").textContent = ev.target.value; };
+  const fuelleStimmen = () => {
+    const sel = $("#stimme"); if (!sel) return;
+    const gew = localStorage.getItem("stimme") || "";
+    const st2 = speechSynthesis.getVoices().filter(v => v.lang.startsWith("de"));
+    sel.innerHTML = `<option value="">Standard (Deutsch)</option>` +
+      st2.map(v => `<option ${v.name === gew ? "selected" : ""}>${esc(v.name)}</option>`).join("");
+  };
+  fuelleStimmen();
+  speechSynthesis.onvoiceschanged = fuelleStimmen;
+  $("#stimme").onchange = ev => localStorage.setItem("stimme", ev.target.value);
+  $("#test-stimme").onclick = () => vorlesen("Akutes Koronarsyndrom. 12-Kanal-EKG innerhalb von 10 Minuten.");
+
+  $("#export").onclick = () => {
+    const daten = st.eintraege.map(e => ({ id: e.id, ...bereinigt(e) }));
+    const blob = new Blob([JSON.stringify({ app: "Wissen RD", version: self.APP_VERSION,
+      exportiert: new Date().toISOString(), eintraege: daten }, null, 2)], { type: "application/json" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = `wissen-export-${new Date().toISOString().slice(0, 10)}.json`;
+    a.click();
+  };
+  $("#import").onchange = async ev => {
+    const datei = ev.target.files[0]; if (!datei) return;
+    try {
+      const json = JSON.parse(await datei.text());
+      const liste = Array.isArray(json) ? json : json.eintraege;
+      if (!Array.isArray(liste)) throw new Error("Keine Einträge in der Datei");
+      if (!confirm(`${liste.length} Einträge importieren?`)) return;
+      for (let i = 0; i < liste.length; i += 400) {
+        const b = writeBatch(db);
+        for (const roh of liste.slice(i, i + 400)) {
+          const alt = roh.id ? st.eintraege.find(x => x.id === roh.id) : null;
+          await speichere(roh, alt, b);
+        }
+        b.set(doc(db, "meta", "stand"), { datenversion: increment(1), geaendert: serverTimestamp() }, { merge: true });
+        await b.commit();
+      }
+      hinweis(`${liste.length} Einträge importiert`);
+    } catch (err) { hinweis("Import fehlgeschlagen: " + err.message, true); }
+    ev.target.value = "";
+  };
+  fetch("CHANGELOG.md", { cache: "no-store" }).then(r => r.text())
+    .then(t => { const c = $("#changelog"); if (c) c.textContent = t; })
+    .catch(() => { const c = $("#changelog"); if (c) c.textContent = "offline nicht verfügbar"; });
+  $("#abmelden").onclick = () => signOut(auth);
+}
+
+// ---------------- Vorlesen ----------------
+function vorlesen(text) {
+  stoppeVorlesen();
+  const rate = parseFloat(localStorage.getItem("rate") || "1.0");
+  const name = localStorage.getItem("stimme");
+  const stimme = speechSynthesis.getVoices().find(v => v.name === name)
+    || speechSynthesis.getVoices().find(v => v.lang === "de-DE");
+  // In Sätze teilen – iOS bricht sehr lange Texte sonst ab
+  const saetze = text.match(/[^.!?]+[.!?]*/g) || [text];
+  saetze.forEach((s, i) => {
+    const u = new SpeechSynthesisUtterance(s.trim());
+    u.lang = "de-DE"; u.rate = rate; if (stimme) u.voice = stimme;
+    if (i === saetze.length - 1) u.onend = setzeKnopf;
+    speechSynthesis.speak(u);
+  });
+  setzeKnopf(true);
+}
+function stoppeVorlesen() { if (speechSynthesis.speaking || speechSynthesis.pending) speechSynthesis.cancel(); setzeKnopf(); }
+function setzeKnopf(laeuft = false) {
+  const k = $("#vorlesen"); if (k) k.textContent = laeuft === true ? "⏹ Stopp" : "🔊 Vorlesen";
+}
+
+// ---------------- Service Worker & Updates ----------------
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js").then(reg => {
+    const zeigeUpdate = w => {
+      const leiste = $("#update");
+      leiste.hidden = false;
+      leiste.onclick = () => w.postMessage("skipWaiting");
+    };
+    if (reg.waiting) zeigeUpdate(reg.waiting);
+    reg.addEventListener("updatefound", () => {
+      const w = reg.installing;
+      w.addEventListener("statechange", () => {
+        if (w.state === "installed" && navigator.serviceWorker.controller) zeigeUpdate(w);
+      });
+    });
+    document.addEventListener("visibilitychange", () => { if (!document.hidden) reg.update(); });
+  });
+  let neuGeladen = false;
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (!neuGeladen) { neuGeladen = true; location.reload(); }
+  });
+}

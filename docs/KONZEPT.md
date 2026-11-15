@@ -1,0 +1,101 @@
+# Wissen RD – Konzept
+
+**Ziel:** „Hey Siri, Wissen“ → „Welches Thema?“ → „ACS“ → auf dem iPhone erscheint alles Wichtige zum Akuten Koronarsyndrom, auf Wunsch wird es vorgelesen. Die Inhalte pflegst du selbst, sie liegen auf einem Server und sind auf allen Geräten gleich.
+
+## 1. Architektur
+
+```
+ ┌──────────────┐  „Hey Siri, Wissen“   ┌──────────────────────┐
+ │  iPhone/Watch│ ─────────────────────▶│ Kurzbefehl „Wissen“  │
+ │  (Siri)      │◀── Anzeige + Sprache ─│ (Kurzbefehle-App)    │
+ └──────────────┘                       └─────────┬────────────┘
+                                                  │ REST (Lese-Konto)
+ ┌──────────────┐   Firebase-SDK        ┌─────────▼────────────┐
+ │  PWA         │ ◀────────────────────▶│ Firebase             │
+ │  Wissen RD   │   lesen + schreiben   │ Auth + Firestore     │
+ │ (GitHub Pages)│                      │ (Server, EU)         │
+ └──────────────┘                       └──────────────────────┘
+```
+
+| Baustein | Aufgabe | Warum so |
+|---|---|---|
+| **Firestore** (Firebase) | Speichert alle Einträge, synchronisiert alle Geräte, offline-fähig | Kennst du aus Zeiterfassung Pro / JUH-App, kostenloser Spark-Tarif reicht locker |
+| **PWA „Wissen RD“** auf GitHub Pages | Pflegen, Suchen, Lesen, Vorlesen – auf iPhone, iPad, Mac | Gleicher Weg wie MediFlips, keine App-Store-Hürde |
+| **Kurzbefehl „Wissen“** | Sprachabfrage über Siri, zeigt und spricht das Ergebnis | Funktioniert freihändig, auch bei gesperrtem Bildschirm und mit AirPods |
+| **Lese-Konto „Siri“** | Eigenes Firebase-Konto, das nur lesen darf | Das Passwort steht im Kurzbefehl – selbst wenn es jemand sieht, kann er nichts ändern |
+
+**Wichtiger Kniff:** Beim Speichern berechnet die App drei Zusatzfelder vor – `schluessel` (Suchbegriffe in Siri-tauglicher Form), `markdown` (fertige Anzeige) und `vorlesen` (sprechoptimierter Text, z. B. „i.v.“ → „intravenös“). Dadurch bleibt der Kurzbefehl einfach: Er sucht nur noch und zeigt an.
+
+## 2. Bereiche
+
+| Bereich | Vorlage-Abschnitte |
+|---|---|
+| 🩺 Verdachtsdiagnosen | Leitsymptome · Typische Symptome · Diagnostik · Differenzialdiagnosen · Maßnahmen · Medikamente · Zielklinik/Transport · Merke/Red Flags |
+| 🔎 Symptome | Beschreibung · Mögliche Ursachen · Gezielt fragen/untersuchen · Red Flags |
+| 💊 Medikamente | Wirkstoff/Handelsname · Wirkgruppe · Indikation · KI · Dosierung Erw./Kinder · Applikation · NW · Freigabe NotSan/Arzt |
+| 📋 Algorithmen & SAA | Indikation · Ablauf · Besonderheiten |
+| 📡 Leitstellen | Zuständigkeitsbereich · Telefon · Funk/Kanäle · Besonderheiten |
+| 🏥 Kliniken | Adresse/Anfahrt · Fachbereiche · Zentren/Versorgungsstufe · Anmeldung · Besonderheiten |
+| 🔤 Abkürzungen | Bedeutung · Erklärung |
+| 📌 Sonstiges | frei |
+
+Neue Bereiche: ein Block in `js/bereiche.js`. Abschnitte sind pro Eintrag frei änderbar (hinzufügen, umbenennen, verschieben).
+Bei Leitstellen und Kliniken werden Telefonnummern antippbar.
+
+## 3. Datenmodell (Firestore)
+
+**Sammlung `eintraege`**, Dokument-ID = Kurzform (z. B. `acs`):
+
+| Feld | Inhalt |
+|---|---|
+| `bereich` | z. B. `diagnose` |
+| `titel`, `kurz` | „Akutes Koronarsyndrom“, „ACS“ |
+| `suchbegriffe[]` | Herzinfarkt, STEMI, Brustschmerz … – so, wie du es zu Siri sagen würdest |
+| `abschnitte[]` | `{titel, text}` – Text mit „- “ für Aufzählungen und `**fett**` |
+| `siehe[]` | Querverweise (anklickbar) |
+| `sprechtext` | optional eigene Kurzfassung zum Vorlesen |
+| `quelle`, `stand` | z. B. „SAA ÄLRD Bayern 2025“, „2026-11“ |
+| `revision` | zählt bei jeder Änderung des Eintrags hoch |
+| `schluessel[]`, `markdown`, `vorlesen` | automatisch berechnet (für Siri) |
+| `erstellt`, `geaendert`, `geaendertVon` | automatisch |
+
+**Dokument `meta/stand`:** `datenversion` zählt bei jeder Änderung der Datenbank hoch.
+
+## 4. Suche – so wird aus „A C S“ ein Treffer
+
+Gesagter Text wird normalisiert: Kleinbuchstaben → ä/ö/ü/ß ersetzen → alles außer a–z und 0–9 entfernen.
+„A C S“, „ACS“, „a.c.s.“ → `acs` · „Akutes Koronarsyndrom“ → `akuteskoronarsyndrom`.
+App und Kurzbefehl verwenden exakt dieselbe Regel. Mehrere Treffer (z. B. „Herzkatheter“ bei mehreren Kliniken) → Siri fragt „Welcher Eintrag?“. Kein Treffer → die App öffnet sich mit einer unscharfen Suche (verzeiht auch Diktierfehler wie „Herzinfakt“).
+
+## 5. Versionierung – Änderungen sofort erkennen
+
+| Was | Wo sichtbar | Wie es hochzählt |
+|---|---|---|
+| **App-Version** `v1.0.0 (Build 1)` | Fußzeile, Einstellungen, Änderungsprotokoll | `./version-erhoehen.sh "Beschreibung"` – ändert Version, Build, Datum, Cache-Name und CHANGELOG in einem Schritt |
+| **Datenstand** `Daten #47` | Fußzeile, Einstellungen | automatisch bei jedem Speichern/Löschen/Import |
+| **Eintrags-Revision** `Rev. 3` | unter jedem Eintrag, auch in der Siri-Anzeige | automatisch beim Speichern des Eintrags |
+| **Kurzbefehl-Version** | Kommentar-Aktion oben im Kurzbefehl | von Hand bei Änderungen |
+
+Schema: `MAJOR.MINOR.PATCH` – Patch = Fehlerkorrektur, Minor = neue Funktion, Major = grundlegender Umbau. Neue App-Version → rote Leiste „Neue Version verfügbar“.
+
+## 6. Icon
+
+Navy-Verlauf `#2c5282 → #1a365d` wie MediFlips, weiße Sprechblase (Sprache/Siri) mit roter EKG-Kurve (Rettungsdienst). Dateien in `icons/` – SVG als Vorlage, PNG 512/192/180.
+
+## 7. Sicherheit & Datenschutz
+
+- **Keine Patientendaten** – die Datenbank ist reines Fachwissen.
+- Lesen nur mit Anmeldung; Schreiben nur dein Konto (UID in `firestore.rules`).
+- Siri-Konto darf nur lesen. Registrierung neuer Konten in Firebase abschalten.
+- Speicherort Firestore: EU (`eur3`).
+- Inhalte sind dein persönliches Nachschlagewerk – maßgeblich bleiben die gültigen SAA/ÄLRD-Vorgaben.
+
+## 8. Ausbaustufen
+
+| Version | Inhalt |
+|---|---|
+| **1.0** | Kern: Bereiche, Editor, Suche, Vorlesen, Sync, Siri-Kurzbefehl, Export/Import |
+| 1.1 | Medikamente aus MediFlips übernehmen (Import-Konverter) |
+| 1.2 | Kliniken nach Fachbereich abfragen („Wissen – Stroke Unit“ → alle passenden Kliniken) |
+| 1.3 | Kurzbefehl „Wissen hören“ für Apple Watch/AirPods, Aktionstaste |
+| 1.4 | Favoriten, „Zuletzt angesehen“, Lernmodus mit Verbindung zur Quiz-App |

@@ -1,0 +1,31 @@
+rules_version = '2';
+// Wissen RD – Zugriffsregeln
+// 1. In der Firebase-Konsole unter Authentication → Users die beiden UIDs kopieren.
+// 2. Platzhalter unten ersetzen.
+// 3. Den kompletten Text unter Firestore Database → Regeln einfügen und „Veröffentlichen“.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Dein persönliches Konto (darf lesen und schreiben)
+    function istRedakteur() {
+      return request.auth != null && request.auth.uid in ['qhLyyfOAgvQgSn3jz8IX9t0g9Mm2'];
+    }
+    // Separates Lese-Konto für den Siri-Kurzbefehl (darf nur lesen)
+    function istLeser() {
+      return request.auth != null && (istRedakteur() || request.auth.uid in ['YEUYgrn0cMa7PXs6RDEVt7wsEuy2']);
+    }
+
+    match /eintraege/{id} {
+      allow read: if istLeser();
+      allow write: if istRedakteur();
+    }
+    match /meta/{id} {
+      allow read: if istLeser();
+      allow write: if istRedakteur();
+    }
+    // Alles andere ist gesperrt
+    match /{rest=**} {
+      allow read, write: if false;
+    }
+  }
+}

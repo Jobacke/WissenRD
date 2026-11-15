@@ -1,0 +1,42 @@
+{
+  "app": "Wissen RD",
+  "hinweis": "Beispieleintrag als Muster. Inhalte vor Nutzung gegen die aktuell gültigen SAA/ÄLRD-Vorgaben deines Rettungsdienstbereichs prüfen und Medikamente/Dosierungen selbst eintragen.",
+  "eintraege": [
+    {
+      "id": "acs",
+      "bereich": "diagnose",
+      "titel": "Akutes Koronarsyndrom",
+      "kurz": "ACS",
+      "suchbegriffe": ["Herzinfarkt", "Myokardinfarkt", "STEMI", "NSTEMI", "NSTE-ACS", "instabile Angina pectoris", "Brustschmerz", "Thoraxschmerz", "AP"],
+      "siehe": ["Lungenembolie", "Aortendissektion", "Herzkatheter"],
+      "abschnitte": [
+        { "titel": "Leitsymptome", "text": "- Thoraxschmerz / Druck- oder Engegefühl, meist > 20 Minuten, nicht atemabhängig\n- Ausstrahlung in linken (oder rechten) Arm, Hals, Unterkiefer, Rücken oder Oberbauch" },
+        { "titel": "Typische Symptome", "text": "- Dyspnoe\n- Kaltschweißigkeit, Blässe\n- Übelkeit, Erbrechen\n- Angst bis Vernichtungsgefühl, Unruhe\n- Schwäche, Synkope, Rhythmusstörungen\n- **Atypisch** bei Frauen, Älteren und Diabetikern: nur Oberbauchschmerz, Müdigkeit oder Luftnot" },
+        { "titel": "Diagnostik", "text": "- 12-Kanal-EKG innerhalb von 10 Minuten nach Patientenkontakt, bei Verlauf wiederholen\n- Bei Hinterwandinfarkt: rechtsventrikuläre Ableitungen (V3R–V6R), ggf. V7–V9\n- STEMI: ST-Hebung im J-Punkt in ≥ 2 benachbarten Ableitungen, ≥ 1 mm (V2–V3: Männer ≥ 2 mm, Frauen ≥ 1,5 mm)\n- Neuer Schenkelblock bei typischer Klinik wie STEMI behandeln\n- Vitalparameter, Schmerzskala, Anamnese (OPQRST, SAMPLER), Vormedikation (Gerinnungshemmer, PDE-5-Hemmer)" },
+        { "titel": "Differenzialdiagnosen", "text": "- Lungenembolie\n- Aortendissektion\n- Spannungspneumothorax\n- Peri-/Myokarditis, Takotsubo\n- Hypertensiver Notfall\n- Ösophagus, Gallenkolik, Pankreatitis\n- Muskuloskelettal" },
+        { "titel": "Maßnahmen", "text": "- Oberkörper hoch, Ruhe, Patient nicht selbst gehen lassen\n- Monitoring mit aufgeklebten Defi-Elektroden (Kammerflimmern!)\n- Sauerstoff nur bei SpO2 < 90 %\n- i.v.-Zugang\n- Notarzt nach Indikationskatalog\n- EKG-Übermittlung und frühe Voranmeldung der Zielklinik" },
+        { "titel": "Medikamente", "text": "- Nach gültiger SAA / ÄLRD-Vorgabe selbst eintragen (z. B. ASS, Heparin, Analgesie, Antiemetikum)\n- Nitrat: Kontraindikationen beachten – RR syst. < 90 mmHg, PDE-5-Hemmer-Einnahme, rechtsventrikulärer Infarkt" },
+        { "titel": "Zielklinik / Transport", "text": "- STEMI: direkt in Klinik mit 24/7-Herzkatheter, Notaufnahme umgehen wenn möglich\n- Ziel: Diagnose bis Rekanalisation < 120 min, sonst Lyse mit Notarzt abwägen\n- NSTE-ACS mit hohem Risiko (Schock, Rhythmusstörungen, anhaltender Schmerz): wie STEMI\n- Sonst: Klinik mit Kardiologie / Chest Pain Unit" },
+        { "titel": "Merke / Red Flags", "text": "- Ein unauffälliges EKG schließt ein ACS nicht aus\n- Vor Nitro an rechtsventrikulären Infarkt denken\n- Kardiogener Schock: früh Notarzt, Herzkatheter mit Schockversorgung" }
+      ],
+      "sprechtext": "",
+      "quelle": "ESC-Leitlinie ACS 2023; regionale SAA prüfen",
+      "stand": "2026-11"
+    },
+    {
+      "id": "stemi",
+      "bereich": "abkuerzung",
+      "titel": "ST-Hebungsinfarkt",
+      "kurz": "STEMI",
+      "suchbegriffe": ["ST elevation myocardial infarction", "ST-Hebung"],
+      "siehe": ["ACS"],
+      "abschnitte": [
+        { "titel": "Bedeutung", "text": "ST-Elevation Myocardial Infarction – Herzinfarkt mit ST-Streckenhebung im EKG" },
+        { "titel": "Erklärung", "text": "Meist kompletter Verschluss eines Koronargefäßes. Zeitkritisch: direkte Zuweisung in ein Herzkatheterlabor." }
+      ],
+      "sprechtext": "",
+      "quelle": "",
+      "stand": "2026-11"
+    }
+  ]
+}
