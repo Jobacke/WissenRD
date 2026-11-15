@@ -1,11 +1,11 @@
-"""Erzeugt die Kurzbefehle „Wissen“ und „Wissen hören“ als (unsignierte) .shortcut-Dateien."""
+"""Erzeugt die Kurzbefehle „Wissen“ und „Wissen vorlesen“ als (unsignierte) .shortcut-Dateien."""
 import plistlib, uuid, sys
 
 OBJ = "￼"
 API_KEY = "AIzaSyD2gljUDG3_u3AThk4c021cVTlrR1EuD_c"
 PROJEKT = "wissen-rd"
 APP_URL = "https://wissen.vjbackhaus.de/"
-KB_VERSION = "1.0"
+KB_VERSION = "1.3"
 
 def U(): return str(uuid.uuid4()).upper()
 
@@ -63,7 +63,7 @@ def wenn_ende(g): act("conditional", GroupingIdentifier=g, WFControlFlowMode=2, 
 
 def bauen(vorlesen: bool):
     A.clear()
-    name = "Wissen hören" if vorlesen else "Wissen"
+    name = "Wissen vorlesen" if vorlesen else "Wissen"
     act("comment", WFCommentActionText=f"Wissen RD – Kurzbefehl „{name}“ v{KB_VERSION}\n"
         "Fragt per Siri nach einem Thema und zeigt den passenden Eintrag aus wissen.vjbackhaus.de"
         + (" und liest ihn vor." if vorlesen else "."))
@@ -79,6 +79,7 @@ def bauen(vorlesen: bool):
     u = text("PASSWORT_HIER"); setvar("Passwort", out(u, "Text"))
 
     # --- Teil B: Frage + Normalisierung (identisch zur App) ---
+    # Siri-Sprachdialog: Siri fragt „Welches Thema?“ und hört die Antwort ab
     u = U()
     act("ask", UUID=u, WFAskActionPrompt="Welches Thema?", WFInputType="Text")
     setvar("Frage", out(u, "Eingabe"))
@@ -124,14 +125,25 @@ def bauen(vorlesen: bool):
         WFHTTPBodyType="File", WFRequestVariable=att(out(q, "Text")))
     setvar("Antwort", out(u, "Inhalte der URL"))
 
-    # --- Teil E: Titel der Treffer sammeln ---
+    # --- Teil E: Treffer sammeln (Titel-Liste + Wörterbuch Titel -> Eintrag) ---
+    d = U()
+    act("dictionary", UUID=d, WFItems={"Value": {"WFDictionaryFieldValueItems": []}, "WFSerializationType": "WFDictionaryFieldValue"})
+    setvar("Treffer", out(d, "Wörterbuch"))
     g = U()
     act("repeat.each", GroupingIdentifier=g, WFControlFlowMode=0, WFInput=att(var("Antwort")))
     t = U()
     act("getvalueforkey", UUID=t, WFInput=att(var("Repeat Item", dict_coerce=True)),
         WFDictionaryKey="document.fields.titel.stringValue", WFGetDictionaryValueType="Value")
     w = U(); wenn_start(w, WFCondition=100, WFInput=bedingung_input(out(t, "Wörterbuchwert")))
-    act("appendvariable", WFVariableName="Titel", WFInput=att(out(t, "Wörterbuchwert")))
+    # Punkte im Titel durch optisch gleiches Zeichen ersetzen (Punkt = Pfadtrenner im Wörterbuch)
+    rt = U()
+    act("text.replace", UUID=rt, WFInput=tok(out(t, "Wörterbuchwert")), WFReplaceTextFind=".",
+        WFReplaceTextReplace="\u2024", WFReplaceTextRegularExpression=False, WFReplaceTextCaseSensitive=False)
+    act("appendvariable", WFVariableName="Titel", WFInput=att(out(rt, "Aktualisierter Text")))
+    sd = U()
+    act("setvalueforkey", UUID=sd, WFDictionary=att(var("Treffer")),
+        WFDictionaryKey=tok(out(rt, "Aktualisierter Text")), WFDictionaryValue=tok(var("Repeat Item")))
+    setvar("Treffer", out(sd, "Wörterbuch"))
     wenn_ende(w)
     act("repeat.each", GroupingIdentifier=g, WFControlFlowMode=2, UUID=U())
 
@@ -154,26 +166,18 @@ def bauen(vorlesen: bool):
     setvar("Gewaehlt", out(x, "Objekt aus Liste"))
     wenn_ende(w)
 
-    # Gewählten Eintrag in der Antwort wiederfinden
-    g = U()
-    act("repeat.each", GroupingIdentifier=g, WFControlFlowMode=0, WFInput=att(var("Antwort")))
-    t = U()
-    act("getvalueforkey", UUID=t, WFInput=att(var("Repeat Item", dict_coerce=True)),
-        WFDictionaryKey="document.fields.titel.stringValue", WFGetDictionaryValueType="Value")
-    w = U(); wenn_start(w, WFCondition=4, WFConditionalActionString=tok(var("Gewaehlt")),
-                        WFInput=bedingung_input(out(t, "Wörterbuchwert")))
-    setvar("Eintrag", var("Repeat Item"))
-    wenn_ende(w)
-    act("repeat.each", GroupingIdentifier=g, WFControlFlowMode=2, UUID=U())
+    # Gewählten Eintrag aus dem Wörterbuch holen
+    x = U()
+    act("getvalueforkey", UUID=x, WFInput=att(var("Treffer")), WFDictionaryKey=tok(var("Gewaehlt")),
+        WFGetDictionaryValueType="Value")
+    setvar("Eintrag", out(x, "Wörterbuchwert"))
 
-    # --- Teil H: Vorlesen (nur „Wissen hören“) und anzeigen ---
-    w = U(); wenn_start(w, WFCondition=4, WFConditionalActionString=tok("ja"),
-                        WFInput=bedingung_input(var("K", "vorlesen")))
-    v = U()
-    act("getvalueforkey", UUID=v, WFInput=att(var("Eintrag", dict_coerce=True)),
-        WFDictionaryKey="document.fields.vorlesen.stringValue", WFGetDictionaryValueType="Value")
-    act("speaktext", WFText=tok(out(v, "Wörterbuchwert")), WFSpeakTextWait=False)
-    wenn_ende(w)
+    # --- Teil H: Vorlesen (nur „Wissen vorlesen“) und anzeigen ---
+    if vorlesen:
+        v = U()
+        act("getvalueforkey", UUID=v, WFInput=att(var("Eintrag", dict_coerce=True)),
+            WFDictionaryKey="document.fields.vorlesen.stringValue", WFGetDictionaryValueType="Value")
+        act("speaktext", WFText=tok(out(v, "Wörterbuchwert")), WFSpeakTextWait=False)
     m = U()
     act("getvalueforkey", UUID=m, WFInput=att(var("Eintrag", dict_coerce=True)),
         WFDictionaryKey="document.fields.markdown.stringValue", WFGetDictionaryValueType="Value")
@@ -207,7 +211,7 @@ def bauen(vorlesen: bool):
 
 if __name__ == "__main__":
     ziel = sys.argv[1]
-    for vl, datei in [(False, "Wissen.unsigned.shortcut"), (True, "Wissen hören.unsigned.shortcut")]:
+    for vl, datei in [(False, "Wissen.unsigned.shortcut"), (True, "Wissen vorlesen.unsigned.shortcut")]:
         with open(f"{ziel}/{datei}", "wb") as f:
             plistlib.dump(bauen(vl), f, fmt=plistlib.FMT_BINARY)
         print("erstellt:", datei, len(A), "Aktionen")

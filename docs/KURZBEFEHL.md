@@ -3,10 +3,10 @@
 ## Schnellweg: fertige Dateien (empfohlen)
 
 Im Ordner `kurzbefehl/` liegen beide Kurzbefehle fertig gebaut:
-`Wissen.unsigned.shortcut` (nur anzeigen) und `Wissen hören.unsigned.shortcut` (anzeigen + vorlesen).
+`Wissen.unsigned.shortcut` (nur anzeigen) und `Wissen vorlesen.unsigned.shortcut` (anzeigen + vorlesen).
 
 1. Terminal: `cd ~/"Wissen Rettungsdienst/kurzbefehl" && bash signieren.sh`
-2. Im Finder doppelt auf `Wissen.shortcut` und `Wissen hören.shortcut` klicken → „Kurzbefehl hinzufügen“.
+2. Im Finder doppelt auf `Wissen.shortcut` und `Wissen vorlesen.shortcut` klicken → „Kurzbefehl hinzufügen“.
 3. Beim Import fragt die Kurzbefehle-App nach **E-Mail** und **Passwort des Siri-Lesekontos**.
 4. Fertig – per iCloud sind die Kurzbefehle auch auf iPhone und Watch.
 
@@ -35,7 +35,7 @@ Du brauchst aus der App (⚙️ Einstellungen → „Für den Siri-Kurzbefehl“
    | `email` | E-Mail des Siri-Lesekontos |
    | `passwort` | Passwort des Siri-Lesekontos |
    | `url` | App-URL, z. B. `https://jobacke.github.io/WissenRD/` |
-   | `vorlesen` | `nein` (beim Kurzbefehl „Wissen hören“: `ja`) |
+   | `vorlesen` | `nein` (beim Kurzbefehl „Wissen vorlesen“: `ja`) |
 3. **Variable festlegen** → Name `K`
 
 ## Teil B – Thema erfragen und normalisieren
@@ -117,8 +117,8 @@ Du brauchst aus der App (⚙️ Einstellungen → „Für den Siri-Kurzbefehl“
 ## Teil H – Siri & zweite Variante
 
 - Kurzbefehl **„Wissen“** nennen → *„Hey Siri, Wissen“*.
-- Kurzbefehl duplizieren, **„Wissen hören“** nennen, in Schritt 2 `vorlesen` = `ja`.
-- Optional: Aktionstaste (iPhone 15 Pro und neuer) oder *Bedienungshilfen → Tippen → Rückseite antippen* auf „Wissen hören“ legen.
+- Kurzbefehl duplizieren, **„Wissen vorlesen“** nennen, in Schritt 2 `vorlesen` = `ja`.
+- Optional: Aktionstaste (iPhone 15 Pro und neuer) oder *Bedienungshilfen → Tippen → Rückseite antippen* auf „Wissen vorlesen“ legen.
 
 ## Fehlersuche
 

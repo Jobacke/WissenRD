@@ -97,5 +97,5 @@ Navy-Verlauf `#2c5282 → #1a365d` wie MediFlips, weiße Sprechblase (Sprache/Si
 | **1.0** | Kern: Bereiche, Editor, Suche, Vorlesen, Sync, Siri-Kurzbefehl, Export/Import |
 | 1.1 | Medikamente aus MediFlips übernehmen (Import-Konverter) |
 | 1.2 | Kliniken nach Fachbereich abfragen („Wissen – Stroke Unit“ → alle passenden Kliniken) |
-| 1.3 | Kurzbefehl „Wissen hören“ für Apple Watch/AirPods, Aktionstaste |
+| 1.3 | Kurzbefehl „Wissen vorlesen“ für Apple Watch/AirPods, Aktionstaste |
 | 1.4 | Favoriten, „Zuletzt angesehen“, Lernmodus mit Verbindung zur Quiz-App |
