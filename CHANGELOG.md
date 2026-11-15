@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.1.0 (Build 3) – 2026-11-15
+- Neues App-Icon im Stil von Mopped/Schichtbuch (Wissensbuch, Neon-Rubin); fertige Siri-Kurzbefehle „Wissen“ und „Wissen hören“
+
 ## v1.0.1 (Build 2) – 2026-11-15
 - Vorlesen flüssiger (größere Textstücke), beste deutsche Stimme wird automatisch gewählt
 

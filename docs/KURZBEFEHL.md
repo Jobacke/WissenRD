@@ -1,4 +1,20 @@
-# Siri-Kurzbefehl „Wissen“ – Bauanleitung (Kurzbefehl v1.0)
+# Siri-Kurzbefehl „Wissen“
+
+## Schnellweg: fertige Dateien (empfohlen)
+
+Im Ordner `kurzbefehl/` liegen beide Kurzbefehle fertig gebaut:
+`Wissen.unsigned.shortcut` (nur anzeigen) und `Wissen hören.unsigned.shortcut` (anzeigen + vorlesen).
+
+1. Terminal: `cd ~/"Wissen Rettungsdienst/kurzbefehl" && bash signieren.sh`
+2. Im Finder doppelt auf `Wissen.shortcut` und `Wissen hören.shortcut` klicken → „Kurzbefehl hinzufügen“.
+3. Beim Import fragt die Kurzbefehle-App nach **E-Mail** und **Passwort des Siri-Lesekontos**.
+4. Fertig – per iCloud sind die Kurzbefehle auch auf iPhone und Watch.
+
+Geändert wird der Kurzbefehl über `kurzbefehl/gen_shortcut.py` (dann neu erzeugen und signieren).
+
+---
+
+## Manueller Bau (Referenz / Fehlersuche)
 
 Ablauf: *„Hey Siri, Wissen“* → Siri: *„Welches Thema?“* → *„ACS“* → Anzeige (und optional Sprachausgabe).
 
