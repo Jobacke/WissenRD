@@ -1,14 +1,22 @@
 // Service Worker – Cache-Name enthält die Version, damit jede neue Version sauber übernommen wird.
 // Die Zeile CACHE wird von version-erhoehen.sh automatisch angepasst.
-const CACHE = "wissen-rd-1.3.0-b11";
+const CACHE = "wissen-rd-1.4.0-b12";
 const SHELL = [
   "./", "index.html", "css/style.css", "manifest.webmanifest",
   "js/version.js", "js/app.js", "js/text.js", "js/bereiche.js", "js/firebase-config.js",
   "icons/icon.svg", "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png"
 ];
 
+// Firebase-SDK gleich bei der Installation mitladen – sonst fehlt es nach einem Update,
+// wenn die App zum ersten Mal ohne Netz gestartet wird.
+const SDK = ["firebase-app.js", "firebase-auth.js", "firebase-firestore.js"]
+  .map(f => "https://www.gstatic.com/firebasejs/10.12.4/" + f);
+
 self.addEventListener("install", ev => {
-  ev.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)));
+  ev.waitUntil(caches.open(CACHE).then(async c => {
+    await c.addAll(SHELL);
+    await Promise.all(SDK.map(u => c.add(u).catch(() => {})));
+  }));
 });
 
 self.addEventListener("activate", ev => {

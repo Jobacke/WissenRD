@@ -52,7 +52,14 @@ onAuthStateChanged(auth, user => {
   st.user = user;
   document.body.classList.toggle("angemeldet", !!user);
   if (!user) { st.eintraege = []; st.geladen = false; zeigeLogin(); return; }
-  st.abmelden.push(onSnapshot(collection(db, "eintraege"), snap => {
+  st.syncGeprueft = false;
+  setTimeout(() => { st.syncGeprueft = true; zeigeStand(); }, 4000);
+  st.abmelden.push(onSnapshot(collection(db, "eintraege"), { includeMetadataChanges: true }, snap => {
+    // Offline-Status: Daten liegen dauerhaft im Gerätespeicher (persistentLocalCache)
+    st.ausCache = snap.metadata.fromCache;
+    if (!snap.metadata.fromCache) merkeSync();
+    zeigeStand();
+    if (st.geladen && snap.docChanges().length === 0) return; // nur Statuswechsel, nichts neu zeichnen
     st.eintraege = snap.docs.map(d => ({ id: d.id, ...d.data() }))
       .sort((a, b) => a.titel.localeCompare(b.titel, "de"));
     const ersterLauf = !st.geladen;
@@ -62,9 +69,34 @@ onAuthStateChanged(auth, user => {
   }, err => hinweis("Laden fehlgeschlagen: " + err.message, true)));
   st.abmelden.push(onSnapshot(doc(db, "meta", "stand"), d => {
     st.datenversion = d.exists() ? d.data().datenversion || 0 : 0;
-    $("#datenstand").textContent = "Daten #" + st.datenversion;
+    zeigeStand();
   }));
 });
+
+// ---------------- Offline-Anzeige ----------------
+function merkeSync() {
+  try { localStorage.setItem("wrd-sync", new Date().toISOString()); } catch { /* egal */ }
+}
+function letzterSync() {
+  try {
+    const v = localStorage.getItem("wrd-sync");
+    return v ? new Date(v).toLocaleString("de-DE", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }) : "";
+  } catch { return ""; }
+}
+function zeigeStand() {
+  const el = $("#datenstand");
+  if (!el) return;
+  const offline = !navigator.onLine || (st.ausCache && st.syncGeprueft);
+  let t = "Daten #" + st.datenversion;
+  if (offline) {
+    const s = letzterSync();
+    t += " · offline" + (s ? " (Stand " + s + ")" : "");
+  }
+  el.textContent = t;
+  el.classList.toggle("offline", offline);
+}
+window.addEventListener("online", zeigeStand);
+window.addEventListener("offline", zeigeStand);
 
 function zeigeLogin() {
   inhalt.innerHTML = `

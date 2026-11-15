@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.4.0 (Build 12) – 2026-11-15
+- Offline: Anzeige „offline (Stand …)“, Firebase-SDK wird für den Offline-Start vorgeladen. Daten: 19 Kliniken (München, Ebersberg, Starnberg, Erding, Agatharied, kbo Haar) plus 7 Übersichten nach Versorgungsmöglichkeit (Stroke, Chest Pain, Trauma, Kinder, CAC, Neurochirurgie, Geburtshilfe)
+
 ## v1.3.0 (Build 11) – 2026-11-15
 - Neuer Bereich Maßnahmen; Import behält eigene Suchbegriffe; Vorlesen verbessert (Dosierungen, Abkürzungen); Importdatei ÄLRD Bayern (83 Einträge)
 

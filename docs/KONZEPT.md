@@ -67,6 +67,8 @@ Gesagter Text wird normalisiert: Kleinbuchstaben → ä/ö/ü/ß ersetzen → al
 „A C S“, „ACS“, „a.c.s.“ → `acs` · „Akutes Koronarsyndrom“ → `akuteskoronarsyndrom`.
 App und Kurzbefehl verwenden exakt dieselbe Regel. Mehrere Treffer (z. B. „Herzkatheter“ bei mehreren Kliniken) → Siri fragt „Welcher Eintrag?“. Kein Treffer → die App öffnet sich mit einer unscharfen Suche (verzeiht auch Diktierfehler wie „Herzinfakt“).
 
+**Suche nach Versorgungsmöglichkeit (ab v1.4):** Für Fragen wie „Wo ist die nächste Stroke Unit?“ gibt es eigene Übersichtseinträge im Bereich Kliniken (Stroke Units, Chest Pain Units, Traumazentren, Kinderkliniken, Cardiac Arrest Center, Neurochirurgie, Geburtshilfe). Die Suchbegriffe liegen nur auf der Übersicht, nicht auf den einzelnen Kliniken – so liefert „Hey Siri, Wissen → Stroke“ genau einen Treffer und liest die Liste mit Telefonnummern vor, ohne Rückfrage. Aufgenommen sind nur belegte Häuser; die Listen sind nicht abschließend, Zuweisung immer über ILS / IVENA.
+
 ## 5. Versionierung – Änderungen sofort erkennen
 
 | Was | Wo sichtbar | Wie es hochzählt |
@@ -78,9 +80,13 @@ App und Kurzbefehl verwenden exakt dieselbe Regel. Mehrere Treffer (z. B. „Her
 
 Schema: `MAJOR.MINOR.PATCH` – Patch = Fehlerkorrektur, Minor = neue Funktion, Major = grundlegender Umbau. Neue App-Version → rote Leiste „Neue Version verfügbar“.
 
+### Offline (ab v1.4)
+
+Alle Einträge liegen dauerhaft im Gerätespeicher (Firestore `persistentLocalCache`), App-Dateien und Firebase-SDK im Service-Worker-Cache. Ohne Netz zeigt die Fußzeile „offline (Stand TT.MM. hh:mm)“. Änderungen im Editor werden offline vorgemerkt und beim nächsten Netzkontakt übertragen. Der Siri-Kurzbefehl braucht weiterhin Netz.
+
 ## 6. Icon
 
-Navy-Verlauf `#2c5282 → #1a365d` wie MediFlips, weiße Sprechblase (Sprache/Siri) mit roter EKG-Kurve (Rettungsdienst). Dateien in `icons/` – SVG als Vorlage, PNG 512/192/180.
+Variante B „Wissensbuch“ in Neon-Rubin auf dunklem Grund (`#1b1d20`), im Stil von ZNA-Navi, Schichtbuch, Notizen und Mopped. Dateien in `icons/` – SVG als Vorlage, PNG 512/192/180.
 
 ## 7. Sicherheit & Datenschutz
 
@@ -92,10 +98,19 @@ Navy-Verlauf `#2c5282 → #1a365d` wie MediFlips, weiße Sprechblase (Sprache/Si
 
 ## 8. Ausbaustufen
 
-| Version | Inhalt |
-|---|---|
-| **1.0** | Kern: Bereiche, Editor, Suche, Vorlesen, Sync, Siri-Kurzbefehl, Export/Import |
-| 1.1 | Medikamente aus MediFlips übernehmen (Import-Konverter) |
-| 1.2 | Kliniken nach Fachbereich abfragen („Wissen – Stroke Unit“ → alle passenden Kliniken) |
-| 1.3 | Kurzbefehl „Wissen vorlesen“ für Apple Watch/AirPods, Aktionstaste |
-| 1.4 | Favoriten, „Zuletzt angesehen“, Lernmodus mit Verbindung zur Quiz-App |
+| Version | Inhalt | Status |
+|---|---|---|
+| 1.0–1.1 | Kern: Bereiche, Editor, Suche, Vorlesen, Sync, Siri-Kurzbefehl, Export/Import | ✅ |
+| 1.1.4–1.2.1 | Kurzbefehl „Wissen vorlesen“, Lernschleife für Siri-Begriffe, Klangsuche (Kölner Phonetik) | ✅ |
+| 1.3 | Bereich Maßnahmen, ÄLRD-Bayern-Inhalte (83 Einträge) | ✅ |
+| 1.4 | Offline-Anzeige, Kliniken München/Umland, Übersichten nach Versorgungsmöglichkeit | ✅ |
+| später | Leitstellen; Favoriten / „Zuletzt angesehen“; Lernmodus mit Verbindung zur Quiz-App | offen |
+
+## 9. Datenpflege
+
+| Datensatz | Generator | Importdatei | Prüfung |
+|---|---|---|---|
+| ÄLRD Bayern (Medikamente, Algorithmen, Maßnahmen …) | `daten/gen_aelrd.py` | `daten/aelrd-bayern-import.json` | geplante Aufgabe „ÄLRD-Leitlinien-Check Wissen RD“, monatlich am 1. um 19:37 |
+| Kliniken München und Umland inkl. Übersichten | `daten/gen_kliniken.py` | `daten/kliniken-muenchen-import.json` | geplante Aufgabe „Kliniken-Check Wissen RD“, jährlich am 10. Januar |
+
+Ablauf bei Änderungen: Generator anpassen → `python3 daten/gen_….py daten/….json` → in der App ⚙️ → Import. Der Import überschreibt Einträge mit gleicher ID und behält eigene Suchbegriffe. Nur Angaben aus offiziellen Quellen (ÄLRD Bayern, DKG-Krankenhausverzeichnis, Klinikseiten); nicht Ermittelbares wird ausdrücklich als „nicht ermittelt“ markiert.

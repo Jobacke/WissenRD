@@ -54,7 +54,7 @@ Nach [`docs/KURZBEFEHL.md`](docs/KURZBEFEHL.md) bauen. Unbedingt den 🧪 Zwisch
 ### Phase 5 – Wissen aufbauen (laufend)
 
 - **Suchbegriffe** so eintragen, wie du sie sprichst – auch typische Siri-Missverständnisse.
-- Bei Kliniken z. B. Suchbegriffe „Herzkatheter“, „Stroke Unit“, „Schockraum“ → Siri bietet dann alle passenden Kliniken zur Auswahl.
+- Kliniken: „Stroke“, „Chest Pain“, „Traumazentren“, „Kinderklinik“ usw. führen auf eine Übersicht aller belegten Häuser (siehe `docs/KONZEPT.md` Abschnitt 4).
 - Regelmäßig ⚙️ → **Export** als Sicherung (z. B. monatlich in iCloud Drive).
 
 ---
@@ -83,6 +83,8 @@ Auf den Geräten erscheint danach eine rote Leiste **„Neue Version verfügbar�
 | `sw.js`, `manifest.webmanifest` | Offline-Fähigkeit, Installation als App |
 | `firestore.rules` | Zugriffsregeln |
 | `daten/beispiel-eintraege.json` | Muster-Einträge zum Import |
+| `daten/gen_aelrd.py` → `daten/aelrd-bayern-import.json` | ÄLRD-Bayern-Inhalte (Generator + Importdatei) |
+| `daten/gen_kliniken.py` → `daten/kliniken-muenchen-import.json` | Kliniken München/Umland + Übersichten nach Versorgungsmöglichkeit |
 | `icons/` | App-Icon (SVG-Vorlage + PNGs) |
 
 > Keine Patientendaten eintragen. Maßgeblich sind immer die aktuell gültigen SAA/ÄLRD-Vorgaben.
