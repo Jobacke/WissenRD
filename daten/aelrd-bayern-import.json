@@ -1,0 +1,3109 @@
+{
+ "app": "Wissen RD",
+ "titel": "Import ÄLRD Bayern",
+ "hinweis": "Ausschließlich aus den gültigen Dokumenten der ÄLRD Bayern (www.aelrd-bayern.de, NotSan-Seite), Stand der Prüfung 15.11.2026. Vor Nutzung mit den Originaldokumenten abgleichen.",
+ "eintraege": [
+  {
+   "id": "amiodaron",
+   "bereich": "medikament",
+   "titel": "Amiodaron",
+   "kurz": "",
+   "suchbegriffe": [
+    "Antiarrhythmikum"
+   ],
+   "siehe": [
+    "Kreislaufstillstand",
+    "Manuelle Defibrillation"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "Ampulle, 150 mg / 3 ml"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "Kammerflimmern / pulslose ventrikuläre Tachykardie"
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "- **Erwachsene:** nach 3. Defibrillation 300 mg i.v. (i.o.); nach 5. Defibrillation 150 mg i.v. (i.o.)\n- **Kinder** (siehe DIVI-Kindernotfallkarte): nach 3. Defibrillation 5 mg/kg KG (max. 300 mg) i.v. (i.o.); nach 5. Defibrillation 5 mg/kg KG (max. 150 mg) i.v. (i.o.)"
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "atropin",
+   "bereich": "medikament",
+   "titel": "Atropinsulfat",
+   "kurz": "",
+   "suchbegriffe": [
+    "Atropin"
+   ],
+   "siehe": [
+    "Bradykardie",
+    "Transthorakaler Schrittmacher"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "Ampulle, 0,5 mg / 1 ml"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "lebensbedrohliche Bradykardie"
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "- **Erwachsene:** initial 0,5 mg i.v. (i.o.); ggf. Wiederholung alle 3–5 Minuten bis maximal 3 mg\n- **Kinder:** 0,01 mg/kg KG i.v. (i.o.), max. 0,5 mg"
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "cafedrin-theodrenalin",
+   "bereich": "medikament",
+   "titel": "Cafedrin / Theodrenalin",
+   "kurz": "",
+   "suchbegriffe": [
+    "Cafedrin",
+    "Theodrenalin"
+   ],
+   "siehe": [
+    "Kritische Hypotension"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "Ampulle, 200/10 mg / 2 ml"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "kritische Hypotension trotz adäquater bzw. mit Kontraindikation für i.v.-Flüssigkeitsgabe"
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "- **Erwachsene:** initial 0,5 ml i.v. (i.o.); ggf. Repetition alle 5 Minuten bis max. 4 ml (2 Ampullen)\n- **Kinder:** keine Zulassung\n- **CAVE:** Konzept der permissiven Hypotension bei aktiver Blutung!"
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "diazepam",
+   "bereich": "medikament",
+   "titel": "Diazepam (Rectiole)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Diazepam",
+    "Diazepam rektal"
+   ],
+   "siehe": [
+    "Krampfanfall",
+    "Midazolam"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "Rectiole, 5 mg"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "prolongierter kindlicher Krampfanfall (> 3 min)"
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "- **Kinder < 15 kg KG:** 5 mg rektal\n- **Kinder ≥ 15 kg KG:** 10 mg rektal, bzw. siehe Midazolam\n- keine Repetition (siehe Midazolam)"
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "epinephrin",
+   "bereich": "medikament",
+   "titel": "Epinephrin (Adrenalin)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Adrenalin",
+    "Epinephrin",
+    "Suprarenin"
+   ],
+   "siehe": [
+    "Kreislaufstillstand",
+    "Anaphylaxie",
+    "Pseudokrupp"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "- Stechampulle 25 mg / 25 ml (Kreislaufstillstand, Inhalation)\n- Ampulle 1 mg / 1 ml (anaphylaktischer Schock)"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "- Kreislaufstillstand\n- anaphylaktischer Schock\n- kritische akute stenosierende Laryngotracheitis (Pseudokrupp), kritische Schwellung / Ödem der oberen Atemwege – zur Inhalation"
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "**Kreislaufstillstand**\n- Erwachsene: nicht defibrillierbar 1 mg i.v. (i.o.) sobald möglich; defibrillierbar 1 mg i.v. (i.o.) nach 3. Defibrillation; Repetition alle 3–5 Minuten unter ALS\n- Kinder (siehe DIVI-Kindernotfallkarte): nicht defibrillierbar 0,01 mg/kg KG i.v. (i.o.) sobald möglich; defibrillierbar 0,01 mg/kg KG i.v. (i.o.) nach 3. Defibrillation; Repetition i.v. (i.o.) alle 3–5 Minuten unter ALS\n**Anaphylaktischer Schock**\n- Erwachsene: 0,5 mg i.m.; Repetition (i.m.) nach 5 Minuten bei ausbleibender Wirkung\n- Kinder (siehe DIVI-Kindernotfallkarte): 0,01 mg/kg KG i.m.; Repetition (i.m.) nach 5–10 Minuten bei ausbleibender Wirkung\n**Inhalation (Pseudokrupp / Schwellung obere Atemwege)**\n- Erwachsene: 5 mg (5 ml) zur Inhalation; Repetition bei Symptompersistenz und (kardiovaskulärer) Verträglichkeit\n- Kinder (siehe DIVI-Kindernotfallkarte): 5 mg (5 ml) zur Inhalation; Repetition bei Symptompersistenz und (kardiovaskulärer) Verträglichkeit"
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "esketamin",
+   "bereich": "medikament",
+   "titel": "Esketamin (intranasal, Kinder)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Esketamin",
+    "Ketamin"
+   ],
+   "siehe": [
+    "Kritischer Schmerzzustand"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "Ampulle, 50 mg / 2 ml"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "kritischer Schmerzzustand **Kinder bis 11 Jahre** – intranasale Applikation"
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "- siehe DIVI-Kindernotfallkarte\n- 2 mg/kg KG intranasal\n- ggf. Repetition der Hälfte der Initialdosis nach 10 Minuten"
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "fentanyl",
+   "bereich": "medikament",
+   "titel": "Fentanyl",
+   "kurz": "",
+   "suchbegriffe": [
+    "Fentanyl"
+   ],
+   "siehe": [
+    "Kritischer Schmerzzustand"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "Ampulle, 0,5 mg / 10 ml"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "- kritischer Schmerzzustand Kinder ab 12 Jahre – intranasale Applikation\n- kritischer Schmerzzustand (außer bei akutem Koronarsyndrom) – i.v."
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "**Intranasal (Kinder ab 12 Jahre)**\n- siehe DIVI-Kindernotfallkarte\n- 0,002 mg/kg KG intranasal\n- ggf. Repetition der Hälfte der Initialdosis nach 10 Minuten\n**Intravenös**\n- nur Erwachsene und Kinder ab 12 Jahre\n- unverdünnte Einzeldosis von 0,05 mg i.v. (i.o.)\n- ggf. Repetition nach 5 Minuten bis maximal 0,2 mg\n- **nicht bei akutem Koronarsyndrom**"
+    },
+    {
+     "titel": "Betäubungsmittel",
+     "text": "Opiatgabe: § 2a NotSanG gibt eine eigenständige Befugnis zu heilkundlichem Handeln. § 13 Abs. 1b BtMG ermöglicht in diesem Rahmen auch die Gabe von Betäubungsmitteln entsprechend der Empfehlungen der Medikamentenliste zu Indikation, Art und Weise der Verabreichung und Dosierung."
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "flumazenil",
+   "bereich": "medikament",
+   "titel": "Flumazenil",
+   "kurz": "",
+   "suchbegriffe": [
+    "Flumazenil",
+    "Benzodiazepin-Antagonist"
+   ],
+   "siehe": [
+    "Benzodiazepin-Intoxikation"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "Ampulle, 0,5 mg / 5 ml"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "kritische Benzodiazepin-Überdosierung / -Intoxikation"
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "- **Erwachsene:** 0,2 mg i.v. (i.o.); ggf. Repetition nach 1 Minute bis maximal 1 mg\n- **Kinder ab 1 Jahr:** 0,01 mg/kg KG (max. 0,2 mg) langsam i.v. (i.o.); ggf. Repetition nach 1 Min. bis Gesamtdosis von 0,05 mg/kg KG (max. 1 mg)"
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "glucose-40",
+   "bereich": "medikament",
+   "titel": "Glucose 40 %",
+   "kurz": "",
+   "suchbegriffe": [
+    "Glucose",
+    "Glukose",
+    "Glukose 40",
+    "G40",
+    "Traubenzucker i.v."
+   ],
+   "siehe": [
+    "Hypoglykämie",
+    "2c Hypoglykämie",
+    "Glucose-Gel",
+    "Thiamin"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "Ampulle, 4,0 g / 10 ml"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "kritische Hypoglykämie"
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "- **Erwachsene:** initial 20 g langsam i.v. (i.o.) zu maximal laufender Infusion; ggf. weitere 20 g i.v. (i.o.) nach Blutzuckerwert\n- **Kinder** (siehe DIVI-Kindernotfallkarte): 200 mg/kg KG i.v. (i.o.)"
+    },
+    {
+     "titel": "2c-Delegation (Algorithmus Hypoglykämie)",
+     "text": "- 20 g (50 ml) intravenös zu schnelllaufender Infusion\n- ggf. einmalige Repetition\n- nur Erwachsene / Adoleszente\n- Zuspritzung langsam zu einer möglichst schnell laufenden Infusion zur Verdünnung; große Sorgfalt, damit kein Paravasat dieser hochosmolaren Lösung entsteht"
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · ÄLRD Bayern: Medikamente nach § 4 Abs. 2 Nr. 2c NotSanG, Version 2.0, gültig ab 01.11.2025 · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "glucose-gel",
+   "bereich": "medikament",
+   "titel": "Glucose-Gel (oral)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Glucose-Gel",
+    "Glukose Gel",
+    "Zuckergel",
+    "Glucose oral"
+   ],
+   "siehe": [
+    "Hypoglykämie",
+    "2c Hypoglykämie"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform",
+     "text": "Tube / Beutel o. ä."
+    },
+    {
+     "titel": "2c-Delegation (Algorithmus Hypoglykämie)",
+     "text": "- 30 g Glucose per os\n- ggf. einmalige Repetition (nach 15 Minuten, wenn BZ weiter < 70 mg/dl)\n- nur Erwachsene / Adoleszente\n- nur bei erhaltener Schluckfähigkeit"
+    },
+    {
+     "titel": "Hinweis (Erläuterungen)",
+     "text": "Die orale Glukosegabe ist bei erhaltener Schluckfähigkeit zu bevorzugen. Falls keine geeigneten oralen Glukosequellen verfügbar sind (z. B. Zucker-Gels), kann im Ausnahmefall Glukose-Injektionslösung in entsprechender Dosis oral verabreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente nach § 4 Abs. 2 Nr. 2c NotSanG, Version 2.0, gültig ab 01.11.2025 · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025",
+   "stand": "2025-11"
+  },
+  {
+   "id": "ipratropiumbromid",
+   "bereich": "medikament",
+   "titel": "Ipratropiumbromid",
+   "kurz": "",
+   "suchbegriffe": [
+    "Ipratropium",
+    "Atrovent"
+   ],
+   "siehe": [
+    "Bronchospastik",
+    "Salbutamol"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "Inhalationslösung, 0,5 mg / 2 ml"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "kritische Bronchospastik – zur Inhalation"
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "- Restmenge der verwendeten Verneblungsmaske beachten!\n- **Erwachsene:** 0,5 mg (2,0 ml) zur Inhalation; Repetition bei Symptompersistenz und (kardiovaskulärer) Verträglichkeit\n- **Kinder:** 0,25 mg (1,0 ml) zur Inhalation; Repetition bei Symptompersistenz und (kardiovaskulärer) Verträglichkeit"
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "midazolam",
+   "bereich": "medikament",
+   "titel": "Midazolam",
+   "kurz": "",
+   "suchbegriffe": [
+    "Midazolam",
+    "Dormicum"
+   ],
+   "siehe": [
+    "Status epilepticus",
+    "Diazepam"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "- Ampulle 5 mg / 5 ml (intravenös)\n- Ampulle 15 mg / 3 ml (intranasal)"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "generalisierter Status epilepticus – intravenöse bzw. intranasale Applikation"
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "**Intravenös** (in der Regel nur indiziert, wenn i.v.-Zugang bei Krampfbeginn bereits etabliert)\n- Erwachsene: initial 5 mg; einmalige Repetition bei Krampfpersistenz\n- Kinder (siehe DIVI-Kindernotfallkarte): 0,1 mg/kg KG i.v. (i.o.)\n**Intranasal**\n- Erwachsene: 10 mg intranasal; einmalige Repetition bei Krampfpersistenz nach frühestens 5 Minuten\n- Kinder (siehe DIVI-Kindernotfallkarte): 0,3 mg/kg KG intranasal"
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "morphin",
+   "bereich": "medikament",
+   "titel": "Morphin",
+   "kurz": "",
+   "suchbegriffe": [
+    "Morphin",
+    "Morphium"
+   ],
+   "siehe": [
+    "ACS",
+    "Kritischer Schmerzzustand"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "Ampulle, 10 mg / 1 ml"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "kritischer Schmerzzustand **bei akutem Koronarsyndrom**"
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "- nur Erwachsene\n- 1–2 mg i.v. (i.o.)\n- Repetition nach frühestens 5 Minuten bis maximal 5 mg"
+    },
+    {
+     "titel": "Betäubungsmittel",
+     "text": "Opiatgabe: § 2a NotSanG gibt eine eigenständige Befugnis zu heilkundlichem Handeln. § 13 Abs. 1b BtMG ermöglicht in diesem Rahmen auch die Gabe von Betäubungsmitteln entsprechend der Empfehlungen der Medikamentenliste zu Indikation, Art und Weise der Verabreichung und Dosierung."
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "naloxon",
+   "bereich": "medikament",
+   "titel": "Naloxon (nasal)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Naloxon",
+    "Opiat-Antagonist"
+   ],
+   "siehe": [
+    "Opiat-Intoxikation"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "Einzeldosis nasal, 2 x 1,8 mg"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "kritische Opiat-Überdosierung / -Intoxikation"
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "- Anwendung zugelassen ab 14. Lebensjahr\n- 1,8 mg intranasal\n- Repetition nach 2–3 Minuten oder bei Symptomrückkehr"
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "oxymetazolin",
+   "bereich": "medikament",
+   "titel": "Oxymetazolin 0,05 %",
+   "kurz": "",
+   "suchbegriffe": [
+    "Oxymetazolin",
+    "Nasenspray"
+   ],
+   "siehe": [
+    "Epistaxis"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "Nasenspray, 0,5 mg / ml"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "kritische Epistaxis"
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "- nur Erwachsene / Adoleszente > 50 kg KG\n- 2–6 Sprühstöße in jedes betroffene Nasenloch\n- keine Repetition"
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "oxytocin",
+   "bereich": "medikament",
+   "titel": "Oxytocin",
+   "kurz": "",
+   "suchbegriffe": [
+    "Oxytocin",
+    "Syntocinon"
+   ],
+   "siehe": [
+    "Postpartale Blutung"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "Ampulle, 3 IE / 1 ml"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "kritische postpartale Blutung"
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "- 3 IE langsam i.v. (i.o.)\n- einmalige Repetition nach frühestens 5 Minuten"
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "piritramid",
+   "bereich": "medikament",
+   "titel": "Piritramid",
+   "kurz": "",
+   "suchbegriffe": [
+    "Piritramid",
+    "Dipidolor"
+   ],
+   "siehe": [
+    "2c Trauma-Schmerz",
+    "2c Abdominalschmerz",
+    "Kritischer Schmerzzustand"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "Ampulle, 7,5 mg / 1 ml"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "kritischer Schmerzzustand (außer bei akutem Koronarsyndrom)"
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "- nur Erwachsene / Adoleszente > 50 kg KG\n- 7,5 mg als Kurzinfusion in 100 ml NaCl 0,9 % i.v. (i.o.) über mind. 5 Minuten\n- ggf. Repetition nach 10 Minuten\n- **nicht bei akutem Koronarsyndrom**"
+    },
+    {
+     "titel": "2c-Delegation (Algorithmen Traumatisch bedingter Schmerz / Akuter Abdominalschmerz)",
+     "text": "- Indikation: nicht tolerable traumatisch bedingte Schmerzen bzw. nicht tolerable akute abdominelle Schmerzen bei vital stabilen Patienten\n- 7,5 mg intravenös in 100 ml NaCl 0,9 % als Kurzinfusion über mindestens 5 Minuten\n- **keine Repetitionsgabe**\n- nur Erwachsene / Adoleszente > 50 kg KG; nicht bei Schwangeren\n- Patienten unter 50 kg, Schwangere sowie schwer gebrechliche und vital instabile Patienten dürfen kein Piritramid erhalten\n- Infusion abbrechen, wenn der gewünschte Effekt vorzeitig erreicht ist oder bei gravierenden Nebenwirkungen / Komplikationen\n- Gabe möglichst in stabiler liegender Position unter vollständigem Basismonitoring\n- Schmerzniveau vor und nach Analgesie mit NRS erheben und dokumentieren"
+    },
+    {
+     "titel": "Betäubungsmittel",
+     "text": "Opiatgabe: § 2a NotSanG gibt eine eigenständige Befugnis zu heilkundlichem Handeln. § 13 Abs. 1b BtMG ermöglicht in diesem Rahmen auch die Gabe von Betäubungsmitteln entsprechend der Empfehlungen der Medikamentenliste zu Indikation, Art und Weise der Verabreichung und Dosierung."
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · ÄLRD Bayern: Medikamente nach § 4 Abs. 2 Nr. 2c NotSanG, Version 2.0, gültig ab 01.11.2025 · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "prednison",
+   "bereich": "medikament",
+   "titel": "Prednison (Suppositorium)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Prednison",
+    "Rectodelt",
+    "Kortison Zäpfchen"
+   ],
+   "siehe": [
+    "Pseudokrupp"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "Suppositorium, 100 mg"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "- kritische akute stenosierende Laryngotracheitis (Pseudokrupp)\n- kritische spastische Bronchitis"
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "- nur Kinder (siehe DIVI-Kindernotfallkarte)\n- 100 mg rektal (alters- / gewichtsunabhängig)"
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "salbutamol",
+   "bereich": "medikament",
+   "titel": "Salbutamol",
+   "kurz": "",
+   "suchbegriffe": [
+    "Salbutamol",
+    "Sultanol"
+   ],
+   "siehe": [
+    "Bronchospastik",
+    "Ipratropiumbromid"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "Inhalationslösung, 1,25 mg / 2,5 ml"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "kritische Bronchospastik – zur Inhalation"
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "- Restmenge der verwendeten Verneblungsmaske beachten!\n- **Erwachsene:** 2,5 mg (5 ml) initial zur Inhalation; Repetition bei Symptompersistenz und (kardiovaskulärer) Verträglichkeit\n- **Kinder** (siehe DIVI-Kindernotfallkarte): 2,5 mg (5 ml) zur Inhalation; Repetition bei Symptompersistenz und (kardiovaskulärer) Verträglichkeit"
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "sauerstoff",
+   "bereich": "medikament",
+   "titel": "Sauerstoff",
+   "kurz": "",
+   "suchbegriffe": [
+    "Sauerstoff",
+    "O2",
+    "Sauerstoffgabe"
+   ],
+   "siehe": [
+    "Hypoxämie",
+    "2c Sauerstoff"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "inhalativ"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "kritische Hypoxie"
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "- 15 l/min über Maske\n- CPR: höchstmögliche inspiratorische Sauerstoffkonzentration"
+    },
+    {
+     "titel": "2c-Delegation (Algorithmus Moderate Hypoxämie)",
+     "text": "- nur Erwachsene / Adoleszente; Applikation über Nasenbrille; Dosierung nach SpO2-Zielbereich\n- ohne Risiko für hyperkapnisches Atemversagen: bis 6 l/min, Ziel SpO2 94–98 %\n- mit Risiko für hyperkapnisches Atemversagen: bis 2 l/min (+ LTOT-Dosis), Ziel SpO2 88–92 %\n- maximaler O2-Fluss zur Prä- und Post-Oxygenierung vor trachealer Absaugung"
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · ÄLRD Bayern: Medikamente nach § 4 Abs. 2 Nr. 2c NotSanG, Version 2.0, gültig ab 01.11.2025 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "thiamin",
+   "bereich": "medikament",
+   "titel": "Thiamin (Vitamin B1)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Thiamin",
+    "Vitamin B1"
+   ],
+   "siehe": [
+    "Hypoglykämie",
+    "Status epilepticus"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "Ampulle, 100 mg / 2 ml"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "- V. a. alkoholinduzierter, generalisierter Status epilepticus\n- kritische Hypoglykämie bei V. a. chron. Alkoholabusus\n- kritische Hypoglykämie mit Hinweis auf schwere Mangelernährung (Kachexie / Marasmus, Anamnese)"
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "- nur Adoleszente und Erwachsene\n- bei V. a. chronischen Alkoholabusus bzw. Hinweisen auf eine schwere Mangelernährung zur Prophylaxe von gravierenden Folgeschäden: Thiamin-Gabe unmittelbar nach Krampfdurchbrechung; Thiamin-Gabe **vor** i.v./i.o.-Hypoglykämie-Ausgleich!\n- 100 mg langsam (über eine Minute) i.v. (i.o.)"
+    },
+    {
+     "titel": "2c-Delegation (Algorithmus Hypoglykämie)",
+     "text": "- Indikation: Hypoglykämie verbunden mit schwerer Mangelernährung\n- 100 mg langsam (über eine Minute) intravenös, möglichst vor Glucosegabe\n- nur bei intravenöser Glucosegabe; nur Erwachsene / Adoleszente\n- Alkoholabusus ohne körperliche Folgeerscheinungen oder eine gut kontrollierte Darmerkrankung sind keine Indikation; bei oraler Glukosegabe nicht empfohlen"
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · ÄLRD Bayern: Medikamente nach § 4 Abs. 2 Nr. 2c NotSanG, Version 2.0, gültig ab 01.11.2025 · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "urapidil",
+   "bereich": "medikament",
+   "titel": "Urapidil",
+   "kurz": "",
+   "suchbegriffe": [
+    "Urapidil",
+    "Ebrantil"
+   ],
+   "siehe": [
+    "Hypertensiver Notfall"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "Ampulle, 50 mg / 10 ml"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "hypertensiver Notfall"
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "- nur Erwachsene\n- initial 5 mg i.v. (i.o.)\n- Repetition frühestens nach 5 Minuten\n- Senkung nach Symptomatik, max. um 25 % des Ausgangswerts RR syst."
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "elektrolytloesung",
+   "bereich": "medikament",
+   "titel": "Balancierte Elektrolytlösung (Acetat/Malat)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Vollelektrolytlösung",
+    "Infusion",
+    "Kristalloide",
+    "Ringer",
+    "Elektrolytlösung"
+   ],
+   "siehe": [
+    "2c Sepsis"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Darreichungsform / Zusammensetzung",
+     "text": "Infusionslösung, 500 ml"
+    },
+    {
+     "titel": "Indikation nach § 2a NotSanG",
+     "text": "- Träger-Infusionslösung zur i.v.-Medikamentenapplikation\n- Flüssigkeitsersatz bei kritischem Volumenmangel"
+    },
+    {
+     "titel": "Dosierung / Hinweise (§ 2a)",
+     "text": "- nach Bedarf\n- **CAVE:** Konzept der permissiven Hypotension bei aktiver Blutung!"
+    },
+    {
+     "titel": "2c-Delegation",
+     "text": "- nur Erwachsene / Adoleszente; intravenös als Infusion nach jeweiligem Delegationsalgorithmus\n- V. a. Sepsis: max. 500 ml zur Einleitung der Infusionstherapie, danach weitere langsame Infusion zum Offenhalten des Zugangs\n- sonstige Algorithmen: langsame Infusion (Offenhalten, Richtwert 1 Tropfen pro Sekunde)"
+    },
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 1 (grün) der Kompetenzmatrix: Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · ÄLRD Bayern: Medikamente nach § 4 Abs. 2 Nr. 2c NotSanG, Version 2.0, gültig ab 01.11.2025 · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "ass",
+   "bereich": "medikament",
+   "titel": "Acetylsalicylsäure (ASS)",
+   "kurz": "",
+   "suchbegriffe": [
+    "ASS",
+    "Aspirin",
+    "Acetylsalicylsäure"
+   ],
+   "siehe": [
+    "Kompetenzmatrix"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 2 (gelb) der Kompetenzmatrix: Kompetenzniveau kann grundsätzlich durch zusätzliche Aus- / Fortbildung erreicht werden (Berufserfahrung sowie deutlich über den regulären Umfang hinausgehende Bildungsmaßnahmen erforderlich)."
+    },
+    {
+     "titel": "Dosierung",
+     "text": "In den gültigen Dokumenten der ÄLRD Bayern ist für dieses Medikament keine Dosierungsempfehlung enthalten (nicht in der Medikamentenliste nach § 2a NotSanG)."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-04"
+  },
+  {
+   "id": "dimetinden",
+   "bereich": "medikament",
+   "titel": "Dimetinden",
+   "kurz": "",
+   "suchbegriffe": [
+    "Dimetinden",
+    "Fenistil"
+   ],
+   "siehe": [
+    "Kompetenzmatrix"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 2 (gelb) der Kompetenzmatrix: Kompetenzniveau kann grundsätzlich durch zusätzliche Aus- / Fortbildung erreicht werden (Berufserfahrung sowie deutlich über den regulären Umfang hinausgehende Bildungsmaßnahmen erforderlich)."
+    },
+    {
+     "titel": "Dosierung",
+     "text": "In den gültigen Dokumenten der ÄLRD Bayern ist für dieses Medikament keine Dosierungsempfehlung enthalten (nicht in der Medikamentenliste nach § 2a NotSanG)."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-04"
+  },
+  {
+   "id": "furosemid",
+   "bereich": "medikament",
+   "titel": "Furosemid",
+   "kurz": "",
+   "suchbegriffe": [
+    "Furosemid",
+    "Lasix"
+   ],
+   "siehe": [
+    "Kompetenzmatrix"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 2 (gelb) der Kompetenzmatrix: Kompetenzniveau kann grundsätzlich durch zusätzliche Aus- / Fortbildung erreicht werden (Berufserfahrung sowie deutlich über den regulären Umfang hinausgehende Bildungsmaßnahmen erforderlich)."
+    },
+    {
+     "titel": "Dosierung",
+     "text": "In den gültigen Dokumenten der ÄLRD Bayern ist für dieses Medikament keine Dosierungsempfehlung enthalten (nicht in der Medikamentenliste nach § 2a NotSanG)."
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Laut ÄBRD-Stellungnahme vom 08.01.2026 im bayerischen Rettungsdienst intravenös zur Blutdrucksenkung verfügbar."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025 · ÄBRD Bayern: Stellungnahme gegen 2c-Algorithmus arterielle Hypertension, 08.01.2026",
+   "stand": "2025-04"
+  },
+  {
+   "id": "glyceroltrinitrat",
+   "bereich": "medikament",
+   "titel": "Glyceroltrinitrat sublingual",
+   "kurz": "",
+   "suchbegriffe": [
+    "Nitro",
+    "Nitroglycerin",
+    "Glyceroltrinitrat",
+    "Nitrospray"
+   ],
+   "siehe": [
+    "Kompetenzmatrix"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 2 (gelb) der Kompetenzmatrix: Kompetenzniveau kann grundsätzlich durch zusätzliche Aus- / Fortbildung erreicht werden (Berufserfahrung sowie deutlich über den regulären Umfang hinausgehende Bildungsmaßnahmen erforderlich)."
+    },
+    {
+     "titel": "Dosierung",
+     "text": "In den gültigen Dokumenten der ÄLRD Bayern ist für dieses Medikament keine Dosierungsempfehlung enthalten (nicht in der Medikamentenliste nach § 2a NotSanG)."
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Laut ÄBRD-Stellungnahme vom 08.01.2026 im bayerischen Rettungsdienst sublingual zur Blutdrucksenkung verfügbar."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025 · ÄBRD Bayern: Stellungnahme gegen 2c-Algorithmus arterielle Hypertension, 08.01.2026",
+   "stand": "2025-04"
+  },
+  {
+   "id": "heparin",
+   "bereich": "medikament",
+   "titel": "Heparin",
+   "kurz": "",
+   "suchbegriffe": [
+    "Heparin"
+   ],
+   "siehe": [
+    "Kompetenzmatrix"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 2 (gelb) der Kompetenzmatrix: Kompetenzniveau kann grundsätzlich durch zusätzliche Aus- / Fortbildung erreicht werden (Berufserfahrung sowie deutlich über den regulären Umfang hinausgehende Bildungsmaßnahmen erforderlich)."
+    },
+    {
+     "titel": "Dosierung",
+     "text": "In den gültigen Dokumenten der ÄLRD Bayern ist für dieses Medikament keine Dosierungsempfehlung enthalten (nicht in der Medikamentenliste nach § 2a NotSanG)."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-04"
+  },
+  {
+   "id": "lidocain",
+   "bereich": "medikament",
+   "titel": "Lidocain",
+   "kurz": "",
+   "suchbegriffe": [
+    "Lidocain",
+    "Xylocain"
+   ],
+   "siehe": [
+    "Kompetenzmatrix"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 2 (gelb) der Kompetenzmatrix: Kompetenzniveau kann grundsätzlich durch zusätzliche Aus- / Fortbildung erreicht werden (Berufserfahrung sowie deutlich über den regulären Umfang hinausgehende Bildungsmaßnahmen erforderlich)."
+    },
+    {
+     "titel": "Dosierung",
+     "text": "In den gültigen Dokumenten der ÄLRD Bayern ist für dieses Medikament keine Dosierungsempfehlung enthalten (nicht in der Medikamentenliste nach § 2a NotSanG)."
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Nicht länger zur intraossären Lokalanästhesie in der grünen Kategorie (Empfehlung RDA Bayern vom 10.07.2024 – nicht mehr empfohlen). Kann als alternatives Antiarrhythmikum im Rahmen der Reanimation Verwendung finden; zunächst als Reanimationsmedikament in Kategorie gelb geführt."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-04"
+  },
+  {
+   "id": "magnesiumsulfat",
+   "bereich": "medikament",
+   "titel": "Magnesiumsulfat",
+   "kurz": "",
+   "suchbegriffe": [
+    "Magnesium",
+    "Magnesiumsulfat"
+   ],
+   "siehe": [
+    "Kompetenzmatrix"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 2 (gelb) der Kompetenzmatrix: Kompetenzniveau kann grundsätzlich durch zusätzliche Aus- / Fortbildung erreicht werden (Berufserfahrung sowie deutlich über den regulären Umfang hinausgehende Bildungsmaßnahmen erforderlich)."
+    },
+    {
+     "titel": "Dosierung",
+     "text": "In den gültigen Dokumenten der ÄLRD Bayern ist für dieses Medikament keine Dosierungsempfehlung enthalten (nicht in der Medikamentenliste nach § 2a NotSanG)."
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Kategorie 2 (gelb) nur für Torsade de Pointes und Asthma / COPD (Erweiterung um Asthma / COPD aufgrund neuer Leitlinienempfehlungen). Magnesiumsulfat für sonstige Indikationen: Kategorie 3 (rot)."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-04"
+  },
+  {
+   "id": "metamizol",
+   "bereich": "medikament",
+   "titel": "Metamizol",
+   "kurz": "",
+   "suchbegriffe": [
+    "Metamizol",
+    "Novalgin"
+   ],
+   "siehe": [
+    "Kompetenzmatrix"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 2 (gelb) der Kompetenzmatrix: Kompetenzniveau kann grundsätzlich durch zusätzliche Aus- / Fortbildung erreicht werden (Berufserfahrung sowie deutlich über den regulären Umfang hinausgehende Bildungsmaßnahmen erforderlich)."
+    },
+    {
+     "titel": "Dosierung",
+     "text": "In den gültigen Dokumenten der ÄLRD Bayern ist für dieses Medikament keine Dosierungsempfehlung enthalten (nicht in der Medikamentenliste nach § 2a NotSanG)."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-04"
+  },
+  {
+   "id": "butylscopolamin",
+   "bereich": "medikament",
+   "titel": "N-Butylscopolamin",
+   "kurz": "",
+   "suchbegriffe": [
+    "Butylscopolamin",
+    "Buscopan"
+   ],
+   "siehe": [
+    "Kompetenzmatrix"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 2 (gelb) der Kompetenzmatrix: Kompetenzniveau kann grundsätzlich durch zusätzliche Aus- / Fortbildung erreicht werden (Berufserfahrung sowie deutlich über den regulären Umfang hinausgehende Bildungsmaßnahmen erforderlich)."
+    },
+    {
+     "titel": "Dosierung",
+     "text": "In den gültigen Dokumenten der ÄLRD Bayern ist für dieses Medikament keine Dosierungsempfehlung enthalten (nicht in der Medikamentenliste nach § 2a NotSanG)."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-04"
+  },
+  {
+   "id": "prednisolon",
+   "bereich": "medikament",
+   "titel": "Prednisolon",
+   "kurz": "",
+   "suchbegriffe": [
+    "Prednisolon",
+    "Solu-Decortin"
+   ],
+   "siehe": [
+    "Kompetenzmatrix"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 2 (gelb) der Kompetenzmatrix: Kompetenzniveau kann grundsätzlich durch zusätzliche Aus- / Fortbildung erreicht werden (Berufserfahrung sowie deutlich über den regulären Umfang hinausgehende Bildungsmaßnahmen erforderlich)."
+    },
+    {
+     "titel": "Dosierung",
+     "text": "In den gültigen Dokumenten der ÄLRD Bayern ist für dieses Medikament keine Dosierungsempfehlung enthalten (nicht in der Medikamentenliste nach § 2a NotSanG)."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-04"
+  },
+  {
+   "id": "tranexamsaeure",
+   "bereich": "medikament",
+   "titel": "Tranexamsäure",
+   "kurz": "",
+   "suchbegriffe": [
+    "Tranexamsäure",
+    "TXA"
+   ],
+   "siehe": [
+    "Kompetenzmatrix"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Einordnung Kompetenzmatrix",
+     "text": "Kategorie 2 (gelb) der Kompetenzmatrix: Kompetenzniveau kann grundsätzlich durch zusätzliche Aus- / Fortbildung erreicht werden (Berufserfahrung sowie deutlich über den regulären Umfang hinausgehende Bildungsmaßnahmen erforderlich)."
+    },
+    {
+     "titel": "Dosierung",
+     "text": "In den gültigen Dokumenten der ÄLRD Bayern ist für dieses Medikament keine Dosierungsempfehlung enthalten (nicht in der Medikamentenliste nach § 2a NotSanG)."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-04"
+  },
+  {
+   "id": "2c-hypoxaemie",
+   "bereich": "algorithmus",
+   "titel": "Moderate Hypoxämie: Delegation von Sauerstoffgabe",
+   "kurz": "2c Sauerstoff",
+   "suchbegriffe": [
+    "2c Hypoxämie",
+    "Algorithmus Sauerstoff",
+    "Algorithmus Hypoxämie",
+    "moderate Hypoxämie"
+   ],
+   "siehe": [
+    "Sauerstoff",
+    "Hypoxämie"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Gültigkeit",
+     "text": "Stand 01.08.2022"
+    },
+    {
+     "titel": "Einstieg",
+     "text": "Notfallpatient mit SpO2 kleiner 94 %"
+    },
+    {
+     "titel": "Notarzt",
+     "text": "- Kritischer Patient (symptombezogener Zustand) → **Notarzt-Nachforderung**\n- Initiale Beurteilung: kritisches (x)ABCDE-Problem → **Notarzt-Nachforderung**\n- Danach: Ist eine Wartezeit auf den Notarzt medizinisch vertretbar? Nein → Maßnahmen nach § 2a NotSanG → ggf. Rendezvous mit Notarzt / Transport ohne Notarzt mit Schockraumanmeldung; Ja → Versorgung / Transport mit Notarzt\n- SpO2 < 85 % gilt als kritische Hypoxämie → regelhaft kritisch, Notarzt nachfordern, Behandlung nach § 2a NotSanG"
+    },
+    {
+     "titel": "Ohne Risiko für hyperkapnisches Atemversagen",
+     "text": "- Patientenaufklärung über Sauerstoffgabe\n- **2c: Sauerstoffgabe 4 l/min über Nasenbrille, Ziel SpO2 94–98 %**\n- SpO2 mindestens 94 % → Transport in geeignete Behandlungseinrichtung; sonst Notarzt-Nachforderung"
+    },
+    {
+     "titel": "Mit Risiko für hyperkapnisches Atemversagen",
+     "text": "- SpO2 kleiner 88 % (ggf. unter LTOT)? Nein → Vorgehen nach Befund\n- Patientenaufklärung über Sauerstoffgabe\n- **2c: Sauerstoffgabe 2 l/min + LTOT, Ziel SpO2 88–92 %**\n- SpO2 mindestens 88 % → Transport in geeignete Behandlungseinrichtung; sonst Notarzt-Nachforderung"
+    },
+    {
+     "titel": "Checkbox Risiko für hyperkapnisches Atemversagen",
+     "text": "- Bekannte COPD oder Bronchiektasen\n- Morbide Adipositas (BMI größer 40 kg/m²)\n- Bekannte zystische Fibrose / Mukoviszidose\n- Bekannte neuromuskuläre Erkrankung oder Brustwanddeformitäten mit chronischer Beeinträchtigung der Atmung"
+    },
+    {
+     "titel": "Titrieren",
+     "text": "- Bei Verlassen des Zielbereichs Sauerstoff literweise reduzieren bzw. erhöhen (max. 6 l/min ohne bzw. 2 l/min + LTOT mit Risiko für hyperkapnisches Atemversagen)\n- Nach einer Äquilibrationszeit von 5 Minuten kann die nächste Anpassung erfolgen\n- Kurzfristige Sättigungsausschläge (bis zu einer Minute) bleiben ohne Konsequenz\n- Die delegierte Dosis kann um eine bestehende LTOT-Dosis erhöht werden"
+    },
+    {
+     "titel": "Erläuterungen",
+     "text": "Die Delegation bezieht sich explizit auf Notfallpatienten. Eine SpO2 unter 94 % bei ansonsten gesunden bzw. stabilen Patienten ohne notfallmedizinischen Versorgungsbedarf (z. B. Heimfahrt im KTW) bedingt keine Indikation zur O2-Therapie."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Delegationsalgorithmen 2c (Stand 01.11.2025) · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025",
+   "stand": "2025-11"
+  },
+  {
+   "id": "2c-trachealkanuele",
+   "bereich": "algorithmus",
+   "titel": "Sekret in Trachealkanüle beim spontanatmenden Patienten: Delegation von Absaugen",
+   "kurz": "2c Absaugen",
+   "suchbegriffe": [
+    "Trachealkanüle",
+    "Absaugen Trachealkanüle",
+    "Tracheostoma Absaugen",
+    "Algorithmus Absaugen"
+   ],
+   "siehe": [
+    "Freimachen des Tracheostomas"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Gültigkeit",
+     "text": "Stand 01.03.2022"
+    },
+    {
+     "titel": "Einstieg",
+     "text": "Sekret in Trachealkanüle bei stabilem Tracheostoma"
+    },
+    {
+     "titel": "Checkbox stabiles Tracheostoma",
+     "text": "- Anlage vor mindestens 14 Tagen\n- Kanülenwechsel bereits problemlos ohne Hilfsmittel erfolgt (keine Verlegungsstrukturen oder Kollapsneigung)"
+    },
+    {
+     "titel": "Notarzt",
+     "text": "- Kritischer Patient (symptombezogener Zustand) → **Notarzt-Nachforderung**\n- Initiale Beurteilung: kritisches (x)ABCDE-Problem → **Notarzt-Nachforderung**\n- Danach: Ist eine Wartezeit auf den Notarzt medizinisch vertretbar? Nein → Maßnahmen nach § 2a NotSanG → ggf. Rendezvous mit Notarzt / Transport ohne Notarzt mit Schockraumanmeldung; Ja → Versorgung / Transport mit Notarzt"
+    },
+    {
+     "titel": "Ablauf 2c",
+     "text": "- Atembehinderung? Nein → Vorgehen nach Befund\n- Patientenaufklärung über Absaugen\n- **2c: Präoxygenieren über Trachealkanüle** (max. O2-Fluss über 1 Minute)\n- **2c: Absaugen der Trachealkanüle**, Fortführen der Oxygenierung für 1 Minute (max. 2 Versuche à 15 Sek. innerhalb von 5 Minuten)\n- Nach 5 Minuten Reevaluation: Atembehinderung gelöst? Ja → Vorgehen nach Befund; Nein → Notarzt-Nachforderung"
+    },
+    {
+     "titel": "Checkbox Atembehinderung (mindestens 1 erfüllt)",
+     "text": "- Anhaltender Hustenreiz\n- SpO2-Abfall um mindestens 5 Prozentpunkte unter den Ausgangswert oder SpO2 unter 90 %\n- (Teil-)Verlegung des Atemwegs durch Sekret\n- V. a. geringfügige Aspiration von Flüssigkeiten\n- Unbehagen / Wunsch des Patienten"
+    },
+    {
+     "titel": "Technik (Erläuterungen)",
+     "text": "- Eigenen Infektionsschutz beachten! Auf sichere Fixierung der Trachealkanüle achten!\n- Durchmesser des Absaugkatheters maximal die Hälfte des Trachealkanülendurchmessers\n- Sog auf max. −0,25 bar begrenzen, falls technisch möglich\n- Eingeführter Teil des Absaugkatheters muss steril bleiben\n- Katheter ohne Sog bis maximal zur Kanülenspitze einführen, dann unter Sog langsam zurückziehen\n- Absaugvorgang dauert maximal 15 Sekunden"
+    },
+    {
+     "titel": "Besonderheiten",
+     "text": "- Delegation gilt für (zäh-)flüssiges Sekret, nicht für die Entfernung von Verborkungen; sichere Spontanatmung ist Voraussetzung\n- Dislokation der Kanüle: ABC-Check; atmet der Patient unbehindert ohne Kanüle → keine Replatzierung durch NotSan, Transport in eine Einrichtung mit Kompetenz zur Replatzierung; ABC-Problem → unverzüglich Notarzt\n- Nach der Absaugung ist nicht zwingend ein Transport in eine Behandlungseinrichtung erforderlich; ggf. ursprüngliches Transportziel"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Delegationsalgorithmen 2c (Stand 01.11.2025) · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025",
+   "stand": "2025-11"
+  },
+  {
+   "id": "2c-hypoglykaemie",
+   "bereich": "algorithmus",
+   "titel": "Hypoglykämie: Delegation von IV-Zugang, Infusion, Thiamin- und Glukosegabe",
+   "kurz": "2c Hypoglykämie",
+   "suchbegriffe": [
+    "Algorithmus Hypoglykämie",
+    "2c Unterzucker"
+   ],
+   "siehe": [
+    "Hypoglykämie",
+    "Glucose 40 %",
+    "Glucose-Gel",
+    "Thiamin"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Gültigkeit",
+     "text": "gültig ab 01.11.2025"
+    },
+    {
+     "titel": "Einstieg",
+     "text": "V. a. Hypoglykämie"
+    },
+    {
+     "titel": "Notarzt",
+     "text": "- Kritischer Patient (symptombezogener Zustand) → **Notarzt-Nachforderung**\n- Initiale Beurteilung: kritisches ABC-Problem → **Notarzt-Nachforderung**\n- Danach: Ist eine Wartezeit auf den Notarzt medizinisch vertretbar? Nein → Maßnahmen nach § 2a NotSanG → ggf. Rendezvous mit Notarzt / Transport ohne Notarzt mit Schockraumanmeldung; Ja → Versorgung / Transport mit Notarzt"
+    },
+    {
+     "titel": "Ablauf 2c",
+     "text": "- BZ < 70 mg/dl **und** klinische Manifestation der Hypoglykämie? Nein → Vorgehen nach Befund\n- **Patient kann sicher schlucken:** Patientenaufklärung → **2c: Glukose 30 g per os** → nach 15 Min.: BZ < 70 mg/dl? → ggf. **erneut 30 g per os** → nach 15 Min. Reevaluation\n- **Patient kann nicht sicher schlucken:** Patientenaufklärung → **2c: IV-Zugang** → V. a. schwere Mangelernährung? → **2c: Thiamin 100 mg langsam IV** → **2c: Glukose 40 % 50 ml IV zu schnelllaufender Infusion** → nach 5 Min.: BZ < 70 mg/dl? → ggf. **erneut Glukose 40 % 50 ml IV** → nach 5 Min. Reevaluation\n- Symptome verschwunden oder eindeutige Besserung **und** BZ ≥ 70 mg/dl → Transport in geeignete Behandlungseinrichtung (bei Transportverweigerung Vorgehen laut Umsetzungshinweisen); sonst **Notarzt-Nachforderung**"
+    },
+    {
+     "titel": "Checkbox typische klinische Manifestationen (mindestens 1 erfüllt)",
+     "text": "Identifikation durch Patient oder Dritte · Schwitzen · Zittern · Heißhunger · Herzklopfen · Gedankenflucht · Logorrhoe · Wortfindungsstörungen · Reizbarkeit · Sehstörungen · Kopfschmerzen · Verwirrtheit · Ängstlichkeit · Schläfrigkeit · Koordinationsdefizite · Bewusstseinsstörung · Verhaltensauffälligkeiten · Krampfanfall · Fokale Neurologie · Übelkeit"
+    },
+    {
+     "titel": "Checkbox V. a. schwere Mangelernährung (mindestens 1 erfüllt)",
+     "text": "- Kachexie\n- Schwerer chronischer Alkoholabusus\n- Chronische Gastritis, Magenkarzinom\n- Chronisch entzündliche Darmerkrankung mit regelmäßigen Symptomen (M. Crohn, Colitis ulcerosa)\n- Langanhaltendes Erbrechen (täglich länger 1 Woche), z. B. während Krebserkrankung, Schwangerschaft, Magersucht\n- Z. n. Adipositas-Chirurgie"
+    },
+    {
+     "titel": "Erläuterungen",
+     "text": "- Liegt bei einem bewusstseinsgestörten, aber nicht kritischen Patienten eine Hypoglykämie als alleinige Ursache nahe, kann die Notarzt-Alarmierung zunächst zurückgestellt werden – auch bei Patienten ohne Insulin\n- Repetition ausgeschlossen, wenn der BZ wieder im Normbereich ist, auch bei fortbestehenden Symptomen → an andere Ursache denken\n- Wartezeiten bei oraler Gabe für Vorbereitung bzw. Beginn des Transports nutzen\n- Schwere Hypoglykämien gehen häufig mit Hypothermie einher → Temperaturmessung\n- Besondere Vorsicht bei oraler Sulfonylharnstoff-Therapie (z. B. Glibenclamid, Glimepirid, Gliclazid, Gliquidon): ausgeprägte, langanhaltende Hypoglykämien mit schweren Rückfällen – vom Verzicht auf Krankenhauseinweisung dringend abraten; ebenso bei Problemen mit Nahrungsaufnahme oder sehr hoher Dosis Insulin / oraler Antidiabetika\n- Bei Verdacht auf suizidale Verabreichung ist ein Kliniktransport obligat\n- Transportverweigerung: Einwilligungsfähigkeit korrekt feststellen, über Folgen aufklären, schriftlich dokumentieren"
+    },
+    {
+     "titel": "Hinweise",
+     "text": "IV-Zugang: max. 2 Versuche – kein IO-Zugang. Medikamente nach Medikamentenliste Delegation. BZ-Umrechnung: 70 mg/dl = 3,9 mmol/l."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Delegationsalgorithmen 2c (Stand 01.11.2025) · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025",
+   "stand": "2025-11"
+  },
+  {
+   "id": "2c-trauma-schmerz",
+   "bereich": "algorithmus",
+   "titel": "Traumatisch bedingter Schmerz: Delegation von IV-Zugang, Infusion, IV-Analgesie BtM und achsengerechter Lagerung",
+   "kurz": "2c Trauma-Schmerz",
+   "suchbegriffe": [
+    "Algorithmus Schmerz",
+    "Trauma Schmerz",
+    "2c Analgesie Trauma",
+    "Algorithmus Trauma"
+   ],
+   "siehe": [
+    "Piritramid",
+    "Schockraum-Indikation"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Gültigkeit",
+     "text": "gültig ab 01.04.2024"
+    },
+    {
+     "titel": "Einstieg",
+     "text": "Akutes Trauma oder thermische Verletzung"
+    },
+    {
+     "titel": "Notarzt",
+     "text": "- Offensichtlich schwerverletzt (auf den ersten Blick auf den Schadensort) → **Notarzt-Nachforderung**\n- Kritischer Patient (symptombezogener Zustand) → **Notarzt-Nachforderung**\n- Initiale Beurteilung: xABCDE-Problem oder Schockraum-A-Indikation → **Notarzt-Nachforderung**\n- Danach: Ist eine Wartezeit auf den Notarzt medizinisch vertretbar? Nein → Maßnahmen nach § 2a NotSanG → ggf. Rendezvous mit Notarzt / Transport ohne Notarzt mit Schockraumanmeldung; Ja → Versorgung / Transport mit Notarzt"
+    },
+    {
+     "titel": "Ablauf 2c",
+     "text": "- Ausschlusskriterium? Ja → **Notarzt-Nachforderung**\n- Für den Patienten tolerabler Schmerz? Ja → 2c: bei Frakturverdacht achsengerechte Lagerung → Transport\n- Patientenaufklärung über IV-Zugang / Medikamente\n- **2c: IV-Zugang + 7,5 mg Piritramid in 100 ml NaCl 0,9 % als Kurzinfusion über mind. 5 Min.**\n- Danach tolerabler Schmerz? Ja → 2c: bei Frakturverdacht achsengerechte Lagerung → Transport in geeignete Behandlungseinrichtung; Nein → **Notarzt-Nachforderung**"
+    },
+    {
+     "titel": "Checkbox Schockraum-A-Indikation",
+     "text": "- **Präklinische Intervention** (z. B. Tourniquet, Atemwegssicherung, Thoraxentlastung, Katecholamingabe)\n- **Gestörte Vitalparameter** (Atemstörungen (SpO2 < 90 %), AF < 10 oder > 29 /min, RRsyst < 90 mmHg, Puls > 120 /min, Schockindex > 0,9, GCS < 13, Hypothermie < 35,0 °C)\n- **Kritische Verletzung** (penetrierende Verletzungen Rumpf/Hals, instabiler Thorax, mechanisch instabile Beckenverletzung, Amputationsverletzung proximal der Hände/Füße, Frakturen von 2 oder mehr proximalen langen Röhrenknochen (Oberarm, Oberschenkel), sensomotorisches Defizit nach Wirbelsäulenverletzung, Verbrennungen > 20 % und Grad ≥ 2)"
+    },
+    {
+     "titel": "Checkbox Ausschlusskriterien",
+     "text": "- Grob dislozierte Fraktur\n- Beckenverletzung\n- Defizit Durchblutung / Motorik / Sensibilität\n- Beeinträchtigung Weichteilmantel / Haut\n- Verbrennung / Verbrühung > 10 % Körperoberfläche 2° / 3° und/oder Beteiligung Kopf / Hals\n- Hinweis auf Inhalationstrauma\n- Lange Rettungszeit"
+    },
+    {
+     "titel": "Erläuterungen",
+     "text": "- Versorgung von Verletzungen an mehr als einer Körperregion möglich, sofern kein (vorhersehbares) xABCDE-Problem – bei Mehrfachverletzungen Notarztindikation großzügig stellen\n- Als Traumafolge gelten auch Verletzungen durch besondere Kraftanstrengung (z. B. Achillessehnenruptur, Muskel(faser)riss, Verhebetrauma); ausdrücklich **nicht** die Verschlechterung chronischer Rückenschmerzen\n- Luxationen sind eingeschlossen; junge Patienten (bis 40 Jahre) mit isolierter, habitueller Schulter- oder Patellaluxation ohne relevantes Trauma: Verzicht auf 2c-Analgesie und Notarzt-Nachforderung erwägen\n- Überdehnung / gravierende Druckbelastung des Weichteilmantels → präklinische Reposition oft angezeigt → Notarzt; Luxationsfrakturen des Sprunggelenks stets Indikation zur zeitnahen Reposition → Notarzt\n- Hinweis auf Inhalationstrauma: Person war Feuer, Rauch oder Explosion ausgesetzt UND Rußablagerungen im Mund-/Rachenraum und/oder Auswurf mit Ruß, schwerer Husten, Heiserkeit und/oder Verbrennungen des Gesichts / Halses oder versengte Augenbrauen / Nasenhaare\n- Lange Rettungszeit ist immer anzunehmen bei technischer oder besonderer Rettung (Einklemmung / Verschüttung, Drehleiterrettung, unwegsames Gelände etc.)"
+    },
+    {
+     "titel": "Hinweise",
+     "text": "IV-Zugang: max. 2 Versuche – kein IO-Zugang. Medikamente nach Medikamentenliste Delegation."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Delegationsalgorithmen 2c (Stand 01.11.2025) · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025",
+   "stand": "2025-11"
+  },
+  {
+   "id": "2c-abdominalschmerz",
+   "bereich": "algorithmus",
+   "titel": "Akuter Abdominalschmerz: Delegation von IV-Zugang, Infusion, IV-Analgesie BtM",
+   "kurz": "2c Abdominalschmerz",
+   "suchbegriffe": [
+    "Algorithmus Bauchschmerz",
+    "Algorithmus Abdomen",
+    "2c Bauchschmerz"
+   ],
+   "siehe": [
+    "Piritramid",
+    "ACS"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Gültigkeit",
+     "text": "gültig ab 01.04.2024"
+    },
+    {
+     "titel": "Einstieg",
+     "text": "Akuter Bauchschmerz"
+    },
+    {
+     "titel": "Notarzt",
+     "text": "- Kritischer Patient (symptombezogener Zustand) → **Notarzt-Nachforderung**\n- Initiale Beurteilung: kritisches (x)ABCDE-Problem → **Notarzt-Nachforderung**\n- Danach: Ist eine Wartezeit auf den Notarzt medizinisch vertretbar? Nein → Maßnahmen nach § 2a NotSanG → ggf. Rendezvous mit Notarzt / Transport ohne Notarzt mit Schockraumanmeldung; Ja → Versorgung / Transport mit Notarzt"
+    },
+    {
+     "titel": "Ablauf 2c",
+     "text": "- Für den Patienten tolerabler Schmerz? Ja → Transport in geeignete Behandlungseinrichtung\n- Ausschlusskriterium? Ja → **Notarzt-Nachforderung**\n- Patientenaufklärung über IV-Zugang / Medikamente\n- **2c: IV-Zugang + 7,5 mg Piritramid in 100 ml NaCl 0,9 % als Kurzinfusion über mind. 5 Min.**\n- Danach tolerabler Schmerz? Ja → Transport; Nein → **Notarzt-Nachforderung**"
+    },
+    {
+     "titel": "Checkbox Ausschlusskriterien",
+     "text": "- Blutiger Stuhl / Teerstuhl oder blutiges / kaffeesatzartiges Erbrechen\n- Bekanntes Aortenaneurysma\n- Schwangerschaft\n- (zusätzlicher) Thoraxschmerz\n- Bei Oberbauchschmerz: ST-Strecken-Veränderungen im 12-Kanal-EKG"
+    },
+    {
+     "titel": "Erläuterungen",
+     "text": "- Vor der 2c-Analgesie Hinweise auf lebensbedrohliche Erkrankungen ausschließen, insbesondere gastrointestinale Blutung, akutes Aortensyndrom und akutes Koronarsyndrom\n- Bei Oberbauchschmerz 12-Kanal-EKG: nur wenn die ST-Strecke in allen Ableitungen isoelektrisch ist, darf die Delegation angewendet werden; ST-Hebungen oder -Senkungen in mindestens einer Ableitung → Ausschluss und Notarzt-Nachalarmierung\n- Akutes Abdomen / bretthartes Bauch / Peritonismus: mit hoher Dringlichkeit in Klinik mit chirurgischer Sofortbehandlungsmöglichkeit voranmelden; schon bei geringsten Zeichen respiratorischer oder kardiozirkulatorischer Instabilität Notarzt obligat\n- Gilt auch für Flankenschmerzen und akutes Skrotum (Zielklinik mit operativer urologischer Versorgungsmöglichkeit)"
+    },
+    {
+     "titel": "Hinweise",
+     "text": "IV-Zugang: max. 2 Versuche – kein IO-Zugang. Medikamente nach Medikamentenliste Delegation."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Delegationsalgorithmen 2c (Stand 01.11.2025) · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025",
+   "stand": "2025-11"
+  },
+  {
+   "id": "2c-sepsis",
+   "bereich": "algorithmus",
+   "titel": "V. a. Sepsis: Delegation von IV-Zugang und Infusion",
+   "kurz": "2c Sepsis",
+   "suchbegriffe": [
+    "Algorithmus Sepsis",
+    "2c Infusion Sepsis"
+   ],
+   "siehe": [
+    "Sepsis",
+    "NEWS2"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Gültigkeit",
+     "text": "gültig ab 01.11.2025"
+    },
+    {
+     "titel": "Einstieg",
+     "text": "Akut reduzierter Allgemeinzustand"
+    },
+    {
+     "titel": "Notarzt",
+     "text": "- Kritischer Patient (symptombezogener Zustand) → **Notarzt-Nachforderung**\n- Initiale Beurteilung: kritisches (x)ABCDE-Problem → **Notarzt-Nachforderung**\n- Danach: Ist eine Wartezeit auf den Notarzt medizinisch vertretbar? Nein → Maßnahmen nach § 2a NotSanG → ggf. Rendezvous mit Notarzt / Transport ohne Notarzt mit Schockraumanmeldung; Ja → Versorgung / Transport mit Notarzt\n- **Meningismus** → Notarzt-Nachforderung (unabhängig von einem kritischen ABCDE-Problem)"
+    },
+    {
+     "titel": "Ablauf 2c",
+     "text": "- Vereinfachter NEWS-2: Summe mindestens 5 Punkte **plus** Hinweis auf Infektion? Nein → Vorgehen nach Befund\n- Patientenaufklärung über IV-Zugang / Infusion\n- **2c: IV-Zugang, Einleitung Infusionstherapie mit 500 ml Vollelektrolytlösung, Voranmeldung „V. a. Sepsis“**\n- Transport in geeignete Behandlungseinrichtung"
+    },
+    {
+     "titel": "Vereinfachter NEWS-2 (Punkte)",
+     "text": "- **Atemfrequenz (/min):** 3 = ≤ 8 · 1 = 9–11 · 0 = 12–20 · 2 = 21–24 · 3 = ≥ 25\n- **SpO2 (%):** 3 = ≤ 91 · 2 = 92–93 · 1 = 94–95 · 0 = ≥ 96\n- **Raumluft oder O2:** 2 = O2 · 0 = Raumluft\n- **Syst. Blutdruck (mmHg):** 3 = ≤ 90 · 2 = 91–100 · 1 = 101–110 · 0 = 111–219 · 3 = ≥ 220\n- **Pulsfrequenz (/min):** 3 = ≤ 40 · 1 = 41–50 · 0 = 51–90 · 1 = 91–110 · 2 = 111–130 · 3 = ≥ 131\n- **Bewusstsein:** 0 = wach · 3 = verwirrt, getrübt, bewusstlos (nur falls neu aufgetreten oder verschlechtert)\n- **Temperatur (°C):** 3 = ≤ 35,0 · 1 = 35,1–36,0 · 0 = 36,1–38,0 · 1 = 38,1–39,0 · 2 = ≥ 39,1\n- NEWS-2 nicht anwendbar bei Schwangeren und Patienten jünger als 16 Jahre\n- Ein alleiniger roter Warnwert hat in diesem Algorithmus keine Wirkung"
+    },
+    {
+     "titel": "Checkliste „Hinweise auf Infektion“",
+     "text": "- **Allgemeine Hinweise:** Temperatur ≤ 36,0 °C (Hypothermie) oder ≥ 38,0 °C (Fieber), Schüttelfrost, Blutzucker > 140 mg/dl ohne Diabetes\n- **Risikofaktoren:** Immunsuppression, Krankenhausaufenthalt in den letzten 30 Tagen\n- **Atemwegsinfekt:** Husten und Auswurf, Dyspnoe, atemabhängiger Brustschmerz\n- **Harnwegsinfekt:** Brennen beim Wasserlassen, auffälliger Geruch, Verfärbung des Urins\n- **Intraabdominale Infektion:** Durchfall, Bauchschmerzen, Voroperationen\n- **Weichteil- und Knocheninfektion:** chronische Wunden, Gelenk- und Wirbelsäulenschmerzen, Rötung, Bewegungseinschränkung\n- **Fremdkörper-assoziierte Infekte:** Portkatheter, Blasendauerkatheter, medizinische Implantate (z. B. Endoprothesen, Herzklappenersatz, Herzschrittmacher), Körperschmuck (z. B. Piercing), sonstige Fremdkörper\n- **Endokarditis:** Herzrhythmusstörungen, Herzklappenersatz\n- **Meningitis:** veränderte Bewusstseinslage, Kopfschmerz, Nackensteifigkeit"
+    },
+    {
+     "titel": "Erläuterungen",
+     "text": "- Die Diagnose „Sepsis“ ist präklinisch nicht möglich; ≥ 5 Punkte NEWS2 plus Infektionshinweis ergeben den Verdacht mit akzeptabler Sensitivität und Spezifität\n- Anwendbar erst ab 16 Jahren und nicht bei Schwangeren; NEWS2-Elemente vollständig dokumentieren\n- Voranmeldung als „roter“ Patient mit Tracerdiagnose Sepsis; bei entsprechenden Kriterien nicht-traumatologischer Schockraum; bei chirurgischem Fokus Zielklinik mit aufnahmebereiter Chirurgie\n- Blutzucker bestimmen (Infektionshinweis bzw. Hypoglykämie als Differenzialdiagnose)\n- Keine forcierte Volumengabe: rasche Gabe von 500 ml, danach langsame Infusion zum Offenhalten; erster Volumenbolus soll leitliniengemäß erst innerhalb der ersten drei Stunden komplett verabreicht sein\n- Kontraindikationen zur Infusionstherapie (z. B. Dialysepflichtigkeit, dekompensierte Herzinsuffizienz) beachten – dann ABCDE-Problem als „kritisch“ einstufen → Notarzt"
+    },
+    {
+     "titel": "Hinweise",
+     "text": "IV-Zugang: max. 2 Versuche – kein IO-Zugang. Medikamente nach Medikamentenliste Delegation."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Delegationsalgorithmen 2c (Stand 01.11.2025) · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025",
+   "stand": "2025-11"
+  },
+  {
+   "id": "2c-zustandsverschlechterung",
+   "bereich": "algorithmus",
+   "titel": "Risiko für relevante Zustandsverschlechterung: Delegation von IV-Zugang und Infusion",
+   "kurz": "2c NEWS",
+   "suchbegriffe": [
+    "Algorithmus NEWS",
+    "prophylaktischer Zugang",
+    "Zustandsverschlechterung",
+    "2c Zugang"
+   ],
+   "siehe": [
+    "NEWS2"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Gültigkeit",
+     "text": "Stand 01.10.2023"
+    },
+    {
+     "titel": "Einstieg",
+     "text": "Notfallpatient"
+    },
+    {
+     "titel": "Notarzt",
+     "text": "- Kritischer Patient (symptombezogener Zustand) → **Notarzt-Nachforderung**\n- Initiale Beurteilung: kritisches (x)ABCDE-Problem → **Notarzt-Nachforderung**\n- Danach: Ist eine Wartezeit auf den Notarzt medizinisch vertretbar? Nein → Maßnahmen nach § 2a NotSanG → ggf. Rendezvous mit Notarzt / Transport ohne Notarzt mit Schockraumanmeldung; Ja → Versorgung / Transport mit Notarzt"
+    },
+    {
+     "titel": "Ablauf 2c",
+     "text": "- Vereinfachter NEWS-2: Summe mindestens 5 Punkte **oder** 3 Punkte bei einem einzelnen Vitalparameter (roter Warnwert)? Nein → Vorgehen nach Befund\n- Patientenaufklärung über IV-Zugang / Infusion\n- **2c: IV-Zugang, langsame Infusion Vollelektrolytlösung**\n- Transport in geeignete Behandlungseinrichtung"
+    },
+    {
+     "titel": "Vereinfachter NEWS-2 (Punkte)",
+     "text": "- **Atemfrequenz (/min):** 3 = ≤ 8 · 1 = 9–11 · 0 = 12–20 · 2 = 21–24 · 3 = ≥ 25\n- **SpO2 (%):** 3 = ≤ 91 · 2 = 92–93 · 1 = 94–95 · 0 = ≥ 96\n- **Raumluft oder O2:** 2 = O2 · 0 = Raumluft\n- **Syst. Blutdruck (mmHg):** 3 = ≤ 90 · 2 = 91–100 · 1 = 101–110 · 0 = 111–219 · 3 = ≥ 220\n- **Pulsfrequenz (/min):** 3 = ≤ 40 · 1 = 41–50 · 0 = 51–90 · 1 = 91–110 · 2 = 111–130 · 3 = ≥ 131\n- **Bewusstsein:** 0 = wach · 3 = verwirrt, getrübt, bewusstlos (nur falls neu aufgetreten oder verschlechtert)\n- **Temperatur (°C):** 3 = ≤ 35,0 · 1 = 35,1–36,0 · 0 = 36,1–38,0 · 1 = 38,1–39,0 · 2 = ≥ 39,1\n- NEWS-2 nicht anwendbar bei Schwangeren und Patienten jünger als 16 Jahre"
+    },
+    {
+     "titel": "Erläuterungen",
+     "text": "- Nur bei Notfallpatienten im engeren Sinne; nicht, wenn ein trivialer Zustand die Auffälligkeiten erklärt oder sich der Zustand durch nicht-invasive Basismaßnahmen suffizient bessern lässt\n- Nur valide, gleichzeitig erhobene Messwerte verwenden (Artefakte ausschließen)\n- Bewusstsein: 3 Punkte nur bei neu aufgetretener oder akut verschlechterter Bewusstseinsminderung / Verwirrtheit\n- SpO2-Skala 2 (hyperkapnisches Atemversagen) wird nicht verwendet\n- Schwangere und Jugendliche unter 16 Jahren ausgeschlossen; NEWS2 bei Zustandsänderungen ggf. wiederholt erheben\n- Misslingt der prophylaktische Zugang: ohne weiteren Versuch Transport ins Krankenhaus"
+    },
+    {
+     "titel": "Hinweise",
+     "text": "IV-Zugang: max. 2 Versuche – kein IO-Zugang. Medikamente nach Medikamentenliste Delegation."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Delegationsalgorithmen 2c (Stand 01.11.2025) · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025",
+   "stand": "2025-11"
+  },
+  {
+   "id": "2c-verletzte-person",
+   "bereich": "algorithmus",
+   "titel": "Verletzte Person: Delegation von IV-Zugang und Infusion",
+   "kurz": "2c Verletzte Person",
+   "suchbegriffe": [
+    "Algorithmus verletzte Person",
+    "geriatrisches SHT",
+    "2c Trauma Zugang"
+   ],
+   "siehe": [
+    "Schockraum-Indikation"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Gültigkeit",
+     "text": "gültig ab 01.04.2024"
+    },
+    {
+     "titel": "Einstieg",
+     "text": "Relevantes Trauma"
+    },
+    {
+     "titel": "Notarzt",
+     "text": "- Offensichtlich schwerverletzt → **Notarzt-Nachforderung**\n- Kritischer Patient (symptombezogener Zustand) → **Notarzt-Nachforderung**\n- Initiale Beurteilung: xABCDE-Problem oder Schockraum-A-Indikation → **Notarzt-Nachforderung**\n- Danach: Ist eine Wartezeit auf den Notarzt medizinisch vertretbar? Nein → Maßnahmen nach § 2a NotSanG → ggf. Rendezvous mit Notarzt / Transport ohne Notarzt mit Schockraumanmeldung TraumaZentrum; Ja → Versorgung / Transport mit Notarzt"
+    },
+    {
+     "titel": "Ablauf 2c",
+     "text": "- Schockraum-Indikation nach Unfallmechanismus? **Ja** → Patientenaufklärung → **2c: IV-Zugang + langsame Infusion Vollelektrolytlösung + Voranmeldung TraumaZentrum „Schockraum B“** → Transport in TraumaZentrum\n- **Nein** → Geriatrischer Patient? Nein → Vorgehen nach Befund\n- Geriatrisch: mindestens zwei Körperregionen mehr als nur oberflächlich verletzt? **Ja** → wie oben, Voranmeldung „Schockraum B“\n- Geriatrisch, nicht zwei Regionen: bekanntes oder vermutetes SHT mit GCS 13–15? **Ja** → Patientenaufklärung → **2c: IV-Zugang + langsame Infusion Vollelektrolytlösung + Voranmeldung TraumaZentrum „geriatrisches leichtes SHT“**; Nein → Vorgehen nach Befund"
+    },
+    {
+     "titel": "Checkbox Schockraum-A-Indikation",
+     "text": "- **Präklinische Intervention** (z. B. Tourniquet, Atemwegssicherung, Thoraxentlastung, Katecholamingabe)\n- **Gestörte Vitalparameter** (Atemstörungen (SpO2 < 90 %), AF < 10 oder > 29 /min, RRsyst < 90 mmHg, Puls > 120 /min, Schockindex > 0,9, GCS < 13, Hypothermie < 35,0 °C)\n- **Kritische Verletzung** (penetrierende Verletzungen Rumpf/Hals, instabiler Thorax, mechanisch instabile Beckenverletzung, Amputationsverletzung proximal der Hände/Füße, Frakturen von 2 oder mehr proximalen langen Röhrenknochen (Oberarm, Oberschenkel), sensomotorisches Defizit nach Wirbelsäulenverletzung, Verbrennungen > 20 % und Grad ≥ 2)"
+    },
+    {
+     "titel": "Checkbox Schockraumindikation nach Unfallmechanismus (S3-Leitlinie Polytrauma, Konsens der Bayer. Traumanetzwerke)",
+     "text": "- (Ab)Sturz aus über 3 Metern Höhe oder\n- Großtierunfall (z. B. Rind, Pferd) oder\n- Kraftfahrzeugunfall mit Ejektion aus dem Fahrzeug und/oder sicheren Frakturzeichen an mindestens einem langen Röhrenknochen (Oberarm, Unterarm, Oberschenkel, Unterschenkel)"
+    },
+    {
+     "titel": "Checkbox geriatrischer Patient",
+     "text": "- 80 Jahre oder älter\n- 70 Jahre oder älter mit geriatrietypischer Multimorbidität (definiert als Vorliegen von mindestens 3 chronischen Erkrankungen)"
+    },
+    {
+     "titel": "Checkbox Körperregionen",
+     "text": "- Kopf (inkl. SHT), Mittelgesicht, Hals (ohne HWS)\n- Brustkorb\n- Abdomen / Becken\n- Wirbelsäule (inkl. HWS)\n- Extremitäten"
+    },
+    {
+     "titel": "Erläuterungen",
+     "text": "- Potenziell schwerverletzt im 2c-Kontext: Schockraumindikation nach Unfallmechanismus, geriatrischer Patient mit mindestens zwei relevant verletzten Körperregionen oder geriatrischer Patient mit bekanntem/vermutetem leichtem SHT – nicht jedoch bei Schockraum-A-Indikation oder beim geriatrischen Patienten mit RR syst. < 100 mmHg (C-Problem)\n- Kraftfahrzeugunfall: Straßenverkehr mit mindestens einem motorisierten Verkehrsmittel (auch E-Bike); Kollisionen eines Radfahrers mit einem Hindernis aus großer Geschwindigkeit eingeschlossen\n- Großtierunfall: Tritt, Kopfstoß oder Einklemmung im Bereich Körperstamm, Hals oder Kopf durch ein Großtier sowie Sturz vom Großtier in Bewegung\n- Kann der Patient keine verwertbaren Angaben zu Vorerkrankungen machen, gilt dies als Beleg für Multimorbidität\n- Geriatrisches leichtes SHT (GCS 13–15 ohne Verschlechterungstendenz) trotz D-Problem nach diesem Algorithmus; Voranmeldung analog Schockraumalarmierung (IVENA: PZC 222, Behandlungsdringlichkeit Notfallversorgung / rot); Voranmeldung dokumentieren"
+    },
+    {
+     "titel": "Hinweise",
+     "text": "IV-Zugang: max. 2 Versuche – kein IO-Zugang. Medikamente nach Medikamentenliste Delegation. SHT = Schädel-Hirn-Trauma, GCS = Glasgow-Coma-Scale, HWS = Halswirbelsäule."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Delegationsalgorithmen 2c (Stand 01.11.2025) · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025",
+   "stand": "2025-11"
+  },
+  {
+   "id": "xabcde",
+   "bereich": "massnahme",
+   "titel": "Ersteinschätzung und initiale Beurteilung xABCDE",
+   "kurz": "",
+   "suchbegriffe": [
+    "xABCDE",
+    "ABCDE",
+    "Ersteinschätzung",
+    "Primary Survey"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Grundsatz",
+     "text": "Bei jedem x-, A-, B-, C-, D- oder E-Problem: Notarzt alarmiert? Invasive Maßnahmen NotSan nur, sofern nach Checkliste indiziert."
+    },
+    {
+     "titel": "x – Exsanguination",
+     "text": "Katastrophale Blutung? → Stillen lebensbedrohlicher Blutungen"
+    },
+    {
+     "titel": "A – Airway",
+     "text": "Atemwege? → Supraglottische Atemwegshilfe · Freimachen des Tracheostomas · Endobronchiales Absaugen · Laryngoskopie / Fremdkörperentfernung mit Magill-Zange"
+    },
+    {
+     "titel": "B – Breathing",
+     "text": "Adäquate Atmung? → Beutel-Masken-Beatmung ± Naso-/Oropharyngealtubus · Thoraxentlastungspunktion · Magenentlastung"
+    },
+    {
+     "titel": "C – Circulation",
+     "text": "Kreislauffunktion? → Applikationstechniken für Medikamente und Infusionen · Kardioversion / Defibrillation · Transthorakaler Schrittmacher · Beckenschlinge · Reposition in achsengerechte Lage · Stillen lebensbedrohlicher Blutungen"
+    },
+    {
+     "titel": "D – Disability",
+     "text": "Neurologischer Status? → Applikationstechniken für Medikamente und Infusionen · Reposition in achsengerechte Lage"
+    },
+    {
+     "titel": "E – Exposure und Environment",
+     "text": "Weiteres A-, B-, C- oder D-Problem auch im Verlauf (secondary survey) erkannt, das eine invasive Maßnahme erfordert? → Geburtsbegleitung (ohne Checkliste)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2024-07"
+  },
+  {
+   "id": "blutung",
+   "bereich": "massnahme",
+   "titel": "Stillen lebensbedrohlicher Blutungen",
+   "kurz": "",
+   "suchbegriffe": [
+    "Tourniquet",
+    "Blutung",
+    "Wundtamponade",
+    "Blutstillung",
+    "Hämostyptikum"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Indikation",
+     "text": "- Lebensgefährliche Blutungen, die mit anderen Maßnahmen nicht zeitgerecht gestoppt werden können\n- Erstversorgung bei unzugänglichem Blutungsort (z. B. eingeklemmte Person)"
+    },
+    {
+     "titel": "Weniger invasiv zuerst",
+     "text": "- Manuelle Kompression, Druckverband\n- Hochlagerung der verletzten Extremität"
+    },
+    {
+     "titel": "Maßnahmen",
+     "text": "- Wundtamponade mit hämostyptischen Verbandsstoffen\n- Tourniquet"
+    },
+    {
+     "titel": "Voraussetzung",
+     "text": "Die Anlage eines Tourniquets ist sehr schmerzhaft und erfordert frühestmöglich eine adäquate Analgesie."
+    },
+    {
+     "titel": "Folgemaßnahmen",
+     "text": "- Bei nicht sistierender Blutung zweites Tourniquet proximal des ersten\n- i.v./i.o.-Zugang und ausreichende Analgesie (entfällt bei bewusstlosen Patienten)\n- Volumentherapie\n- Nach technischer Rettung prüfen, ob Verfahrenswechsel auf Druckverband oder Wundtamponade möglich ist"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2024-07"
+  },
+  {
+   "id": "sga",
+   "bereich": "massnahme",
+   "titel": "Supraglottische Atemwegssicherung",
+   "kurz": "",
+   "suchbegriffe": [
+    "Larynxtubus",
+    "Larynxmaske",
+    "SGA",
+    "Supraglottische Atemwegshilfe",
+    "i-gel"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Indikation",
+     "text": "- Bewusstloser Patient mit beatmungspflichtiger respiratorischer Insuffizienz ohne Schutzreflexe\n- Atemwegssicherung ist gemäß CPR-Leitlinien im Verlauf der Reanimation indiziert"
+    },
+    {
+     "titel": "Voraussetzung",
+     "text": "Ggf. Laryngoskopie und Fremdkörperentfernung"
+    },
+    {
+     "titel": "Folgemaßnahmen",
+     "text": "- Beutelbeatmung\n- Fortführung CPR entsprechend der gültigen Leitlinien\n- Magenentlastung über Absaugkanal mittels Sonde\n- i.v./i.o.-Zugang"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2024-07"
+  },
+  {
+   "id": "tracheostoma",
+   "bereich": "massnahme",
+   "titel": "Freimachen des Tracheostomas",
+   "kurz": "",
+   "suchbegriffe": [
+    "Tracheostoma",
+    "Trachealkanüle frei",
+    "Kanüle disloziert"
+   ],
+   "siehe": [
+    "2c Absaugen"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Indikation",
+     "text": "- Tracheostoma-Träger mit respiratorischer Insuffizienz aufgrund Atemwegsverlegung und/oder Aspiration (z. B. Körpersekrete, Nahrungsmittel, Blut)\n- Dislokation der Trachealkanüle mit respiratorischer Insuffizienz"
+    },
+    {
+     "titel": "Mögliche Maßnahmen",
+     "text": "- Blockung der Trachealkanüle\n- Entfernung / Wiedereinsetzen der Innenkanüle (Seele)\n- Absaugen / endobronchiales Absaugen\n- Entfernung der Außenkanüle mit / ohne Führungshilfe\n- Neuplatzierung einer dislozierten Kanüle\n- Intubation des Tracheostomas mit Endotrachealtubus"
+    },
+    {
+     "titel": "Folgemaßnahmen",
+     "text": "- Sauerstoffgabe\n- Beutel-Masken-Beatmung über Mund/Nase oder Tracheostoma\n- Beutelbeatmung über geblockte Trachealkanüle oder Tubus"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2024-07"
+  },
+  {
+   "id": "endobronchial",
+   "bereich": "massnahme",
+   "titel": "Endobronchiales Absaugen",
+   "kurz": "",
+   "suchbegriffe": [
+    "Endobronchiales Absaugen",
+    "Absaugen Tubus"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Indikation",
+     "text": "Patient mit vorhandenem Tracheostoma oder liegendem Endotrachealtubus und kritischer Atembehinderung durch flüssige und/oder feste Substanzen in den Atemwegen"
+    },
+    {
+     "titel": "Weniger invasiv zuerst",
+     "text": "Eigenständiges Abhusten (tracheotomierter Patient)"
+    },
+    {
+     "titel": "Voraussetzung",
+     "text": "Ggf. Sauerstoffgabe (Präoxygenierung)"
+    },
+    {
+     "titel": "Folgemaßnahmen",
+     "text": "- Laryngoskopie und Fremdkörperentfernung mit Magill-Zange\n- Beutel-Masken-Beatmung bzw. Beutelbeatmung über Tracheostoma / Tubus\n- Supraglottische Atemwegssicherung\n- Freimachen des Tracheostomas\n- i.v./i.o.-Zugang"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2024-07"
+  },
+  {
+   "id": "magill",
+   "bereich": "massnahme",
+   "titel": "Laryngoskopie und Fremdkörperentfernung mit Magill-Zange",
+   "kurz": "",
+   "suchbegriffe": [
+    "Magill",
+    "Magillzange",
+    "Laryngoskopie",
+    "Fremdkörper",
+    "Bolus"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Indikation",
+     "text": "Bewusstloser Patient ohne suffiziente Eigenatmung aufgrund einer Atemwegsverlegung"
+    },
+    {
+     "titel": "Weniger invasiv zuerst",
+     "text": "- ggf. Seitenlage zum Sekretabfluss\n- Maßnahmen bei Atemwegsverlegung durch Fremdkörper laut CPR-Leitlinie"
+    },
+    {
+     "titel": "Folgemaßnahmen",
+     "text": "- Beutel-Masken-Beatmung\n- Supraglottische Atemwegssicherung\n- CPR entsprechend der gültigen Leitlinien"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2024-07"
+  },
+  {
+   "id": "bmv",
+   "bereich": "massnahme",
+   "titel": "Beutel-Masken-Beatmung",
+   "kurz": "",
+   "suchbegriffe": [
+    "Beutel-Masken-Beatmung",
+    "BMV",
+    "Beatmung",
+    "Guedel",
+    "Wendl"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Indikation",
+     "text": "Patient mit beatmungspflichtiger respiratorischer Insuffizienz ohne Atemwegsverlegung"
+    },
+    {
+     "titel": "Weniger invasiv zuerst",
+     "text": "- Kommandoatmung bei Wirkung atemdepressiver Substanzen\n- Sauerstoffgabe"
+    },
+    {
+     "titel": "Voraussetzung",
+     "text": "- ggf. Einlage eines Oro- oder Nasopharyngealtubus\n- Laryngoskopie und Fremdkörperentfernung"
+    },
+    {
+     "titel": "Folgemaßnahmen",
+     "text": "- Supraglottische Atemwegssicherung\n- Magenentlastung mittels Sonde\n- Antagonisierung atemdepressiver Substanzen\n- Sauerstoffgabe\n- i.v./i.o.-Zugang"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2024-07"
+  },
+  {
+   "id": "thoraxentlastung",
+   "bereich": "massnahme",
+   "titel": "Thoraxentlastungspunktion",
+   "kurz": "",
+   "suchbegriffe": [
+    "Entlastungspunktion",
+    "Pneumothorax",
+    "Thoraxpunktion"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Indikation",
+     "text": "Patient mit vital bedrohlicher hämodynamischer und/oder respiratorischer Störung **und** Zeichen eines Spannungspneumothorax"
+    },
+    {
+     "titel": "Weniger invasiv zuerst",
+     "text": "- Sauerstoffgabe\n- Beutel-Masken-Beatmung"
+    },
+    {
+     "titel": "Folgemaßnahmen",
+     "text": "- Sauerstoffgabe\n- Beutel-Masken-Beatmung\n- CPR entsprechend der gültigen Leitlinien\n- Supraglottische Atemwegssicherung\n- i.v./i.o.-Zugang\n- Analgesie"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2024-07"
+  },
+  {
+   "id": "magenentlastung",
+   "bereich": "massnahme",
+   "titel": "Magenentlastung",
+   "kurz": "",
+   "suchbegriffe": [
+    "Magensonde",
+    "Magenentlastung",
+    "Magenüberblähung"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Indikation",
+     "text": "Bewusstloser und beatmungspflichtiger Patient mit erfolgter supraglottischer Atemwegssicherung oder Magenüberblähung mit Beatmungsproblemen (insbesondere beim Säugling / Kleinkind)"
+    },
+    {
+     "titel": "Voraussetzung",
+     "text": "- ggf. Beutel-Masken-Beatmung\n- ggf. supraglottische Atemwegssicherung"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2024-07"
+  },
+  {
+   "id": "applikation",
+   "bereich": "massnahme",
+   "titel": "Applikationstechniken für Medikamente und Infusionen",
+   "kurz": "",
+   "suchbegriffe": [
+    "i.v.-Zugang",
+    "Zugang",
+    "intraossär",
+    "i.o.-Zugang",
+    "Applikation",
+    "Venenzugang"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Indikation",
+     "text": "- Zwingende Notwendigkeit einer Medikamentengabe oder Infusionstherapie unter den Voraussetzungen von § 2a NotSanG oder\n- ausreichend hohe Wahrscheinlichkeit einer Medikamentengabe oder Infusionstherapie durch den anfahrenden Notarzt oder\n- ausreichend hohe Wahrscheinlichkeit einer Zustandsverschlechterung mit Eintritt einer der o. g. Situationen bei anfahrendem Notarzt"
+    },
+    {
+     "titel": "Maßnahmen eskalierend",
+     "text": "Je invasiver die Maßnahme, umso strenger ist die Indikation zu stellen!\n- Inhalation\n- i.m.-Injektion\n- i.v.-Zugang\n- nasale Medikamentengabe\n- i.o.-Zugang"
+    },
+    {
+     "titel": "Folgemaßnahmen",
+     "text": "Medikamentengabe, Infusion"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2024-07"
+  },
+  {
+   "id": "kardioversion",
+   "bereich": "massnahme",
+   "titel": "Elektrische Kardioversion",
+   "kurz": "",
+   "suchbegriffe": [
+    "Kardioversion",
+    "Tachykardie instabil"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Indikation",
+     "text": "Patient mit tachykarder Rhythmusstörung **und** hämodynamisch instabil **und** bewusstlos\n(Kurznarkose oder Analgosedierung bei nicht bewusstlosen Patienten ist nur vom Notarzt durchzuführen)"
+    },
+    {
+     "titel": "Folgemaßnahmen",
+     "text": "- Erneute Kardioversion entsprechend der gültigen Leitlinien\n- i.v./i.o.-Zugang\n- Analgesie"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2024-07"
+  },
+  {
+   "id": "defibrillation",
+   "bereich": "massnahme",
+   "titel": "Manuelle Defibrillation",
+   "kurz": "",
+   "suchbegriffe": [
+    "Defibrillation",
+    "Defi",
+    "Kammerflimmern",
+    "pulslose VT"
+   ],
+   "siehe": [
+    "Amiodaron",
+    "Epinephrin"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Indikation",
+     "text": "- Kammerflimmern\n- Pulslose ventrikuläre Tachykardie mit Bewusstlosigkeit"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Die manuelle Defibrillation soll nur durchgeführt werden, wenn die Defibrillation im AED-Modus nicht möglich / nicht verfügbar ist."
+    },
+    {
+     "titel": "Voraussetzung",
+     "text": "CPR entsprechend der gültigen Leitlinien und Beutel-Masken-Beatmung bis zur Defibrillationsbereitschaft"
+    },
+    {
+     "titel": "Folgemaßnahmen",
+     "text": "- Erneute Defibrillation entsprechend der gültigen CPR-Leitlinien\n- i.v./i.o.-Zugang\n- CPR entsprechend der gültigen Leitlinien\n- Beutel-Masken-Beatmung\n- Supraglottische Atemwegssicherung"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2024-07"
+  },
+  {
+   "id": "schrittmacher",
+   "bereich": "massnahme",
+   "titel": "Transthorakaler Schrittmacher",
+   "kurz": "",
+   "suchbegriffe": [
+    "Schrittmacher",
+    "Pacing",
+    "externer Schrittmacher"
+   ],
+   "siehe": [
+    "Atropinsulfat"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Indikation",
+     "text": "- Patient mit P-Wellen, jedoch ohne QRS-Komplexe im EKG\noder\n- bradykarde Rhythmusstörung **und** hämodynamisch instabil **und** schwer bewusstseinsgemindert **und** keine suffiziente Reaktion auf medikamentöse Therapie"
+    },
+    {
+     "titel": "Weniger invasiv zuerst",
+     "text": "Medikamentöse antibradykarde Therapie"
+    },
+    {
+     "titel": "Voraussetzung",
+     "text": "- CPR entsprechend der gültigen Leitlinien bis zur Schrittmacherbereitschaft\n- i.v./i.o.-Zugang\n- medikamentöse antibradykarde Therapie"
+    },
+    {
+     "titel": "Folgemaßnahmen",
+     "text": "- CPR entsprechend der gültigen Leitlinien\n- i.v./i.o.-Zugang\n- Analgesie\n- Sauerstoffgabe"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2024-07"
+  },
+  {
+   "id": "beckenschlinge",
+   "bereich": "massnahme",
+   "titel": "Beckenschlinge (Trochanterschlinge)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Beckenschlinge",
+    "Trochanterschlinge",
+    "Beckenverletzung",
+    "Beckenfraktur"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Indikation",
+     "text": "Klinische Anhaltspunkte für eine Beckenringverletzung oder instabile Beckenringverletzung **und** hämodynamisch instabil"
+    },
+    {
+     "titel": "Voraussetzung",
+     "text": "- ggf. i.v./i.o.-Zugang (entfällt bei bewusstlosen Patienten)\n- ggf. Analgesie (entfällt bei bewusstlosen Patienten)"
+    },
+    {
+     "titel": "Folgemaßnahmen",
+     "text": "- i.v./i.o.-Zugang\n- Volumentherapie\n- Analgesie"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2024-07"
+  },
+  {
+   "id": "reposition",
+   "bereich": "massnahme",
+   "titel": "Reposition in achsengerechte Lage",
+   "kurz": "",
+   "suchbegriffe": [
+    "Reposition",
+    "Luxation",
+    "Fehlstellung"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Indikation",
+     "text": "Patient mit fehlstehender Extremität mit Störung von Durchblutung, Motorik und/oder Sensibilität"
+    },
+    {
+     "titel": "Voraussetzung",
+     "text": "- i.v./i.o.-Zugang (entfällt bei bewusstlosen Patienten)\n- Analgesie (entfällt bei bewusstlosen Patienten)"
+    },
+    {
+     "titel": "Folgemaßnahmen",
+     "text": "- Retention / Immobilisation\n- i.v./i.o.-Zugang\n- Analgesie (entfällt bei bewusstlosen Patienten)\n- Volumentherapie"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2024-07"
+  },
+  {
+   "id": "acs",
+   "bereich": "diagnose",
+   "titel": "Akutes Koronarsyndrom",
+   "kurz": "ACS",
+   "suchbegriffe": [
+    "Herzinfarkt",
+    "Myokardinfarkt",
+    "Koronarsyndrom",
+    "Brustschmerz",
+    "Thoraxschmerz"
+   ],
+   "siehe": [
+    "Morphin",
+    "ASS",
+    "Heparin",
+    "Glyceroltrinitrat",
+    "2c Abdominalschmerz"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Medikamente nach § 2a (Kategorie 1)",
+     "text": "**Morphin** – kritischer Schmerzzustand bei akutem Koronarsyndrom:\n- nur Erwachsene\n- 1–2 mg i.v. (i.o.)\n- Repetition nach frühestens 5 Minuten bis maximal 5 mg"
+    },
+    {
+     "titel": "Nicht beim ACS",
+     "text": "Fentanyl i.v. und Piritramid sind laut § 2a-Liste ausdrücklich **nicht** beim akuten Koronarsyndrom vorgesehen."
+    },
+    {
+     "titel": "Kategorie 2 (gelb) – keine Dosierungsempfehlung",
+     "text": "Acetylsalicylsäure, Heparin und Glyceroltrinitrat sublingual sind Kategorie 2: Kompetenz nur durch zusätzliche Aus-/Fortbildung; in den ÄLRD-Dokumenten ist keine Dosierung enthalten."
+    },
+    {
+     "titel": "Bezug in den 2c-Algorithmen",
+     "text": "- Akuter Abdominalschmerz: das ACS ist vor einer 2c-Analgesie auszuschließen; bei Oberbauchschmerz 12-Kanal-EKG – ST-Hebungen oder -Senkungen in mindestens einer Ableitung → Ausschluss, Notarzt-Nachalarmierung\n- (zusätzlicher) Thoraxschmerz ist Ausschlusskriterium für die 2c-Analgesie beim Abdominalschmerz"
+    },
+    {
+     "titel": "Hypertensiver Notfall",
+     "text": "Laut ÄBRD-Stellungnahme kann ein ACS Begleitsymptom eines hypertensiven Notfalls sein."
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025 · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025 · ÄBRD Bayern: Stellungnahme gegen 2c-Algorithmus arterielle Hypertension, 08.01.2026",
+   "stand": "2025-10"
+  },
+  {
+   "id": "hypoglykaemie",
+   "bereich": "diagnose",
+   "titel": "Hypoglykämie",
+   "kurz": "",
+   "suchbegriffe": [
+    "Unterzucker",
+    "Unterzuckerung",
+    "Hypo",
+    "niedriger Blutzucker"
+   ],
+   "siehe": [
+    "2c Hypoglykämie",
+    "Glucose 40 %",
+    "Glucose-Gel",
+    "Thiamin"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Typische klinische Manifestationen (Checkbox 2c)",
+     "text": "Identifikation durch Patient oder Dritte · Schwitzen · Zittern · Heißhunger · Herzklopfen · Gedankenflucht · Logorrhoe · Wortfindungsstörungen · Reizbarkeit · Sehstörungen · Kopfschmerzen · Verwirrtheit · Ängstlichkeit · Schläfrigkeit · Koordinationsdefizite · Bewusstseinsstörung · Verhaltensauffälligkeiten · Krampfanfall · Fokale Neurologie · Übelkeit"
+    },
+    {
+     "titel": "§ 2a – kritische Hypoglykämie",
+     "text": "**Glucose 40 %:** Erwachsene initial 20 g langsam i.v. (i.o.) zu maximal laufender Infusion, ggf. weitere 20 g nach BZ; Kinder 200 mg/kg KG i.v. (i.o.) (DIVI-Kindernotfallkarte)\n**Thiamin** 100 mg langsam i.v. (i.o.) **vor** dem Hypoglykämie-Ausgleich bei V. a. chronischen Alkoholabusus bzw. schwere Mangelernährung (nur Adoleszente und Erwachsene)"
+    },
+    {
+     "titel": "2c-Algorithmus (Kurzfassung)",
+     "text": "- BZ < 70 mg/dl **und** klinische Manifestation der Hypoglykämie? Nein → Vorgehen nach Befund\n- **Patient kann sicher schlucken:** Patientenaufklärung → **2c: Glukose 30 g per os** → nach 15 Min.: BZ < 70 mg/dl? → ggf. **erneut 30 g per os** → nach 15 Min. Reevaluation\n- **Patient kann nicht sicher schlucken:** Patientenaufklärung → **2c: IV-Zugang** → V. a. schwere Mangelernährung? → **2c: Thiamin 100 mg langsam IV** → **2c: Glukose 40 % 50 ml IV zu schnelllaufender Infusion** → nach 5 Min.: BZ < 70 mg/dl? → ggf. **erneut Glukose 40 % 50 ml IV** → nach 5 Min. Reevaluation\n- Symptome verschwunden oder eindeutige Besserung **und** BZ ≥ 70 mg/dl → Transport in geeignete Behandlungseinrichtung (bei Transportverweigerung Vorgehen laut Umsetzungshinweisen); sonst **Notarzt-Nachforderung**"
+    },
+    {
+     "titel": "V. a. schwere Mangelernährung (Checkbox 2c)",
+     "text": "- Kachexie\n- Schwerer chronischer Alkoholabusus\n- Chronische Gastritis, Magenkarzinom\n- Chronisch entzündliche Darmerkrankung mit regelmäßigen Symptomen (M. Crohn, Colitis ulcerosa)\n- Langanhaltendes Erbrechen (täglich länger 1 Woche), z. B. während Krebserkrankung, Schwangerschaft, Magersucht\n- Z. n. Adipositas-Chirurgie"
+    },
+    {
+     "titel": "Wichtig",
+     "text": "- Zielwert BZ ≥ 70 mg/dl (= 3,9 mmol/l)\n- Sulfonylharnstoffe (z. B. Glibenclamid, Glimepirid, Gliclazid, Gliquidon): Gefahr langanhaltender Hypoglykämie mit Rückfällen – von Verzicht auf Klinik dringend abraten\n- Bei Verdacht auf suizidale Verabreichung Kliniktransport obligat\n- Hypothermie häufig – Temperatur messen"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · ÄLRD Bayern: Delegationsalgorithmen 2c (Stand 01.11.2025) · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "sepsis",
+   "bereich": "diagnose",
+   "titel": "Sepsis (Verdacht)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Sepsis",
+    "Blutvergiftung",
+    "septisch"
+   ],
+   "siehe": [
+    "2c Sepsis",
+    "NEWS2"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Erkennen (2c-Algorithmus)",
+     "text": "Vereinfachter NEWS-2 mit mindestens 5 Punkten **plus** Hinweis auf Infektion → Verdacht auf Sepsis (ab 16 Jahren, nicht bei Schwangeren)"
+    },
+    {
+     "titel": "Hinweise auf Infektion",
+     "text": "- **Allgemeine Hinweise:** Temperatur ≤ 36,0 °C (Hypothermie) oder ≥ 38,0 °C (Fieber), Schüttelfrost, Blutzucker > 140 mg/dl ohne Diabetes\n- **Risikofaktoren:** Immunsuppression, Krankenhausaufenthalt in den letzten 30 Tagen\n- **Atemwegsinfekt:** Husten und Auswurf, Dyspnoe, atemabhängiger Brustschmerz\n- **Harnwegsinfekt:** Brennen beim Wasserlassen, auffälliger Geruch, Verfärbung des Urins\n- **Intraabdominale Infektion:** Durchfall, Bauchschmerzen, Voroperationen\n- **Weichteil- und Knocheninfektion:** chronische Wunden, Gelenk- und Wirbelsäulenschmerzen, Rötung, Bewegungseinschränkung\n- **Fremdkörper-assoziierte Infekte:** Portkatheter, Blasendauerkatheter, medizinische Implantate (z. B. Endoprothesen, Herzklappenersatz, Herzschrittmacher), Körperschmuck (z. B. Piercing), sonstige Fremdkörper\n- **Endokarditis:** Herzrhythmusstörungen, Herzklappenersatz\n- **Meningitis:** veränderte Bewusstseinslage, Kopfschmerz, Nackensteifigkeit"
+    },
+    {
+     "titel": "Vorgehen 2c",
+     "text": "IV-Zugang, Einleitung Infusionstherapie mit 500 ml Vollelektrolytlösung, Voranmeldung „V. a. Sepsis“, Transport in geeignete Behandlungseinrichtung. Meningismus oder kritisches ABCDE-Problem → Notarzt."
+    },
+    {
+     "titel": "Vereinfachter NEWS-2",
+     "text": "- **Atemfrequenz (/min):** 3 = ≤ 8 · 1 = 9–11 · 0 = 12–20 · 2 = 21–24 · 3 = ≥ 25\n- **SpO2 (%):** 3 = ≤ 91 · 2 = 92–93 · 1 = 94–95 · 0 = ≥ 96\n- **Raumluft oder O2:** 2 = O2 · 0 = Raumluft\n- **Syst. Blutdruck (mmHg):** 3 = ≤ 90 · 2 = 91–100 · 1 = 101–110 · 0 = 111–219 · 3 = ≥ 220\n- **Pulsfrequenz (/min):** 3 = ≤ 40 · 1 = 41–50 · 0 = 51–90 · 1 = 91–110 · 2 = 111–130 · 3 = ≥ 131\n- **Bewusstsein:** 0 = wach · 3 = verwirrt, getrübt, bewusstlos (nur falls neu aufgetreten oder verschlechtert)\n- **Temperatur (°C):** 3 = ≤ 35,0 · 1 = 35,1–36,0 · 0 = 36,1–38,0 · 1 = 38,1–39,0 · 2 = ≥ 39,1\n- NEWS-2 nicht anwendbar bei Schwangeren und Patienten jünger als 16 Jahre"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Delegationsalgorithmen 2c (Stand 01.11.2025) · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025",
+   "stand": "2025-11"
+  },
+  {
+   "id": "anaphylaxie",
+   "bereich": "diagnose",
+   "titel": "Anaphylaktischer Schock",
+   "kurz": "",
+   "suchbegriffe": [
+    "Anaphylaxie",
+    "allergischer Schock",
+    "Allergie"
+   ],
+   "siehe": [
+    "Epinephrin",
+    "Dimetinden",
+    "Prednisolon"
+   ],
+   "abschnitte": [
+    {
+     "titel": "§ 2a – Epinephrin (Adrenalin) i.m.",
+     "text": "- Erwachsene: 0,5 mg i.m.; Repetition (i.m.) nach 5 Minuten bei ausbleibender Wirkung\n- Kinder (siehe DIVI-Kindernotfallkarte): 0,01 mg/kg KG i.m.; Repetition (i.m.) nach 5–10 Minuten bei ausbleibender Wirkung\n- Ampulle 1 mg / 1 ml"
+    },
+    {
+     "titel": "Kategorie 2 (gelb)",
+     "text": "Dimetinden und Prednisolon: keine Dosierungsempfehlung in den ÄLRD-Dokumenten."
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "kreislaufstillstand",
+   "bereich": "diagnose",
+   "titel": "Kreislaufstillstand / Reanimation",
+   "kurz": "CPR",
+   "suchbegriffe": [
+    "Reanimation",
+    "Herzstillstand",
+    "Kreislaufstillstand",
+    "ALS",
+    "Herz-Kreislauf-Stillstand"
+   ],
+   "siehe": [
+    "Manuelle Defibrillation",
+    "Epinephrin",
+    "Amiodaron",
+    "Sichere Todeszeichen"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Epinephrin (Adrenalin) § 2a",
+     "text": "- Erwachsene: nicht defibrillierbar 1 mg i.v. (i.o.) sobald möglich; defibrillierbar 1 mg i.v. (i.o.) nach 3. Defibrillation; Repetition alle 3–5 Minuten unter ALS\n- Kinder (DIVI-Kindernotfallkarte): 0,01 mg/kg KG i.v. (i.o.) – nicht defibrillierbar sobald möglich, defibrillierbar nach 3. Defibrillation; Repetition alle 3–5 Minuten"
+    },
+    {
+     "titel": "Amiodaron § 2a (Kammerflimmern / pulslose VT)",
+     "text": "- Erwachsene: nach 3. Defibrillation 300 mg i.v. (i.o.), nach 5. Defibrillation 150 mg i.v. (i.o.)\n- Kinder: 5 mg/kg KG (max. 300 mg bzw. 150 mg) nach 3. bzw. 5. Defibrillation"
+    },
+    {
+     "titel": "Sauerstoff",
+     "text": "CPR: höchstmögliche inspiratorische Sauerstoffkonzentration"
+    },
+    {
+     "titel": "Maßnahmen (Checklisten § 2a)",
+     "text": "Manuelle Defibrillation (nur wenn AED-Modus nicht möglich), Beutel-Masken-Beatmung, supraglottische Atemwegssicherung, i.v./i.o.-Zugang – CPR jeweils entsprechend der gültigen Leitlinien"
+    },
+    {
+     "titel": "Lidocain",
+     "text": "Kann als alternatives Antiarrhythmikum in der Reanimation verwendet werden – Kategorie 2 (gelb)."
+    },
+    {
+     "titel": "Sichere Todeszeichen",
+     "text": "Siehe Eintrag „Sichere Todeszeichen“: Liegen die Kriterien nicht vor, ist in jedem Fall mit Wiederbelebung zu beginnen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025 · StMI/ÄLRD Bayern: Handlungsempfehlung Erkennen sicherer Todeszeichen durch NotSan, vom 31.03.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "bradykardie",
+   "bereich": "diagnose",
+   "titel": "Lebensbedrohliche Bradykardie",
+   "kurz": "",
+   "suchbegriffe": [
+    "Bradykardie",
+    "langsamer Puls",
+    "AV-Block"
+   ],
+   "siehe": [
+    "Atropinsulfat",
+    "Transthorakaler Schrittmacher"
+   ],
+   "abschnitte": [
+    {
+     "titel": "§ 2a – Atropinsulfat",
+     "text": "- Erwachsene: initial 0,5 mg i.v. (i.o.); ggf. Wiederholung alle 3–5 Minuten bis maximal 3 mg\n- Kinder: 0,01 mg/kg KG i.v. (i.o.), max. 0,5 mg"
+    },
+    {
+     "titel": "Transthorakaler Schrittmacher (Checkliste)",
+     "text": "P-Wellen ohne QRS-Komplexe **oder** bradykarde Rhythmusstörung + hämodynamisch instabil + schwer bewusstseinsgemindert + keine suffiziente Reaktion auf medikamentöse Therapie"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024",
+   "stand": "2025-10"
+  },
+  {
+   "id": "tachykardie",
+   "bereich": "diagnose",
+   "titel": "Instabile tachykarde Rhythmusstörung",
+   "kurz": "",
+   "suchbegriffe": [
+    "Tachykardie",
+    "Herzrasen"
+   ],
+   "siehe": [
+    "Elektrische Kardioversion"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Elektrische Kardioversion (Checkliste § 2a)",
+     "text": "Tachykarde Rhythmusstörung **und** hämodynamisch instabil **und** bewusstlos. Kurznarkose oder Analgosedierung bei nicht bewusstlosen Patienten ist nur vom Notarzt durchzuführen."
+    },
+    {
+     "titel": "Medikamente",
+     "text": "Adenosin und Metoprolol sind Kategorie 3 (rot) der Kompetenzmatrix."
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2024-07"
+  },
+  {
+   "id": "status-epilepticus",
+   "bereich": "diagnose",
+   "titel": "Status epilepticus / Krampfanfall",
+   "kurz": "",
+   "suchbegriffe": [
+    "Krampfanfall",
+    "Epilepsie",
+    "Krampf",
+    "Status epilepticus",
+    "Fieberkrampf"
+   ],
+   "siehe": [
+    "Midazolam",
+    "Diazepam (Rectiole)",
+    "Thiamin"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Generalisierter Status epilepticus – Midazolam § 2a",
+     "text": "**Intranasal** (Ampulle 15 mg / 3 ml): Erwachsene 10 mg, einmalige Repetition bei Krampfpersistenz nach frühestens 5 Minuten; Kinder 0,3 mg/kg KG (DIVI-Kindernotfallkarte)\n**Intravenös** (Ampulle 5 mg / 5 ml, in der Regel nur, wenn i.v.-Zugang bei Krampfbeginn bereits etabliert): Erwachsene initial 5 mg, einmalige Repetition; Kinder 0,1 mg/kg KG i.v. (i.o.)"
+    },
+    {
+     "titel": "Prolongierter kindlicher Krampfanfall (> 3 min) – Diazepam rektal",
+     "text": "Kinder < 15 kg KG: 5 mg rektal · Kinder ≥ 15 kg KG: 10 mg rektal bzw. siehe Midazolam · keine Repetition"
+    },
+    {
+     "titel": "V. a. alkoholinduzierten Status",
+     "text": "Thiamin 100 mg langsam (über eine Minute) i.v. (i.o.) unmittelbar nach Krampfdurchbrechung (nur Adoleszente und Erwachsene)"
+    },
+    {
+     "titel": "Kompetenzmatrix",
+     "text": "Levetiracetam und Lorazepam: Kategorie 3 (rot)."
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "pseudokrupp",
+   "bereich": "diagnose",
+   "titel": "Pseudokrupp / Schwellung obere Atemwege",
+   "kurz": "",
+   "suchbegriffe": [
+    "Pseudokrupp",
+    "Krupp",
+    "Laryngotracheitis",
+    "Atemwegsschwellung",
+    "Larynxödem"
+   ],
+   "siehe": [
+    "Epinephrin",
+    "Prednison"
+   ],
+   "abschnitte": [
+    {
+     "titel": "§ 2a – Epinephrin zur Inhalation",
+     "text": "Kritische akute stenosierende Laryngotracheitis (Pseudokrupp), kritische Schwellung / Ödem der oberen Atemwege:\n- Erwachsene und Kinder: 5 mg (5 ml) zur Inhalation (Kinder siehe DIVI-Kindernotfallkarte)\n- Repetition bei Symptompersistenz und (kardiovaskulärer) Verträglichkeit"
+    },
+    {
+     "titel": "§ 2a – Prednison rektal (nur Kinder)",
+     "text": "Pseudokrupp und kritische spastische Bronchitis: 100 mg rektal (alters-/gewichtsunabhängig)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027",
+   "stand": "2025-10"
+  },
+  {
+   "id": "bronchospastik",
+   "bereich": "diagnose",
+   "titel": "Kritische Bronchospastik (Asthma / COPD)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Bronchospastik",
+    "Asthma",
+    "COPD",
+    "Bronchospasmus",
+    "Atemnot",
+    "spastische Bronchitis",
+    "Asthmaanfall"
+   ],
+   "siehe": [
+    "Salbutamol",
+    "Ipratropiumbromid",
+    "2c Sauerstoff"
+   ],
+   "abschnitte": [
+    {
+     "titel": "§ 2a – Salbutamol (Inhalation)",
+     "text": "- Erwachsene: 2,5 mg (5 ml) initial; Repetition bei Symptompersistenz und Verträglichkeit\n- Kinder (DIVI-Kindernotfallkarte): 2,5 mg (5 ml); Repetition entsprechend\n- Restmenge der Verneblungsmaske beachten!"
+    },
+    {
+     "titel": "§ 2a – Ipratropiumbromid (Inhalation)",
+     "text": "- Erwachsene: 0,5 mg (2,0 ml)\n- Kinder: 0,25 mg (1,0 ml)\n- Repetition bei Symptompersistenz und (kardiovaskulärer) Verträglichkeit"
+    },
+    {
+     "titel": "Kinder: kritische spastische Bronchitis",
+     "text": "Prednison 100 mg rektal (alters-/gewichtsunabhängig)"
+    },
+    {
+     "titel": "Kategorie 2 (gelb)",
+     "text": "Magnesiumsulfat bei Asthma / COPD sowie Prednisolon – keine Dosierungsempfehlung in den ÄLRD-Dokumenten."
+    },
+    {
+     "titel": "Sauerstoff 2c",
+     "text": "Bei Risiko für hyperkapnisches Atemversagen (z. B. bekannte COPD): Ziel-SpO2 88–92 % (siehe 2c Sauerstoff)."
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025 · ÄLRD Bayern: Medikamente nach § 4 Abs. 2 Nr. 2c NotSanG, Version 2.0, gültig ab 01.11.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "hypertensiver-notfall",
+   "bereich": "diagnose",
+   "titel": "Hypertensiver Notfall / hypertensive Entgleisung",
+   "kurz": "",
+   "suchbegriffe": [
+    "Hypertensiver Notfall",
+    "Bluthochdruck",
+    "Hypertonie",
+    "hypertensive Krise",
+    "hypertensive Entgleisung",
+    "hoher Blutdruck"
+   ],
+   "siehe": [
+    "Urapidil"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Definition hypertensive Entgleisung",
+     "text": "Blutdruck > 180 / 110 mmHg **ohne** akute Manifestation einer Endorganschädigung."
+    },
+    {
+     "titel": "Definition hypertensiver Notfall",
+     "text": "Akuter starker Blutdruckanstieg auf > 180 / 110 mmHg **mit** akuten Begleitsymptomen (z. B. Ruhedyspnoe, V. a. Schlaganfall, ACS, Aortendissektion, Lungenödem, rasch progrediente oder neu aufgetretene Nierenkrankheit, akute schwere Blutung o. ä.)."
+    },
+    {
+     "titel": "Vorgehen laut ÄBRD",
+     "text": "- **Kein 2c-Algorithmus** für hypertensive Entgleisung oder hypertensiven Notfall (Stellungnahme 08.01.2026)\n- Entgleisung: für die meisten Fälle vorteilhaft, den Patienten ohne präklinische Intervention in eine (bereitschafts)ärztliche Versorgung zu verweisen\n- Notfall: möglichst rasche ärztliche Beurteilung durch Notarzt bzw. künftig Telenotarzt; ggf. kann es angezeigt sein, von einer präklinischen Senkung abzusehen (z. B. bei V. a. Schlaganfall)"
+    },
+    {
+     "titel": "§ 2a – Urapidil (zur Überbrückung in akut lebensbedrohlichen Situationen)",
+     "text": "- nur Erwachsene\n- initial 5 mg i.v. (i.o.)\n- Repetition frühestens nach 5 Minuten\n- Senkung nach Symptomatik, max. um 25 % des Ausgangswerts RR syst."
+    },
+    {
+     "titel": "Verfügbar im bayerischen Rettungsdienst",
+     "text": "Orales Captopril, sublinguales Glyceroltrinitrat, intravenös Urapidil, Metoprolol und Furosemid (Auswahl erfordert ärztliche Expertise)."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄBRD Bayern: Stellungnahme gegen 2c-Algorithmus arterielle Hypertension, 08.01.2026 · ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027",
+   "stand": "2026-01"
+  },
+  {
+   "id": "hypotension",
+   "bereich": "diagnose",
+   "titel": "Kritische Hypotension / Volumenmangel",
+   "kurz": "",
+   "suchbegriffe": [
+    "Kritische Hypotension",
+    "Hypotonie",
+    "niedriger Blutdruck",
+    "Schock",
+    "Volumenmangel"
+   ],
+   "siehe": [
+    "Cafedrin / Theodrenalin",
+    "Balancierte Elektrolytlösung (Acetat/Malat)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "§ 2a – Cafedrin / Theodrenalin",
+     "text": "Kritische Hypotension trotz adäquater bzw. mit Kontraindikation für i.v.-Flüssigkeitsgabe:\n- Erwachsene: initial 0,5 ml i.v. (i.o.); ggf. Repetition alle 5 Minuten bis max. 4 ml (2 Ampullen)\n- Kinder: keine Zulassung"
+    },
+    {
+     "titel": "§ 2a – Balancierte Elektrolytlösung",
+     "text": "Flüssigkeitsersatz bei kritischem Volumenmangel – nach Bedarf"
+    },
+    {
+     "titel": "CAVE",
+     "text": "Konzept der permissiven Hypotension bei aktiver Blutung!"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027",
+   "stand": "2025-10"
+  },
+  {
+   "id": "opiat-intox",
+   "bereich": "diagnose",
+   "titel": "Opiat-Überdosierung / -Intoxikation",
+   "kurz": "",
+   "suchbegriffe": [
+    "Opiat-Intoxikation",
+    "Opiat",
+    "Opioid",
+    "Heroin",
+    "Überdosis",
+    "Opiatvergiftung"
+   ],
+   "siehe": [
+    "Naloxon (nasal)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "§ 2a – Naloxon nasal",
+     "text": "- Anwendung zugelassen ab 14. Lebensjahr\n- 1,8 mg intranasal\n- Repetition nach 2–3 Minuten oder bei Symptomrückkehr"
+    },
+    {
+     "titel": "Beatmung",
+     "text": "Checkliste Beutel-Masken-Beatmung: Kommandoatmung bei Wirkung atemdepressiver Substanzen; Folgemaßnahme Antagonisierung atemdepressiver Substanzen."
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024",
+   "stand": "2025-10"
+  },
+  {
+   "id": "benzo-intox",
+   "bereich": "diagnose",
+   "titel": "Benzodiazepin-Überdosierung / -Intoxikation",
+   "kurz": "",
+   "suchbegriffe": [
+    "Benzodiazepin-Intoxikation",
+    "Benzodiazepin",
+    "Benzo",
+    "Tablettenvergiftung Benzodiazepin"
+   ],
+   "siehe": [
+    "Flumazenil"
+   ],
+   "abschnitte": [
+    {
+     "titel": "§ 2a – Flumazenil",
+     "text": "- Erwachsene: 0,2 mg i.v. (i.o.); ggf. Repetition nach 1 Minute bis maximal 1 mg\n- Kinder ab 1 Jahr: 0,01 mg/kg KG (max. 0,2 mg) langsam i.v. (i.o.); ggf. Repetition nach 1 Min. bis Gesamtdosis 0,05 mg/kg KG (max. 1 mg)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027",
+   "stand": "2025-10"
+  },
+  {
+   "id": "epistaxis",
+   "bereich": "diagnose",
+   "titel": "Kritische Epistaxis (Nasenbluten)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Nasenbluten",
+    "Epistaxis"
+   ],
+   "siehe": [
+    "Oxymetazolin 0,05 %"
+   ],
+   "abschnitte": [
+    {
+     "titel": "§ 2a – Oxymetazolin 0,05 %",
+     "text": "- nur Erwachsene / Adoleszente > 50 kg KG\n- 2–6 Sprühstöße in jedes betroffene Nasenloch\n- keine Repetition"
+    },
+    {
+     "titel": "Kompetenzmatrix",
+     "text": "Mechanische Nasentamponade bei Epistaxis: Kategorie 3 (rot)."
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "postpartale-blutung",
+   "bereich": "diagnose",
+   "titel": "Kritische postpartale Blutung",
+   "kurz": "",
+   "suchbegriffe": [
+    "postpartale Blutung",
+    "Nachblutung Geburt",
+    "PPH"
+   ],
+   "siehe": [
+    "Oxytocin"
+   ],
+   "abschnitte": [
+    {
+     "titel": "§ 2a – Oxytocin",
+     "text": "- 3 IE langsam i.v. (i.o.)\n- einmalige Repetition nach frühestens 5 Minuten"
+    },
+    {
+     "titel": "Geburtsbegleitung",
+     "text": "Die Beherrschung der Geburtsbegleitung bis zum Eintreffen des Notarztes ist eine wichtige Kompetenz (Kategorie 1, ohne Checkliste)."
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "schmerz",
+   "bereich": "diagnose",
+   "titel": "Kritischer Schmerzzustand (Analgesie-Übersicht)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Kritischer Schmerzzustand",
+    "Schmerz",
+    "Analgesie",
+    "Schmerztherapie",
+    "Schmerzmittel"
+   ],
+   "siehe": [
+    "Esketamin (intranasal, Kinder)",
+    "Fentanyl",
+    "Piritramid",
+    "Morphin",
+    "2c Trauma-Schmerz",
+    "2c Abdominalschmerz"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Kinder bis 11 Jahre",
+     "text": "**Esketamin** intranasal 2 mg/kg KG; ggf. Repetition der Hälfte der Initialdosis nach 10 Minuten (DIVI-Kindernotfallkarte)"
+    },
+    {
+     "titel": "Kinder ab 12 Jahre",
+     "text": "**Fentanyl** intranasal 0,002 mg/kg KG; ggf. Repetition der Hälfte nach 10 Minuten (DIVI-Kindernotfallkarte)"
+    },
+    {
+     "titel": "Erwachsene (außer ACS)",
+     "text": "**Fentanyl** i.v. (auch Kinder ab 12 J.): Einzeldosis 0,05 mg unverdünnt, ggf. Repetition nach 5 Minuten bis max. 0,2 mg\n**Piritramid** (> 50 kg KG): 7,5 mg als Kurzinfusion in 100 ml NaCl 0,9 % über mind. 5 Minuten, ggf. Repetition nach 10 Minuten"
+    },
+    {
+     "titel": "Akutes Koronarsyndrom",
+     "text": "**Morphin** (nur Erwachsene): 1–2 mg i.v. (i.o.), Repetition nach frühestens 5 Minuten bis max. 5 mg"
+    },
+    {
+     "titel": "2c-Delegation",
+     "text": "Traumatisch bedingter Schmerz und akuter Abdominalschmerz: Piritramid 7,5 mg als Kurzinfusion, **keine Repetition**, nicht bei Schwangeren, > 50 kg KG (siehe 2c-Algorithmen)"
+    },
+    {
+     "titel": "Kategorie 2 (gelb)",
+     "text": "Metamizol und N-Butylscopolamin – keine Dosierungsempfehlung in den ÄLRD-Dokumenten. Paracetamol: Kategorie 3b (keine Indikation laut § 2a)."
+    },
+    {
+     "titel": "Betäubungsmittel",
+     "text": "Opiatgabe: § 2a NotSanG gibt eine eigenständige Befugnis zu heilkundlichem Handeln. § 13 Abs. 1b BtMG ermöglicht in diesem Rahmen auch die Gabe von Betäubungsmitteln entsprechend der Empfehlungen der Medikamentenliste zu Indikation, Art und Weise der Verabreichung und Dosierung."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · ÄLRD Bayern: Medikamente nach § 4 Abs. 2 Nr. 2c NotSanG, Version 2.0, gültig ab 01.11.2025 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "hypoxie",
+   "bereich": "diagnose",
+   "titel": "Hypoxie / Hypoxämie",
+   "kurz": "",
+   "suchbegriffe": [
+    "Hypoxie",
+    "Hypoxämie",
+    "Sauerstoffmangel",
+    "niedrige Sättigung"
+   ],
+   "siehe": [
+    "Sauerstoff",
+    "2c Sauerstoff"
+   ],
+   "abschnitte": [
+    {
+     "titel": "§ 2a – kritische Hypoxie",
+     "text": "Sauerstoff 15 l/min über Maske; CPR: höchstmögliche inspiratorische Sauerstoffkonzentration"
+    },
+    {
+     "titel": "2c – moderate Hypoxämie (SpO2 < 94 %)",
+     "text": "- ohne Hyperkapnierisiko: 4 l/min über Nasenbrille, Ziel 94–98 %, max. 6 l/min\n- mit Hyperkapnierisiko: 2 l/min + LTOT, Ziel 88–92 %\n- SpO2 < 85 % = kritische Hypoxämie → Notarzt, § 2a"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · ÄLRD Bayern: Delegationsalgorithmen 2c (Stand 01.11.2025) · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025",
+   "stand": "2025-10"
+  },
+  {
+   "id": "abdominalschmerz",
+   "bereich": "diagnose",
+   "titel": "Akuter Abdominalschmerz",
+   "kurz": "",
+   "suchbegriffe": [
+    "Bauchschmerz",
+    "Bauchschmerzen",
+    "akutes Abdomen",
+    "Flankenschmerz",
+    "Kolik"
+   ],
+   "siehe": [
+    "2c Abdominalschmerz",
+    "Piritramid"
+   ],
+   "abschnitte": [
+    {
+     "titel": "2c-Algorithmus (Kurzfassung)",
+     "text": "Nicht tolerabler Schmerz, kein kritisches xABCDE-Problem, kein Ausschlusskriterium → IV-Zugang + 7,5 mg Piritramid als Kurzinfusion über mind. 5 Min.; danach nicht tolerabel → Notarzt"
+    },
+    {
+     "titel": "Ausschlusskriterien",
+     "text": "- Blutiger Stuhl / Teerstuhl oder blutiges / kaffeesatzartiges Erbrechen\n- Bekanntes Aortenaneurysma\n- Schwangerschaft\n- (zusätzlicher) Thoraxschmerz\n- Bei Oberbauchschmerz: ST-Strecken-Veränderungen im 12-Kanal-EKG"
+    },
+    {
+     "titel": "Wichtig",
+     "text": "Gastrointestinale Blutung, akutes Aortensyndrom und akutes Koronarsyndrom ausschließen. Akutes Abdomen / Peritonismus: dringliche Voranmeldung in Klinik mit chirurgischer Sofortbehandlungsmöglichkeit. Akutes Skrotum: Zielklinik mit operativer Urologie."
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Delegationsalgorithmen 2c (Stand 01.11.2025) · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025",
+   "stand": "2025-11"
+  },
+  {
+   "id": "spannungspneu",
+   "bereich": "diagnose",
+   "titel": "Spannungspneumothorax",
+   "kurz": "",
+   "suchbegriffe": [
+    "Spannungspneumothorax",
+    "Spannungspneu"
+   ],
+   "siehe": [
+    "Thoraxentlastungspunktion"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Thoraxentlastungspunktion (Checkliste § 2a)",
+     "text": "Patient mit vital bedrohlicher hämodynamischer und/oder respiratorischer Störung und Zeichen eines Spannungspneumothorax. Vorher Sauerstoffgabe / Beutel-Masken-Beatmung, falls ausreichend."
+    },
+    {
+     "titel": "Schockraum-A",
+     "text": "Thoraxentlastung ist eine präklinische Intervention mit Schockraum-A-Indikation."
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · ÄLRD Bayern: Delegationsalgorithmen 2c (Stand 01.11.2025)",
+   "stand": "2024-07"
+  },
+  {
+   "id": "todeszeichen",
+   "bereich": "sonstiges",
+   "titel": "Sichere Todeszeichen – Vorgehen NotSan",
+   "kurz": "",
+   "suchbegriffe": [
+    "Sichere Todeszeichen",
+    "Todeszeichen",
+    "verstorben",
+    "Leichenschau",
+    "Totenflecken",
+    "Totenstarre",
+    "Tod"
+   ],
+   "siehe": [
+    "Kreislaufstillstand"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Grundsätze",
+     "text": "- Unterlassen von Wiederbelebung allein auf Basis einer Patientenverfügung oder eines mutmaßlichen Willens ist für nichtärztliches Personal grundsätzlich nicht möglich\n- Jegliche Verzögerung indizierter Wiederbelebungsmaßnahmen ist inakzeptabel\n- Bei sicher verstorbenen Patienten besteht keine Notarztindikation; die Leichenschau ist keine Aufgabe des Notarztdienstes"
+    },
+    {
+     "titel": "Ausreichend Zugang schaffen",
+     "text": "Der Patient muss in vollem Umfang beurteilt werden können; Umstände, die die Untersuchung beeinträchtigen, entfernen. Bei „Erhängten“ ist der Zeitpunkt unklar – Wiederbelebung kann grundsätzlich noch erfolgreich sein. Auffindesituation einprägen und formlos dokumentieren."
+    },
+    {
+     "titel": "Ohne weitere Maßnahmen",
+     "text": "Großflächige, fortgeschrittene Fäulnis oder sicher nicht mit dem Leben vereinbare Verletzungen (z. B. Dekapitation) → keine weiteren medizinischen Maßnahmen, keine Notarzt-Nachforderung"
+    },
+    {
+     "titel": "Sonst immer",
+     "text": "Komplette ABCDE-Beurteilung, ggf. Maßnahmen und EKG (3-Kanal) – auch bei vermeintlich anderen „sicheren“ Todeszeichen.\nKeine weitere Behandlungsindikation nur bei **gemeinsamem** Vorliegen von **Totenstarre, Totenflecken und Asystolie**. Asystolie bis zum Einsatzende ableiten (mindestens 3 min). An Intoxikationen mit Hautveränderungen, Unterkühlung, Kontrakturen, Kältestarre u. v. m. denken."
+    },
+    {
+     "titel": "Kriterien nicht erfüllt",
+     "text": "In jedem Fall mit Wiederbelebung beginnen und fortführen, bis der Notarzt eintrifft; ist noch kein Notarzt auf Anfahrt, unverzüglich nachfordern."
+    },
+    {
+     "titel": "Kriterien erfüllt",
+     "text": "- Rückmeldung an die ILS: „Patient verstorben“ (den Begriff „Todesfeststellung“ vermeiden)\n- ILS beendet den Einsatz für anfahrenden / anfliegenden Notarzt\n- Dokumentation im Rettungsdienstprotokoll, Ausdruck am Einsatzort belassen\n- Keine (vorläufige) Todesbescheinigung durch NotSan"
+    },
+    {
+     "titel": "a) Identifizierter Verstorbener bei Angehörigen mit Zugangsrecht bzw. in Pflegeeinrichtung, kein Anhalt für nicht-natürlichen Tod",
+     "text": "Weder Notarzt noch Polizei alarmieren. Angehörige/Pflegekräfte an Hausarzt bzw. ärztlichen Bereitschaftsdienst **116 117** verweisen. Eintreffen eines Arztes nicht abwarten. Bei Überforderung der Angehörigen Unterstützung organisieren (Angehörige, Nachbarn, Seelsorger, Hausarzt, Notfallseelsorge über ILS); nur wenn niemand erreichbar ist, Polizei."
+    },
+    {
+     "titel": "b) Polizei alarmieren und Eintreffen grundsätzlich abwarten",
+     "text": "- fortgeschrittene Fäulnis / Verwesung\n- Verstorbene allein, bei „Dritten“ (außer Pflegeeinrichtungen), bei Angehörigen ohne Zugangsrecht, nicht sicher identifiziert oder im öffentlichen Raum\n- offensichtlicher Anhalt für nicht-natürlichen Tod\nKeine Pflicht, aktiv nach Anhaltspunkten zu suchen. Für einen weiteren Notfalleinsatz darf die Einsatzstelle in Rechtsgüterabwägung verlassen werden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "StMI/ÄLRD Bayern: Handlungsempfehlung Erkennen sicherer Todeszeichen durch NotSan, vom 31.03.2025",
+   "stand": "2025-03"
+  },
+  {
+   "id": "kompetenzmatrix",
+   "bereich": "sonstiges",
+   "titel": "Kompetenzmatrix NotSan Bayern (§ 2a)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Kompetenzmatrix",
+    "Kategorie grün",
+    "Kategorie gelb",
+    "Kategorie rot",
+    "Adenosin",
+    "Ceftriaxon",
+    "Fenoterol",
+    "Haloperidol",
+    "Levetiracetam",
+    "Lorazepam",
+    "Metoprolol",
+    "Norepinephrin",
+    "Promethazin",
+    "Propofol",
+    "Reproterol",
+    "Rocuronium",
+    "Tenecteplase",
+    "Thiopental",
+    "Captopril",
+    "Dimenhydrinat",
+    "Ondansetron",
+    "Paracetamol",
+    "Intubation",
+    "CPAP",
+    "NIV"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Kategorien",
+     "text": "- **Kategorie 1 (grün):** Kompetenzniveau soll von jedem Notfallsanitäter erreicht werden\n- **Kategorie 2 (gelb):** kann grundsätzlich durch zusätzliche Aus-/Fortbildung erreicht werden\n- **Kategorie 3 (rot):** Anwendungsbereich des § 2a NotSanG im Allgemeinen nicht gegeben (Kenntnis für Assistenz trotzdem essenziell)"
+    },
+    {
+     "titel": "Medikamente Kategorie 1 (grün)",
+     "text": "Adrenalin/Epinephrin · Amiodaron · Atropin · Cafedrin/Theodrenalin · Diazepam · Esketamin · Fentanyl · Flumazenil · Glucose · Ipratropiumbromid · Kristalloide Infusionslösung · Midazolam · Morphin · Naloxon · Oxymetazolin · Oxytocin · Piritramid · Prednison · Salbutamol · Sauerstoff · Thiamin · Urapidil"
+    },
+    {
+     "titel": "Medikamente Kategorie 2 (gelb)",
+     "text": "Acetylsalicylsäure · Dimetinden · Furosemid · Glyceroltrinitrat sublingual · Heparin · Lidocain · Magnesiumsulfat für Torsade de Pointes, Asthma / COPD · Metamizol · N-Butylscopolamin · Prednisolon · Tranexamsäure"
+    },
+    {
+     "titel": "Medikamente Kategorie 3a (rot): nicht ausbildbar",
+     "text": "Adenosin · Ceftriaxon · Fenoterol i.v. · Haloperidol · Kolloidale Infusionslösung · Levetiracetam · Lorazepam · Magnesiumsulfat (sonstige Indikationen) · Metoprolol · Norepinephrin · Promethazin · Propofol · Reproterol · Rocuronium · Tenecteplase · Thiopental"
+    },
+    {
+     "titel": "Medikamente Kategorie 3b (rot): keine Indikation lt. § 2a",
+     "text": "Captopril · Dimenhydrinat · Ondansetron · Paracetamol spp."
+    },
+    {
+     "titel": "Maßnahmen Kategorie 1 (grün)",
+     "text": "Applikationstechniken Medikamente (i.v., i.o., i.m., nasal, inhalativ, bukkal, rektal, oral) · Beutel-Masken-Beatmung (alle Altersgruppen) · Direkte Laryngoskopie · Endobronchiales Absaugen · Freimachen des Tracheostomas · Fremdkörperentfernung mit Magillzange · Geburtsbegleitung · Magenentlastung · Manuelle Defibrillation · Naso- und Oropharyngealtubus · Kardioversion · Reposition · Supraglottische Atemwegshilfe (alle Altersgruppen) · Thoraxentlastungspunktion · Tourniquet · Transthorakaler Schrittmacher · Trochanterschlinge (Beckenschlinge) · Wundtamponade mit hämostatischen Verbandstoffen"
+    },
+    {
+     "titel": "Maßnahmen Kategorie 2 (gelb)",
+     "text": "Endotracheale Intubation (Erwachsene und Adoleszente ab Beginn der Pubertät) · NIV-Therapie (Erwachsene und Adoleszente)"
+    },
+    {
+     "titel": "Maßnahmen Kategorie 3 (rot)",
+     "text": "Allgemein- und Regionalanästhesie · CPAP-Therapie Kinder · Endotracheale Intubation (Kinder) · Nabelvenenkatheter · Mechanische Nasentamponade bei Epistaxis · Operative Eingriffe · Perkutane transtracheale Ventilation · Thoraxdrainage · Zentraler Venenkatheter"
+    },
+    {
+     "titel": "Wichtig",
+     "text": "Bei der Versorgung nach § 2a sind das NotSanG, die Umsetzungshinweise des StMI sowie die Checklisten und die Medikamentenliste zu § 2a der ÄLRD zu beachten. Grundsätzlich sind die am wenigsten invasiven Maßnahmen anzuwenden."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025 · ÄLRD Bayern: Maßnahmenkatalog zu § 2a NotSanG, Stand 30.03.2023",
+   "stand": "2025-04"
+  },
+  {
+   "id": "delegation-2c",
+   "bereich": "sonstiges",
+   "titel": "2c-Delegation – Grundsätze",
+   "kurz": "2c",
+   "suchbegriffe": [
+    "Delegation",
+    "2c Delegation",
+    "Paragraph 2c",
+    "Umsetzungshinweise",
+    "Dokumentation 2c"
+   ],
+   "siehe": [
+    "Kompetenzmatrix"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Grundlage",
+     "text": "Delegation durch den ÄLRD nach Art. 12 Abs. 1 Satz 2 Nr. 6 BayRDG. Nur die von allen bayerischen ÄLRD konsentierten, bayernweit einheitlichen Maßnahmen sind für in Bayern tätige NotSan bindend – Vorgaben anderer Bundesländer oder Berufsverbände sind nicht delegiert."
+    },
+    {
+     "titel": "Altersgruppen",
+     "text": "Vorgaben gelten, sofern nicht anders festgelegt, für Erwachsene und Adoleszente (ab Beginn der Pubertät)."
+    },
+    {
+     "titel": "Ausschluss",
+     "text": "Ausschlusskriterien der Algorithmen führen automatisch zur Notarztnachforderung und Versorgung nach § 2a NotSanG. Nur kritische ABCDE-Probleme (mittelbare / unmittelbare Lebensbedrohung oder Gefahr von Folgeschäden) erfordern beim nicht-traumatologischen Patienten grundsätzlich den Notarzt; beim Trauma führt jedes xABCDE-Problem zur Notarzt-Nachforderung."
+    },
+    {
+     "titel": "Monitoring",
+     "text": "Basismonitoring (EKG, SpO2, Blutdruck) vor Behandlungsbeginn, vollständige Dokumentation im elektronischen Einsatzprotokoll; Körpertemperatur mindestens einmal erheben."
+    },
+    {
+     "titel": "IV-Zugang",
+     "text": "In der Regel nach zwei erfolglosen Punktionsversuchen misslungen. Kein invasiveres Vorgehen (z. B. kein IO-Zugang) nach Misslingen. Bei dringender Behandlungsindikation Notarzt; bei rein vorsorglichem Zugang Transport ohne weiteren Versuch. Offenhalten mit langsam tropfender balancierter Elektrolytlösung (Richtwert 1 Tropfen pro Sekunde)."
+    },
+    {
+     "titel": "Medikamente",
+     "text": "Medikamentengabe in Delegation ist an Präparat und Dosis der Algorithmen gebunden; andere vorgehaltene Medikamente (insbesondere Analgetika) sind nicht möglich."
+    },
+    {
+     "titel": "Transport",
+     "text": "Nach 2c-Maßnahmen immer Transport in geeignete Behandlungseinrichtung, sofern nicht anders vorgegeben (Ausnahme z. B. Absaugen Trachealkanüle). Verbleib vor Ort nur bei Transportverweigerung."
+    },
+    {
+     "titel": "Aufklärung / Verweigerung",
+     "text": "Einwilligung nach Aufklärung (gleiche Anforderungen wie beim Notarzt) bzw. mutmaßliche Einwilligung; im Protokoll dokumentieren. Verweigerung schriftlich mit Zeugen. Einwilligungsunfähiger Patient verweigert erforderliche Behandlung → Polizei zur Durchsetzung."
+    },
+    {
+     "titel": "Betäubungsmittel",
+     "text": "2c (Piritramid): Eintrag ins BtM-Buch mit Einsatznummer und Personalnummer, als behandelnder Arzt der delegierende ÄLRD; Unterschrift NotSan nicht erforderlich. § 2a: Eintrag unter Verweis auf § 2a NotSanG, kein Arzt anzugeben."
+    },
+    {
+     "titel": "Dokumentation (mindestens)",
+     "text": "- Klinisches Zustandsbild zu allen im Algorithmus abgefragten Aspekten\n- Einverständnis bzw. mutmaßliches Einverständnis\n- Maßnahme, Medikament mit Dosis, Überwachung\n- Zustandsveränderung nach Behandlung\n- Kennzeichnung als „2c-Behandlung“\nDelegation grundsätzlich nur mit elektronischer Dokumentation (NIDAPad)."
+    },
+    {
+     "titel": "Geltungsbereich",
+     "text": "Gilt auch bei Einsätzen bayerischer Rettungsmittel in anderen Bundesländern und in Tschechien (Umfang nach bayerischen Vorgaben); in Österreich kann von der Delegation kein Gebrauch gemacht werden. Maßnahmen nach § 2a sind in Österreich und Tschechien möglich."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "StMI Bayern: Umsetzungshinweise NotSan-Delegation, Stand 05.05.2022 · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025",
+   "stand": "2022-05"
+  },
+  {
+   "id": "paragraph-2a",
+   "bereich": "sonstiges",
+   "titel": "§ 2a NotSanG – eigenverantwortliche Heilkunde",
+   "kurz": "2a",
+   "suchbegriffe": [
+    "Paragraph 2a",
+    "2a NotSanG",
+    "eigenverantwortlich",
+    "Notkompetenz"
+   ],
+   "siehe": [
+    "Kompetenzmatrix",
+    "Ersteinschätzung und initiale Beurteilung xABCDE"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Voraussetzungen",
+     "text": "Heilkundliche Maßnahmen nur, wenn sie zur Abwendung von Lebensgefahr oder drohenden wesentlichen Folgeschäden intendiert und geeignet sind – nur bis zum Eintreffen des Notarztes oder dem Beginn einer sonstigen (tele)ärztlichen Behandlung."
+    },
+    {
+     "titel": "Notarzt",
+     "text": "Ist der Zustand lebensbedrohlich oder lässt er ohne Behandlung wesentliche Folgeschäden erwarten, ist sofort der Notarzt zu alarmieren – ebenso bei entsprechender Zustandsänderung im Verlauf. Ob wegen eines Zeitvorteils durch sofortigen Klinik-Transport auf den Notarzt verzichtet werden kann, kann nur die ILS beurteilen."
+    },
+    {
+     "titel": "Umfang",
+     "text": "Kompetenzniveau beachten (Kompetenzmatrix); grundsätzlich die am wenigsten invasiven Maßnahmen (Checklisten). Darüber hinaus nur im rechtfertigenden Notstand (§ 34 StGB), z. B. Intubation nach Versagen aller sonstigen Maßnahmen. Behandlung von allgemeinem „Unwohlsein“ ist kein Maßstab für „wesentliche Folgeschäden“."
+    },
+    {
+     "titel": "Gültige Dokumente",
+     "text": "Nur auf www.aelrd-bayern.de: Medikamentenliste § 2a, Maßnahmenkatalog, Checklisten, Kompetenzmatrix."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "StMI Bayern: Umsetzungshinweise NotSan-Delegation, Stand 05.05.2022 · ÄLRD Bayern: Maßnahmenkatalog zu § 2a NotSanG, Stand 30.03.2023 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
+   "stand": "2022-05"
+  },
+  {
+   "id": "news2",
+   "bereich": "sonstiges",
+   "titel": "Vereinfachter NEWS-2 (Bayern 2c)",
+   "kurz": "NEWS2",
+   "suchbegriffe": [
+    "NEWS",
+    "NEWS 2",
+    "Early Warning Score",
+    "Warnscore"
+   ],
+   "siehe": [
+    "2c Sepsis",
+    "2c NEWS"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Punkte",
+     "text": "- **Atemfrequenz (/min):** 3 = ≤ 8 · 1 = 9–11 · 0 = 12–20 · 2 = 21–24 · 3 = ≥ 25\n- **SpO2 (%):** 3 = ≤ 91 · 2 = 92–93 · 1 = 94–95 · 0 = ≥ 96\n- **Raumluft oder O2:** 2 = O2 · 0 = Raumluft\n- **Syst. Blutdruck (mmHg):** 3 = ≤ 90 · 2 = 91–100 · 1 = 101–110 · 0 = 111–219 · 3 = ≥ 220\n- **Pulsfrequenz (/min):** 3 = ≤ 40 · 1 = 41–50 · 0 = 51–90 · 1 = 91–110 · 2 = 111–130 · 3 = ≥ 131\n- **Bewusstsein:** 0 = wach · 3 = verwirrt, getrübt, bewusstlos (nur falls neu aufgetreten oder verschlechtert)\n- **Temperatur (°C):** 3 = ≤ 35,0 · 1 = 35,1–36,0 · 0 = 36,1–38,0 · 1 = 38,1–39,0 · 2 = ≥ 39,1\n- NEWS-2 nicht anwendbar bei Schwangeren und Patienten jünger als 16 Jahre"
+    },
+    {
+     "titel": "Verwendung",
+     "text": "- 2c V. a. Sepsis: ≥ 5 Punkte **plus** Hinweis auf Infektion (roter Warnwert allein ohne Wirkung)\n- 2c Risiko für relevante Zustandsverschlechterung: ≥ 5 Punkte **oder** 3 Punkte bei einem einzelnen Parameter (roter Warnwert)\n- SpO2-Skala 2 wird nicht verwendet; nur valide, zeitgleiche Werte"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Delegationsalgorithmen 2c (Stand 01.11.2025) · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025",
+   "stand": "2025-11"
+  },
+  {
+   "id": "schockraum",
+   "bereich": "sonstiges",
+   "titel": "Schockraum-Indikation (Bayerische Traumanetzwerke)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Schockraum-Indikation",
+    "Schockraum",
+    "Schockraum A",
+    "Schockraum B",
+    "Traumazentrum",
+    "Polytrauma",
+    "Unfallmechanismus"
+   ],
+   "siehe": [
+    "2c Verletzte Person",
+    "2c Trauma-Schmerz"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Schockraum-A-Indikation",
+     "text": "- **Präklinische Intervention** (z. B. Tourniquet, Atemwegssicherung, Thoraxentlastung, Katecholamingabe)\n- **Gestörte Vitalparameter** (Atemstörungen (SpO2 < 90 %), AF < 10 oder > 29 /min, RRsyst < 90 mmHg, Puls > 120 /min, Schockindex > 0,9, GCS < 13, Hypothermie < 35,0 °C)\n- **Kritische Verletzung** (penetrierende Verletzungen Rumpf/Hals, instabiler Thorax, mechanisch instabile Beckenverletzung, Amputationsverletzung proximal der Hände/Füße, Frakturen von 2 oder mehr proximalen langen Röhrenknochen (Oberarm, Oberschenkel), sensomotorisches Defizit nach Wirbelsäulenverletzung, Verbrennungen > 20 % und Grad ≥ 2)"
+    },
+    {
+     "titel": "Schockraumindikation nach Unfallmechanismus",
+     "text": "- (Ab)Sturz aus über 3 Metern Höhe\n- Großtierunfall (z. B. Rind, Pferd)\n- Kraftfahrzeugunfall mit Ejektion aus dem Fahrzeug und/oder sicheren Frakturzeichen an mindestens einem langen Röhrenknochen (Oberarm, Unterarm, Oberschenkel, Unterschenkel)"
+    },
+    {
+     "titel": "Geriatrischer Patient",
+     "text": "80 Jahre oder älter, oder 70 Jahre oder älter mit geriatrietypischer Multimorbidität (mindestens 3 chronische Erkrankungen)"
+    },
+    {
+     "titel": "Voranmeldung",
+     "text": "Dreistufig: Schockraum A / Schockraum B / „geriatrisches leichtes SHT“ (IVENA: PZC 222, Behandlungsdringlichkeit Notfallversorgung / rot)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern: Delegationsalgorithmen 2c (Stand 01.11.2025) · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025",
+   "stand": "2025-11"
+  }
+ ]
+}

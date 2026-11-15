@@ -37,6 +37,12 @@ export function markdownFuer(e) {
 
 // ---------- Vorlesetext ----------
 const SPRECH_ERSATZ = [
+  [/(\d+(?:,\d+)?(?:\/\d+)?\s?(?:mg|g|IE|µg))\s?\/\s?(\d+(?:,\d+)?\s?ml)/g, "$1 in $2"],
+  [/(\d)\s?l\/min/g, "$1 Liter pro Minute"], [/mg\/dl/g, "Milligramm pro Deziliter"],
+  [/mg\/kg\s?KG/g, "Milligramm pro Kilogramm Körpergewicht"], [/\bkg\s?KG\b/g, "Kilogramm Körpergewicht"],
+  [/\bRR\s?syst\.?/g, "systolischer Blutdruck"], [/\bBZ\b/g, "Blutzucker"], [/\bAF\b/g, "Atemfrequenz"],
+  [/\bNotSan\b/g, "Notfallsanitäter"], [/\bLJ\b/g, "Lebensjahr"], [/\bKOF\b/g, "Körperoberfläche"],
+  [/§\s?2a/g, "Paragraf 2 a"], [/\b2c\b/g, "2 c"], [/\bca\b/g, "circa"],
   [/\bi\.\s?v\./gi, "intravenös"], [/\bi\.\s?o\./gi, "intraossär"], [/\bi\.\s?m\./gi, "intramuskulär"],
   [/\bs\.\s?l\./gi, "sublingual"], [/\bp\.\s?o\./gi, "oral"], [/\bi\.\s?n\./gi, "intranasal"],
   [/\bs\.\s?c\./gi, "subkutan"], [/\bz\.\s?B\./g, "zum Beispiel"], [/\bggf\./g, "gegebenenfalls"],
@@ -56,9 +62,9 @@ export function sprechbar(text) {
     .replace(/\*\*|__|`|#/g, "")
     .replace(/^\s*[-•*]\s+/gm, "")       // Aufzählungszeichen
     .replace(/\n+/g, ". ")
-    .replace(/\.\s*\./g, ".");
+    .replace(/(?:\.\s*){2,}/g, ". ");
   for (const [re, ers] of SPRECH_ERSATZ) t = t.replace(re, ers);
-  return t.replace(/:\s*\.\s*/g, ": ").replace(/\s{2,}/g, " ").replace(/\s+([.,])/g, "$1").trim();
+  return t.replace(/(?:\.\s*){2,}/g, ". ").replace(/:\s*\.\s*/g, ": ").replace(/\s{2,}/g, " ").replace(/\s+([.,])/g, "$1").trim();
 }
 
 export function vorlesetextFuer(e) {

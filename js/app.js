@@ -403,7 +403,7 @@ function zeigeEinstellungen() {
         <button id="export" class="sekundaer">⬇️ Export (JSON)</button>
         <label class="sekundaer datei">⬆️ Import (JSON)<input id="import" type="file" accept=".json,application/json" hidden></label>
       </div>
-      <p class="leise">Import überschreibt Einträge mit gleicher ID. Beispieldaten: <code>daten/beispiel-eintraege.json</code></p>
+      <p class="leise">Import überschreibt Einträge mit gleicher ID (eigene Suchbegriffe bleiben erhalten). ÄLRD-Bayern-Daten: <code>daten/aelrd-bayern-import.json</code></p>
 
       <h3>Für den Siri-Kurzbefehl</h3>
       <dl class="info klein">
@@ -451,6 +451,8 @@ function zeigeEinstellungen() {
         const b = writeBatch(db);
         for (const roh of liste.slice(i, i + 400)) {
           const alt = roh.id ? st.eintraege.find(x => x.id === roh.id) : null;
+          // eigene / per Siri gelernte Suchbegriffe beim Überschreiben behalten
+          if (alt) roh.suchbegriffe = [...new Set([...(roh.suchbegriffe || []), ...(alt.suchbegriffe || [])])];
           await speichere(roh, alt, b);
         }
         b.set(doc(db, "meta", "stand"), { datenversion: increment(1), geaendert: serverTimestamp() }, { merge: true });

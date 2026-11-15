@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.3.0 (Build 11) – 2026-11-15
+- Neuer Bereich Maßnahmen; Import behält eigene Suchbegriffe; Vorlesen verbessert (Dosierungen, Abkürzungen); Importdatei ÄLRD Bayern (83 Einträge)
+
 ## v1.2.1 (Build 10) – 2026-11-15
 - Siri-Kurzbefehl v1.5: Absturz bei „kein Treffer“ behoben (Schlüsselpfad „document“)
 

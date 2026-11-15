@@ -22,6 +22,10 @@ export const BEREICHE = {
     name: "Algorithmen & SAA", icon: "📋",
     vorlage: ["Indikation", "Ablauf", "Besonderheiten"]
   },
+  massnahme: {
+    name: "Maßnahmen", icon: "🩹",
+    vorlage: ["Indikation", "Weniger invasiv zuerst", "Maßnahmen", "Voraussetzung", "Folgemaßnahmen"]
+  },
   leitstelle: {
     name: "Leitstellen", icon: "📡", telefon: true,
     vorlage: ["Zuständigkeitsbereich", "Telefon", "Funk / Kanäle", "Besonderheiten"]
