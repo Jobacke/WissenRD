@@ -609,7 +609,7 @@ function zeigeSymptomCheck(b, liste) {
     const treffer = st.eintraege.filter(e => e.bereich === "diagnose" && (e.symptome || []).length)
       .map(e => ({ e, m: e.symptome.filter(x => sel.has(x)) }))
       .filter(t => t.m.length)
-      .sort((x, y) => y.m.length - x.m.length || y.m.length / y.e.symptome.length - x.m.length / x.e.symptome.length || x.e.titel.localeCompare(y.e.titel, "de"));
+      .sort((x, y) => y.m.length - x.m.length || x.e.titel.localeCompare(y.e.titel, "de"));   // Anzahl Treffer, dann alphabetisch
     box.innerHTML = `
       <div class="sym-kopf"><strong>${treffer.length ? `${treffer.length} mögliche Verdachtsdiagnose${treffer.length === 1 ? "" : "n"}` : "Keine passende Verdachtsdiagnose"}</strong>
         <span>${sel.size} Symptom${sel.size === 1 ? "" : "e"} gewählt · <button class="link" id="sym-leeren">alle abwählen</button></span></div>

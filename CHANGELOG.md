@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.9.2 (Build 22) – 2026-11-16
+- Symptom-Check: Sortierung nach Anzahl passender Symptome, dann alphabetisch
+
 ## v1.9.1 (Build 21) – 2026-11-16
 - Symptom-Check: widersprüchliche Symptome (Puls schnell/langsam, Blutdruck hoch/niedrig, Atmung, Temperatur, Pupillen) nur entweder/oder wählbar
 
