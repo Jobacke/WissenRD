@@ -62,6 +62,7 @@ E.append({
 if __name__ == "__main__":
     ids = [e["id"] for e in E]
     assert len(ids) == len(set(ids))
+    import gen_symptome; gen_symptome.ergaenze(E)   # Symptome für den Symptom-Check
     json.dump({"app": "Wissen RD", "titel": "Import Ergänzungen ohne ÄLRD-Bayern-Leitlinie",
                "hinweis": "Ausnahmen auf ausdrücklichen Wunsch: Inhalte nach Vorgaben anderer Bundesländer, in jedem Eintrag als „Keine Leitlinie des ÄLRD in Bayern“ gekennzeichnet.",
                "eintraege": E}, open(sys.argv[1], "w", encoding="utf-8"), ensure_ascii=False, indent=1)

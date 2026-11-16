@@ -735,6 +735,7 @@ eintrag("schockraum", "sonstiges", "Schockraum-Indikation (Bayerische Traumanetz
 if __name__ == "__main__":
     ids = [e["id"] for e in E]
     assert len(ids) == len(set(ids)), "doppelte IDs"
+    import gen_symptome; gen_symptome.ergaenze(E)   # Symptome für den Symptom-Check
     out = {"app": "Wissen RD", "titel": "Import ÄLRD Bayern",
            "hinweis": "Ausschließlich aus den gültigen Dokumenten der ÄLRD Bayern (www.aelrd-bayern.de, NotSan-Seite), Stand der Prüfung 15.11.2026. Vor Nutzung mit den Originaldokumenten abgleichen.",
            "eintraege": E}

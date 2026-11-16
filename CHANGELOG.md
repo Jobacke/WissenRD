@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.9.0 (Build 20) – 2026-11-16
+- „Siehe auch“ springt direkt zum verwiesenen Eintrag; Symptom-Check im Bereich Symptome: Symptome antippen → mögliche Verdachtsdiagnosen; Symptome bei allen Verdachtsdiagnosen, 12 neue Verdachtsdiagnosen
+
 ## v1.8.1 (Build 19) – 2026-11-16
 - Kliniken: Entfernung jetzt als Fahrstrecke mit Fahrzeit (Straßennetz OpenStreetMap, Pkw, ohne Verkehr/Sonderrechte); Luftlinie nur noch als gekennzeichnete Notlösung ohne Netz
 

@@ -350,7 +350,6 @@
    "suchbegriffe": [
     "LAE Abkürzung",
     "Abkürzung LAE",
-    "Lungenembolie",
     "LE"
    ],
    "siehe": [],
@@ -397,7 +396,7 @@
   {
    "id": "abk-sht",
    "bereich": "abkuerzung",
-   "titel": "SHT",
+   "titel": "SHT (Abkürzung)",
    "kurz": "",
    "suchbegriffe": [
     "SHT Abkürzung",
@@ -796,7 +795,7 @@
     "AVPU",
     "WAO",
     "ZOPS",
-    "SHT"
+    "SHT (Abkürzung)"
    ],
    "abschnitte": [
     {

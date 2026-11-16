@@ -2066,6 +2066,14 @@
    ],
    "abschnitte": [
     {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Leitsymptom: Brustschmerz / Engegefühl, ggf. mit Ausstrahlung\n- Brustschmerz-Äquivalente: Atemnot, Übelkeit, Oberbauchbeschwerden, ausgeprägte Schwäche – häufig bei Älteren, Diabetikern und Frauen\n- Vegetativ: Angst, Unruhe, Schwitzen, Übelkeit / Erbrechen\n- Ggf. Herzrasen / Herzstolpern"
+    },
+    {
+     "titel": "Bayern-Bezug (ÄLRD)",
+     "text": "- ÄLRD-Bayern-Empfehlung ACS: 12-Kanal-EKG ≤ 10 Minuten nach Erstkontakt; Unterscheidung STEMI / NSTE-ACS über das EKG\n- Hochrisikokriterien NSTE-ACS u. a.: hämodynamische Instabilität oder kardiogener Schock, therapierefraktärer infarkttypischer Thoraxschmerz, lebensbedrohliche Arrhythmien oder Herzstillstand, akute Herzinsuffizienz"
+    },
+    {
      "titel": "Medikamente nach § 2a (Kategorie 1)",
      "text": "**Morphin** – kritischer Schmerzzustand bei akutem Koronarsyndrom:\n- nur Erwachsene\n- 1–2 mg i.v. (i.o.)\n- Repetition nach frühestens 5 Minuten bis maximal 5 mg"
     },
@@ -2087,12 +2095,23 @@
     },
     {
      "titel": "Hinweis",
-     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+     "text": "Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben. Die „Typischen Symptome“ stammen aus Fachleitlinien bzw. Fachliteratur (siehe Quelle) und dienen nur der Einordnung."
     }
    ],
    "sprechtext": "",
-   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025 · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025 · ÄBRD Bayern: Stellungnahme gegen 2c-Algorithmus arterielle Hypertension, 08.01.2026",
-   "stand": "2025-10"
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025 · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025 · ÄBRD Bayern: Stellungnahme gegen 2c-Algorithmus arterielle Hypertension, 08.01.2026 · Symptome: ESC-Leitlinie Akutes Koronarsyndrom 2023 (DGK Pocket-Leitlinie), u. a. nach DocCheck Flexikon · ÄLRD Bayern / RDA: Verdachtsdiagnose akutes Koronarsyndrom, Version 2.0 (2025)",
+   "stand": "2025-10",
+   "symptome": [
+    "sym-brustschmerz",
+    "sym-ausstrahlung",
+    "sym-atemnot",
+    "sym-oberbauch",
+    "sym-kaltschweissig",
+    "sym-schwitzen",
+    "sym-uebelkeit",
+    "sym-unruhe",
+    "sym-palpitationen"
+   ]
   },
   {
    "id": "hypoglykaemie",
@@ -2135,7 +2154,24 @@
    ],
    "sprechtext": "",
    "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · ÄLRD Bayern: Delegationsalgorithmen 2c (Stand 01.11.2025) · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025",
-   "stand": "2025-10"
+   "stand": "2025-10",
+   "symptome": [
+    "sym-schwitzen",
+    "sym-zittern",
+    "sym-heisshunger",
+    "sym-palpitationen",
+    "sym-verwirrtheit",
+    "sym-sprache",
+    "sym-sehstoerung",
+    "sym-kopfschmerz",
+    "sym-unruhe",
+    "sym-schwindel",
+    "sym-bewusstseinsstoerung",
+    "sym-krampfanfall",
+    "sym-laehmung",
+    "sym-uebelkeit",
+    "sym-diabetes"
+   ]
   },
   {
    "id": "sepsis",
@@ -2175,7 +2211,19 @@
    ],
    "sprechtext": "",
    "quelle": "ÄLRD Bayern: Delegationsalgorithmen 2c (Stand 01.11.2025) · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025",
-   "stand": "2025-11"
+   "stand": "2025-11",
+   "symptome": [
+    "sym-fieber",
+    "sym-unterkuehlt",
+    "sym-schuettelfrost",
+    "sym-infekt",
+    "sym-tachypnoe",
+    "sym-spo2-niedrig",
+    "sym-tachykardie",
+    "sym-schock",
+    "sym-verwirrtheit",
+    "sym-husten"
+   ]
   },
   {
    "id": "anaphylaxie",
@@ -2194,6 +2242,10 @@
    ],
    "abschnitte": [
     {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Rasches Auftreten (Minuten bis Stunden) nach Allergenkontakt\n- Haut: Juckreiz, Rötung (Flush), Quaddeln, Schwellung (Angioödem)\n- Atemwege: Atemnot, Stridor, Bronchospastik\n- Kreislauf: Tachykardie, Blutdruckabfall bis Schock und Kreislaufstillstand\n- Magen-Darm: Übelkeit, Erbrechen, Bauchschmerzen\n- ZNS: Unruhe, Bewusstseinsstörung\n- Symptome können ein oder mehrere Organsysteme betreffen; erneutes Auftreten innerhalb von 24 Stunden möglich"
+    },
+    {
      "titel": "§ 2a – Epinephrin (Adrenalin) i.m.",
      "text": "- Erwachsene: 0,5 mg i.m.; Repetition (i.m.) nach 5 Minuten bei ausbleibender Wirkung\n- Kinder (siehe DIVI-Kindernotfallkarte): 0,01 mg/kg KG i.m.; Repetition (i.m.) nach 5–10 Minuten bei ausbleibender Wirkung\n- Ampulle 1 mg / 1 ml"
     },
@@ -2203,12 +2255,26 @@
     },
     {
      "titel": "Hinweis",
-     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+     "text": "Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben. Die „Typischen Symptome“ stammen aus Fachleitlinien bzw. Fachliteratur (siehe Quelle) und dienen nur der Einordnung."
     }
    ],
    "sprechtext": "",
-   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
-   "stand": "2025-10"
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025 · Symptome: S2k-Leitlinie Akuttherapie und Management der Anaphylaxie 2021 (AWMF 061-025)",
+   "stand": "2025-10",
+   "symptome": [
+    "sym-quaddeln",
+    "sym-schwellung",
+    "sym-atemnot",
+    "sym-stridor",
+    "sym-giemen",
+    "sym-schock",
+    "sym-tachykardie",
+    "sym-uebelkeit",
+    "sym-bauchschmerz",
+    "sym-unruhe",
+    "sym-bewusstseinsstoerung",
+    "sym-allergen"
+   ]
   },
   {
    "id": "kreislaufstillstand",
@@ -2229,6 +2295,10 @@
     "Sichere Todeszeichen"
    ],
    "abschnitte": [
+    {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Keine Reaktion auf Ansprache und Berührung\n- Keine normale Atmung (Schnappatmung zählt als „nicht normal“)\n- Kein Lebenszeichen / kein tastbarer Puls"
+    },
     {
      "titel": "Epinephrin (Adrenalin) § 2a",
      "text": "- Erwachsene: nicht defibrillierbar 1 mg i.v. (i.o.) sobald möglich; defibrillierbar 1 mg i.v. (i.o.) nach 3. Defibrillation; Repetition alle 3–5 Minuten unter ALS\n- Kinder (DIVI-Kindernotfallkarte): 0,01 mg/kg KG i.v. (i.o.) – nicht defibrillierbar sobald möglich, defibrillierbar nach 3. Defibrillation; Repetition alle 3–5 Minuten"
@@ -2255,8 +2325,13 @@
     }
    ],
    "sprechtext": "",
-   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025 · StMI/ÄLRD Bayern: Handlungsempfehlung Erkennen sicherer Todeszeichen durch NotSan, vom 31.03.2025",
-   "stand": "2025-10"
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025 · StMI/ÄLRD Bayern: Handlungsempfehlung Erkennen sicherer Todeszeichen durch NotSan, vom 31.03.2025 · Symptome: ERC-Leitlinien 2025 (GRC) – Reanimation / Instabilitätszeichen bei Rhythmusstörungen",
+   "stand": "2025-10",
+   "symptome": [
+    "sym-bewusstseinsstoerung",
+    "sym-keine-atmung",
+    "sym-pulslos"
+   ]
   },
   {
    "id": "bradykardie",
@@ -2274,6 +2349,10 @@
    ],
    "abschnitte": [
     {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Langsamer Puls\n- Zeichen der Instabilität: Schock / Blutdruckabfall, Synkope, Brustschmerz (Myokardischämie), Herzinsuffizienz\n- Schwindel, Bewusstseinsstörung, kalte blasse Haut"
+    },
+    {
      "titel": "§ 2a – Atropinsulfat",
      "text": "- Erwachsene: initial 0,5 mg i.v. (i.o.); ggf. Wiederholung alle 3–5 Minuten bis maximal 3 mg\n- Kinder: 0,01 mg/kg KG i.v. (i.o.), max. 0,5 mg"
     },
@@ -2283,12 +2362,21 @@
     },
     {
      "titel": "Hinweis",
-     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+     "text": "Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben. Die „Typischen Symptome“ stammen aus Fachleitlinien bzw. Fachliteratur (siehe Quelle) und dienen nur der Einordnung."
     }
    ],
    "sprechtext": "",
-   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024",
-   "stand": "2025-10"
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Symptome: ERC-Leitlinien 2025 (GRC) – Reanimation / Instabilitätszeichen bei Rhythmusstörungen",
+   "stand": "2025-10",
+   "symptome": [
+    "sym-bradykardie",
+    "sym-schock",
+    "sym-synkope",
+    "sym-schwindel",
+    "sym-bewusstseinsstoerung",
+    "sym-kaltschweissig",
+    "sym-brustschmerz"
+   ]
   },
   {
    "id": "tachykardie",
@@ -2304,6 +2392,10 @@
    ],
    "abschnitte": [
     {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Herzrasen, schneller Puls\n- Zeichen der Instabilität: Schock / Blutdruckabfall, Synkope, Brustschmerz (Myokardischämie), Herzinsuffizienz (Atemnot)\n- Schwindel, Bewusstseinsstörung"
+    },
+    {
      "titel": "Elektrische Kardioversion (Checkliste § 2a)",
      "text": "Tachykarde Rhythmusstörung **und** hämodynamisch instabil **und** bewusstlos. Kurznarkose oder Analgosedierung bei nicht bewusstlosen Patienten ist nur vom Notarzt durchzuführen."
     },
@@ -2313,12 +2405,22 @@
     },
     {
      "titel": "Hinweis",
-     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+     "text": "Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben. Die „Typischen Symptome“ stammen aus Fachleitlinien bzw. Fachliteratur (siehe Quelle) und dienen nur der Einordnung."
     }
    ],
    "sprechtext": "",
-   "quelle": "ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
-   "stand": "2024-07"
+   "quelle": "ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025 · Symptome: ERC-Leitlinien 2025 (GRC) – Reanimation / Instabilitätszeichen bei Rhythmusstörungen",
+   "stand": "2024-07",
+   "symptome": [
+    "sym-tachykardie",
+    "sym-palpitationen",
+    "sym-schock",
+    "sym-synkope",
+    "sym-brustschmerz",
+    "sym-atemnot",
+    "sym-schwindel",
+    "sym-bewusstseinsstoerung"
+   ]
   },
   {
    "id": "status-epilepticus",
@@ -2339,6 +2441,10 @@
    ],
    "abschnitte": [
     {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Anhaltender Krampfanfall oder Serie von Anfällen ohne Wiedererlangen des Bewusstseins dazwischen\n- Bewusstseinsstörung, ggf. Zyanose"
+    },
+    {
      "titel": "Generalisierter Status epilepticus – Midazolam § 2a",
      "text": "**Intranasal** (Ampulle 15 mg / 3 ml): Erwachsene 10 mg, einmalige Repetition bei Krampfpersistenz nach frühestens 5 Minuten; Kinder 0,3 mg/kg KG (DIVI-Kindernotfallkarte)\n**Intravenös** (Ampulle 5 mg / 5 ml, in der Regel nur, wenn i.v.-Zugang bei Krampfbeginn bereits etabliert): Erwachsene initial 5 mg, einmalige Repetition; Kinder 0,1 mg/kg KG i.v. (i.o.)"
     },
@@ -2356,12 +2462,17 @@
     },
     {
      "titel": "Hinweis",
-     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+     "text": "Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben. Die „Typischen Symptome“ stammen aus Fachleitlinien bzw. Fachliteratur (siehe Quelle) und dienen nur der Einordnung."
     }
    ],
    "sprechtext": "",
-   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
-   "stand": "2025-10"
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025 · Symptome: Notfallmedizinische Fachliteratur",
+   "stand": "2025-10",
+   "symptome": [
+    "sym-krampfanfall",
+    "sym-bewusstseinsstoerung",
+    "sym-zyanose"
+   ]
   },
   {
    "id": "pseudokrupp",
@@ -2381,6 +2492,10 @@
    ],
    "abschnitte": [
     {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Bellender Husten, Heiserkeit\n- Inspiratorischer Stridor, Atemnot\n- Typisch bei Kleinkindern, oft nachts\n- Unruhe; kritisch: Erschöpfung, Zyanose, Bewusstseinsstörung"
+    },
+    {
      "titel": "§ 2a – Epinephrin zur Inhalation",
      "text": "Kritische akute stenosierende Laryngotracheitis (Pseudokrupp), kritische Schwellung / Ödem der oberen Atemwege:\n- Erwachsene und Kinder: 5 mg (5 ml) zur Inhalation (Kinder siehe DIVI-Kindernotfallkarte)\n- Repetition bei Symptompersistenz und (kardiovaskulärer) Verträglichkeit"
     },
@@ -2390,12 +2505,19 @@
     },
     {
      "titel": "Hinweis",
-     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+     "text": "Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben. Die „Typischen Symptome“ stammen aus Fachleitlinien bzw. Fachliteratur (siehe Quelle) und dienen nur der Einordnung."
     }
    ],
    "sprechtext": "",
-   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027",
-   "stand": "2025-10"
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Symptome: Notfallmedizinische Fachliteratur",
+   "stand": "2025-10",
+   "symptome": [
+    "sym-bellender-husten",
+    "sym-stridor",
+    "sym-atemnot",
+    "sym-unruhe",
+    "sym-kleinkind"
+   ]
   },
   {
    "id": "bronchospastik",
@@ -2418,6 +2540,10 @@
    ],
    "abschnitte": [
     {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Atemnot, Giemen, verlängerte Ausatmung\n- Husten, schnelle Atmung\n- Niedrige Sauerstoffsättigung, Zyanose\n- Unruhe; kritisch: Erschöpfung, „stille Lunge“, Bewusstseinsstörung\n- Häufig bekanntes Asthma / COPD"
+    },
+    {
      "titel": "§ 2a – Salbutamol (Inhalation)",
      "text": "- Erwachsene: 2,5 mg (5 ml) initial; Repetition bei Symptompersistenz und Verträglichkeit\n- Kinder (DIVI-Kindernotfallkarte): 2,5 mg (5 ml); Repetition entsprechend\n- Restmenge der Verneblungsmaske beachten!"
     },
@@ -2439,12 +2565,22 @@
     },
     {
      "titel": "Hinweis",
-     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+     "text": "Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben. Die „Typischen Symptome“ stammen aus Fachleitlinien bzw. Fachliteratur (siehe Quelle) und dienen nur der Einordnung."
     }
    ],
    "sprechtext": "",
-   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025 · ÄLRD Bayern: Medikamente nach § 4 Abs. 2 Nr. 2c NotSanG, Version 2.0, gültig ab 01.11.2025",
-   "stand": "2025-10"
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025 · ÄLRD Bayern: Medikamente nach § 4 Abs. 2 Nr. 2c NotSanG, Version 2.0, gültig ab 01.11.2025 · Symptome: Notfallmedizinische Fachliteratur",
+   "stand": "2025-10",
+   "symptome": [
+    "sym-atemnot",
+    "sym-giemen",
+    "sym-husten",
+    "sym-tachypnoe",
+    "sym-zyanose",
+    "sym-spo2-niedrig",
+    "sym-unruhe",
+    "sym-lunge-bekannt"
+   ]
   },
   {
    "id": "hypertensiver-notfall",
@@ -2486,7 +2622,15 @@
    ],
    "sprechtext": "",
    "quelle": "ÄBRD Bayern: Stellungnahme gegen 2c-Algorithmus arterielle Hypertension, 08.01.2026 · ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027",
-   "stand": "2026-01"
+   "stand": "2026-01",
+   "symptome": [
+    "sym-hypertonie",
+    "sym-atemnot",
+    "sym-brustschmerz",
+    "sym-laehmung",
+    "sym-sprache",
+    "sym-hypertonie-bekannt"
+   ]
   },
   {
    "id": "hypotension",
@@ -2506,6 +2650,10 @@
    ],
    "abschnitte": [
     {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Niedriger Blutdruck, schneller Puls\n- Kalte, blasse, schweißige Haut\n- Schwindel, Kollaps, Verwirrtheit"
+    },
+    {
      "titel": "§ 2a – Cafedrin / Theodrenalin",
      "text": "Kritische Hypotension trotz adäquater bzw. mit Kontraindikation für i.v.-Flüssigkeitsgabe:\n- Erwachsene: initial 0,5 ml i.v. (i.o.); ggf. Repetition alle 5 Minuten bis max. 4 ml (2 Ampullen)\n- Kinder: keine Zulassung"
     },
@@ -2519,12 +2667,20 @@
     },
     {
      "titel": "Hinweis",
-     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+     "text": "Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben. Die „Typischen Symptome“ stammen aus Fachleitlinien bzw. Fachliteratur (siehe Quelle) und dienen nur der Einordnung."
     }
    ],
    "sprechtext": "",
-   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027",
-   "stand": "2025-10"
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Symptome: Notfallmedizinische Fachliteratur",
+   "stand": "2025-10",
+   "symptome": [
+    "sym-schock",
+    "sym-tachykardie",
+    "sym-kaltschweissig",
+    "sym-synkope",
+    "sym-schwindel",
+    "sym-verwirrtheit"
+   ]
   },
   {
    "id": "opiat-intox",
@@ -2544,6 +2700,10 @@
    ],
    "abschnitte": [
     {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Trias: Bewusstseinsstörung, enge (stecknadelkopfgroße) Pupillen, Atemdepression\n- Die Trias muss nicht vollständig sein; bei längerer Hypoxie können die Pupillen weit werden\n- Hinweise: Spritzen, Injektionsstellen, Schmerzpflaster"
+    },
+    {
      "titel": "§ 2a – Naloxon nasal",
      "text": "- Anwendung zugelassen ab 14. Lebensjahr\n- 1,8 mg intranasal\n- Repetition nach 2–3 Minuten oder bei Symptomrückkehr"
     },
@@ -2553,12 +2713,19 @@
     },
     {
      "titel": "Hinweis",
-     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+     "text": "Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben. Die „Typischen Symptome“ stammen aus Fachleitlinien bzw. Fachliteratur (siehe Quelle) und dienen nur der Einordnung."
     }
    ],
    "sprechtext": "",
-   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024",
-   "stand": "2025-10"
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · Symptome: Notfallmedizinische Fachliteratur (Toxidrom), u. a. DocCheck Flexikon / AMBOSS",
+   "stand": "2025-10",
+   "symptome": [
+    "sym-bewusstseinsstoerung",
+    "sym-miosis",
+    "sym-atemdepression",
+    "sym-opioid-hinweis",
+    "sym-zyanose"
+   ]
   },
   {
    "id": "benzo-intox",
@@ -2576,17 +2743,27 @@
    ],
    "abschnitte": [
     {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Schläfrigkeit bis Bewusstlosigkeit\n- Atemdepression (v. a. bei Mischintoxikation, z. B. mit Alkohol)\n- Gang- und Koordinationsstörung\n- Hinweise: Tablettenpackungen, Anamnese"
+    },
+    {
      "titel": "§ 2a – Flumazenil",
      "text": "- Erwachsene: 0,2 mg i.v. (i.o.); ggf. Repetition nach 1 Minute bis maximal 1 mg\n- Kinder ab 1 Jahr: 0,01 mg/kg KG (max. 0,2 mg) langsam i.v. (i.o.); ggf. Repetition nach 1 Min. bis Gesamtdosis 0,05 mg/kg KG (max. 1 mg)"
     },
     {
      "titel": "Hinweis",
-     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+     "text": "Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben. Die „Typischen Symptome“ stammen aus Fachleitlinien bzw. Fachliteratur (siehe Quelle) und dienen nur der Einordnung."
     }
    ],
    "sprechtext": "",
-   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027",
-   "stand": "2025-10"
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Symptome: Notfallmedizinische Fachliteratur (Toxidrom), u. a. DocCheck Flexikon / AMBOSS",
+   "stand": "2025-10",
+   "symptome": [
+    "sym-bewusstseinsstoerung",
+    "sym-atemdepression",
+    "sym-benzo-hinweis",
+    "sym-schwindel"
+   ]
   },
   {
    "id": "epistaxis",
@@ -2602,6 +2779,10 @@
    ],
    "abschnitte": [
     {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Starke Blutung aus der Nase, ggf. Blut im Rachen\n- Risiko: Blutverdünner, hoher Blutdruck\n- Bei starkem Blutverlust Schockzeichen"
+    },
+    {
      "titel": "§ 2a – Oxymetazolin 0,05 %",
      "text": "- nur Erwachsene / Adoleszente > 50 kg KG\n- 2–6 Sprühstöße in jedes betroffene Nasenloch\n- keine Repetition"
     },
@@ -2611,12 +2792,17 @@
     },
     {
      "titel": "Hinweis",
-     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+     "text": "Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben. Die „Typischen Symptome“ stammen aus Fachleitlinien bzw. Fachliteratur (siehe Quelle) und dienen nur der Einordnung."
     }
    ],
    "sprechtext": "",
-   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
-   "stand": "2025-10"
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025 · Symptome: Notfallmedizinische Fachliteratur",
+   "stand": "2025-10",
+   "symptome": [
+    "sym-nasenbluten",
+    "sym-antikoagulation",
+    "sym-hypertonie"
+   ]
   },
   {
    "id": "postpartale-blutung",
@@ -2633,6 +2819,10 @@
    ],
    "abschnitte": [
     {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Starke vaginale Blutung nach der Geburt\n- Schockzeichen: schneller Puls, Blutdruckabfall, kalte blasse Haut"
+    },
+    {
      "titel": "§ 2a – Oxytocin",
      "text": "- 3 IE langsam i.v. (i.o.)\n- einmalige Repetition nach frühestens 5 Minuten"
     },
@@ -2642,12 +2832,19 @@
     },
     {
      "titel": "Hinweis",
-     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+     "text": "Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben. Die „Typischen Symptome“ stammen aus Fachleitlinien bzw. Fachliteratur (siehe Quelle) und dienen nur der Einordnung."
     }
    ],
    "sprechtext": "",
-   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025",
-   "stand": "2025-10"
+   "quelle": "ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5, freigegeben 22.10.2025, gültig bis 31.10.2027 · Kompetenzmatrix NotSan Bayern zu § 2a und § 4 Abs. 2 Nr. 1c NotSanG, Version 2.0 vom 04.04.2025 · Symptome: Notfallmedizinische Fachliteratur",
+   "stand": "2025-10",
+   "symptome": [
+    "sym-blutung-geburt",
+    "sym-schwanger",
+    "sym-schock",
+    "sym-tachykardie",
+    "sym-kaltschweissig"
+   ]
   },
   {
    "id": "schmerz",
@@ -2754,6 +2951,10 @@
    ],
    "abschnitte": [
     {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Bauchschmerz, ggf. Abwehrspannung (harter Bauch)\n- Übelkeit, Erbrechen, ggf. Fieber\n- Warnzeichen siehe Ausschlusskriterien (Blut im Stuhl, Bluterbrechen, Aortenaneurysma, Schwangerschaft, Thoraxschmerz)"
+    },
+    {
      "titel": "2c-Algorithmus (Kurzfassung)",
      "text": "Nicht tolerabler Schmerz, kein kritisches xABCDE-Problem, kein Ausschlusskriterium → IV-Zugang + 7,5 mg Piritramid als Kurzinfusion über mind. 5 Min.; danach nicht tolerabel → Notarzt"
     },
@@ -2767,12 +2968,19 @@
     },
     {
      "titel": "Hinweis",
-     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+     "text": "Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben. Die „Typischen Symptome“ stammen aus Fachleitlinien bzw. Fachliteratur (siehe Quelle) und dienen nur der Einordnung."
     }
    ],
    "sprechtext": "",
-   "quelle": "ÄLRD Bayern: Delegationsalgorithmen 2c (Stand 01.11.2025) · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025",
-   "stand": "2025-11"
+   "quelle": "ÄLRD Bayern: Delegationsalgorithmen 2c (Stand 01.11.2025) · ÄLRD Bayern: Medizinische Erläuterungen zu den 2c-Delegationsalgorithmen, gültig ab 01.11.2025 · Symptome: Notfallmedizinische Fachliteratur",
+   "stand": "2025-11",
+   "symptome": [
+    "sym-bauchschmerz",
+    "sym-abwehrspannung",
+    "sym-oberbauch",
+    "sym-uebelkeit",
+    "sym-fieber"
+   ]
   },
   {
    "id": "spannungspneu",
@@ -2788,6 +2996,10 @@
    ],
    "abschnitte": [
     {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Einseitig abgeschwächtes oder fehlendes Atemgeräusch (nach Tubuslagekontrolle) plus typische Symptome\n- Atemnot, Brustschmerz, schneller Puls\n- Gestaute Halsvenen, Blutdruckabfall (eher spät), Zyanose, Bewusstseinsstörung\n- Beim Beatmeten: stark steigende Beatmungsdrücke"
+    },
+    {
      "titel": "Thoraxentlastungspunktion (Checkliste § 2a)",
      "text": "Patient mit vital bedrohlicher hämodynamischer und/oder respiratorischer Störung und Zeichen eines Spannungspneumothorax. Vorher Sauerstoffgabe / Beutel-Masken-Beatmung, falls ausreichend."
     },
@@ -2797,12 +3009,24 @@
     },
     {
      "titel": "Hinweis",
-     "text": "Symptome, Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben."
+     "text": "Diagnostik und weiterführende Therapie sind in den gültigen Dokumenten der ÄLRD Bayern hierzu nicht beschrieben. Die „Typischen Symptome“ stammen aus Fachleitlinien bzw. Fachliteratur (siehe Quelle) und dienen nur der Einordnung."
     }
    ],
    "sprechtext": "",
-   "quelle": "ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · ÄLRD Bayern: Delegationsalgorithmen 2c (Stand 01.11.2025)",
-   "stand": "2024-07"
+   "quelle": "ÄLRD Bayern: Checklisten zu § 2a NotSanG, Stand 25.07.2024 · ÄLRD Bayern: Delegationsalgorithmen 2c (Stand 01.11.2025) · Symptome: S3-Leitlinie Polytrauma/Schwerverletzten-Behandlung (Spannungspneumothorax)",
+   "stand": "2024-07",
+   "symptome": [
+    "sym-atemnot",
+    "sym-atemgeraeusch-einseitig",
+    "sym-brustschmerz",
+    "sym-tachykardie",
+    "sym-schock",
+    "sym-halsvenen",
+    "sym-zyanose",
+    "sym-spo2-niedrig",
+    "sym-bewusstseinsstoerung",
+    "sym-trauma"
+   ]
   },
   {
    "id": "todeszeichen",

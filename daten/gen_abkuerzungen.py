@@ -226,7 +226,7 @@ def slug(s):
 
 # vorhandene Schlüssel der anderen Datensätze (Siri soll weiterhin eindeutig bleiben)
 fremd, ziele = {}, set()
-for f in ["aelrd-bayern-import.json", "kliniken-muenchen-import.json", "leitstellen-import.json", "ergaenzungen-import.json"]:
+for f in ["aelrd-bayern-import.json", "kliniken-muenchen-import.json", "leitstellen-import.json", "ergaenzungen-import.json", "symptome-import.json"]:
     try:
         for e in json.load(open(f, encoding="utf-8"))["eintraege"]:
             ziele.update(x for x in [e.get("titel"), e.get("kurz")] if x)

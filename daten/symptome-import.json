@@ -1,0 +1,2993 @@
+{
+ "app": "Wissen RD",
+ "titel": "Import Symptome und weitere Verdachtsdiagnosen",
+ "hinweis": "Symptom-Check: Symptome ↔ Verdachtsdiagnosen. Quellen je Diagnose; ÄLRD Bayern, wo vorhanden, sonst Fachleitlinien/Fachliteratur (gekennzeichnet). Zuerst aelrd-bayern-import.json und ergaenzungen-import.json neu importieren.",
+ "eintraege": [
+  {
+   "id": "schlaganfall",
+   "bereich": "diagnose",
+   "titel": "Schlaganfall (Verdacht)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Schlaganfall",
+    "Apoplex",
+    "Hirninfarkt",
+    "Stroke Verdacht",
+    "TIA Verdacht"
+   ],
+   "siehe": [
+    "Übersicht Stroke Units",
+    "BE-FAST",
+    "GCS"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Typische Symptome",
+     "text": "- **Leitsymptome (ÄLRD Bayern):** FAST (Gesicht, Arm, Sprache, Zeit) sowie Bewusstseinsstörung, starker Kopfschmerz, akuter Schwindel, Sehstörungen und Blickwendung\n- Neu aufgetretene neurologische Symptome der letzten 24 Stunden – auch vorübergehende\n- Ergänzend: einseitiges Taubheitsgefühl / Kribbeln, einseitige Beinschwäche"
+    },
+    {
+     "titel": "Anamnese (ÄLRD Bayern)",
+     "text": "- Genauer Zeitpunkt des Symptombeginns; plötzlich oder allmählich?\n- Nur vorübergehend? Dauer?\n- Medikamente: Antikoagulantien, Thrombozytenaggregationshemmer, Antiepileptika\n- Frühere Schlaganfälle / TIA; Vorerkrankungen (Epilepsie, Diabetes, kardiovaskulär)\n- Vorangegangene Kopfschmerzen, Übelkeit oder Fieber\n- Angehörige kontaktieren bzw. mit in die Klinik nehmen"
+    },
+    {
+     "titel": "Untersuchung (ÄLRD Bayern)",
+     "text": "- Gesicht: spontan lächeln lassen, Augen zukneifen\n- Arm: Armvorhalteversuch, Kraft im Seitenvergleich\n- Sprache: Satz nachsprechen, Aufforderung befolgen, Gegenstände benennen\n- Bewusstsein: GCS\n- Schwindel: Nystagmus, unsicherer Gang, Fallneigung\n- Augen: Doppelbilder, Blindheit, Pupillen, Blickwendung, Folgebewegungen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Für dieses Krankheitsbild gibt es keine eigene Vorgabe der ÄLRD Bayern zu Maßnahmen oder Medikamenten. Vorgehen nach xABCDE, Befund und Notarzt; allgemeine § 2a-Maßnahmen und -Medikamente siehe jeweilige Einträge."
+    }
+   ],
+   "symptome": [
+    "sym-laehmung",
+    "sym-gesicht",
+    "sym-sprache",
+    "sym-sehstoerung",
+    "sym-blickwendung",
+    "sym-schwindel",
+    "sym-taubheit",
+    "sym-kopfschmerz",
+    "sym-bewusstseinsstoerung",
+    "sym-uebelkeit",
+    "sym-antikoagulation"
+   ],
+   "sprechtext": "",
+   "quelle": "ÄLRD Bayern / RDA: Verdachtsdiagnose Schlaganfall, Version 1.0 (2021), Anhang B",
+   "stand": "2026-11"
+  },
+  {
+   "id": "lungenembolie",
+   "bereich": "diagnose",
+   "titel": "Lungenembolie (Verdacht)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Lungenembolie",
+    "Lungenarterienembolie"
+   ],
+   "siehe": [
+    "LAE",
+    "TVT"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Typisch: Atemnot, Brustschmerz (oft atemabhängig), (Prä-)Synkope, Bluthusten\n- Schnelle Atmung, schneller Puls, Angst / Unruhe, Husten\n- Zeichen einer Beinvenenthrombose (einseitige Beinschwellung)\n- Hämodynamische Instabilität möglich\n- CAVE: Beschwerdebild oft unspezifisch, evtl. symptomarm"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Für dieses Krankheitsbild gibt es keine eigene Vorgabe der ÄLRD Bayern zu Maßnahmen oder Medikamenten. Vorgehen nach xABCDE, Befund und Notarzt; allgemeine § 2a-Maßnahmen und -Medikamente siehe jeweilige Einträge."
+    }
+   ],
+   "symptome": [
+    "sym-atemnot",
+    "sym-tachypnoe",
+    "sym-brustschmerz",
+    "sym-atemabh-schmerz",
+    "sym-synkope",
+    "sym-bluthusten",
+    "sym-husten",
+    "sym-tachykardie",
+    "sym-beinschwellung",
+    "sym-schock",
+    "sym-unruhe",
+    "sym-thromboserisiko"
+   ],
+   "sprechtext": "",
+   "quelle": "ESC-Leitlinie Lungenembolie 2019 (DGK Pocket-Leitlinie / CardioCard 2021)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "aortendissektion",
+   "bereich": "diagnose",
+   "titel": "Aortendissektion / akutes Aortensyndrom (Verdacht)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Aortendissektion",
+    "Aortensyndrom",
+    "Dissektion"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Plötzlicher, sehr starker Schmerz in Brust, Rücken oder Bauch – reißend, stechend oder schneidend\n- Puls- oder Blutdruckdifferenz, fehlende Pulse\n- Blutdruckabfall, Schock, Synkope\n- Neurologisches Defizit zusammen mit dem Schmerzereignis\n- Risiko: Bluthochdruck, bekannte Bindegewebserkrankung"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Für dieses Krankheitsbild gibt es keine eigene Vorgabe der ÄLRD Bayern zu Maßnahmen oder Medikamenten. Vorgehen nach xABCDE, Befund und Notarzt; allgemeine § 2a-Maßnahmen und -Medikamente siehe jeweilige Einträge."
+    }
+   ],
+   "symptome": [
+    "sym-reissend",
+    "sym-brustschmerz",
+    "sym-rueckenschmerz",
+    "sym-bauchschmerz",
+    "sym-pulsdifferenz",
+    "sym-schock",
+    "sym-synkope",
+    "sym-laehmung",
+    "sym-hypertonie-bekannt"
+   ],
+   "sprechtext": "",
+   "quelle": "Fachliteratur Akutes Aortensyndrom (u. a. Aortentelefon DHZC, ESC-Leitlinie Aortenerkrankungen)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "rupturiertes-baa",
+   "bereich": "diagnose",
+   "titel": "Rupturiertes Bauchaortenaneurysma (Verdacht)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Bauchaortenaneurysma",
+    "Aortenaneurysma Ruptur",
+    "BAA",
+    "AAA"
+   ],
+   "siehe": [
+    "Akuter Abdominalschmerz"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Klassische Trias: plötzlicher Bauch- oder Rückenschmerz, Blutdruckabfall / Schock, pulsierende Schwellung im Bauch\n- Die Trias ist oft unvollständig\n- Bekanntes Aneurysma: siehe Ausschlusskriterium im 2c-Algorithmus Abdominalschmerz"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Für dieses Krankheitsbild gibt es keine eigene Vorgabe der ÄLRD Bayern zu Maßnahmen oder Medikamenten. Vorgehen nach xABCDE, Befund und Notarzt; allgemeine § 2a-Maßnahmen und -Medikamente siehe jeweilige Einträge."
+    }
+   ],
+   "symptome": [
+    "sym-bauchschmerz",
+    "sym-rueckenschmerz",
+    "sym-schock",
+    "sym-pulsierender-bauch",
+    "sym-kaltschweissig",
+    "sym-aneurysma-bekannt"
+   ],
+   "sprechtext": "",
+   "quelle": "Notfallmedizinische Fachliteratur (klassische Trias rupturiertes Bauchaortenaneurysma)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "lungenoedem",
+   "bereich": "diagnose",
+   "titel": "Akute Herzinsuffizienz / Lungenödem (Verdacht)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Lungenödem",
+    "Herzinsuffizienz",
+    "kardiales Lungenödem",
+    "Asthma cardiale",
+    "Linksherzinsuffizienz"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Schwere Atemnot, Atemnot im Liegen (Besserung im Sitzen)\n- Rasselgeräusche, brodelnde Atmung, ggf. schaumiger, blutig tingierter Auswurf; Giemen möglich („Herzasthma“)\n- Unruhe, Angst, Schwitzen, Blässe, Zyanose\n- Gestaute Halsvenen, Ödeme\n- Häufig bekannte Herzerkrankung"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Für dieses Krankheitsbild gibt es keine eigene Vorgabe der ÄLRD Bayern zu Maßnahmen oder Medikamenten. Vorgehen nach xABCDE, Befund und Notarzt; allgemeine § 2a-Maßnahmen und -Medikamente siehe jeweilige Einträge."
+    }
+   ],
+   "symptome": [
+    "sym-atemnot",
+    "sym-orthopnoe",
+    "sym-rasseln",
+    "sym-tachypnoe",
+    "sym-giemen",
+    "sym-husten",
+    "sym-zyanose",
+    "sym-spo2-niedrig",
+    "sym-kaltschweissig",
+    "sym-schwitzen",
+    "sym-unruhe",
+    "sym-halsvenen",
+    "sym-oedeme",
+    "sym-herz-bekannt"
+   ],
+   "sprechtext": "",
+   "quelle": "ESC-Leitlinie Herzinsuffizienz 2021; MSD Manual Lungenödem",
+   "stand": "2026-11"
+  },
+  {
+   "id": "meningitis",
+   "bereich": "diagnose",
+   "titel": "Meningitis / Meningokokken-Erkrankung (Verdacht)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Meningitis",
+    "Hirnhautentzündung",
+    "Meningokokken",
+    "Meningoenzephalitis"
+   ],
+   "siehe": [
+    "Sepsis (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Vier Leitsymptome: Kopfschmerz, Fieber, Nackensteifigkeit, Bewusstseinsstörung\n- Oft fehlen einzelne Leitsymptome – schon bei zwei der vier daran denken\n- Übelkeit, Erbrechen, Lichtscheu, Krampfanfälle\n- Punktförmige Hauteinblutungen (Petechien) als Warnzeichen, v. a. bei Meningokokken"
+    },
+    {
+     "titel": "Bayern-Bezug (ÄLRD)",
+     "text": "- 2c-Algorithmus V. a. Sepsis: Meningismus → Notarzt-Nachforderung (unabhängig von einem kritischen ABCDE-Problem)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Für dieses Krankheitsbild gibt es keine eigene Vorgabe der ÄLRD Bayern zu Maßnahmen oder Medikamenten. Vorgehen nach xABCDE, Befund und Notarzt; allgemeine § 2a-Maßnahmen und -Medikamente siehe jeweilige Einträge."
+    }
+   ],
+   "symptome": [
+    "sym-kopfschmerz",
+    "sym-fieber",
+    "sym-nackensteife",
+    "sym-bewusstseinsstoerung",
+    "sym-verwirrtheit",
+    "sym-uebelkeit",
+    "sym-lichtscheu",
+    "sym-krampfanfall",
+    "sym-petechien"
+   ],
+   "sprechtext": "",
+   "quelle": "DGN-Leitlinie Ambulant erworbene bakterielle Meningoenzephalitis im Erwachsenenalter (2023) · ÄLRD Bayern: 2c-Algorithmus V. a. Sepsis – Hinweise auf Infektion und vereinfachter NEWS-2 (01.11.2025)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "gi-blutung",
+   "bereich": "diagnose",
+   "titel": "Obere gastrointestinale Blutung (Verdacht)",
+   "kurz": "",
+   "suchbegriffe": [
+    "GI-Blutung",
+    "Magenblutung",
+    "Ösophagusvarizenblutung",
+    "Bluterbrechen Verdacht"
+   ],
+   "siehe": [
+    "Akuter Abdominalschmerz",
+    "Kritische Hypotension / Volumenmangel"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Bluterbrechen oder kaffeesatzartiges Erbrechen\n- Teerstuhl (schwarzer Stuhl) oder Blut im Stuhl\n- Schockzeichen, Kollaps\n- Risiko: Blutverdünner"
+    },
+    {
+     "titel": "Bayern-Bezug (ÄLRD)",
+     "text": "- 2c-Algorithmus Akuter Abdominalschmerz: blutiger Stuhl / Teerstuhl oder blutiges / kaffeesatzartiges Erbrechen sind **Ausschlusskriterien** für die 2c-Analgesie"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Für dieses Krankheitsbild gibt es keine eigene Vorgabe der ÄLRD Bayern zu Maßnahmen oder Medikamenten. Vorgehen nach xABCDE, Befund und Notarzt; allgemeine § 2a-Maßnahmen und -Medikamente siehe jeweilige Einträge."
+    }
+   ],
+   "symptome": [
+    "sym-bluterbrechen",
+    "sym-teerstuhl",
+    "sym-schock",
+    "sym-kaltschweissig",
+    "sym-synkope",
+    "sym-oberbauch",
+    "sym-antikoagulation"
+   ],
+   "sprechtext": "",
+   "quelle": "Notfallmedizinische Fachliteratur obere GI-Blutung (Hämatemesis, Meläna) · ÄLRD Bayern: 2c-Algorithmus V. a. Sepsis – Hinweise auf Infektion und vereinfachter NEWS-2 (01.11.2025)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "praeeklampsie",
+   "bereich": "diagnose",
+   "titel": "Präeklampsie / Eklampsie (Verdacht)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Präeklampsie",
+    "Eklampsie",
+    "HELLP",
+    "Schwangerschaftsvergiftung",
+    "Gestose"
+   ],
+   "siehe": [
+    "Status epilepticus / Krampfanfall",
+    "Hypertensiver Notfall / hypertensive Entgleisung"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Erhöhter Blutdruck in der Schwangerschaft (bis ins Wochenbett) mit Organbeteiligung\n- ZNS: Kopfschmerzen, Sehstörungen (Augenflimmern, Gesichtsfeldausfälle)\n- Leber: rechtsbetonte Oberbauchschmerzen\n- Lunge: Atemnot\n- Eklampsie: generalisierter Krampfanfall in Schwangerschaft, Geburt oder Wochenbett, Bewusstseinsstörung"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Für dieses Krankheitsbild gibt es keine eigene Vorgabe der ÄLRD Bayern zu Maßnahmen oder Medikamenten. Vorgehen nach xABCDE, Befund und Notarzt; allgemeine § 2a-Maßnahmen und -Medikamente siehe jeweilige Einträge."
+    }
+   ],
+   "symptome": [
+    "sym-schwanger",
+    "sym-hypertonie",
+    "sym-kopfschmerz",
+    "sym-sehstoerung",
+    "sym-oberbauch",
+    "sym-atemnot",
+    "sym-oedeme",
+    "sym-krampfanfall",
+    "sym-bewusstseinsstoerung"
+   ],
+   "sprechtext": "",
+   "quelle": "S2k-Leitlinie Hypertensive Erkrankungen in der Schwangerschaft (DGGG), nach Fachliteratur",
+   "stand": "2026-11"
+  },
+  {
+   "id": "hypothermie",
+   "bereich": "diagnose",
+   "titel": "Unterkühlung (akzidentelle Hypothermie)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Hypothermie",
+    "Unterkühlung",
+    "unterkühlt"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Körperkerntemperatur unter 35 °C\n- Anfangs Kältezittern, später kein Zittern mehr\n- Zunehmende Verwirrtheit bis Bewusstlosigkeit\n- Langsamer Puls, langsame Atmung, Muskelsteife\n- Blässe, kühle Haut; paradoxes Wärmegefühl (Entkleiden) möglich"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Für dieses Krankheitsbild gibt es keine eigene Vorgabe der ÄLRD Bayern zu Maßnahmen oder Medikamenten. Vorgehen nach xABCDE, Befund und Notarzt; allgemeine § 2a-Maßnahmen und -Medikamente siehe jeweilige Einträge."
+    }
+   ],
+   "symptome": [
+    "sym-unterkuehlt",
+    "sym-kaelte",
+    "sym-zittern",
+    "sym-verwirrtheit",
+    "sym-bewusstseinsstoerung",
+    "sym-bradykardie",
+    "sym-atemdepression"
+   ],
+   "sprechtext": "",
+   "quelle": "ERC-Leitlinien (GRC) / Schweizer Stadieneinteilung akzidentelle Hypothermie, nach Fachliteratur",
+   "stand": "2026-11"
+  },
+  {
+   "id": "hitzschlag",
+   "bereich": "diagnose",
+   "titel": "Hitzschlag / Hyperthermie",
+   "kurz": "",
+   "suchbegriffe": [
+    "Hitzschlag",
+    "Hyperthermie",
+    "Hitzeerschöpfung",
+    "Sonnenstich"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Sehr hohe Körpertemperatur (ERC/GRC: Kerntemperatur ≥ 40,5 °C) **und** Verwirrtheit / Desorientierung\n- Bewusstseinsstörung, Krampfanfall möglich\n- Nach Hitze oder körperlicher Anstrengung in Wärme"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Für dieses Krankheitsbild gibt es keine eigene Vorgabe der ÄLRD Bayern zu Maßnahmen oder Medikamenten. Vorgehen nach xABCDE, Befund und Notarzt; allgemeine § 2a-Maßnahmen und -Medikamente siehe jeweilige Einträge."
+    }
+   ],
+   "symptome": [
+    "sym-ueberhitzt",
+    "sym-hitze",
+    "sym-verwirrtheit",
+    "sym-bewusstseinsstoerung",
+    "sym-krampfanfall",
+    "sym-tachykardie"
+   ],
+   "sprechtext": "",
+   "quelle": "ERC-Leitlinien 2025 (GRC-Algorithmus Hyperthermie)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "co-intox",
+   "bereich": "diagnose",
+   "titel": "Kohlenmonoxid-Vergiftung (Verdacht)",
+   "kurz": "",
+   "suchbegriffe": [
+    "Kohlenmonoxidvergiftung",
+    "CO-Vergiftung",
+    "CO Intoxikation",
+    "Rauchgasvergiftung"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Erste Anzeichen: Kopfschmerzen, Schwindel, Schwächegefühl, Übelkeit, Erbrechen\n- Schwer: Orientierungs- und Bewusstseinsstörung, Krampfanfall, Brustenge, Atemnot, Herzrhythmusstörungen, Kreislaufversagen\n- Symptome unspezifisch – an CO-Quellen denken (Brand, Heizung, Ofen, Garage, Holzkohlegrill, Shisha), oft mehrere Betroffene\n- Pulsoximetrie ist bei CO-Vergiftung **nicht zuverlässig**"
+    },
+    {
+     "titel": "Bayern-Bezug (ÄLRD)",
+     "text": "- ÄLRD-Bayern-Empfehlung „CO-Pulsoximetrie“ (29.11.2023) – Inhalt hier nicht übernommen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Für dieses Krankheitsbild gibt es keine eigene Vorgabe der ÄLRD Bayern zu Maßnahmen oder Medikamenten. Vorgehen nach xABCDE, Befund und Notarzt; allgemeine § 2a-Maßnahmen und -Medikamente siehe jeweilige Einträge."
+    }
+   ],
+   "symptome": [
+    "sym-kopfschmerz",
+    "sym-schwindel",
+    "sym-uebelkeit",
+    "sym-verwirrtheit",
+    "sym-sehstoerung",
+    "sym-bewusstseinsstoerung",
+    "sym-krampfanfall",
+    "sym-brustschmerz",
+    "sym-atemnot",
+    "sym-palpitationen",
+    "sym-co-quelle"
+   ],
+   "sprechtext": "",
+   "quelle": "S2k-Leitlinie Diagnostik und Therapie der Kohlenmonoxidvergiftung (AWMF 040-012) · ÄLRD Bayern / RDA: Verdachtsdiagnose akutes Koronarsyndrom, Version 2.0 (2025)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sht",
+   "bereich": "diagnose",
+   "titel": "Schädel-Hirn-Trauma",
+   "kurz": "SHT",
+   "suchbegriffe": [
+    "Gehirnerschütterung",
+    "Kopfverletzung"
+   ],
+   "siehe": [
+    "Schockraum-Indikation (Bayerische Traumanetzwerke)",
+    "GCS",
+    "KRIMP"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Typische Symptome (nicht ÄLRD Bayern)",
+     "text": "- Kopfverletzung oder passender Unfallmechanismus\n- Bewusstseinsstörung (GCS), Verwirrtheit, Erinnerungslücke\n- Kopfschmerz, Übelkeit, Erbrechen\n- Warnzeichen erhöhter Hirndruck / Einklemmung: einseitig weite Pupille, Strecksynergismen, zunehmende Bewusstseinstrübung\n- Krampfanfall, Lähmungen; erhöhtes Blutungsrisiko unter Blutverdünnern"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Für dieses Krankheitsbild gibt es keine eigene Vorgabe der ÄLRD Bayern zu Maßnahmen oder Medikamenten. Vorgehen nach xABCDE, Befund und Notarzt; allgemeine § 2a-Maßnahmen und -Medikamente siehe jeweilige Einträge."
+    }
+   ],
+   "symptome": [
+    "sym-kopfverletzung",
+    "sym-trauma",
+    "sym-bewusstseinsstoerung",
+    "sym-verwirrtheit",
+    "sym-kopfschmerz",
+    "sym-uebelkeit",
+    "sym-anisokorie",
+    "sym-krampfanfall",
+    "sym-laehmung",
+    "sym-antikoagulation"
+   ],
+   "sprechtext": "",
+   "quelle": "S3-Leitlinie Polytrauma/Schwerverletzten-Behandlung (Zeichen der Einklemmung), notfallmedizinische Fachliteratur",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-brustschmerz",
+   "bereich": "symptom",
+   "titel": "Brustschmerz / Engegefühl in der Brust",
+   "kurz": "",
+   "kategorie": "Schmerz",
+   "reihe": 0,
+   "suchbegriffe": [
+    "Druck auf der Brust",
+    "Engegefühl"
+   ],
+   "siehe": [
+    "Akutes Koronarsyndrom",
+    "Aortendissektion / akutes Aortensyndrom (Verdacht)",
+    "Hypertensiver Notfall / hypertensive Entgleisung",
+    "Instabile tachykarde Rhythmusstörung",
+    "Kohlenmonoxid-Vergiftung (Verdacht)",
+    "Lebensbedrohliche Bradykardie",
+    "Lungenembolie (Verdacht)",
+    "Spannungspneumothorax"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akutes Koronarsyndrom\n- Aortendissektion / akutes Aortensyndrom (Verdacht)\n- Hypertensiver Notfall / hypertensive Entgleisung\n- Instabile tachykarde Rhythmusstörung\n- Kohlenmonoxid-Vergiftung (Verdacht)\n- Lebensbedrohliche Bradykardie\n- Lungenembolie (Verdacht)\n- Spannungspneumothorax"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-ausstrahlung",
+   "bereich": "symptom",
+   "titel": "Schmerzausstrahlung in Arm, Hals, Kiefer oder Rücken",
+   "kurz": "",
+   "kategorie": "Schmerz",
+   "reihe": 1,
+   "suchbegriffe": [
+    "Schmerzausstrahlung"
+   ],
+   "siehe": [
+    "Akutes Koronarsyndrom"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akutes Koronarsyndrom"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-reissend",
+   "bereich": "symptom",
+   "titel": "Plötzlicher, reißender Schmerz in Brust, Rücken oder Bauch",
+   "kurz": "",
+   "kategorie": "Schmerz",
+   "reihe": 2,
+   "suchbegriffe": [
+    "Vernichtungsschmerz",
+    "reißender Schmerz"
+   ],
+   "siehe": [
+    "Aortendissektion / akutes Aortensyndrom (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Aortendissektion / akutes Aortensyndrom (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-atemabh-schmerz",
+   "bereich": "symptom",
+   "titel": "Atemabhängiger Brustschmerz",
+   "kurz": "",
+   "kategorie": "Schmerz",
+   "reihe": 3,
+   "suchbegriffe": [
+    "pleuritischer Schmerz"
+   ],
+   "siehe": [
+    "Lungenembolie (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Lungenembolie (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-oberbauch",
+   "bereich": "symptom",
+   "titel": "Oberbauchschmerz",
+   "kurz": "",
+   "kategorie": "Schmerz",
+   "reihe": 4,
+   "suchbegriffe": [
+    "Oberbauchbeschwerden",
+    "epigastrischer Schmerz"
+   ],
+   "siehe": [
+    "Akuter Abdominalschmerz",
+    "Akutes Koronarsyndrom",
+    "Obere gastrointestinale Blutung (Verdacht)",
+    "Präeklampsie / Eklampsie (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akuter Abdominalschmerz\n- Akutes Koronarsyndrom\n- Obere gastrointestinale Blutung (Verdacht)\n- Präeklampsie / Eklampsie (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-bauchschmerz",
+   "bereich": "symptom",
+   "titel": "Bauchschmerz (Symptom)",
+   "kurz": "",
+   "kategorie": "Schmerz",
+   "reihe": 5,
+   "suchbegriffe": [
+    "Abdominalschmerz"
+   ],
+   "siehe": [
+    "Akuter Abdominalschmerz",
+    "Anaphylaktischer Schock",
+    "Aortendissektion / akutes Aortensyndrom (Verdacht)",
+    "Rupturiertes Bauchaortenaneurysma (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akuter Abdominalschmerz\n- Anaphylaktischer Schock\n- Aortendissektion / akutes Aortensyndrom (Verdacht)\n- Rupturiertes Bauchaortenaneurysma (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-abwehrspannung",
+   "bereich": "symptom",
+   "titel": "Harter Bauch / Abwehrspannung",
+   "kurz": "",
+   "kategorie": "Schmerz",
+   "reihe": 6,
+   "suchbegriffe": [
+    "Peritonismus",
+    "brettharter Bauch"
+   ],
+   "siehe": [
+    "Akuter Abdominalschmerz"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akuter Abdominalschmerz"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-rueckenschmerz",
+   "bereich": "symptom",
+   "titel": "Akuter Rücken- oder Flankenschmerz",
+   "kurz": "",
+   "kategorie": "Schmerz",
+   "reihe": 7,
+   "suchbegriffe": [
+    "Rückenschmerz"
+   ],
+   "siehe": [
+    "Aortendissektion / akutes Aortensyndrom (Verdacht)",
+    "Rupturiertes Bauchaortenaneurysma (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Aortendissektion / akutes Aortensyndrom (Verdacht)\n- Rupturiertes Bauchaortenaneurysma (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-kopfschmerz",
+   "bereich": "symptom",
+   "titel": "Kopfschmerz",
+   "kurz": "",
+   "kategorie": "Schmerz",
+   "reihe": 8,
+   "suchbegriffe": [
+    "Kopfschmerzen"
+   ],
+   "siehe": [
+    "Hypoglykämie",
+    "Kohlenmonoxid-Vergiftung (Verdacht)",
+    "Meningitis / Meningokokken-Erkrankung (Verdacht)",
+    "Präeklampsie / Eklampsie (Verdacht)",
+    "Schlaganfall (Verdacht)",
+    "Schädel-Hirn-Trauma"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Hypoglykämie\n- Kohlenmonoxid-Vergiftung (Verdacht)\n- Meningitis / Meningokokken-Erkrankung (Verdacht)\n- Präeklampsie / Eklampsie (Verdacht)\n- Schlaganfall (Verdacht)\n- Schädel-Hirn-Trauma"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-nackensteife",
+   "bereich": "symptom",
+   "titel": "Nackensteifigkeit (Meningismus)",
+   "kurz": "",
+   "kategorie": "Schmerz",
+   "reihe": 9,
+   "suchbegriffe": [
+    "Meningismus",
+    "Nackensteifigkeit"
+   ],
+   "siehe": [
+    "Meningitis / Meningokokken-Erkrankung (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Meningitis / Meningokokken-Erkrankung (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-atemnot",
+   "bereich": "symptom",
+   "titel": "Atemnot (Symptom)",
+   "kurz": "",
+   "kategorie": "Atmung",
+   "reihe": 10,
+   "suchbegriffe": [
+    "Dyspnoe",
+    "Luftnot"
+   ],
+   "siehe": [
+    "Akute Herzinsuffizienz / Lungenödem (Verdacht)",
+    "Akutes Koronarsyndrom",
+    "Anaphylaktischer Schock",
+    "Hypertensiver Notfall / hypertensive Entgleisung",
+    "Instabile tachykarde Rhythmusstörung",
+    "Kohlenmonoxid-Vergiftung (Verdacht)",
+    "Kritische Bronchospastik (Asthma / COPD)",
+    "Lungenembolie (Verdacht)",
+    "Präeklampsie / Eklampsie (Verdacht)",
+    "Pseudokrupp / Schwellung obere Atemwege",
+    "Spannungspneumothorax"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akute Herzinsuffizienz / Lungenödem (Verdacht)\n- Akutes Koronarsyndrom\n- Anaphylaktischer Schock\n- Hypertensiver Notfall / hypertensive Entgleisung\n- Instabile tachykarde Rhythmusstörung\n- Kohlenmonoxid-Vergiftung (Verdacht)\n- Kritische Bronchospastik (Asthma / COPD)\n- Lungenembolie (Verdacht)\n- Präeklampsie / Eklampsie (Verdacht)\n- Pseudokrupp / Schwellung obere Atemwege\n- Spannungspneumothorax"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-orthopnoe",
+   "bereich": "symptom",
+   "titel": "Atemnot im Liegen, Besserung im Sitzen",
+   "kurz": "",
+   "kategorie": "Atmung",
+   "reihe": 11,
+   "suchbegriffe": [
+    "Orthopnoe"
+   ],
+   "siehe": [
+    "Akute Herzinsuffizienz / Lungenödem (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akute Herzinsuffizienz / Lungenödem (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-tachypnoe",
+   "bereich": "symptom",
+   "titel": "Schnelle Atmung",
+   "kurz": "",
+   "kategorie": "Atmung",
+   "reihe": 12,
+   "suchbegriffe": [
+    "Tachypnoe"
+   ],
+   "siehe": [
+    "Akute Herzinsuffizienz / Lungenödem (Verdacht)",
+    "Kritische Bronchospastik (Asthma / COPD)",
+    "Lungenembolie (Verdacht)",
+    "Sepsis (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akute Herzinsuffizienz / Lungenödem (Verdacht)\n- Kritische Bronchospastik (Asthma / COPD)\n- Lungenembolie (Verdacht)\n- Sepsis (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-atemdepression",
+   "bereich": "symptom",
+   "titel": "Langsame oder flache Atmung",
+   "kurz": "",
+   "kategorie": "Atmung",
+   "reihe": 13,
+   "suchbegriffe": [
+    "Atemdepression",
+    "Bradypnoe"
+   ],
+   "siehe": [
+    "Benzodiazepin-Überdosierung / -Intoxikation",
+    "Opiat-Überdosierung / -Intoxikation",
+    "Unterkühlung (akzidentelle Hypothermie)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Benzodiazepin-Überdosierung / -Intoxikation\n- Opiat-Überdosierung / -Intoxikation\n- Unterkühlung (akzidentelle Hypothermie)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-keine-atmung",
+   "bereich": "symptom",
+   "titel": "Keine normale Atmung / Schnappatmung",
+   "kurz": "",
+   "kategorie": "Atmung",
+   "reihe": 14,
+   "suchbegriffe": [
+    "Atemstillstand",
+    "Schnappatmung"
+   ],
+   "siehe": [
+    "Kreislaufstillstand / Reanimation"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Kreislaufstillstand / Reanimation"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-stridor",
+   "bereich": "symptom",
+   "titel": "Pfeifendes Einatemgeräusch (inspiratorischer Stridor)",
+   "kurz": "",
+   "kategorie": "Atmung",
+   "reihe": 15,
+   "suchbegriffe": [
+    "Stridor"
+   ],
+   "siehe": [
+    "Anaphylaktischer Schock",
+    "Pseudokrupp / Schwellung obere Atemwege"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Anaphylaktischer Schock\n- Pseudokrupp / Schwellung obere Atemwege"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-giemen",
+   "bereich": "symptom",
+   "titel": "Giemen / verlängerte Ausatmung",
+   "kurz": "",
+   "kategorie": "Atmung",
+   "reihe": 16,
+   "suchbegriffe": [
+    "Giemen",
+    "Pfeifen beim Ausatmen"
+   ],
+   "siehe": [
+    "Akute Herzinsuffizienz / Lungenödem (Verdacht)",
+    "Anaphylaktischer Schock",
+    "Kritische Bronchospastik (Asthma / COPD)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akute Herzinsuffizienz / Lungenödem (Verdacht)\n- Anaphylaktischer Schock\n- Kritische Bronchospastik (Asthma / COPD)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-bellender-husten",
+   "bereich": "symptom",
+   "titel": "Bellender Husten / Heiserkeit",
+   "kurz": "",
+   "kategorie": "Atmung",
+   "reihe": 17,
+   "suchbegriffe": [
+    "Krupphusten",
+    "bellender Husten"
+   ],
+   "siehe": [
+    "Pseudokrupp / Schwellung obere Atemwege"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Pseudokrupp / Schwellung obere Atemwege"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-husten",
+   "bereich": "symptom",
+   "titel": "Husten",
+   "kurz": "",
+   "kategorie": "Atmung",
+   "reihe": 18,
+   "suchbegriffe": [],
+   "siehe": [
+    "Akute Herzinsuffizienz / Lungenödem (Verdacht)",
+    "Kritische Bronchospastik (Asthma / COPD)",
+    "Lungenembolie (Verdacht)",
+    "Sepsis (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akute Herzinsuffizienz / Lungenödem (Verdacht)\n- Kritische Bronchospastik (Asthma / COPD)\n- Lungenembolie (Verdacht)\n- Sepsis (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-rasseln",
+   "bereich": "symptom",
+   "titel": "Brodelnde Atmung / Rasselgeräusche / schaumiger Auswurf",
+   "kurz": "",
+   "kategorie": "Atmung",
+   "reihe": 19,
+   "suchbegriffe": [
+    "Rasselgeräusche",
+    "Brodeln"
+   ],
+   "siehe": [
+    "Akute Herzinsuffizienz / Lungenödem (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akute Herzinsuffizienz / Lungenödem (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-bluthusten",
+   "bereich": "symptom",
+   "titel": "Bluthusten",
+   "kurz": "",
+   "kategorie": "Atmung",
+   "reihe": 20,
+   "suchbegriffe": [
+    "Hämoptyse",
+    "Hämoptysen"
+   ],
+   "siehe": [
+    "Lungenembolie (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Lungenembolie (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-atemgeraeusch-einseitig",
+   "bereich": "symptom",
+   "titel": "Einseitig abgeschwächtes oder fehlendes Atemgeräusch",
+   "kurz": "",
+   "kategorie": "Atmung",
+   "reihe": 21,
+   "suchbegriffe": [
+    "fehlendes Atemgeräusch"
+   ],
+   "siehe": [
+    "Spannungspneumothorax"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Spannungspneumothorax"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-zyanose",
+   "bereich": "symptom",
+   "titel": "Blaue Lippen / blaue Haut (Zyanose)",
+   "kurz": "",
+   "kategorie": "Atmung",
+   "reihe": 22,
+   "suchbegriffe": [
+    "Zyanose"
+   ],
+   "siehe": [
+    "Akute Herzinsuffizienz / Lungenödem (Verdacht)",
+    "Kritische Bronchospastik (Asthma / COPD)",
+    "Opiat-Überdosierung / -Intoxikation",
+    "Spannungspneumothorax",
+    "Status epilepticus / Krampfanfall"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akute Herzinsuffizienz / Lungenödem (Verdacht)\n- Kritische Bronchospastik (Asthma / COPD)\n- Opiat-Überdosierung / -Intoxikation\n- Spannungspneumothorax\n- Status epilepticus / Krampfanfall"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-spo2-niedrig",
+   "bereich": "symptom",
+   "titel": "Niedrige Sauerstoffsättigung",
+   "kurz": "",
+   "kategorie": "Atmung",
+   "reihe": 23,
+   "suchbegriffe": [
+    "Entsättigung"
+   ],
+   "siehe": [
+    "Akute Herzinsuffizienz / Lungenödem (Verdacht)",
+    "Kritische Bronchospastik (Asthma / COPD)",
+    "Sepsis (Verdacht)",
+    "Spannungspneumothorax"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akute Herzinsuffizienz / Lungenödem (Verdacht)\n- Kritische Bronchospastik (Asthma / COPD)\n- Sepsis (Verdacht)\n- Spannungspneumothorax"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-tachykardie",
+   "bereich": "symptom",
+   "titel": "Schneller Puls",
+   "kurz": "",
+   "kategorie": "Kreislauf",
+   "reihe": 24,
+   "suchbegriffe": [],
+   "siehe": [
+    "Anaphylaktischer Schock",
+    "Hitzschlag / Hyperthermie",
+    "Instabile tachykarde Rhythmusstörung",
+    "Kritische Hypotension / Volumenmangel",
+    "Kritische postpartale Blutung",
+    "Lungenembolie (Verdacht)",
+    "Sepsis (Verdacht)",
+    "Spannungspneumothorax"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Anaphylaktischer Schock\n- Hitzschlag / Hyperthermie\n- Instabile tachykarde Rhythmusstörung\n- Kritische Hypotension / Volumenmangel\n- Kritische postpartale Blutung\n- Lungenembolie (Verdacht)\n- Sepsis (Verdacht)\n- Spannungspneumothorax"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-bradykardie",
+   "bereich": "symptom",
+   "titel": "Langsamer Puls (Symptom)",
+   "kurz": "",
+   "kategorie": "Kreislauf",
+   "reihe": 25,
+   "suchbegriffe": [],
+   "siehe": [
+    "Lebensbedrohliche Bradykardie",
+    "Unterkühlung (akzidentelle Hypothermie)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Lebensbedrohliche Bradykardie\n- Unterkühlung (akzidentelle Hypothermie)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-palpitationen",
+   "bereich": "symptom",
+   "titel": "Herzrasen / Herzstolpern / Herzklopfen",
+   "kurz": "",
+   "kategorie": "Kreislauf",
+   "reihe": 26,
+   "suchbegriffe": [
+    "Palpitationen",
+    "Herzstolpern",
+    "Herzklopfen"
+   ],
+   "siehe": [
+    "Akutes Koronarsyndrom",
+    "Hypoglykämie",
+    "Instabile tachykarde Rhythmusstörung",
+    "Kohlenmonoxid-Vergiftung (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akutes Koronarsyndrom\n- Hypoglykämie\n- Instabile tachykarde Rhythmusstörung\n- Kohlenmonoxid-Vergiftung (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-schock",
+   "bereich": "symptom",
+   "titel": "Niedriger Blutdruck / Schockzeichen",
+   "kurz": "",
+   "kategorie": "Kreislauf",
+   "reihe": 27,
+   "suchbegriffe": [
+    "Schockzeichen"
+   ],
+   "siehe": [
+    "Anaphylaktischer Schock",
+    "Aortendissektion / akutes Aortensyndrom (Verdacht)",
+    "Instabile tachykarde Rhythmusstörung",
+    "Kritische Hypotension / Volumenmangel",
+    "Kritische postpartale Blutung",
+    "Lebensbedrohliche Bradykardie",
+    "Lungenembolie (Verdacht)",
+    "Obere gastrointestinale Blutung (Verdacht)",
+    "Rupturiertes Bauchaortenaneurysma (Verdacht)",
+    "Sepsis (Verdacht)",
+    "Spannungspneumothorax"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Anaphylaktischer Schock\n- Aortendissektion / akutes Aortensyndrom (Verdacht)\n- Instabile tachykarde Rhythmusstörung\n- Kritische Hypotension / Volumenmangel\n- Kritische postpartale Blutung\n- Lebensbedrohliche Bradykardie\n- Lungenembolie (Verdacht)\n- Obere gastrointestinale Blutung (Verdacht)\n- Rupturiertes Bauchaortenaneurysma (Verdacht)\n- Sepsis (Verdacht)\n- Spannungspneumothorax"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-hypertonie",
+   "bereich": "symptom",
+   "titel": "Stark erhöhter Blutdruck",
+   "kurz": "",
+   "kategorie": "Kreislauf",
+   "reihe": 28,
+   "suchbegriffe": [
+    "Blutdruck hoch"
+   ],
+   "siehe": [
+    "Hypertensiver Notfall / hypertensive Entgleisung",
+    "Kritische Epistaxis (Nasenbluten)",
+    "Präeklampsie / Eklampsie (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Hypertensiver Notfall / hypertensive Entgleisung\n- Kritische Epistaxis (Nasenbluten)\n- Präeklampsie / Eklampsie (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-kaltschweissig",
+   "bereich": "symptom",
+   "titel": "Kalter Schweiß / blasse, kühle Haut",
+   "kurz": "",
+   "kategorie": "Kreislauf",
+   "reihe": 29,
+   "suchbegriffe": [
+    "Kaltschweißigkeit",
+    "kaltschweißig",
+    "Blässe"
+   ],
+   "siehe": [
+    "Akute Herzinsuffizienz / Lungenödem (Verdacht)",
+    "Akutes Koronarsyndrom",
+    "Kritische Hypotension / Volumenmangel",
+    "Kritische postpartale Blutung",
+    "Lebensbedrohliche Bradykardie",
+    "Obere gastrointestinale Blutung (Verdacht)",
+    "Rupturiertes Bauchaortenaneurysma (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akute Herzinsuffizienz / Lungenödem (Verdacht)\n- Akutes Koronarsyndrom\n- Kritische Hypotension / Volumenmangel\n- Kritische postpartale Blutung\n- Lebensbedrohliche Bradykardie\n- Obere gastrointestinale Blutung (Verdacht)\n- Rupturiertes Bauchaortenaneurysma (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-synkope",
+   "bereich": "symptom",
+   "titel": "Kurze Bewusstlosigkeit / Kollaps",
+   "kurz": "",
+   "kategorie": "Kreislauf",
+   "reihe": 30,
+   "suchbegriffe": [
+    "Synkope",
+    "Ohnmacht",
+    "Kollaps"
+   ],
+   "siehe": [
+    "Aortendissektion / akutes Aortensyndrom (Verdacht)",
+    "Instabile tachykarde Rhythmusstörung",
+    "Kritische Hypotension / Volumenmangel",
+    "Lebensbedrohliche Bradykardie",
+    "Lungenembolie (Verdacht)",
+    "Obere gastrointestinale Blutung (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Aortendissektion / akutes Aortensyndrom (Verdacht)\n- Instabile tachykarde Rhythmusstörung\n- Kritische Hypotension / Volumenmangel\n- Lebensbedrohliche Bradykardie\n- Lungenembolie (Verdacht)\n- Obere gastrointestinale Blutung (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-pulslos",
+   "bereich": "symptom",
+   "titel": "Kein tastbarer Puls, leblos",
+   "kurz": "",
+   "kategorie": "Kreislauf",
+   "reihe": 31,
+   "suchbegriffe": [
+    "Pulslosigkeit",
+    "kein Puls"
+   ],
+   "siehe": [
+    "Kreislaufstillstand / Reanimation"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Kreislaufstillstand / Reanimation"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-pulsdifferenz",
+   "bereich": "symptom",
+   "titel": "Puls- oder Blutdruckdifferenz zwischen den Armen / fehlender Puls an einer Extremität",
+   "kurz": "",
+   "kategorie": "Kreislauf",
+   "reihe": 32,
+   "suchbegriffe": [
+    "Pulsdefizit",
+    "Blutdruckdifferenz"
+   ],
+   "siehe": [
+    "Aortendissektion / akutes Aortensyndrom (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Aortendissektion / akutes Aortensyndrom (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-halsvenen",
+   "bereich": "symptom",
+   "titel": "Gestaute Halsvenen",
+   "kurz": "",
+   "kategorie": "Kreislauf",
+   "reihe": 33,
+   "suchbegriffe": [
+    "Halsvenenstauung"
+   ],
+   "siehe": [
+    "Akute Herzinsuffizienz / Lungenödem (Verdacht)",
+    "Spannungspneumothorax"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akute Herzinsuffizienz / Lungenödem (Verdacht)\n- Spannungspneumothorax"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-beinschwellung",
+   "bereich": "symptom",
+   "titel": "Einseitige Beinschwellung",
+   "kurz": "",
+   "kategorie": "Kreislauf",
+   "reihe": 34,
+   "suchbegriffe": [
+    "Thrombosezeichen",
+    "geschwollenes Bein"
+   ],
+   "siehe": [
+    "Lungenembolie (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Lungenembolie (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-oedeme",
+   "bereich": "symptom",
+   "titel": "Wassereinlagerungen (Beine, Gesicht)",
+   "kurz": "",
+   "kategorie": "Kreislauf",
+   "reihe": 35,
+   "suchbegriffe": [
+    "Ödeme",
+    "Wasser in den Beinen"
+   ],
+   "siehe": [
+    "Akute Herzinsuffizienz / Lungenödem (Verdacht)",
+    "Präeklampsie / Eklampsie (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akute Herzinsuffizienz / Lungenödem (Verdacht)\n- Präeklampsie / Eklampsie (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-pulsierender-bauch",
+   "bereich": "symptom",
+   "titel": "Pulsierende Schwellung im Bauch",
+   "kurz": "",
+   "kategorie": "Kreislauf",
+   "reihe": 36,
+   "suchbegriffe": [
+    "pulsierender Tumor"
+   ],
+   "siehe": [
+    "Rupturiertes Bauchaortenaneurysma (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Rupturiertes Bauchaortenaneurysma (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-bewusstseinsstoerung",
+   "bereich": "symptom",
+   "titel": "Bewusstseinsstörung bis Bewusstlosigkeit",
+   "kurz": "",
+   "kategorie": "Bewusstsein & Neurologie",
+   "reihe": 37,
+   "suchbegriffe": [
+    "Bewusstlos",
+    "Bewusstlosigkeit",
+    "Vigilanzminderung",
+    "Somnolenz",
+    "Koma"
+   ],
+   "siehe": [
+    "Anaphylaktischer Schock",
+    "Benzodiazepin-Überdosierung / -Intoxikation",
+    "Hitzschlag / Hyperthermie",
+    "Hyperglykämie",
+    "Hypoglykämie",
+    "Instabile tachykarde Rhythmusstörung",
+    "Kohlenmonoxid-Vergiftung (Verdacht)",
+    "Kreislaufstillstand / Reanimation",
+    "Lebensbedrohliche Bradykardie",
+    "Meningitis / Meningokokken-Erkrankung (Verdacht)",
+    "Opiat-Überdosierung / -Intoxikation",
+    "Präeklampsie / Eklampsie (Verdacht)",
+    "Schlaganfall (Verdacht)",
+    "Schädel-Hirn-Trauma",
+    "Spannungspneumothorax",
+    "Status epilepticus / Krampfanfall",
+    "Unterkühlung (akzidentelle Hypothermie)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Anaphylaktischer Schock\n- Benzodiazepin-Überdosierung / -Intoxikation\n- Hitzschlag / Hyperthermie\n- Hyperglykämie\n- Hypoglykämie\n- Instabile tachykarde Rhythmusstörung\n- Kohlenmonoxid-Vergiftung (Verdacht)\n- Kreislaufstillstand / Reanimation\n- Lebensbedrohliche Bradykardie\n- Meningitis / Meningokokken-Erkrankung (Verdacht)\n- Opiat-Überdosierung / -Intoxikation\n- Präeklampsie / Eklampsie (Verdacht)\n- Schlaganfall (Verdacht)\n- Schädel-Hirn-Trauma\n- Spannungspneumothorax\n- Status epilepticus / Krampfanfall\n- Unterkühlung (akzidentelle Hypothermie)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-verwirrtheit",
+   "bereich": "symptom",
+   "titel": "Verwirrtheit / Verhaltensänderung",
+   "kurz": "",
+   "kategorie": "Bewusstsein & Neurologie",
+   "reihe": 38,
+   "suchbegriffe": [
+    "Verwirrtheit",
+    "desorientiert",
+    "Wesensänderung"
+   ],
+   "siehe": [
+    "Hitzschlag / Hyperthermie",
+    "Hyperglykämie",
+    "Hypoglykämie",
+    "Kohlenmonoxid-Vergiftung (Verdacht)",
+    "Kritische Hypotension / Volumenmangel",
+    "Meningitis / Meningokokken-Erkrankung (Verdacht)",
+    "Schädel-Hirn-Trauma",
+    "Sepsis (Verdacht)",
+    "Unterkühlung (akzidentelle Hypothermie)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Hitzschlag / Hyperthermie\n- Hyperglykämie\n- Hypoglykämie\n- Kohlenmonoxid-Vergiftung (Verdacht)\n- Kritische Hypotension / Volumenmangel\n- Meningitis / Meningokokken-Erkrankung (Verdacht)\n- Schädel-Hirn-Trauma\n- Sepsis (Verdacht)\n- Unterkühlung (akzidentelle Hypothermie)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-unruhe",
+   "bereich": "symptom",
+   "titel": "Angst / Unruhe",
+   "kurz": "",
+   "kategorie": "Bewusstsein & Neurologie",
+   "reihe": 39,
+   "suchbegriffe": [
+    "Angst",
+    "Unruhe",
+    "Agitiertheit"
+   ],
+   "siehe": [
+    "Akute Herzinsuffizienz / Lungenödem (Verdacht)",
+    "Akutes Koronarsyndrom",
+    "Anaphylaktischer Schock",
+    "Hypoglykämie",
+    "Kritische Bronchospastik (Asthma / COPD)",
+    "Lungenembolie (Verdacht)",
+    "Pseudokrupp / Schwellung obere Atemwege"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akute Herzinsuffizienz / Lungenödem (Verdacht)\n- Akutes Koronarsyndrom\n- Anaphylaktischer Schock\n- Hypoglykämie\n- Kritische Bronchospastik (Asthma / COPD)\n- Lungenembolie (Verdacht)\n- Pseudokrupp / Schwellung obere Atemwege"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-krampfanfall",
+   "bereich": "symptom",
+   "titel": "Krampfanfall (Symptom)",
+   "kurz": "",
+   "kategorie": "Bewusstsein & Neurologie",
+   "reihe": 40,
+   "suchbegriffe": [
+    "Anfall"
+   ],
+   "siehe": [
+    "Hitzschlag / Hyperthermie",
+    "Hypoglykämie",
+    "Kohlenmonoxid-Vergiftung (Verdacht)",
+    "Meningitis / Meningokokken-Erkrankung (Verdacht)",
+    "Präeklampsie / Eklampsie (Verdacht)",
+    "Schädel-Hirn-Trauma",
+    "Status epilepticus / Krampfanfall"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Hitzschlag / Hyperthermie\n- Hypoglykämie\n- Kohlenmonoxid-Vergiftung (Verdacht)\n- Meningitis / Meningokokken-Erkrankung (Verdacht)\n- Präeklampsie / Eklampsie (Verdacht)\n- Schädel-Hirn-Trauma\n- Status epilepticus / Krampfanfall"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-laehmung",
+   "bereich": "symptom",
+   "titel": "Lähmung oder Schwäche einer Körperseite (Arm, Bein)",
+   "kurz": "",
+   "kategorie": "Bewusstsein & Neurologie",
+   "reihe": 41,
+   "suchbegriffe": [
+    "Halbseitenlähmung",
+    "Hemiparese",
+    "Armschwäche"
+   ],
+   "siehe": [
+    "Aortendissektion / akutes Aortensyndrom (Verdacht)",
+    "Hypertensiver Notfall / hypertensive Entgleisung",
+    "Hypoglykämie",
+    "Schlaganfall (Verdacht)",
+    "Schädel-Hirn-Trauma"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Aortendissektion / akutes Aortensyndrom (Verdacht)\n- Hypertensiver Notfall / hypertensive Entgleisung\n- Hypoglykämie\n- Schlaganfall (Verdacht)\n- Schädel-Hirn-Trauma"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-gesicht",
+   "bereich": "symptom",
+   "titel": "Hängender Mundwinkel / Gesichtslähmung",
+   "kurz": "",
+   "kategorie": "Bewusstsein & Neurologie",
+   "reihe": 42,
+   "suchbegriffe": [
+    "Fazialisparese",
+    "hängender Mundwinkel"
+   ],
+   "siehe": [
+    "Schlaganfall (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Schlaganfall (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-sprache",
+   "bereich": "symptom",
+   "titel": "Sprachstörung / Wortfindungsstörung",
+   "kurz": "",
+   "kategorie": "Bewusstsein & Neurologie",
+   "reihe": 43,
+   "suchbegriffe": [
+    "Sprachstörung",
+    "Aphasie",
+    "verwaschene Sprache"
+   ],
+   "siehe": [
+    "Hypertensiver Notfall / hypertensive Entgleisung",
+    "Hypoglykämie",
+    "Schlaganfall (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Hypertensiver Notfall / hypertensive Entgleisung\n- Hypoglykämie\n- Schlaganfall (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-sehstoerung",
+   "bereich": "symptom",
+   "titel": "Sehstörung / Doppelbilder",
+   "kurz": "",
+   "kategorie": "Bewusstsein & Neurologie",
+   "reihe": 44,
+   "suchbegriffe": [
+    "Sehstörung",
+    "Doppelbilder",
+    "Augenflimmern"
+   ],
+   "siehe": [
+    "Hypoglykämie",
+    "Kohlenmonoxid-Vergiftung (Verdacht)",
+    "Präeklampsie / Eklampsie (Verdacht)",
+    "Schlaganfall (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Hypoglykämie\n- Kohlenmonoxid-Vergiftung (Verdacht)\n- Präeklampsie / Eklampsie (Verdacht)\n- Schlaganfall (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-blickwendung",
+   "bereich": "symptom",
+   "titel": "Einseitige Blickwendung",
+   "kurz": "",
+   "kategorie": "Bewusstsein & Neurologie",
+   "reihe": 45,
+   "suchbegriffe": [
+    "Blickdeviation"
+   ],
+   "siehe": [
+    "Schlaganfall (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Schlaganfall (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-schwindel",
+   "bereich": "symptom",
+   "titel": "Schwindel / Gang- und Koordinationsstörung",
+   "kurz": "",
+   "kategorie": "Bewusstsein & Neurologie",
+   "reihe": 46,
+   "suchbegriffe": [
+    "Schwindel",
+    "Gangunsicherheit"
+   ],
+   "siehe": [
+    "Benzodiazepin-Überdosierung / -Intoxikation",
+    "Hypoglykämie",
+    "Instabile tachykarde Rhythmusstörung",
+    "Kohlenmonoxid-Vergiftung (Verdacht)",
+    "Kritische Hypotension / Volumenmangel",
+    "Lebensbedrohliche Bradykardie",
+    "Schlaganfall (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Benzodiazepin-Überdosierung / -Intoxikation\n- Hypoglykämie\n- Instabile tachykarde Rhythmusstörung\n- Kohlenmonoxid-Vergiftung (Verdacht)\n- Kritische Hypotension / Volumenmangel\n- Lebensbedrohliche Bradykardie\n- Schlaganfall (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-taubheit",
+   "bereich": "symptom",
+   "titel": "Taubheitsgefühl / Kribbeln einer Körperseite",
+   "kurz": "",
+   "kategorie": "Bewusstsein & Neurologie",
+   "reihe": 47,
+   "suchbegriffe": [
+    "Sensibilitätsstörung",
+    "Kribbeln"
+   ],
+   "siehe": [
+    "Schlaganfall (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Schlaganfall (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-miosis",
+   "bereich": "symptom",
+   "titel": "Enge, stecknadelkopfgroße Pupillen",
+   "kurz": "",
+   "kategorie": "Bewusstsein & Neurologie",
+   "reihe": 48,
+   "suchbegriffe": [
+    "Miosis",
+    "enge Pupillen"
+   ],
+   "siehe": [
+    "Opiat-Überdosierung / -Intoxikation"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Opiat-Überdosierung / -Intoxikation"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-anisokorie",
+   "bereich": "symptom",
+   "titel": "Ungleich weite Pupillen / einseitig weite Pupille",
+   "kurz": "",
+   "kategorie": "Bewusstsein & Neurologie",
+   "reihe": 49,
+   "suchbegriffe": [
+    "Anisokorie"
+   ],
+   "siehe": [
+    "Schädel-Hirn-Trauma"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Schädel-Hirn-Trauma"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-zittern",
+   "bereich": "symptom",
+   "titel": "Zittern",
+   "kurz": "",
+   "kategorie": "Bewusstsein & Neurologie",
+   "reihe": 50,
+   "suchbegriffe": [
+    "Tremor"
+   ],
+   "siehe": [
+    "Hypoglykämie",
+    "Unterkühlung (akzidentelle Hypothermie)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Hypoglykämie\n- Unterkühlung (akzidentelle Hypothermie)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-heisshunger",
+   "bereich": "symptom",
+   "titel": "Heißhunger",
+   "kurz": "",
+   "kategorie": "Bewusstsein & Neurologie",
+   "reihe": 51,
+   "suchbegriffe": [],
+   "siehe": [
+    "Hypoglykämie"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Hypoglykämie"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-lichtscheu",
+   "bereich": "symptom",
+   "titel": "Lichtscheu",
+   "kurz": "",
+   "kategorie": "Bewusstsein & Neurologie",
+   "reihe": 52,
+   "suchbegriffe": [
+    "Photophobie"
+   ],
+   "siehe": [
+    "Meningitis / Meningokokken-Erkrankung (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Meningitis / Meningokokken-Erkrankung (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-fieber",
+   "bereich": "symptom",
+   "titel": "Fieber",
+   "kurz": "",
+   "kategorie": "Haut & Temperatur",
+   "reihe": 53,
+   "suchbegriffe": [],
+   "siehe": [
+    "Akuter Abdominalschmerz",
+    "Meningitis / Meningokokken-Erkrankung (Verdacht)",
+    "Sepsis (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akuter Abdominalschmerz\n- Meningitis / Meningokokken-Erkrankung (Verdacht)\n- Sepsis (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-schuettelfrost",
+   "bereich": "symptom",
+   "titel": "Schüttelfrost",
+   "kurz": "",
+   "kategorie": "Haut & Temperatur",
+   "reihe": 54,
+   "suchbegriffe": [],
+   "siehe": [
+    "Sepsis (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Sepsis (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-unterkuehlt",
+   "bereich": "symptom",
+   "titel": "Niedrige Körpertemperatur / Kältezittern",
+   "kurz": "",
+   "kategorie": "Haut & Temperatur",
+   "reihe": 55,
+   "suchbegriffe": [
+    "Kältezittern",
+    "Untertemperatur"
+   ],
+   "siehe": [
+    "Sepsis (Verdacht)",
+    "Unterkühlung (akzidentelle Hypothermie)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Sepsis (Verdacht)\n- Unterkühlung (akzidentelle Hypothermie)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-ueberhitzt",
+   "bereich": "symptom",
+   "titel": "Sehr hohe Körpertemperatur, heiße Haut",
+   "kurz": "",
+   "kategorie": "Haut & Temperatur",
+   "reihe": 56,
+   "suchbegriffe": [
+    "Überhitzung"
+   ],
+   "siehe": [
+    "Hitzschlag / Hyperthermie"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Hitzschlag / Hyperthermie"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-schwitzen",
+   "bereich": "symptom",
+   "titel": "Starkes Schwitzen",
+   "kurz": "",
+   "kategorie": "Haut & Temperatur",
+   "reihe": 57,
+   "suchbegriffe": [
+    "Schweißausbruch",
+    "Schwitzen"
+   ],
+   "siehe": [
+    "Akute Herzinsuffizienz / Lungenödem (Verdacht)",
+    "Akutes Koronarsyndrom",
+    "Hypoglykämie"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akute Herzinsuffizienz / Lungenödem (Verdacht)\n- Akutes Koronarsyndrom\n- Hypoglykämie"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-quaddeln",
+   "bereich": "symptom",
+   "titel": "Quaddeln, Juckreiz, Hautrötung",
+   "kurz": "",
+   "kategorie": "Haut & Temperatur",
+   "reihe": 58,
+   "suchbegriffe": [
+    "Urtikaria",
+    "Nesselsucht",
+    "Flush",
+    "Juckreiz"
+   ],
+   "siehe": [
+    "Anaphylaktischer Schock"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Anaphylaktischer Schock"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-schwellung",
+   "bereich": "symptom",
+   "titel": "Schwellung von Lippen, Zunge oder Gesicht",
+   "kurz": "",
+   "kategorie": "Haut & Temperatur",
+   "reihe": 59,
+   "suchbegriffe": [
+    "Angioödem",
+    "Quincke-Ödem"
+   ],
+   "siehe": [
+    "Anaphylaktischer Schock"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Anaphylaktischer Schock"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-petechien",
+   "bereich": "symptom",
+   "titel": "Punktförmige Hauteinblutungen",
+   "kurz": "",
+   "kategorie": "Haut & Temperatur",
+   "reihe": 60,
+   "suchbegriffe": [
+    "Petechien"
+   ],
+   "siehe": [
+    "Meningitis / Meningokokken-Erkrankung (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Meningitis / Meningokokken-Erkrankung (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-exsikkose",
+   "bereich": "symptom",
+   "titel": "Durst, trockene Schleimhäute, viel Wasserlassen",
+   "kurz": "",
+   "kategorie": "Haut & Temperatur",
+   "reihe": 61,
+   "suchbegriffe": [
+    "Exsikkose",
+    "Polyurie",
+    "Austrocknung"
+   ],
+   "siehe": [
+    "Hyperglykämie"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Hyperglykämie"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-uebelkeit",
+   "bereich": "symptom",
+   "titel": "Übelkeit / Erbrechen",
+   "kurz": "",
+   "kategorie": "Magen-Darm & Blutung",
+   "reihe": 62,
+   "suchbegriffe": [
+    "Übelkeit",
+    "Erbrechen",
+    "Brechreiz"
+   ],
+   "siehe": [
+    "Akuter Abdominalschmerz",
+    "Akutes Koronarsyndrom",
+    "Anaphylaktischer Schock",
+    "Hypoglykämie",
+    "Kohlenmonoxid-Vergiftung (Verdacht)",
+    "Meningitis / Meningokokken-Erkrankung (Verdacht)",
+    "Schlaganfall (Verdacht)",
+    "Schädel-Hirn-Trauma"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akuter Abdominalschmerz\n- Akutes Koronarsyndrom\n- Anaphylaktischer Schock\n- Hypoglykämie\n- Kohlenmonoxid-Vergiftung (Verdacht)\n- Meningitis / Meningokokken-Erkrankung (Verdacht)\n- Schlaganfall (Verdacht)\n- Schädel-Hirn-Trauma"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-bluterbrechen",
+   "bereich": "symptom",
+   "titel": "Bluterbrechen / kaffeesatzartiges Erbrechen",
+   "kurz": "",
+   "kategorie": "Magen-Darm & Blutung",
+   "reihe": 63,
+   "suchbegriffe": [
+    "Hämatemesis",
+    "Kaffeesatzerbrechen"
+   ],
+   "siehe": [
+    "Obere gastrointestinale Blutung (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Obere gastrointestinale Blutung (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-teerstuhl",
+   "bereich": "symptom",
+   "titel": "Teerstuhl / Blut im Stuhl",
+   "kurz": "",
+   "kategorie": "Magen-Darm & Blutung",
+   "reihe": 64,
+   "suchbegriffe": [
+    "Meläna",
+    "schwarzer Stuhl",
+    "Blut im Stuhl"
+   ],
+   "siehe": [
+    "Obere gastrointestinale Blutung (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Obere gastrointestinale Blutung (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-nasenbluten",
+   "bereich": "symptom",
+   "titel": "Starkes Nasenbluten",
+   "kurz": "",
+   "kategorie": "Magen-Darm & Blutung",
+   "reihe": 65,
+   "suchbegriffe": [],
+   "siehe": [
+    "Kritische Epistaxis (Nasenbluten)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Kritische Epistaxis (Nasenbluten)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-blutung-geburt",
+   "bereich": "symptom",
+   "titel": "Starke vaginale Blutung nach der Geburt",
+   "kurz": "",
+   "kategorie": "Magen-Darm & Blutung",
+   "reihe": 66,
+   "suchbegriffe": [
+    "Blutung nach Geburt"
+   ],
+   "siehe": [
+    "Kritische postpartale Blutung"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Kritische postpartale Blutung"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-allergen",
+   "bereich": "symptom",
+   "titel": "Kontakt mit Allergen (Insektenstich, Nahrungsmittel, Medikament)",
+   "kurz": "",
+   "kategorie": "Situation / Anamnese",
+   "reihe": 67,
+   "suchbegriffe": [
+    "Insektenstich",
+    "Bienenstich",
+    "Wespenstich"
+   ],
+   "siehe": [
+    "Anaphylaktischer Schock"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Anaphylaktischer Schock"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-opioid-hinweis",
+   "bereich": "symptom",
+   "titel": "Hinweis auf Opioide (z. B. Heroin, Schmerzpflaster, Spritzen)",
+   "kurz": "",
+   "kategorie": "Situation / Anamnese",
+   "reihe": 68,
+   "suchbegriffe": [
+    "Drogen",
+    "Fixer"
+   ],
+   "siehe": [
+    "Opiat-Überdosierung / -Intoxikation"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Opiat-Überdosierung / -Intoxikation"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-benzo-hinweis",
+   "bereich": "symptom",
+   "titel": "Hinweis auf Schlaf- oder Beruhigungsmittel",
+   "kurz": "",
+   "kategorie": "Situation / Anamnese",
+   "reihe": 69,
+   "suchbegriffe": [
+    "Schlaftabletten",
+    "Beruhigungsmittel"
+   ],
+   "siehe": [
+    "Benzodiazepin-Überdosierung / -Intoxikation"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Benzodiazepin-Überdosierung / -Intoxikation"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-diabetes",
+   "bereich": "symptom",
+   "titel": "Bekannter Diabetes / Insulin",
+   "kurz": "",
+   "kategorie": "Situation / Anamnese",
+   "reihe": 70,
+   "suchbegriffe": [
+    "Diabetiker",
+    "Insulin",
+    "Zucker"
+   ],
+   "siehe": [
+    "Hyperglykämie",
+    "Hypoglykämie"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Hyperglykämie\n- Hypoglykämie"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-infekt",
+   "bereich": "symptom",
+   "titel": "Hinweis auf Infektion",
+   "kurz": "",
+   "kategorie": "Situation / Anamnese",
+   "reihe": 71,
+   "suchbegriffe": [
+    "Infekt",
+    "Infektion"
+   ],
+   "siehe": [
+    "Hyperglykämie",
+    "Sepsis (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Hyperglykämie\n- Sepsis (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-schwanger",
+   "bereich": "symptom",
+   "titel": "Schwangerschaft / Wochenbett",
+   "kurz": "",
+   "kategorie": "Situation / Anamnese",
+   "reihe": 72,
+   "suchbegriffe": [
+    "Schwangere",
+    "Wochenbett"
+   ],
+   "siehe": [
+    "Kritische postpartale Blutung",
+    "Präeklampsie / Eklampsie (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Kritische postpartale Blutung\n- Präeklampsie / Eklampsie (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-trauma",
+   "bereich": "symptom",
+   "titel": "Unfall / Verletzung",
+   "kurz": "",
+   "kategorie": "Situation / Anamnese",
+   "reihe": 73,
+   "suchbegriffe": [
+    "Unfall",
+    "Verletzung",
+    "Sturz"
+   ],
+   "siehe": [
+    "Schädel-Hirn-Trauma",
+    "Spannungspneumothorax"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Schädel-Hirn-Trauma\n- Spannungspneumothorax"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-kopfverletzung",
+   "bereich": "symptom",
+   "titel": "Kopfverletzung / Sturz auf den Kopf",
+   "kurz": "",
+   "kategorie": "Situation / Anamnese",
+   "reihe": 74,
+   "suchbegriffe": [
+    "Kopfplatzwunde"
+   ],
+   "siehe": [
+    "Schädel-Hirn-Trauma"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Schädel-Hirn-Trauma"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-kaelte",
+   "bereich": "symptom",
+   "titel": "Kälte- oder Nässeexposition",
+   "kurz": "",
+   "kategorie": "Situation / Anamnese",
+   "reihe": 75,
+   "suchbegriffe": [
+    "Kälte",
+    "Lawine",
+    "Kaltwasser"
+   ],
+   "siehe": [
+    "Unterkühlung (akzidentelle Hypothermie)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Unterkühlung (akzidentelle Hypothermie)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-hitze",
+   "bereich": "symptom",
+   "titel": "Hitze / Anstrengung bei Hitze",
+   "kurz": "",
+   "kategorie": "Situation / Anamnese",
+   "reihe": 76,
+   "suchbegriffe": [
+    "Hitze",
+    "Sonne"
+   ],
+   "siehe": [
+    "Hitzschlag / Hyperthermie"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Hitzschlag / Hyperthermie"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-co-quelle",
+   "bereich": "symptom",
+   "titel": "Brand, Ofen, Heizung, Garage, Shisha – evtl. mehrere Betroffene",
+   "kurz": "",
+   "kategorie": "Situation / Anamnese",
+   "reihe": 77,
+   "suchbegriffe": [
+    "CO-Warner",
+    "Kohlenmonoxid",
+    "Shisha"
+   ],
+   "siehe": [
+    "Kohlenmonoxid-Vergiftung (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Kohlenmonoxid-Vergiftung (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-thromboserisiko",
+   "bereich": "symptom",
+   "titel": "Immobilisation, Operation oder Thrombose",
+   "kurz": "",
+   "kategorie": "Situation / Anamnese",
+   "reihe": 78,
+   "suchbegriffe": [
+    "Immobilisation",
+    "Thromboserisiko"
+   ],
+   "siehe": [
+    "Lungenembolie (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Lungenembolie (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-kleinkind",
+   "bereich": "symptom",
+   "titel": "Kleinkind",
+   "kurz": "",
+   "kategorie": "Situation / Anamnese",
+   "reihe": 79,
+   "suchbegriffe": [],
+   "siehe": [
+    "Pseudokrupp / Schwellung obere Atemwege"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Pseudokrupp / Schwellung obere Atemwege"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-lunge-bekannt",
+   "bereich": "symptom",
+   "titel": "Bekanntes Asthma / COPD",
+   "kurz": "",
+   "kategorie": "Situation / Anamnese",
+   "reihe": 80,
+   "suchbegriffe": [
+    "Asthmatiker"
+   ],
+   "siehe": [
+    "Kritische Bronchospastik (Asthma / COPD)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Kritische Bronchospastik (Asthma / COPD)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-herz-bekannt",
+   "bereich": "symptom",
+   "titel": "Bekannte Herzschwäche / Herzerkrankung",
+   "kurz": "",
+   "kategorie": "Situation / Anamnese",
+   "reihe": 81,
+   "suchbegriffe": [
+    "Herzschwäche"
+   ],
+   "siehe": [
+    "Akute Herzinsuffizienz / Lungenödem (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Akute Herzinsuffizienz / Lungenödem (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-hypertonie-bekannt",
+   "bereich": "symptom",
+   "titel": "Bekannter Bluthochdruck",
+   "kurz": "",
+   "kategorie": "Situation / Anamnese",
+   "reihe": 82,
+   "suchbegriffe": [],
+   "siehe": [
+    "Aortendissektion / akutes Aortensyndrom (Verdacht)",
+    "Hypertensiver Notfall / hypertensive Entgleisung"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Aortendissektion / akutes Aortensyndrom (Verdacht)\n- Hypertensiver Notfall / hypertensive Entgleisung"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-aneurysma-bekannt",
+   "bereich": "symptom",
+   "titel": "Bekanntes Aortenaneurysma",
+   "kurz": "",
+   "kategorie": "Situation / Anamnese",
+   "reihe": 83,
+   "suchbegriffe": [],
+   "siehe": [
+    "Rupturiertes Bauchaortenaneurysma (Verdacht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Rupturiertes Bauchaortenaneurysma (Verdacht)"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  },
+  {
+   "id": "sym-antikoagulation",
+   "bereich": "symptom",
+   "titel": "Einnahme von Blutverdünnern",
+   "kurz": "",
+   "kategorie": "Situation / Anamnese",
+   "reihe": 84,
+   "suchbegriffe": [
+    "Blutverdünner",
+    "Marcumar",
+    "Antikoagulation"
+   ],
+   "siehe": [
+    "Kritische Epistaxis (Nasenbluten)",
+    "Obere gastrointestinale Blutung (Verdacht)",
+    "Schlaganfall (Verdacht)",
+    "Schädel-Hirn-Trauma"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Mögliche Verdachtsdiagnosen",
+     "text": "- Kritische Epistaxis (Nasenbluten)\n- Obere gastrointestinale Blutung (Verdacht)\n- Schlaganfall (Verdacht)\n- Schädel-Hirn-Trauma"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Zusammenstellung aus den Verdachtsdiagnosen der App",
+   "stand": "2026-11"
+  }
+ ]
+}

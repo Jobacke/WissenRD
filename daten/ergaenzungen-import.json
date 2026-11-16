@@ -58,7 +58,14 @@
    ],
    "sprechtext": "Hyperglykämie. Achtung: keine Leitlinie des Ä L R D in Bayern. Nach den Vorgaben anderer Bundesländer: kritisch ab 250 Milligramm pro Deziliter bei Erwachsenen und ab 200 bei Kindern, mit Allgemeinsymptomen. Anamnese: bekannter Diabetes oder Neumanifestation, Infekt, Therapieänderung, Diätfehler, Kortison, Insulinpumpe. Maßnahmen: Basismaßnahmen, Temperatur, i.v.-Zugang, Vollelektrolytlösung, bei über 12 Jahren 500 bis 1000 Milliliter, bis 12 Jahre 10 Milliliter pro Kilogramm, 12-Kanal-E K G, Transport. Bei Bewusstseinsminderung an andere Ursachen denken. Insulin ist präklinisch schlecht praktikabel.",
    "quelle": "Keine Leitlinie des ÄLRD in Bayern · Inhalt nach: ÄLRD Baden-Württemberg, Brandenburg, Mecklenburg-Vorpommern, Nordrhein-Westfalen, Sachsen, Sachsen-Anhalt: Standardarbeitsanweisungen und Behandlungspfade im Rettungsdienst (SAA und BPR 2025), BPR Hyperglykämie und SAA Vollelektrolytlösung, Stand 30.04.2025 · Bayern-Bezug: ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5 (22.10.2025); ÄLRD Bayern: Delegationsalgorithmen 2c, V. a. Sepsis (gültig ab 01.11.2025)",
-   "stand": "2025-04"
+   "stand": "2025-04",
+   "symptome": [
+    "sym-exsikkose",
+    "sym-bewusstseinsstoerung",
+    "sym-verwirrtheit",
+    "sym-diabetes",
+    "sym-infekt"
+   ]
   }
  ]
 }

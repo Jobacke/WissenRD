@@ -463,6 +463,7 @@ function zeigeBereich(k) {
   if (!b) return zeigeStart();
   const liste = st.eintraege.filter(e => e.bereich === k);
   if (k === "klinik") return zeigeKliniken(b, liste);
+  if (k === "symptom" && liste.some(e => e.kategorie)) return zeigeSymptomCheck(b, liste);
   inhalt.innerHTML = `
     <h2>${b.icon} ${b.name} <span class="kurz">${liste.length}</span></h2>
     <section class="liste">${liste.map(e => eintragZeile(e, false)).join("") || `<p class="leise">Noch leer.</p>`}</section>
@@ -576,6 +577,64 @@ function zeigeKliniken(b, liste) {
   }
 }
 
+// ---------------- Symptom-Check: Symptome antippen → mögliche Verdachtsdiagnosen ----------------
+const SYM_KAT = ["Schmerz", "Atmung", "Kreislauf", "Bewusstsein & Neurologie", "Haut & Temperatur", "Magen-Darm & Blutung", "Situation / Anamnese"];
+function symAuswahl() {
+  try { return new Set(JSON.parse(sessionStorage.getItem("wrd-sym")) || []); } catch { return new Set(); }
+}
+function symMerken(set) { try { sessionStorage.setItem("wrd-sym", JSON.stringify([...set])); } catch { /* egal */ } }
+const symName = e => e.titel.replace(/ \(Symptom\)$/, "");
+
+function zeigeSymptomCheck(b, liste) {
+  const symptome = liste.filter(e => e.kategorie).sort((x, y) => (x.reihe ?? 999) - (y.reihe ?? 999) || x.titel.localeCompare(y.titel, "de"));
+  const kats = [...SYM_KAT, ...new Set(symptome.map(e => e.kategorie).filter(k => !SYM_KAT.includes(k)))];
+  const ohneKat = liste.filter(e => !e.kategorie);
+  const gewaehlt = symAuswahl();
+  inhalt.innerHTML = `
+    <h2>${b.icon} ${b.name} <span class="kurz">Symptom-Check</span></h2>
+    <p class="standort">Symptome antippen – passende Verdachtsdiagnosen erscheinen oben. Hilfe zur Einordnung, keine Diagnose.</p>
+    <section id="sym-ergebnis"></section>
+    ${kats.map(k => {
+      const teil = symptome.filter(e => e.kategorie === k);
+      return teil.length ? `<h3 class="zwischen">${esc(k)}</h3><div class="sym-chips">${teil.map(e =>
+        `<button class="sym${gewaehlt.has(e.id) ? " an" : ""}" data-id="${esc(e.id)}" aria-pressed="${gewaehlt.has(e.id)}">${esc(symName(e))}</button>`).join("")}</div>` : "";
+    }).join("")}
+    ${ohneKat.length ? `<h3 class="zwischen">Weitere Einträge</h3><section class="liste">${ohneKat.map(e => eintragZeile(e, false)).join("")}</section>` : ""}
+    <button id="sym-bar" class="sym-bar" hidden></button>`;
+  const zeichneErgebnis = () => {
+    const sel = symAuswahl();
+    const box = $("#sym-ergebnis"), bar = $("#sym-bar");
+    if (!sel.size) { box.innerHTML = ""; bar.hidden = true; return; }
+    const namen = Object.fromEntries(symptome.map(e => [e.id, symName(e)]));
+    const treffer = st.eintraege.filter(e => e.bereich === "diagnose" && (e.symptome || []).length)
+      .map(e => ({ e, m: e.symptome.filter(x => sel.has(x)) }))
+      .filter(t => t.m.length)
+      .sort((x, y) => y.m.length - x.m.length || y.m.length / y.e.symptome.length - x.m.length / x.e.symptome.length || x.e.titel.localeCompare(y.e.titel, "de"));
+    box.innerHTML = `
+      <div class="sym-kopf"><strong>${treffer.length ? `${treffer.length} mögliche Verdachtsdiagnose${treffer.length === 1 ? "" : "n"}` : "Keine passende Verdachtsdiagnose"}</strong>
+        <span>${sel.size} Symptom${sel.size === 1 ? "" : "e"} gewählt · <button class="link" id="sym-leeren">alle abwählen</button></span></div>
+      <section class="liste">${treffer.slice(0, 12).map(({ e, m }) => `
+        <a class="zeile${m.length === sel.size ? " sym-alle" : ""}" data-b="diagnose" href="#/e/${esc(e.id)}">
+          <span class="z-icon">🩺</span>
+          <span class="z-text"><strong>${esc(e.titel)}</strong><small>✓ ${m.map(x => esc(namen[x] || x)).join(" · ")}</small></span>
+          <span class="dist">${m.length}/${sel.size}</span><span class="pfeil">›</span></a>`).join("")}</section>`;
+    $("#sym-leeren").onclick = () => { symMerken(new Set()); zeigeBereich("symptom"); };
+    bar.hidden = false;
+    bar.textContent = `▲ ${treffer.length} Verdachtsdiagnose${treffer.length === 1 ? "" : "n"} · ${sel.size} gewählt`;
+  };
+  inhalt.querySelectorAll("button.sym").forEach(knopf => (knopf.onclick = () => {
+    const sel = symAuswahl();
+    const an = !sel.has(knopf.dataset.id);
+    if (an) sel.add(knopf.dataset.id); else sel.delete(knopf.dataset.id);
+    symMerken(sel);
+    knopf.classList.toggle("an", an);
+    knopf.setAttribute("aria-pressed", an);
+    zeichneErgebnis();
+  }));
+  $("#sym-bar").onclick = () => $("#sym-ergebnis").scrollIntoView({ behavior: "smooth", block: "start" });
+  zeichneErgebnis();
+}
+
 // Klinik-Eintrag: Entfernung, Route, Position vor Ort speichern
 function geoZeile(e) {
   if (e.bereich !== "klinik" || istUebersicht(e)) return "";
@@ -608,6 +667,17 @@ async function speichereGeo(e) {
   }
 }
 
+// „Siehe auch“: direkt zum Eintrag springen – Titel, dann Kurzform, dann eindeutiger Suchschlüssel
+function sieheZiel(text, eigeneId) {
+  const n = norm(text);
+  if (!n) return null;
+  const andere = st.eintraege.filter(x => x.id !== eigeneId);
+  const exakt = andere.find(x => norm(x.titel) === n) || andere.find(x => x.kurz && norm(x.kurz) === n);
+  if (exakt) return exakt;
+  const treffer = andere.filter(x => (x.schluessel || []).includes(n));
+  return treffer.length === 1 ? treffer[0] : null;
+}
+
 function zeigeEintrag(id) {
   const e = st.eintraege.find(x => x.id === id);
   if (!e) { inhalt.innerHTML = `<p class="leise mitte">Eintrag nicht gefunden.</p>`; return; }
@@ -615,7 +685,10 @@ function zeigeEintrag(id) {
   const tel = !!b.telefon;
   const abschnitte = (e.abschnitte || []).filter(a => a.text && a.text.trim()).map(a => `
     <section class="abschnitt"><h4>${esc(a.titel)}</h4>${htmlAusText(a.text, tel)}</section>`).join("");
-  const siehe = (e.siehe || []).map(s => `<a class="chip" href="#/suche/${encodeURIComponent(s)}">${esc(s)}</a>`).join("");
+  const siehe = (e.siehe || []).map(s => {
+    const z = sieheZiel(s, e.id);
+    return `<a class="chip" href="${z ? "#/e/" + encodeURIComponent(z.id) : "#/suche/" + encodeURIComponent(s)}">${esc(s)}</a>`;
+  }).join("");
   const geaendert = e.geaendert?.toDate ? e.geaendert.toDate().toLocaleString("de-DE") : "";
   inhalt.innerHTML = `
     <article class="eintrag">
@@ -751,7 +824,10 @@ function bereinigt(e) {
     suchbegriffe: e.suchbegriffe || [], siehe: e.siehe || [],
     abschnitte: (e.abschnitte || []).map(a => ({ titel: a.titel || "", text: a.text || "" })),
     sprechtext: e.sprechtext || "", quelle: e.quelle || "", stand: e.stand || "",
-    ...(hatGeo(e) ? { geo: { lat: +e.geo.lat, lon: +e.geo.lon, quelle: e.geo.quelle || "" } } : {})
+    ...(hatGeo(e) ? { geo: { lat: +e.geo.lat, lon: +e.geo.lon, quelle: e.geo.quelle || "" } } : {}),
+    ...(Array.isArray(e.symptome) ? { symptome: e.symptome.filter(x => typeof x === "string") } : {}),
+    ...(e.kategorie ? { kategorie: String(e.kategorie) } : {}),
+    ...(Number.isFinite(e.reihe) ? { reihe: e.reihe } : {})
   };
 }
 

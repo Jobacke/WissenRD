@@ -303,3 +303,21 @@ h3.zwischen { font-size: .72rem; text-transform: uppercase; letter-spacing: .05e
   border: 1px solid var(--linie); background: var(--karte); text-decoration: none;
 }
 
+/* Symptom-Check */
+.sym-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+button.sym {
+  font: inherit; font-size: .8rem; line-height: 1.25; text-align: left; padding: 6px 11px; border-radius: 99px;
+  border: 1px solid var(--linie); background: var(--karte); color: var(--text); cursor: pointer;
+}
+button.sym.an { background: var(--akzent); border-color: var(--akzent); color: #fff; font-weight: 600; }
+.sym-kopf { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 10px; margin: 4px 0 8px; font-size: .85rem; }
+.sym-kopf span { font-size: .76rem; color: var(--leise); }
+.sym-kopf .link { font-size: .76rem; padding: 0; }
+.zeile.sym-alle { border-color: var(--akzent); }
+#sym-ergebnis .z-text small { white-space: normal; }
+.sym-bar {
+  position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(54px + env(safe-area-inset-bottom)); z-index: 9;
+  font: inherit; font-size: .82rem; font-weight: 600; padding: 9px 16px; border-radius: 99px; border: 0;
+  background: var(--kopf); color: #fff; box-shadow: 0 6px 18px rgba(20, 30, 60, .3); white-space: nowrap;
+}
+
