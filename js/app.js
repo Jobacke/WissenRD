@@ -343,18 +343,33 @@ function starteClaude(text) {
   }, 1800);
 }
 
-// Gemini kennt (offiziell) keine vorausgefüllte Frage per Link → Text zusätzlich in die Zwischenablage
+// Gemini kennt keine vorausgefüllte Frage per Link → Text in die Zwischenablage, dann Gemini öffnen.
+// Kopieren synchron (execCommand), damit es sicher fertig ist, bevor iOS die App wechselt.
+function kopiere(text) {
+  let ok = false;
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.setAttribute("readonly", "");
+  ta.style.cssText = "position:fixed;top:0;left:0;opacity:0;font-size:16px";
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.setSelectionRange(0, text.length);
+  try { ok = document.execCommand("copy"); } catch {}
+  ta.remove();
+  if (!ok) try { navigator.clipboard?.writeText(text); ok = true; } catch {}
+  return ok;
+}
 function starteGemini(text) {
-  if (text) {
-    try { navigator.clipboard?.writeText(text); } catch {}
-    hinweis("Frage kopiert – falls das Feld in Gemini leer ist: lange tippen → Einfügen");
-  }
-  const q = text ? "?q=" + encodeURIComponent(text) : "";
-  window.open("https://gemini.google.com/app" + q, "_blank");
+  if (text) { const ok = kopiere(text); hinweis(ok ? "Frage kopiert – in Gemini lange tippen → Einfügen" : "Kopieren nicht möglich", !ok); }
+  window.open("https://gemini.google.com/app", "_blank");
 }
 
 function oeffneClaude(vorgabe = "", e = null) {
   stoppeVorlesen();
+  if (!vorgabe) try {
+    const l = JSON.parse(sessionStorage.getItem("wrd-ki-frage") || "null");
+    if (l && Date.now() - l.t < 15 * 60e3 && l.id === (e?.id || "")) vorgabe = l.q;
+  } catch {}
   $("#c-schleier")?.remove();
   const box = document.createElement("div");
   box.id = "c-schleier";
@@ -374,7 +389,7 @@ function oeffneClaude(vorgabe = "", e = null) {
         <button class="primaer" id="c-los">✦ Claude</button>
         <button class="sekundaer c-gemini" id="c-gemini">◆ Gemini</button>
       </div>
-      <p class="c-hinweis">Die Frage wird vorausgefüllt – dort nur noch absenden. Ohne Frage wird nur der Kontext eingesetzt, die Frage dann direkt dort dazusprechen. Für Gemini wird alles zusätzlich kopiert.</p>
+      <p class="c-hinweis">Bei Claude wird die Frage vorausgefüllt – dort nur noch absenden. Bei Gemini wird sie kopiert: dort lange ins Feld tippen → Einfügen. Das Fenster bleibt offen – für die Zweitmeinung einfach den anderen Knopf tippen.</p>
     </div>`;
   document.body.appendChild(box);
   const zu = () => box.remove();
@@ -384,9 +399,11 @@ function oeffneClaude(vorgabe = "", e = null) {
   const ce = $("#c-eintrag");
   if (ce) ce.onchange = ev => merkeClaudeOption("eintrag", ev.target.checked);
   const text = () => claudeText($("#c-frage").value, e, $("#c-kontext").checked, !!ce?.checked);
-  const los = () => { const t = text(); zu(); starteClaude(t); };
+  // Fenster bleibt offen → nach der Antwort von Claude direkt Gemini als Zweitmeinung (und umgekehrt)
+  const merkeFrage = () => { try { sessionStorage.setItem("wrd-ki-frage", JSON.stringify({ q: $("#c-frage").value, id: e?.id || "", t: Date.now() })); } catch {} };
+  const los = () => { merkeFrage(); $("#c-frage").blur(); starteClaude(text()); };
   $("#c-los").onclick = los;
-  $("#c-gemini").onclick = () => { const t = text(); zu(); starteGemini(t); };
+  $("#c-gemini").onclick = () => { merkeFrage(); $("#c-frage").blur(); starteGemini(text()); };
   $("#c-frage").addEventListener("keydown", ev => { if (ev.key === "Enter" && !ev.shiftKey) { ev.preventDefault(); los(); } });
   setTimeout(() => $("#c-frage").focus(), 60);
 }
