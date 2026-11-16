@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.14.1 (Build 29) – 2026-11-16
+- Zweitmeinung: Gemini-Knopf neben Claude im Fenster „KI fragen“ (Frage wird zusätzlich in die Zwischenablage kopiert)
+
 ## v1.14.0 (Build 28) – 2026-11-16
 - Claude fragen: Knopf in der Kopfzeile, im Eintrag und bei der Suche – öffnet die Claude-App mit vorausgefüllter Frage (optional Bayern-Kontext und Eintragsinhalt)
 

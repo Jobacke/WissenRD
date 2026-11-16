@@ -412,7 +412,9 @@ label.mini { font-weight: 600; }
 .c-option span { flex: 1; min-width: 0; }
 .c-option small { display: block; color: var(--leise); font-size: .72rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .c-knoepfe { display: flex; gap: 8px; }
-.c-knoepfe .primaer { flex: 1; }
+.c-knoepfe .primaer, .c-knoepfe .sekundaer { flex: 1; text-align: center; }
+.c-gemini { background: #e8effd; color: #2a5bd7; }
+@media (prefers-color-scheme: dark) { .c-gemini { background: #22305a; color: #a9c2ff; } }
 .c-hinweis { font-size: .72rem; color: var(--leise); margin: 8px 0 0; }
 .claude-frage { display: flex; align-items: center; justify-content: center; gap: 6px; }
 @keyframes cRein { from { transform: translateY(40px); opacity: .4; } to { transform: none; opacity: 1; } }

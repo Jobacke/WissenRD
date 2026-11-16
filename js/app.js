@@ -343,6 +343,16 @@ function starteClaude(text) {
   }, 1800);
 }
 
+// Gemini kennt (offiziell) keine vorausgefüllte Frage per Link → Text zusätzlich in die Zwischenablage
+function starteGemini(text) {
+  if (text) {
+    try { navigator.clipboard?.writeText(text); } catch {}
+    hinweis("Frage kopiert – falls das Feld in Gemini leer ist: lange tippen → Einfügen");
+  }
+  const q = text ? "?q=" + encodeURIComponent(text) : "";
+  window.open("https://gemini.google.com/app" + q, "_blank");
+}
+
 function oeffneClaude(vorgabe = "", e = null) {
   stoppeVorlesen();
   $("#c-schleier")?.remove();
@@ -350,9 +360,9 @@ function oeffneClaude(vorgabe = "", e = null) {
   box.id = "c-schleier";
   box.className = "c-schleier";
   box.innerHTML = `
-    <div class="c-blatt" role="dialog" aria-label="Claude fragen">
+    <div class="c-blatt" role="dialog" aria-label="KI fragen">
       <div class="c-griff"></div>
-      <div class="c-kopf"><span class="c-stern">✦</span><strong>Claude fragen</strong><button class="c-zu" id="c-zu" aria-label="Schließen">✕</button></div>
+      <div class="c-kopf"><span class="c-stern">✦</span><strong>KI fragen</strong><button class="c-zu" id="c-zu" aria-label="Schließen">✕</button></div>
       <textarea id="c-frage" placeholder="${e ? "Frage zu „" + esc(e.titel) + "“ …" : "Deine Frage …"}" enterkeyhint="send">${esc(vorgabe)}</textarea>
       <div class="c-optionen">
         <label class="c-option"><span>Bayern-Kontext voranstellen<small>Vorgaben ÄLRD Bayern, Abweichungen kennzeichnen</small></span>
@@ -361,9 +371,10 @@ function oeffneClaude(vorgabe = "", e = null) {
           <span class="umschalter" style="flex:none"><input type="checkbox" id="c-eintrag" ${claudeOption("eintrag", false) ? "checked" : ""}><i></i></span></label>` : ""}
       </div>
       <div class="c-knoepfe">
-        <button class="primaer" id="c-los">✦ In Claude öffnen</button>
+        <button class="primaer" id="c-los">✦ Claude</button>
+        <button class="sekundaer c-gemini" id="c-gemini">◆ Gemini</button>
       </div>
-      <p class="c-hinweis">Die Frage wird in der Claude-App vorausgefüllt – dort nur noch absenden. Ohne Frage wird nur der Kontext eingesetzt – die Frage dann direkt in Claude dazusprechen.</p>
+      <p class="c-hinweis">Die Frage wird vorausgefüllt – dort nur noch absenden. Ohne Frage wird nur der Kontext eingesetzt, die Frage dann direkt dort dazusprechen. Für Gemini wird alles zusätzlich kopiert.</p>
     </div>`;
   document.body.appendChild(box);
   const zu = () => box.remove();
@@ -372,13 +383,10 @@ function oeffneClaude(vorgabe = "", e = null) {
   $("#c-kontext").onchange = ev => merkeClaudeOption("kontext", ev.target.checked);
   const ce = $("#c-eintrag");
   if (ce) ce.onchange = ev => merkeClaudeOption("eintrag", ev.target.checked);
-  const los = () => {
-    const frage = $("#c-frage").value;
-    const text = claudeText(frage, e, $("#c-kontext").checked, !!ce?.checked);
-    zu();
-    starteClaude(text);
-  };
+  const text = () => claudeText($("#c-frage").value, e, $("#c-kontext").checked, !!ce?.checked);
+  const los = () => { const t = text(); zu(); starteClaude(t); };
   $("#c-los").onclick = los;
+  $("#c-gemini").onclick = () => { const t = text(); zu(); starteGemini(t); };
   $("#c-frage").addEventListener("keydown", ev => { if (ev.key === "Enter" && !ev.shiftKey) { ev.preventDefault(); los(); } });
   setTimeout(() => $("#c-frage").focus(), 60);
 }
@@ -493,7 +501,7 @@ function zeigeSuche(q) {
     <h3>${t.length} Treffer für „${esc(q)}“</h3>
     <section class="liste">${t.map(e => eintragZeile(e)).join("")}</section>
     ${t.length ? "" : `<p class="leise">Nichts gefunden.</p>`}
-    <button class="${t.length ? "sekundaer" : "primaer"} breit claude-frage" id="claude-suche">✦ Claude fragen: „${esc(q)}“</button>
+    <button class="${t.length ? "sekundaer" : "primaer"} breit claude-frage" id="claude-suche">✦ KI fragen: „${esc(q)}“</button>
     ${!vonSiri && lernen ? `<details class="lernen-klein"><summary>„${esc(q)}“ einem Eintrag als Suchbegriff zuordnen</summary>${lernen}</details>` : ""}
     <a class="sekundaer breit" id="neu-aus-suche" href="#/neu/">＋ „${esc(q)}“ neu anlegen</a>`;
   $("#neu-aus-suche").onclick = () => { sessionStorage.setItem("neuTitel", q); };
@@ -945,7 +953,7 @@ function zeigeEintrag(id) {
       <div class="aktionen">
         <button id="vorlesen" class="primaer">🔊 Vorlesen</button>
         <a class="sekundaer" href="#/bearbeiten/${esc(e.id)}">✏️ Bearbeiten</a>
-        <button id="claude-eintrag" class="sekundaer">✦ Claude</button>
+        <button id="claude-eintrag" class="sekundaer">✦ KI fragen</button>
       </div>
       ${geoZeile(e)}
       ${funk}
