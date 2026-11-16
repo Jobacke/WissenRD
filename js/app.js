@@ -266,6 +266,10 @@ function schliesseSuche() {
   $("#verlauf").hidden = true;
 }
 $("#such-knopf").onclick = () => oeffneSuche(true);
+$("#claude-knopf").onclick = () => {
+  const [, teil, rest] = decodeURIComponent(location.hash.slice(1) || "/").split("/");
+  oeffneClaude("", teil === "e" ? st.eintraege.find(x => x.id === rest) : null);
+};
 $("#suche").addEventListener("focus", zeigeVerlauf);
 $("#suche").addEventListener("blur", () => setTimeout(() => {
   if (document.activeElement !== $("#suche")) { $("#verlauf").hidden = true; schliesseSuche(); }
@@ -305,6 +309,79 @@ document.addEventListener("click", ev => {
   }
 });
 if (startParam) merkeSuche(startParam);
+
+// ---------------- Claude fragen ----------------
+// Öffnet die Claude-App (claude://-Link) mit vorausgefüllter Frage. Gesendet wird erst in Claude selbst.
+const CLAUDE_KONTEXT = "Kontext: Ich arbeite im Rettungsdienst in Bayern. Antworte nach den aktuell gültigen Vorgaben " +
+  "des ÄLRD Bayern. Wenn etwas nicht aus Bayern stammt oder du dir nicht sicher bist, kennzeichne das ausdrücklich – " +
+  "nichts aus anderen Bundesländern ergänzen.";
+const C_MAX = 9000;   // Claude kürzt vorausgefüllten Text bei ca. 14.000 Zeichen – mit Reserve
+function claudeOption(k, std) { try { const v = localStorage.getItem("wrd-claude-" + k); return v === null ? std : v === "1"; } catch { return std; } }
+function merkeClaudeOption(k, v) { try { localStorage.setItem("wrd-claude-" + k, v ? "1" : "0"); } catch {} }
+
+function claudeText(frage, e, mitKontext, mitEintrag) {
+  const teile = [];
+  if (mitKontext) teile.push(CLAUDE_KONTEXT);
+  if (e && mitEintrag) {
+    let md = markdownFuer(e);
+    if (md.length > C_MAX - 1500) md = md.slice(0, C_MAX - 1500) + "\n… (gekürzt)";
+    teile.push(`Es geht um diesen Eintrag aus meiner Wissensdatenbank:\n\n${md.trim()}`);
+  } else if (e) teile.push(`Thema: ${e.titel}${e.kurz && e.kurz !== e.titel ? " (" + e.kurz + ")" : ""}`);
+  if (frage.trim()) teile.push((teile.length ? "Meine Frage: " : "") + frage.trim());
+  return teile.join("\n\n").slice(0, C_MAX);
+}
+
+function starteClaude(text) {
+  const q = text ? "?q=" + encodeURIComponent(text) : "";
+  let weg = false;
+  const merk = () => { if (document.hidden) weg = true; };
+  document.addEventListener("visibilitychange", merk);
+  location.href = "claude://claude.ai/new" + q;          // App öffnen
+  setTimeout(() => {                                      // App nicht da → claude.ai im Browser
+    document.removeEventListener("visibilitychange", merk);
+    if (!weg && !document.hidden) window.open("https://claude.ai/new" + q, "_blank");
+  }, 1800);
+}
+
+function oeffneClaude(vorgabe = "", e = null) {
+  stoppeVorlesen();
+  $("#c-schleier")?.remove();
+  const box = document.createElement("div");
+  box.id = "c-schleier";
+  box.className = "c-schleier";
+  box.innerHTML = `
+    <div class="c-blatt" role="dialog" aria-label="Claude fragen">
+      <div class="c-griff"></div>
+      <div class="c-kopf"><span class="c-stern">✦</span><strong>Claude fragen</strong><button class="c-zu" id="c-zu" aria-label="Schließen">✕</button></div>
+      <textarea id="c-frage" placeholder="${e ? "Frage zu „" + esc(e.titel) + "“ …" : "Deine Frage …"}" enterkeyhint="send">${esc(vorgabe)}</textarea>
+      <div class="c-optionen">
+        <label class="c-option"><span>Bayern-Kontext voranstellen<small>Vorgaben ÄLRD Bayern, Abweichungen kennzeichnen</small></span>
+          <span class="umschalter" style="flex:none"><input type="checkbox" id="c-kontext" ${claudeOption("kontext", true) ? "checked" : ""}><i></i></span></label>
+        ${e ? `<label class="c-option"><span>Eintrag mitschicken<small>${esc(e.titel)} – kompletter Inhalt</small></span>
+          <span class="umschalter" style="flex:none"><input type="checkbox" id="c-eintrag" ${claudeOption("eintrag", false) ? "checked" : ""}><i></i></span></label>` : ""}
+      </div>
+      <div class="c-knoepfe">
+        <button class="primaer" id="c-los">✦ In Claude öffnen</button>
+      </div>
+      <p class="c-hinweis">Die Frage wird in der Claude-App vorausgefüllt – dort nur noch absenden. Ohne Frage wird nur der Kontext eingesetzt – die Frage dann direkt in Claude dazusprechen.</p>
+    </div>`;
+  document.body.appendChild(box);
+  const zu = () => box.remove();
+  box.addEventListener("click", ev => { if (ev.target === box) zu(); });
+  $("#c-zu").onclick = zu;
+  $("#c-kontext").onchange = ev => merkeClaudeOption("kontext", ev.target.checked);
+  const ce = $("#c-eintrag");
+  if (ce) ce.onchange = ev => merkeClaudeOption("eintrag", ev.target.checked);
+  const los = () => {
+    const frage = $("#c-frage").value;
+    const text = claudeText(frage, e, $("#c-kontext").checked, !!ce?.checked);
+    zu();
+    starteClaude(text);
+  };
+  $("#c-los").onclick = los;
+  $("#c-frage").addEventListener("keydown", ev => { if (ev.key === "Enter" && !ev.shiftKey) { ev.preventDefault(); los(); } });
+  setTimeout(() => $("#c-frage").focus(), 60);
+}
 
 // ---------------- Ansichten ----------------
 function eintragZeile(e, mitBereich = true, rechts = "") {
@@ -416,9 +493,11 @@ function zeigeSuche(q) {
     <h3>${t.length} Treffer für „${esc(q)}“</h3>
     <section class="liste">${t.map(e => eintragZeile(e)).join("")}</section>
     ${t.length ? "" : `<p class="leise">Nichts gefunden.</p>`}
+    <button class="${t.length ? "sekundaer" : "primaer"} breit claude-frage" id="claude-suche">✦ Claude fragen: „${esc(q)}“</button>
     ${!vonSiri && lernen ? `<details class="lernen-klein"><summary>„${esc(q)}“ einem Eintrag als Suchbegriff zuordnen</summary>${lernen}</details>` : ""}
     <a class="sekundaer breit" id="neu-aus-suche" href="#/neu/">＋ „${esc(q)}“ neu anlegen</a>`;
   $("#neu-aus-suche").onclick = () => { sessionStorage.setItem("neuTitel", q); };
+  $("#claude-suche").onclick = () => { merkeSuche(q); oeffneClaude(q); };
   inhalt.querySelectorAll("button.lern").forEach(b => (b.onclick = () => lerneBegriff(b.dataset.id, q)));
   const ok = $("#lern-ok");
   if (ok) ok.onclick = () => {
@@ -866,6 +945,7 @@ function zeigeEintrag(id) {
       <div class="aktionen">
         <button id="vorlesen" class="primaer">🔊 Vorlesen</button>
         <a class="sekundaer" href="#/bearbeiten/${esc(e.id)}">✏️ Bearbeiten</a>
+        <button id="claude-eintrag" class="sekundaer">✦ Claude</button>
       </div>
       ${geoZeile(e)}
       ${funk}
@@ -876,6 +956,7 @@ function zeigeEintrag(id) {
     </article>`;
   const gs = $("#geo-speichern");
   if (gs) gs.onclick = () => speichereGeo(e);
+  $("#claude-eintrag").onclick = () => oeffneClaude("", e);
   $("#vorlesen").onclick = () => {
     if (speechSynthesis.speaking) { stoppeVorlesen(); return; }
     vorlesen(e.vorlesen || vorlesetextFuer(e));

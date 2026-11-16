@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.14.0 (Build 28) – 2026-11-16
+- Claude fragen: Knopf in der Kopfzeile, im Eintrag und bei der Suche – öffnet die Claude-App mit vorausgefüllter Frage (optional Bayern-Kontext und Eintragsinhalt)
+
 ## v1.13.0 (Build 27) – 2026-11-16
 - Einstellungen neu gestaltet: kompakt und gruppiert (Vorlesen, Anzeige & Standort, Suchverlauf, Daten), Schalter statt Checkbox, Siri-Angaben und Änderungsprotokoll einklappbar
 
