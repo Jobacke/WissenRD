@@ -1,18 +1,19 @@
-/* Wissen RD – Design v1.5 „frisch“: Türkis → Indigo, helle Karten, kompakte Bedienelemente */
+/* Wissen RD – Design v1.7 „warm“: Apricot → Koralle → Rosé, cremige Flächen, warme Bereichsfarben */
+
 :root {
-  --akzent: #0ea5a4; --akzent-dunkel: #0b7f7e; --indigo: #5b5bf0;
-  --akzent-weich: #e2f6f4; --koralle: #f43f5e; --sonne: #f59e0b;
-  --bg: #f4f6fb; --karte: #ffffff; --text: #0f172a; --leise: #64748b; --linie: #e6eaf2;
-  --schatten: 0 1px 2px rgba(15, 23, 42, .05), 0 4px 14px rgba(15, 23, 42, .05);
+  --akzent: #e8704f; --akzent-dunkel: #b9502f; --indigo: #d9577a;
+  --akzent-weich: #fdece3; --koralle: #d9483b; --sonne: #f2a33a;
+  --bg: #fbf6f0; --karte: #fffdfa; --text: #2b2420; --leise: #8a7d72; --linie: #f0e5da;
+  --schatten: 0 1px 2px rgba(120, 72, 40, .06), 0 6px 18px rgba(120, 72, 40, .06);
   --radius: 14px;
-  --kopf: linear-gradient(115deg, #0ea5a4 0%, #2a8fd6 55%, #5b5bf0 100%);
+  --kopf: linear-gradient(115deg, #f6a96b 0%, #ee7b5c 50%, #e0607d 100%);
 }
-@media (prefers-color-scheme: dark) {   /* Nachtdienst */
+@media (prefers-color-scheme: dark) {   /* Nachtdienst – warmes Dunkel */
   :root {
-    --bg: #0b1120; --karte: #131c2e; --text: #e8eef9; --leise: #93a3b8; --linie: #23304a;
-    --akzent-weich: rgba(20, 184, 166, .16); --akzent-dunkel: #5eead4;
-    --schatten: 0 1px 2px rgba(0, 0, 0, .3);
-    --kopf: linear-gradient(115deg, #0f766e 0%, #1e4f8f 55%, #3730a3 100%);
+    --bg: #1b1613; --karte: #261f1b; --text: #f6ece3; --leise: #b5a497; --linie: #3a2f29;
+    --akzent-weich: rgba(232, 112, 79, .18); --akzent-dunkel: #f6a985; --koralle: #ff8a74;
+    --schatten: 0 1px 2px rgba(0, 0, 0, .35);
+    --kopf: linear-gradient(115deg, #c9774b 0%, #b8573f 50%, #a8465f 100%);
   }
 }
 * { box-sizing: border-box; }
@@ -30,7 +31,7 @@ code { font-size: .85em; word-break: break-all; }
 .kopf {
   position: sticky; top: 0; z-index: 10; background: var(--kopf); color: #fff;
   padding: calc(env(safe-area-inset-top) + 8px) 12px 9px;
-  box-shadow: 0 4px 18px rgba(14, 116, 144, .18);
+  box-shadow: 0 4px 18px rgba(214, 96, 70, .22);
 }
 .kopf-zeile { display: flex; align-items: center; gap: 8px; }
 .zurueck {
@@ -71,7 +72,7 @@ body:not(.angemeldet) .lupe, body:not(.angemeldet) .zahnrad, body:not(.angemelde
 .verlauf {
   position: absolute; right: 0; top: 36px; width: min(300px, calc(100vw - 24px)); z-index: 30;
   background: var(--karte); color: var(--text); border: 1px solid var(--linie); border-radius: 14px;
-  box-shadow: 0 12px 32px rgba(15, 23, 42, .18); padding: 6px; font-size: .85rem;
+  box-shadow: 0 12px 32px rgba(90, 50, 25, .18); padding: 6px; font-size: .85rem;
 }
 .verlauf[hidden] { display: none; }
 .v-titel { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--leise); padding: 4px 8px 2px; }
@@ -103,7 +104,7 @@ body:not(.angemeldet) .lupe, body:not(.angemeldet) .zahnrad, body:not(.angemelde
   white-space: nowrap;
 }
 .bchip span { font-size: .8rem; }
-.bchip.aktiv { background: #fff; color: #0f172a; }
+.bchip.aktiv { background: #fffaf5; color: #8a3a22; }
 @media (prefers-color-scheme: dark) { .bchip.aktiv { background: rgba(255,255,255,.9); } }
 
 main { padding: 14px 14px 24px; max-width: 760px; margin: 0 auto; }
@@ -115,11 +116,15 @@ h3 { margin: 1.4em 0 .5em; font-size: .72rem; font-weight: 700; color: var(--lei
 
 /* ---------- Farben je Bereich ---------- */
 [data-b] { --c: var(--akzent); }
-[data-b="diagnose"] { --c: #f43f5e; }   [data-b="symptom"] { --c: #f59e0b; }
-[data-b="medikament"] { --c: #10b981; } [data-b="algorithmus"] { --c: #6366f1; }
-[data-b="massnahme"] { --c: #ec4899; }  [data-b="leitstelle"] { --c: #0ea5e9; }
-[data-b="klinik"] { --c: #14b8a6; }     [data-b="abkuerzung"] { --c: #8b5cf6; }
-[data-b="sonstiges"] { --c: #64748b; }
+[data-b="diagnose"] { --c: #e8604c; }    /* Koralle */
+[data-b="symptom"] { --c: #e9a23b; }     /* Honig */
+[data-b="medikament"] { --c: #7aa64a; }  /* Olive */
+[data-b="algorithmus"] { --c: #b0638f; } /* Pflaume */
+[data-b="massnahme"] { --c: #e2779a; }   /* Rosé */
+[data-b="leitstelle"] { --c: #d48a3a; }  /* Bernstein */
+[data-b="klinik"] { --c: #cf6a45; }      /* Terrakotta */
+[data-b="abkuerzung"] { --c: #9a7cc4; }  /* Lavendel */
+[data-b="sonstiges"] { --c: #a08a76; }   /* Taupe */
 
 /* ---------- Startseite: kompakte Kacheln ---------- */
 .kacheln { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
@@ -212,7 +217,7 @@ button:active, .primaer:active, .sekundaer:active { transform: scale(.97); }
   position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: calc(54px + env(safe-area-inset-bottom));
   width: 50px; height: 50px; border-radius: 50%; display: grid; place-items: center; z-index: 9;
   background: var(--kopf); color: #fff; font-size: 1.6rem; font-weight: 300; text-decoration: none;
-  box-shadow: 0 6px 18px rgba(79, 70, 229, .35);
+  box-shadow: 0 6px 18px rgba(214, 96, 70, .4);
 }
 .fab:active { transform: scale(.94); }
 
@@ -249,7 +254,7 @@ input[type=range] { padding: 0; accent-color: var(--akzent); }
 .update[hidden] { display: none; }
 .toast {
   position: fixed; left: 50%; bottom: 64px; transform: translateX(-50%) translateY(20px);
-  background: #0f172a; color: #fff; padding: 9px 16px; border-radius: 99px; font-size: .88rem; opacity: 0;
+  background: #3a2c25; color: #fff; padding: 9px 16px; border-radius: 99px; font-size: .88rem; opacity: 0;
   transition: .25s; pointer-events: none; max-width: 90%; z-index: 20; box-shadow: 0 6px 20px rgba(0,0,0,.2);
 }
 .toast.sichtbar { opacity: 1; transform: translateX(-50%); }
@@ -267,3 +272,26 @@ details.lernen-klein summary { cursor: pointer; color: var(--leise); margin: 12p
 
 /* Offline-Anzeige */
 #datenstand.offline { color: var(--sonne); font-weight: 600; }
+
+/* Startseite: Zeile unter den Kacheln + Anordnen-Modus */
+.start-leiste { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; }
+.start-leiste details.zuletzt { margin-top: 0; }
+.start-leiste details.zuletzt[open] { flex-basis: 100%; order: 2; }
+.pille {
+  font-size: .78rem; font-weight: 600; color: var(--leise); padding: 4px 10px; border-radius: 99px;
+  border: 1px solid var(--linie); background: var(--karte);
+}
+.anordnen-hinweis { margin: 0 0 8px; font-size: .8rem; color: var(--leise); text-align: center; }
+.kacheln.anordnen .kachel {
+  cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none;
+  border-style: dashed; border-color: color-mix(in srgb, var(--c) 45%, transparent);
+  animation: wackeln .45s ease-in-out infinite alternate;
+}
+.kacheln.anordnen .kachel:nth-child(even) { animation-delay: .2s; }
+.kacheln.anordnen .kachel small { background: none; color: var(--leise); font-size: .85rem; }
+.kacheln.anordnen .kachel.zieht {
+  animation: none; transform: scale(1.06); z-index: 2; cursor: grabbing;
+  box-shadow: 0 10px 24px rgba(90, 50, 25, .25); border-style: solid; border-color: var(--c);
+}
+@keyframes wackeln { from { transform: rotate(-.8deg); } to { transform: rotate(.8deg); } }
+@media (prefers-reduced-motion: reduce) { .kacheln.anordnen .kachel { animation: none; } }

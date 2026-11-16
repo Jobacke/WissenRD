@@ -23,7 +23,18 @@ const db = initializeFirestore(app, {
 
 const $ = s => document.querySelector(s);
 const inhalt = $("#inhalt");
-const st = { user: null, eintraege: [], geladen: false, datenversion: 0, abmelden: [] };
+const st = { user: null, eintraege: [], geladen: false, datenversion: 0, abmelden: [],
+  reihenfolge: lokaleReihenfolge(), anordnen: false };
+
+// ---------------- Reihenfolge der Bereiche (frei anordnbar, in meta/einstellungen gespeichert) ----------------
+function lokaleReihenfolge() {
+  try { return JSON.parse(localStorage.getItem("wrd-reihenfolge")) || []; } catch { return []; }
+}
+function bereicheSortiert(reihenfolge = st.reihenfolge) {
+  const alle = Object.keys(BEREICHE);
+  const ord = [...reihenfolge.filter(k => alle.includes(k)), ...alle.filter(k => !reihenfolge.includes(k))];
+  return ord.map(k => [k, BEREICHE[k]]);
+}
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -67,6 +78,13 @@ onAuthStateChanged(auth, user => {
     // Formulare nicht durch Live-Updates überschreiben
     if (ersterLauf || !/^#\/(neu|bearbeiten|einstellungen)/.test(location.hash)) route();
   }, err => hinweis("Laden fehlgeschlagen: " + err.message, true)));
+  st.abmelden.push(onSnapshot(doc(db, "meta", "einstellungen"), d => {
+    const r = d.exists() ? d.data().bereichReihenfolge || [] : [];
+    if (JSON.stringify(r) === JSON.stringify(st.reihenfolge)) return;
+    st.reihenfolge = r;
+    try { localStorage.setItem("wrd-reihenfolge", JSON.stringify(r)); } catch { /* egal */ }
+    if (st.geladen && !st.anordnen) route();
+  }, () => {}));
   st.abmelden.push(onSnapshot(doc(db, "meta", "stand"), d => {
     st.datenversion = d.exists() ? d.data().datenversion || 0 : 0;
     zeigeStand();
@@ -129,6 +147,7 @@ function route() {
   const [, teil, rest = ""] = h.split("/");
   const sucheFeld = $("#suche");
   if (teil !== "suche" && document.activeElement !== sucheFeld) sucheFeld.value = "";
+  if (teil) st.anordnen = false;
   setzeZurueck(teil, rest);
   setzeBereichsleiste(teil, rest);
   if (teil === "suche" && rest) oeffneSuche(false); else if (document.activeElement !== sucheFeld) schliesseSuche();
@@ -171,7 +190,7 @@ function setzeBereichsleiste(teil, rest) {
   if (teil === "b") aktiv = rest;
   else if (teil === "e" || teil === "bearbeiten") aktiv = st.eintraege.find(x => x.id === rest)?.bereich || "";
   else if (teil === "neu") aktiv = rest;
-  nav.innerHTML = Object.entries(BEREICHE).map(([k, b]) =>
+  nav.innerHTML = bereicheSortiert().map(([k, b]) =>
     `<a class="bchip${k === aktiv ? " aktiv" : ""}" data-b="${k}" href="#/b/${k}"><span>${b.icon}</span>${esc(KURZNAME[k] || b.name)}</a>`).join("");
   const a = nav.querySelector(".aktiv");
   if (a) a.scrollIntoView({ block: "nearest", inline: "center" });
@@ -297,19 +316,89 @@ function eintragZeile(e, mitBereich = true) {
 }
 
 function zeigeStart() {
-  const kacheln = Object.entries(BEREICHE).map(([k, b]) => {
+  const liste = st.anordnen ? st.anordnenListe.map(k => [k, BEREICHE[k]]) : bereicheSortiert();
+  const kacheln = liste.map(([k, b]) => {
     const n = st.eintraege.filter(e => e.bereich === k).length;
-    return `<a class="kachel" data-b="${k}" href="#/b/${k}"><span class="k-icon">${b.icon}</span>
-      <span class="k-name">${b.name.replace("Verdachtsdiagnosen", "Verdachts\u00ADdiagnosen").replace("Abkürzungen", "Abkür\u00ADzungen")}</span><small>${n}</small></a>`;
+    const name = b.name.replace("Verdachtsdiagnosen", "Verdachts\u00ADdiagnosen").replace("Abkürzungen", "Abkür\u00ADzungen");
+    return `<a class="kachel" data-b="${k}" ${st.anordnen ? "" : `href="#/b/${k}"`}><span class="k-icon">${b.icon}</span>
+      <span class="k-name">${name}</span><small>${st.anordnen ? "⠿" : n}</small></a>`;
   }).join("");
   const zuletzt = [...st.eintraege]
     .sort((a, b) => (b.geaendert?.seconds || 0) - (a.geaendert?.seconds || 0)).slice(0, 5);
+  if (st.anordnen) {
+    inhalt.innerHTML = `
+      <p class="anordnen-hinweis">Kacheln an die gewünschte Stelle ziehen</p>
+      <section class="kacheln anordnen" id="kacheln">${kacheln}</section>
+      <div class="start-leiste">
+        <button id="ord-fertig" class="primaer">✓ Fertig</button>
+        <button id="ord-reset" class="sekundaer">Standard</button>
+        <button id="ord-abbruch" class="link">Abbrechen</button>
+      </div>`;
+    aktiviereZiehen($("#kacheln"));
+    $("#ord-fertig").onclick = speichereReihenfolge;
+    $("#ord-reset").onclick = () => { st.anordnenListe = Object.keys(BEREICHE); zeigeStart(); };
+    $("#ord-abbruch").onclick = () => { st.anordnen = false; zeigeStart(); };
+    return;
+  }
   inhalt.innerHTML = `
     <section class="kacheln">${kacheln}</section>
-    ${zuletzt.length ? `<details class="zuletzt"><summary>🕘 Zuletzt geändert</summary>
-      <section class="liste">${zuletzt.map(eintragZeile).join("")}</section></details>`
-      : `<p class="leise">Noch keine Einträge – lege den ersten an oder importiere Daten (⚙️).</p>`}
+    <div class="start-leiste">
+      ${zuletzt.length ? `<details class="zuletzt"><summary>🕘 Zuletzt geändert</summary>
+        <section class="liste">${zuletzt.map(eintragZeile).join("")}</section></details>` : ""}
+      <button id="anordnen" class="pille">↕ Anordnen</button>
+    </div>
+    ${zuletzt.length ? "" : `<p class="leise">Noch keine Einträge – lege den ersten an oder importiere Daten (⚙️).</p>`}
     <a class="fab" href="#/neu/" title="Neuer Eintrag" aria-label="Neuer Eintrag">＋</a>`;
+  $("#anordnen").onclick = () => {
+    st.anordnen = true;
+    st.anordnenListe = bereicheSortiert().map(([k]) => k);
+    zeigeStart();
+  };
+}
+
+// Ziehen per Finger oder Maus (Pointer-Events), ohne Bibliothek
+function aktiviereZiehen(box) {
+  let zieht = null;
+  box.addEventListener("pointerdown", ev => {
+    const k = ev.target.closest(".kachel");
+    if (!k) return;
+    ev.preventDefault();
+    zieht = k;
+    k.classList.add("zieht");
+    k.setPointerCapture(ev.pointerId);
+  });
+  box.addEventListener("pointermove", ev => {
+    if (!zieht) return;
+    const unter = document.elementFromPoint(ev.clientX, ev.clientY)?.closest(".kachel");
+    if (!unter || unter === zieht || unter.parentNode !== box) return;
+    const kinder = [...box.children];
+    if (kinder.indexOf(zieht) < kinder.indexOf(unter)) unter.after(zieht); else unter.before(zieht);
+    if (navigator.vibrate) navigator.vibrate(8);
+  });
+  const ende = () => {
+    if (!zieht) return;
+    zieht.classList.remove("zieht");
+    zieht = null;
+    st.anordnenListe = [...box.children].map(k => k.dataset.b);
+  };
+  box.addEventListener("pointerup", ende);
+  box.addEventListener("pointercancel", ende);
+}
+
+async function speichereReihenfolge() {
+  const r = [...st.anordnenListe];
+  st.reihenfolge = r;
+  st.anordnen = false;
+  try { localStorage.setItem("wrd-reihenfolge", JSON.stringify(r)); } catch { /* egal */ }
+  zeigeStart();
+  try {
+    const b = writeBatch(db);
+    b.set(doc(db, "meta", "einstellungen"), { bereichReihenfolge: r, geaendert: serverTimestamp() }, { merge: true });
+    await b.commit();
+    hinweis("Reihenfolge gespeichert – gilt auf allen Geräten");
+  } catch (err) {
+    hinweis("Nur auf diesem Gerät gespeichert: " + err.message, true);
+  }
 }
 
 function zeigeSuche(q) {
@@ -427,7 +516,7 @@ function zeigeEditor(id, bereichVorgabe) {
   inhalt.innerHTML = `
     <section class="karte editor">
       <h2>${alt ? "Eintrag bearbeiten" : "Neuer Eintrag"}</h2>
-      <label>Bereich<select id="f-bereich">${Object.entries(BEREICHE).map(([k, b]) =>
+      <label>Bereich<select id="f-bereich">${bereicheSortiert().map(([k, b]) =>
         `<option value="${k}" ${k === e.bereich ? "selected" : ""}>${b.icon} ${b.name}</option>`).join("")}</select></label>
       <label>Titel<input id="f-titel" value="${esc(e.titel)}" placeholder="z. B. Akutes Koronarsyndrom"></label>
       <label>Kurzform / Abkürzung<input id="f-kurz" value="${esc(e.kurz)}" placeholder="z. B. ACS"></label>

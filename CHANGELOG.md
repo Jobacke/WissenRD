@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.7.0 (Build 15) – 2026-11-16
+- Warme Farbwelt (Apricot/Koralle/Rosé, warmes Nachtdesign); Bereiche per Ziehen individuell anordnen, Reihenfolge geräteübergreifend gespeichert
+
 ## v1.6.0 (Build 14) – 2026-11-16
 - Feinschliff: Suche nur als Lupe (öffnet schmales Feld), Suchverlauf mit Löschen nach Heute/Gestern/7 Tage/Alles (auch in den Einstellungen), Bereichsleiste zum direkten Wechsel zwischen den Bereichen, schmalere Kacheln (3 Spalten), Telefonnummern ohne Zeilenumbruch
 
