@@ -47,7 +47,7 @@
     },
     {
      "titel": "Funk / Kanäle",
-     "text": "- **RD_1_M** – Rettungsdienst Nord, Kurzwahl **2513**\n- **RD_2_M** – Rettungsdienst Süd, Kurzwahl **2514**\n(Kurzwahlen laut eigener Geräteprogrammierung, Stand 11/2026; die Taschenkarte von 2017 nennt noch 2766/2767)\n- **RD_Betten_M** – Bettenanforderung / Rückmeldung ohne Transport (Kurzwahl in der Quelle nicht angegeben)\n- BF_1_M (FW Nord) 2751 · BF_2_M (FW Süd) 2752\nDie zugeteilte Gruppe steht im Navi-Datensatz des Einsatzes."
+     "text": "- **RD_1_M** – Rettungsdienst Nord, Kurzwahl **2513**\n- **RD_2_M** – Rettungsdienst Süd, Kurzwahl **2514**\n(Kurzwahlen laut eigener Geräteprogrammierung, Stand 11/2026)\n- **RD_Betten_M** – Bettenanforderung / Rückmeldung ohne Transport (Kurzwahl in der Quelle nicht angegeben)\n- BF_1_M (FW Nord) 2751 · BF_2_M (FW Süd) 2752\nDie zugeteilte Gruppe steht im Navi-Datensatz des Einsatzes."
     },
     {
      "titel": "Besonderheiten",
@@ -73,6 +73,11 @@
    "kreise": [
     "München (Stadt)",
     "München (Landkreis)"
+   ],
+   "funk": [
+    "RD_1_M (Nord) – Kurzwahl 2513",
+    "RD_2_M (Süd) – Kurzwahl 2514",
+    "RD_Betten_M – Bettenanforderung"
    ]
   },
   {
@@ -197,7 +202,7 @@
     },
     {
      "titel": "Funk / Kanäle",
-     "text": "- **RD_FFB** – Kurzwahl 2063 (Taschenkarte KFV Landsberg, Stand Dezember 2018)\n- Rettungsdienst-Gruppen für Dachau, Landsberg, Starnberg: nicht ermittelt – bei der ILS bzw. Wache erfragen"
+     "text": "- **RD_ILS_FFB** – Kurzwahl 2013\n- **RD_Betten_FFB** – Kurzwahl 2012 (Bettenanforderung)\n(Funkgruppen: eigene Angabe (BOS-Funk-App / Geräteprogrammierung, Stand 16.11.2026))"
     },
     {
      "titel": "Besonderheiten",
@@ -213,7 +218,7 @@
     }
    ],
    "sprechtext": "Integrierte Leitstelle Fürstenfeldbruck, seit 2026 in Maisach. Zuständig für Dachau, Fürstenfeldbruck, Landsberg und Starnberg. Telefon 08141 22700 600. Funkgruppe R D F F B, Kurzwahl 2063.",
-   "quelle": "Verbandssatzung ZRF Fürstenfeldbruck (Oberbayerisches Amtsblatt 2020) · Landratsamt Fürstenfeldbruck – Einweihung ILS Maisach (Mai 2026) · KFV Landsberg – Taschenkarte Digitalfunk (12/2018, 04/2021) · Kreisbote – Fusion ILS Oberland/FFB abgesagt · AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026)",
+   "quelle": "Verbandssatzung ZRF Fürstenfeldbruck (Oberbayerisches Amtsblatt 2020) · Landratsamt Fürstenfeldbruck – Einweihung ILS Maisach (Mai 2026) · KFV Landsberg – Taschenkarte Digitalfunk (12/2018, 04/2021) · Kreisbote – Fusion ILS Oberland/FFB abgesagt · AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Funkgruppen: eigene Angabe (BOS-Funk-App / Geräteprogrammierung, Stand 16.11.2026)",
    "stand": "2026-11",
    "geo": {
     "lat": 48.217,
@@ -225,6 +230,10 @@
     "Fürstenfeldbruck",
     "Landsberg am Lech",
     "Starnberg"
+   ],
+   "funk": [
+    "RD_ILS_FFB – Kurzwahl 2013",
+    "RD_Betten_FFB – Kurzwahl 2012 (Bettenanforderung)"
    ]
   },
   {
@@ -253,7 +262,7 @@
     },
     {
      "titel": "Funk / Kanäle",
-     "text": "- Digitalfunkgruppen Rettungsdienst: nicht ermittelt – bei der ILS bzw. Wache erfragen"
+     "text": "- **RD_ILS_ED** – Kurzwahl 1913\n- **RD_Betten_ED** – Kurzwahl 1912 (Bettenanforderung)\n(Funkgruppen: eigene Angabe (BOS-Funk-App / Geräteprogrammierung, Stand 16.11.2026))"
     },
     {
      "titel": "Besonderheiten",
@@ -269,7 +278,7 @@
     }
    ],
    "sprechtext": "Integrierte Leitstelle Erding. Zuständig für Erding, Freising und Ebersberg. Krankentransport 08123 19222.",
-   "quelle": "EU-Ausschreibung Fachplanung Leitstellentechnik ILS Erding (TED 2022 und 2023) · Landkreis Erding – Amtsblatt Nr. 22 vom 27.05.2015 · AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026)",
+   "quelle": "EU-Ausschreibung Fachplanung Leitstellentechnik ILS Erding (TED 2022 und 2023) · Landkreis Erding – Amtsblatt Nr. 22 vom 27.05.2015 · AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Funkgruppen: eigene Angabe (BOS-Funk-App / Geräteprogrammierung, Stand 16.11.2026)",
    "stand": "2026-11",
    "geo": {
     "lat": 48.306,
@@ -280,6 +289,10 @@
     "Ebersberg",
     "Erding",
     "Freising"
+   ],
+   "funk": [
+    "RD_ILS_ED – Kurzwahl 1913",
+    "RD_Betten_ED – Kurzwahl 1912 (Bettenanforderung)"
    ]
   },
   {
@@ -306,7 +319,7 @@
     },
     {
      "titel": "Funk / Kanäle",
-     "text": "- **RD_WM** (Landkreis Weilheim) – Kurzwahl 3073 (Taschenkarte KFV Landsberg, Stand Dezember 2018)\n- Gruppen für Bad Tölz-Wolfratshausen und Garmisch-Partenkirchen: nicht ermittelt – bei der ILS bzw. Wache erfragen"
+     "text": "- **RD_ILS_WM** – Kurzwahl 3013\n- **RD_Betten_WM** – Kurzwahl 3012 (Bettenanforderung)\n(Funkgruppen: eigene Angabe (BOS-Funk-App / Geräteprogrammierung, Stand 16.11.2026))"
     },
     {
      "titel": "Besonderheiten",
@@ -318,7 +331,7 @@
     }
    ],
    "sprechtext": "Integrierte Leitstelle Oberland in Weilheim. Zuständig für Bad Tölz Wolfratshausen, Garmisch Partenkirchen und Weilheim Schongau. Telefon 08861 9258 5100. Funkgruppe R D W M, Kurzwahl 3073.",
-   "quelle": "Landkreis Weilheim-Schongau – Antworten zur ILS / Pressemitteilung 177/2024 · Bayerischer Landtag Drucksache 19/4346 · Kreisbote – Fusion ILS Oberland/FFB abgesagt · KFV Landsberg – Taschenkarte Digitalfunk (12/2018) · AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026)",
+   "quelle": "Landkreis Weilheim-Schongau – Antworten zur ILS / Pressemitteilung 177/2024 · Bayerischer Landtag Drucksache 19/4346 · Kreisbote – Fusion ILS Oberland/FFB abgesagt · KFV Landsberg – Taschenkarte Digitalfunk (12/2018) · AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Funkgruppen: eigene Angabe (BOS-Funk-App / Geräteprogrammierung, Stand 16.11.2026)",
    "stand": "2026-11",
    "geo": {
     "lat": 47.84,
@@ -329,6 +342,10 @@
     "Bad Tölz-Wolfratshausen",
     "Garmisch-Partenkirchen",
     "Weilheim-Schongau"
+   ],
+   "funk": [
+    "RD_ILS_WM – Kurzwahl 3013",
+    "RD_Betten_WM – Kurzwahl 3012 (Bettenanforderung)"
    ]
   },
   {
@@ -356,7 +373,7 @@
     },
     {
      "titel": "Funk / Kanäle",
-     "text": "- Digitalfunkgruppen Rettungsdienst: nicht ermittelt – bei der ILS bzw. Wache erfragen"
+     "text": "- **RD_ILS_RO** – Kurzwahl 3313\n- **RD_Betten_RO** – Kurzwahl 3312 (Bettenanforderung)\n(Funkgruppen: eigene Angabe (BOS-Funk-App / Geräteprogrammierung, Stand 16.11.2026))"
     },
     {
      "titel": "Besonderheiten",
@@ -372,7 +389,7 @@
     }
    ],
    "sprechtext": "Integrierte Leitstelle Rosenheim. Zuständig für Stadt und Landkreis Rosenheim sowie Landkreis Miesbach.",
-   "quelle": "Pressemitteilung daxenfeuer.de (Landratsamt Rosenheim) · Stadt Rosenheim – Organigramm Stand 01.01.2026 · AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026)",
+   "quelle": "Pressemitteilung daxenfeuer.de (Landratsamt Rosenheim) · Stadt Rosenheim – Organigramm Stand 01.01.2026 · AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Funkgruppen: eigene Angabe (BOS-Funk-App / Geräteprogrammierung, Stand 16.11.2026)",
    "stand": "2026-11",
    "geo": {
     "lat": 47.856,
@@ -383,6 +400,10 @@
     "Miesbach",
     "Rosenheim (Stadt)",
     "Rosenheim (Landkreis)"
+   ],
+   "funk": [
+    "RD_ILS_RO – Kurzwahl 3313",
+    "RD_Betten_RO – Kurzwahl 3312 (Bettenanforderung)"
    ]
   },
   {
@@ -407,6 +428,10 @@
     "Mühldorf a.Inn",
     "Traunstein"
    ],
+   "funk": [
+    "RD_ILS_TS – Kurzwahl 3613",
+    "RD_Betten_TS – Kurzwahl 3612 (Bettenanforderung)"
+   ],
    "abschnitte": [
     {
      "titel": "Zuständigkeitsbereich",
@@ -417,8 +442,12 @@
      "text": "Traunstein"
     },
     {
-     "titel": "Telefon / Funk",
+     "titel": "Telefon",
      "text": "nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Funk / Kanäle",
+     "text": "- **RD_ILS_TS** – Kurzwahl 3613\n- **RD_Betten_TS** – Kurzwahl 3612 (Bettenanforderung)\n(Funkgruppen: eigene Angabe (BOS-Funk-App / Geräteprogrammierung, Stand 16.11.2026))"
     },
     {
      "titel": "Hinweis",
@@ -426,7 +455,7 @@
     }
    ],
    "sprechtext": "Integrierte Leitstelle Traunstein, Sitz Traunstein. Zuständig für Altötting, Berchtesgadener Land, Mühldorf a.Inn, Traunstein.",
-   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung",
+   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung · Funkgruppen: eigene Angabe (BOS-Funk-App / Geräteprogrammierung, Stand 16.11.2026)",
    "stand": "2026-11"
   },
   {

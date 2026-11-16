@@ -332,3 +332,19 @@ button.sym.gesperrt { opacity: .4; text-decoration: line-through; text-decoratio
 .zust-karte span { font-size: .78rem; opacity: .85; }
 .zeile.zustaendig { border-color: var(--akzent); }
 
+/* Meldung Leitstellenwechsel */
+.ils-meldung {
+  position: fixed; left: 50%; transform: translateX(-50%); top: calc(64px + env(safe-area-inset-top)); z-index: 30;
+  width: min(92vw, 420px); display: flex; flex-direction: column; gap: 3px; padding: 14px 16px; border-radius: var(--radius);
+  background: var(--kopf); color: #fff; box-shadow: 0 14px 40px rgba(10, 15, 35, .45); animation: ilsRein .25s ease-out;
+}
+.ils-meldung small { font-size: .72rem; opacity: .85; }
+.ils-meldung strong { font-size: 1.05rem; }
+.ils-meldung span { font-size: .8rem; opacity: .85; }
+.ils-funk { font-size: .8rem; margin-top: 4px; }
+.ils-knoepfe { display: flex; gap: 8px; margin-top: 8px; }
+.ils-knoepfe .primaer, .ils-knoepfe .sekundaer { flex: 1; text-align: center; text-decoration: none; }
+@keyframes ilsRein { from { opacity: 0; transform: translate(-50%, -8px); } to { opacity: 1; transform: translate(-50%, 0); } }
+label.schalter { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+label.schalter input { width: auto; }
+

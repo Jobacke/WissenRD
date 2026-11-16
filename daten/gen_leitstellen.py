@@ -40,7 +40,7 @@ ls("muenchen", "Integrierte Leitstelle München", "ILS München",
 (Servicenummern laut Taschenkarte, Stand Juni 2017 – Aktualität prüfen)""",
  """- **RD_1_M** – Rettungsdienst Nord, Kurzwahl **2513**
 - **RD_2_M** – Rettungsdienst Süd, Kurzwahl **2514**
-(Kurzwahlen laut eigener Geräteprogrammierung, Stand 11/2026; die Taschenkarte von 2017 nennt noch 2766/2767)
+(Kurzwahlen laut eigener Geräteprogrammierung, Stand 11/2026)
 - **RD_Betten_M** – Bettenanforderung / Rückmeldung ohne Transport (Kurzwahl in der Quelle nicht angegeben)
 - BF_1_M (FW Nord) 2751 · BF_2_M (FW Süd) 2752
 Die zugeteilte Gruppe steht im Navi-Datensatz des Einsatzes.""",
@@ -168,17 +168,29 @@ ILS = [
  ("donau-iller", "Donau-Iller", "Krumbach", 48.244, 10.364, "Schwaben", ["Memmingen", "Günzburg", "Neu-Ulm", "Unterallgäu"]),
 ]
 assert len(ILS) == 25
+# Funkgruppen (Digitalfunk) je ILS – nur belegte Angaben; ergänzen aus eigener Geräteprogrammierung / BOS-Funk-App
+FUNK = {   # eigene Angaben (Excel „Funkgruppen_Leitstellen_Bayern“, BOS-Funk-App / Geräteprogrammierung, Stand 16.11.2026)
+ "muenchen": ["RD_1_M (Nord) – Kurzwahl 2513", "RD_2_M (Süd) – Kurzwahl 2514", "RD_Betten_M – Bettenanforderung"],
+ "erding": ["RD_ILS_ED – Kurzwahl 1913", "RD_Betten_ED – Kurzwahl 1912 (Bettenanforderung)"],
+ "ffb": ["RD_ILS_FFB – Kurzwahl 2013", "RD_Betten_FFB – Kurzwahl 2012 (Bettenanforderung)"],
+ "oberland": ["RD_ILS_WM – Kurzwahl 3013", "RD_Betten_WM – Kurzwahl 3012 (Bettenanforderung)"],
+ "rosenheim": ["RD_ILS_RO – Kurzwahl 3313", "RD_Betten_RO – Kurzwahl 3312 (Bettenanforderung)"],
+ "traunstein": ["RD_ILS_TS – Kurzwahl 3613", "RD_Betten_TS – Kurzwahl 3612 (Bettenanforderung)"],
+}
+FUNK_Q = "Funkgruppen: eigene Angabe (BOS-Funk-App / Geräteprogrammierung, Stand 16.11.2026)"
+FUNK_ALT = {}   # frühere abweichende Angaben – entfernt, Kurzwahlen haben sich geändert (eigene Angabe ist aktuell)
 vorhanden = {e["id"]: e for e in E}
 for iid, name, sitz, lat, lon, bez, kreise in ILS:
     geo = {"lat": lat, "lon": lon, "quelle": "Feuerwache 4, eigener Zielpunkt (ZNA-Navi)" if iid == "muenchen" else Q_ORT + f" – {sitz}"}
     e = vorhanden.get("leitstelle-" + iid)
     if e:
         e.update(geo=geo, kreise=kreise)
+        if iid in FUNK: e["funk"] = FUNK[iid]
         if Q_ANL1 not in e["quelle"]: e["quelle"] += " · " + Q_ANL1
         continue
     E.append({"id": "leitstelle-" + iid, "bereich": "leitstelle", "titel": f"Integrierte Leitstelle {name}", "kurz": f"ILS {name}",
               "suchbegriffe": [f"Leitstelle {name}", f"ILS {sitz.split(' (')[0]}", f"Leitstelle {sitz.split(' (')[0]}"],
-              "siehe": [], "geo": geo, "kreise": kreise,
+              "siehe": [], "geo": geo, "kreise": kreise, **({"funk": FUNK[iid]} if iid in FUNK else {}),
               "abschnitte": [
                 {"titel": "Zuständigkeitsbereich", "text": f"Rettungsdienstbereich {name} ({bez}):\n" + "\n".join("- " + k for k in kreise)},
                 {"titel": "Sitz", "text": sitz},
@@ -186,6 +198,21 @@ for iid, name, sitz, lat, lon, bez, kreise in ILS:
                 {"titel": "Hinweis", "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."}],
               "sprechtext": f"Integrierte Leitstelle {name}, Sitz {sitz.split(' (')[0]}. Zuständig für " + ", ".join(k.replace(" (Stadt)", " Stadt").replace(" (Landkreis)", " Landkreis") for k in kreise) + ".",
               "quelle": Q_ANL1 + " · " + Q_ORT, "stand": STAND})
+# Funkgruppen in den Abschnitt „Funk / Kanäle“ übernehmen (München hat eigene, ausführlichere Angaben)
+for e in E:
+    iid = e["id"].removeprefix("leitstelle-")
+    if iid not in FUNK or iid == "muenchen": continue
+    e["funk"] = FUNK[iid]
+    text = "\n".join("- **" + f.split(" – ")[0] + "** – " + f.split(" – ", 1)[1] for f in FUNK[iid]) + "\n(" + FUNK_Q + ")"
+    if iid in FUNK_ALT: text += "\n- " + FUNK_ALT[iid] + " – abweichend, aktuelle Programmierung prüfen"
+    neu = []
+    for a in e["abschnitte"]:
+        if a["titel"] == "Funk / Kanäle": a = {"titel": a["titel"], "text": text}
+        elif a["titel"] == "Telefon / Funk": neu.append({"titel": "Telefon", "text": NE}); a = {"titel": "Funk / Kanäle", "text": text}
+        neu.append(a)
+    e["abschnitte"] = neu
+    if FUNK_Q not in e["quelle"]: e["quelle"] += " · " + FUNK_Q
+
 # RD-Kanäle der ILS München an deren Ort einsortieren
 for rid in ("leitstelle-rd1m", "leitstelle-rd2m"):
     if rid in vorhanden: vorhanden[rid]["geo"] = {"lat": 48.156007, "lon": 11.555468, "quelle": "ILS München, Feuerwache 4"}

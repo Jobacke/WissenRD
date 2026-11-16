@@ -62,7 +62,7 @@ onAuthStateChanged(auth, user => {
   st.abmelden = [];
   st.user = user;
   document.body.classList.toggle("angemeldet", !!user);
-  if (!user) { st.eintraege = []; st.geladen = false; zeigeLogin(); return; }
+  if (!user) { st.eintraege = []; st.geladen = false; stoppeIlsWache(); zeigeLogin(); return; }
   st.syncGeprueft = false;
   setTimeout(() => { st.syncGeprueft = true; zeigeStand(); }, 4000);
   st.abmelden.push(onSnapshot(collection(db, "eintraege"), { includeMetadataChanges: true }, snap => {
@@ -75,6 +75,7 @@ onAuthStateChanged(auth, user => {
       .sort((a, b) => a.titel.localeCompare(b.titel, "de"));
     const ersterLauf = !st.geladen;
     st.geladen = true;
+    if (ersterLauf) starteIlsWache();
     // Formulare nicht durch Live-Updates überschreiben
     if (ersterLauf || !/^#\/(neu|bearbeiten|einstellungen)/.test(location.hash)) route();
   }, err => hinweis("Laden fehlgeschlagen: " + err.message, true)));
@@ -605,16 +606,71 @@ const kreisSchluessel = name => norm(String(name || "")
   .replace(/\s*\((Stadt|Landkreis)\)\s*$/i, "")
   .replace(/\ba\.\s*d\.\s*/gi, "an der ").replace(/\bi\.\s*d\.\s*/gi, "in der ")
   .replace(/\ba\.\s*/gi, "am ").replace(/\bi\.\s*/gi, "im ").replace(/OPf\./g, "Oberpfalz"));
-async function holeKreis(pos) {
-  if (st.kreis?.key === pos.t) return st.kreis;
+async function kreisAbfrage(lat, lon) {
   const ctrl = new AbortController();
   const uhr = setTimeout(() => ctrl.abort(), 7000);
-  const r = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${pos.lat.toFixed(4)}&lon=${pos.lon.toFixed(4)}&zoom=10&addressdetails=1&accept-language=de`, { signal: ctrl.signal });
+  const r = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat.toFixed(4)}&lon=${lon.toFixed(4)}&zoom=10&addressdetails=1&accept-language=de`, { signal: ctrl.signal });
   clearTimeout(uhr);
   if (!r.ok) throw new Error("HTTP " + r.status);
   const a = (await r.json()).address || {};
-  st.kreis = { key: pos.t, name: a.county || a.city || a.town || a.municipality || "", land: a.state || "" };
+  return { name: a.county || a.city || a.town || a.municipality || "", land: a.state || "" };
+}
+async function holeKreis(pos) {
+  if (st.kreis?.key === pos.t) return st.kreis;
+  st.kreis = { key: pos.t, ...(await kreisAbfrage(pos.lat, pos.lon)) };
   return st.kreis;
+}
+
+// ---------------- Leitstellenwechsel melden (läuft nur, solange die App geöffnet ist) ----------------
+// Eigene, sparsame Standortbeobachtung: Abfrage des Landkreises höchstens 1× pro Minute und nur nach ≥ 300 m Bewegung.
+const ILS_WACHE = { abstand: 300, pause: 60000 };
+const ilsWacheAn = () => localStorage.getItem("wrd-ils-wache") !== "aus";
+function starteIlsWache() {
+  stoppeIlsWache();
+  if (!ilsWacheAn() || !navigator.geolocation || !st.user) return;
+  st.ilsWatch = navigator.geolocation.watchPosition(p => pruefeIls({ lat: p.coords.latitude, lon: p.coords.longitude }),
+    () => {}, { enableHighAccuracy: false, maximumAge: 60000, timeout: 30000 });
+}
+function stoppeIlsWache() {
+  if (st.ilsWatch != null) navigator.geolocation.clearWatch(st.ilsWatch);
+  st.ilsWatch = null;
+}
+async function pruefeIls(p) {
+  const jetzt = Date.now(), letzte = st.ilsPruef;
+  if (st.ilsLaeuft || !st.geladen) return;
+  if (letzte && (jetzt - letzte.t < ILS_WACHE.pause || haversine(letzte, p) < ILS_WACHE.abstand)) return;
+  st.ilsLaeuft = true;
+  try {
+    const k = await kreisAbfrage(p.lat, p.lon);
+    st.ilsPruef = { ...p, t: Date.now() };
+    const ils = /bayern/i.test(k.land) ? zustaendigeILS(k.name) : null;
+    const neu = ils ? ils.id : "ausserhalb";
+    const alt = localStorage.getItem("wrd-ils");
+    localStorage.setItem("wrd-ils", neu);
+    if (alt && alt !== neu) meldeIlsWechsel(ils, k);
+    if (location.hash === "#/b/leitstelle") zeigeBereich("leitstelle");
+  } catch { /* offline – beim nächsten Standort erneut */ }
+  finally { st.ilsLaeuft = false; }
+}
+function meldeIlsWechsel(ils, k) {
+  $("#ils-meldung")?.remove();
+  const box = document.createElement("div");
+  box.id = "ils-meldung";
+  box.className = "ils-meldung";
+  box.setAttribute("role", "alert");
+  const name = ils ? ils.titel.replace(/^Integrierte Leitstelle /, "ILS ") : "Keine bayerische ILS";
+  const funk = ils?.funk?.length ? `<div class="ils-funk">📻 ${ils.funk.map(esc).join("<br>📻 ")}</div>` : "";
+  box.innerHTML = `
+    <small>📡 Leitstellenwechsel</small>
+    <strong>Jetzt zuständig: ${esc(name)}</strong>
+    <span>${esc(k.name || k.land || "")}${ils ? "" : " – außerhalb Bayerns"}</span>
+    ${funk}
+    <div class="ils-knoepfe">${ils ? `<a class="primaer" href="#/e/${esc(ils.id)}">Öffnen</a>` : ""}<button class="sekundaer" id="ils-ok">OK</button></div>`;
+  document.body.appendChild(box);
+  if (navigator.vibrate) navigator.vibrate([120, 80, 120]);
+  const zu = () => box.remove();
+  $("#ils-ok").onclick = zu;
+  box.querySelector("a")?.addEventListener("click", zu);
 }
 function zustaendigeILS(kreisName) {
   const k = kreisSchluessel(kreisName);
@@ -640,7 +696,8 @@ function zeigeLeitstellen(b, liste) {
   if (st.posLaeuft) kopf = `<p class="standort">📍 Standort und zuständige ILS werden ermittelt …</p>`;
   else if (pos) {
     if (zust) kopf = `<a class="zust-karte" href="#/e/${esc(zust.id)}"><small>📍 An deinem Standort zuständig</small>
-        <strong>${esc(zust.titel)}</strong><span>${esc(kreis.name)}</span></a>`;
+        <strong>${esc(zust.titel)}</strong><span>${esc(kreis.name)}</span>${
+        zust.funk?.length ? `<span class="ils-funk">📻 ${zust.funk.map(esc).join(" · ")}</span>` : ""}</a>`;
     else if (kreis && !inBayern) kopf = `<p class="standort-hilfe">Standort außerhalb Bayerns (${esc(kreis.name || kreis.land || "unbekannt")}) – dafür sind keine Leitstellen hinterlegt.</p>`;
     else if (kreis) kopf = `<p class="standort-hilfe">Für „${esc(kreis.name || "unbekannt")}“ wurde keine ILS gefunden.</p>`;
     else if (st.kreisFehler) kopf = `<p class="standort-hilfe">⚠️ ${esc(st.kreisFehler)}</p>`;
@@ -939,7 +996,8 @@ function bereinigt(e) {
     ...(Array.isArray(e.gegenteil) ? { gegenteil: e.gegenteil.filter(x => typeof x === "string") } : {}),
     ...(e.kategorie ? { kategorie: String(e.kategorie) } : {}),
     ...(Number.isFinite(e.reihe) ? { reihe: e.reihe } : {}),
-    ...(Array.isArray(e.kreise) ? { kreise: e.kreise.filter(x => typeof x === "string") } : {})
+    ...(Array.isArray(e.kreise) ? { kreise: e.kreise.filter(x => typeof x === "string") } : {}),
+    ...(Array.isArray(e.funk) ? { funk: e.funk.filter(x => typeof x === "string" && x.trim()) } : {})
   };
 }
 
@@ -992,6 +1050,11 @@ function zeigeEinstellungen() {
       <p class="leise">Reihenfolge ändern: Kachel auf der Startseite gedrückt halten und verschieben.</p>
       <div class="aktionen"><button id="ord-standard" class="sekundaer">↺ Standard-Reihenfolge</button></div>
 
+      <h3>Leitstellen</h3>
+      <label class="schalter"><input type="checkbox" id="ils-wache" ${ilsWacheAn() ? "checked" : ""}>
+        Wechsel der zuständigen Leitstelle melden</label>
+      <p class="leise">Funktioniert nur, solange Wissen RD geöffnet ist. Prüft höchstens einmal pro Minute und erst nach etwa 300 m Bewegung (Landkreis über OpenStreetMap).</p>
+
       <h3>Suchverlauf</h3>
       <p class="leise" id="verlauf-anzahl">${verlaufLaden().length} gespeicherte Suchen (nur auf diesem Gerät)</p>
       <div class="aktionen">${VERLAUF_ARTEN.map(([k, n]) =>
@@ -1016,6 +1079,10 @@ function zeigeEinstellungen() {
       <button id="abmelden" class="gefahr">Abmelden</button>
     </section>`;
 
+  $("#ils-wache").onchange = ev => {
+    localStorage.setItem("wrd-ils-wache", ev.target.checked ? "an" : "aus");
+    if (ev.target.checked) { st.ilsPruef = null; starteIlsWache(); } else stoppeIlsWache();
+  };
   $("#ord-standard").onclick = () => {
     if (confirm("Bereiche wieder in der Standard-Reihenfolge anzeigen?")) speichereReihenfolge([]);
   };

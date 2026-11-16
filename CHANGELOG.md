@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.11.0 (Build 24) – 2026-11-16
+- Meldung bei Wechsel der zuständigen Leitstelle (solange die App geöffnet ist, abschaltbar in den Einstellungen); Funkgruppen je Leitstelle
+
 ## v1.10.0 (Build 23) – 2026-11-16
 - Leitstellen: zuständige ILS am eigenen Standort (Landkreis über OpenStreetMap, Zuordnung nach AVBayRDG Anlage 1), alle 25 ILS Bayerns, Sortierung nächste zuerst
 
