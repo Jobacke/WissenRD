@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.13.0 (Build 27) – 2026-11-16
+- Einstellungen neu gestaltet: kompakt und gruppiert (Vorlesen, Anzeige & Standort, Suchverlauf, Daten), Schalter statt Checkbox, Siri-Angaben und Änderungsprotokoll einklappbar
+
 ## v1.12.1 (Build 26) – 2026-11-16
 - Vorlesen: Kurzwahlen Ziffer für Ziffer als Wörter mit Pausen wie im Funk („zwo, fünf, eins, drei“) – letzte Ziffer klang vorher wie eine Aufzählung
 

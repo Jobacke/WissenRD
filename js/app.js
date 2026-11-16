@@ -1064,51 +1064,50 @@ async function speichere(e, alt, batch = null) {
 // ---------------- Einstellungen ----------------
 function zeigeEinstellungen() {
   const rate = localStorage.getItem("rate") || "1.0";
+  const verlaufText = () => `${verlaufLaden().length} gespeichert`;
   inhalt.innerHTML = `
-    <section class="karte">
-      <h2>⚙️ Einstellungen</h2>
-      <dl class="info">
-        <dt>App-Version</dt><dd>${VERSION} · ${self.APP_DATUM}</dd>
-        <dt>Datenstand</dt><dd>#${st.datenversion} · ${st.eintraege.length} Einträge</dd>
-        <dt>Angemeldet</dt><dd>${esc(st.user.email)}</dd>
-      </dl>
-      <h3>Vorlesen</h3>
-      <label>Geschwindigkeit <output id="rate-w">${rate}</output>
-        <input id="rate" type="range" min="0.7" max="1.5" step="0.1" value="${rate}"></label>
-      <label>Stimme<select id="stimme"></select></label>
-      <button id="test-stimme" class="sekundaer">🔊 Test</button>
-
-      <h3>Bereiche</h3>
-      <p class="leise">Reihenfolge ändern: Kachel auf der Startseite gedrückt halten und verschieben.</p>
-      <div class="aktionen"><button id="ord-standard" class="sekundaer">↺ Standard-Reihenfolge</button></div>
-
-      <h3>Leitstellen</h3>
-      <label class="schalter"><input type="checkbox" id="ils-wache" ${ilsWacheAn() ? "checked" : ""}>
-        Wechsel der zuständigen Leitstelle melden</label>
-      <p class="leise">Funktioniert nur, solange Wissen RD geöffnet ist. Prüft höchstens einmal pro Minute und erst nach etwa 300 m Bewegung (Landkreis über OpenStreetMap).</p>
-
-      <h3>Suchverlauf</h3>
-      <p class="leise" id="verlauf-anzahl">${verlaufLaden().length} gespeicherte Suchen (nur auf diesem Gerät)</p>
-      <div class="aktionen">${VERLAUF_ARTEN.map(([k, n]) =>
-        `<button class="sekundaer v-weg-e" data-art="${k}">🗑 ${n}</button>`).join("")}</div>
-
-      <h3>Daten</h3>
-      <div class="aktionen">
-        <button id="export" class="sekundaer">⬇️ Export (JSON)</button>
-        <label class="sekundaer datei">⬆️ Import (JSON)<input id="import" type="file" accept=".json,application/json" hidden></label>
+    <section class="einst">
+      <div class="einst-kopf">
+        <h2>Einstellungen</h2>
+        <div class="einst-meta"><span>v${esc(self.APP_VERSION)}</span><span>Daten #${st.datenversion}</span><span>${st.eintraege.length} Einträge</span></div>
       </div>
-      <p class="leise">Import überschreibt Einträge mit gleicher ID (eigene Suchbegriffe bleiben erhalten). ÄLRD-Bayern-Daten: <code>daten/aelrd-bayern-import.json</code></p>
 
-      <h3>Für den Siri-Kurzbefehl</h3>
-      <dl class="info klein">
-        <dt>API-Key</dt><dd><code>${esc(firebaseConfig.apiKey)}</code></dd>
-        <dt>Projekt-ID</dt><dd><code>${esc(firebaseConfig.projectId)}</code></dd>
-        <dt>App-URL</dt><dd><code>${esc(location.origin + location.pathname)}</code></dd>
-      </dl>
+      <div class="gruppe">
+        <div class="g-titel">Vorlesen</div>
+        <div class="reihe"><span>Tempo</span><div class="r-rechts"><input id="rate" type="range" min="0.7" max="1.5" step="0.1" value="${rate}"><output id="rate-w">${rate}</output></div></div>
+        <div class="reihe"><span>Stimme</span><div class="r-rechts"><select id="stimme"></select><button id="test-stimme" class="mini" title="Probe vorlesen">🔊</button></div></div>
+      </div>
 
-      <h3>Änderungsprotokoll</h3>
-      <pre id="changelog" class="changelog">lädt …</pre>
-      <button id="abmelden" class="gefahr">Abmelden</button>
+      <div class="gruppe">
+        <div class="g-titel">Anzeige &amp; Standort</div>
+        <div class="reihe"><span>Leitstellenwechsel melden<small>nur bei geöffneter App · max. 1×/Min.</small></span>
+          <label class="umschalter"><input type="checkbox" id="ils-wache" ${ilsWacheAn() ? "checked" : ""}><i></i></label></div>
+        <div class="reihe"><span>Bereiche<small>Kachel gedrückt halten zum Verschieben</small></span><button id="ord-standard" class="mini">Standard</button></div>
+      </div>
+
+      <div class="gruppe">
+        <div class="g-titel">Suchverlauf <em id="verlauf-anzahl">${verlaufText()}</em></div>
+        <div class="reihe"><span>Löschen</span><div class="segment">${VERLAUF_ARTEN.map(([k, n]) =>
+          `<button class="v-weg-e" data-art="${k}">${k === "7tage" ? "7 Tage" : n}</button>`).join("")}</div></div>
+      </div>
+
+      <div class="gruppe">
+        <div class="g-titel">Daten</div>
+        <div class="reihe"><span>JSON<small>Import ersetzt gleiche IDs</small></span>
+          <div class="r-rechts"><button id="export" class="mini">⬇ Export</button>
+          <label class="mini datei">⬆ Import<input id="import" type="file" accept=".json,application/json" hidden></label></div></div>
+      </div>
+
+      <div class="gruppe">
+        <details class="klapp"><summary>Siri-Kurzbefehl</summary>
+          <dl class="info klein">
+            <dt>API-Key</dt><dd><code>${esc(firebaseConfig.apiKey)}</code></dd>
+            <dt>Projekt-ID</dt><dd><code>${esc(firebaseConfig.projectId)}</code></dd>
+            <dt>App-URL</dt><dd><code>${esc(location.origin + location.pathname)}</code></dd>
+          </dl></details>
+        <details class="klapp"><summary>Änderungsprotokoll</summary><pre id="changelog" class="changelog">lädt …</pre></details>
+        <div class="reihe"><span class="leise-zeile">${esc(st.user.email)}</span><button id="abmelden" class="mini rot">Abmelden</button></div>
+      </div>
     </section>`;
 
   $("#ils-wache").onchange = ev => {
@@ -1119,8 +1118,7 @@ function zeigeEinstellungen() {
     if (confirm("Bereiche wieder in der Standard-Reihenfolge anzeigen?")) speichereReihenfolge([]);
   };
   inhalt.querySelectorAll(".v-weg-e").forEach(b => (b.onclick = () => {
-    if (verlaufLoeschenFragen(b.dataset.art))
-      $("#verlauf-anzahl").textContent = `${verlaufLaden().length} gespeicherte Suchen (nur auf diesem Gerät)`;
+    if (verlaufLoeschenFragen(b.dataset.art)) $("#verlauf-anzahl").textContent = verlaufText();
   }));
   $("#rate").oninput = ev => { localStorage.setItem("rate", ev.target.value); $("#rate-w").textContent = ev.target.value; };
   const fuelleStimmen = () => {
