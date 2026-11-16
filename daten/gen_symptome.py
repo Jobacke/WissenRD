@@ -100,6 +100,18 @@ SYM = [
 ]
 SYM_ID = {s[0]: s for s in SYM}
 
+# Symptome, die sich gegenseitig ausschließen – im Symptom-Check nur entweder/oder wählbar
+GEGENSATZ = [
+ ("tachykardie", "bradykardie"), ("tachykardie", "pulslos"), ("bradykardie", "pulslos"),        # Puls
+ ("schock", "hypertonie"), ("hypertonie", "pulslos"),                                           # Blutdruck
+ ("tachypnoe", "atemdepression"), ("tachypnoe", "keine-atmung"), ("atemdepression", "keine-atmung"),  # Atmung
+ ("fieber", "unterkuehlt"), ("ueberhitzt", "unterkuehlt"),                                      # Temperatur
+ ("miosis", "anisokorie"),                                                                      # Pupillen
+]
+for a, b in GEGENSATZ: assert a in SYM_ID and b in SYM_ID, (a, b)
+def gegenteil(sid):
+    return ["sym-" + (b if a == sid else a) for a, b in GEGENSATZ if sid in (a, b)]
+
 # ------------------------------------------------------------------ Quellen
 Q = {
  "acs": "ESC-Leitlinie Akutes Koronarsyndrom 2023 (DGK Pocket-Leitlinie), u. a. nach DocCheck Flexikon",
@@ -302,6 +314,7 @@ if __name__ == "__main__":
         diags = sorted(zu.get("sym-" + sid, []))
         such = such_frei(syn, titel)
         aus.append({"id": "sym-" + sid, "bereich": "symptom", "titel": titel, "kurz": "", "kategorie": kat, "reihe": i,
+                    **({"gegenteil": gegenteil(sid)} if gegenteil(sid) else {}),
                     "suchbegriffe": such, "siehe": diags,
                     "abschnitte": [{"titel": "Mögliche Verdachtsdiagnosen", "text": "\n".join("- " + t for t in diags) or "– keine Zuordnung –"},
                                    {"titel": "Hinweis", "text": "Hilfe zur Einordnung, keine Diagnose. Im Bereich „Symptome“ mehrere Symptome antippen, um die passenden Verdachtsdiagnosen zu sehen."}],

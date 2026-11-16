@@ -320,4 +320,5 @@ button.sym.an { background: var(--akzent); border-color: var(--akzent); color: #
   font: inherit; font-size: .82rem; font-weight: 600; padding: 9px 16px; border-radius: 99px; border: 0;
   background: var(--kopf); color: #fff; box-shadow: 0 6px 18px rgba(20, 30, 60, .3); white-space: nowrap;
 }
+button.sym.gesperrt { opacity: .4; text-decoration: line-through; text-decoration-thickness: 1px; }
 

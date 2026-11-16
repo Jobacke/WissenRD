@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.9.1 (Build 21) – 2026-11-16
+- Symptom-Check: widersprüchliche Symptome (Puls schnell/langsam, Blutdruck hoch/niedrig, Atmung, Temperatur, Pupillen) nur entweder/oder wählbar
+
 ## v1.9.0 (Build 20) – 2026-11-16
 - „Siehe auch“ springt direkt zum verwiesenen Eintrag; Symptom-Check im Bereich Symptome: Symptome antippen → mögliche Verdachtsdiagnosen; Symptome bei allen Verdachtsdiagnosen, 12 neue Verdachtsdiagnosen
 

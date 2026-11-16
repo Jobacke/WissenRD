@@ -597,7 +597,7 @@ function zeigeSymptomCheck(b, liste) {
     ${kats.map(k => {
       const teil = symptome.filter(e => e.kategorie === k);
       return teil.length ? `<h3 class="zwischen">${esc(k)}</h3><div class="sym-chips">${teil.map(e =>
-        `<button class="sym${gewaehlt.has(e.id) ? " an" : ""}" data-id="${esc(e.id)}" aria-pressed="${gewaehlt.has(e.id)}">${esc(symName(e))}</button>`).join("")}</div>` : "";
+        `<button class="sym" data-id="${esc(e.id)}">${esc(symName(e))}</button>`).join("")}</div>` : "";
     }).join("")}
     ${ohneKat.length ? `<h3 class="zwischen">Weitere Einträge</h3><section class="liste">${ohneKat.map(e => eintragZeile(e, false)).join("")}</section>` : ""}
     <button id="sym-bar" class="sym-bar" hidden></button>`;
@@ -622,15 +622,36 @@ function zeigeSymptomCheck(b, liste) {
     bar.hidden = false;
     bar.textContent = `▲ ${treffer.length} Verdachtsdiagnose${treffer.length === 1 ? "" : "n"} · ${sel.size} gewählt`;
   };
-  inhalt.querySelectorAll("button.sym").forEach(knopf => (knopf.onclick = () => {
+  // Widersprüchliche Symptome (z. B. schneller / langsamer Puls) sind nur entweder/oder wählbar
+  const gegen = Object.fromEntries(symptome.map(e => [e.id, e.gegenteil || []]));
+  const symptomName = Object.fromEntries(symptome.map(e => [e.id, symName(e)]));
+  const knoepfe = [...inhalt.querySelectorAll("button.sym")];
+  const zeichneKnoepfe = () => {
     const sel = symAuswahl();
-    const an = !sel.has(knopf.dataset.id);
-    if (an) sel.add(knopf.dataset.id); else sel.delete(knopf.dataset.id);
+    for (const k of knoepfe) {
+      const an = sel.has(k.dataset.id);
+      const gesperrt = !an && (gegen[k.dataset.id] || []).some(g => sel.has(g));
+      k.classList.toggle("an", an);
+      k.classList.toggle("gesperrt", gesperrt);
+      k.setAttribute("aria-pressed", an);
+      k.title = gesperrt ? "Widerspricht einem gewählten Symptom – Antippen tauscht die Auswahl" : "";
+    }
+  };
+  knoepfe.forEach(knopf => (knopf.onclick = () => {
+    const id = knopf.dataset.id;
+    const sel = symAuswahl();
+    if (sel.has(id)) sel.delete(id);
+    else {
+      const raus = (gegen[id] || []).filter(g => sel.has(g));
+      raus.forEach(g => sel.delete(g));
+      sel.add(id);
+      if (raus.length) hinweis(`„${raus.map(g => symptomName[g]).join("“, „")}“ abgewählt – widerspricht „${symptomName[id]}“`);
+    }
     symMerken(sel);
-    knopf.classList.toggle("an", an);
-    knopf.setAttribute("aria-pressed", an);
+    zeichneKnoepfe();
     zeichneErgebnis();
   }));
+  zeichneKnoepfe();
   $("#sym-bar").onclick = () => $("#sym-ergebnis").scrollIntoView({ behavior: "smooth", block: "start" });
   zeichneErgebnis();
 }
@@ -826,6 +847,7 @@ function bereinigt(e) {
     sprechtext: e.sprechtext || "", quelle: e.quelle || "", stand: e.stand || "",
     ...(hatGeo(e) ? { geo: { lat: +e.geo.lat, lon: +e.geo.lon, quelle: e.geo.quelle || "" } } : {}),
     ...(Array.isArray(e.symptome) ? { symptome: e.symptome.filter(x => typeof x === "string") } : {}),
+    ...(Array.isArray(e.gegenteil) ? { gegenteil: e.gegenteil.filter(x => typeof x === "string") } : {}),
     ...(e.kategorie ? { kategorie: String(e.kategorie) } : {}),
     ...(Number.isFinite(e.reihe) ? { reihe: e.reihe } : {})
   };
