@@ -55,6 +55,7 @@ Die zugeteilte Gruppe steht im Navi-Datensatz des Einsatzes.""",
  "Integrierte Leitstelle München. Betten über R D Betten M mit Status 5. Notfallrettung 089 515191 66943. Betten und MANV 089 515191 66666.",
  siehe=["RD_1_M – Rettungsdienst Nord (ILS München)", "RD_2_M – Rettungsdienst Süd (ILS München)", "Übersicht Leitstellen"])
 
+ZW = dict(zip("0123456789", ["null", "eins", "zwo", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun"]))
 for nr, seite, kw in [(1, "Nord", "2513"), (2, "Süd", "2514")]:
     ls(f"rd{nr}m", f"RD_{nr}_M – Rettungsdienst {seite} (ILS München)", f"RD_{nr}_M",
      [f"RD {nr} M", f"RD{nr}M", f"RD {nr}", f"Rettungsdienst {seite}", f"RD {seite} München", f"Gruppe RD {nr} M"],
@@ -66,8 +67,8 @@ for nr, seite, kw in [(1, "Nord", "2513"), (2, "Süd", "2514")]:
 - Gegenstück: RD_{2 if nr == 1 else 1}_M (Kurzwahl {"2514" if nr == 1 else "2513"})
 - Betten / Rückmeldung ohne Transport: **RD_Betten_M** (Kurzwahl 2511)""",
      STATUS, [], [Q_TK, "Kurzwahl: eigene Angabe (Geräteprogrammierung, Stand 11/2026)"],
-     f"R D {nr} M, Rettungsdienst {seite} der Leitstelle München, Kurzwahl {' '.join(kw)}. "
-     "Betten über R D Betten M, Kurzwahl 2 5 1 1, mit Status 5. Nach Transport zurück auf die Original-Gruppe, Status 1.",
+     f"R D {nr} M, Rettungsdienst {seite} der Leitstelle München, Kurzwahl {', '.join(ZW[z] for z in kw)}. "
+     "Betten über R D Betten M, Kurzwahl zwo, fünf, eins, eins, mit Status 5. Nach Transport zurück auf die Original-Gruppe, Status 1.",
      siehe=["Integrierte Leitstelle München"])
 
 # ------------------------------------------------------------------ ILS Fürstenfeldbruck

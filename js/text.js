@@ -72,14 +72,16 @@ export function sprechbar(text) {
 // ---------- Funkgruppen (Leitstellen) ----------
 export const funkListe = e => (Array.isArray(e?.funk) ? e.funk : []).filter(x => typeof x === "string" && x.trim());
 // Ansage wie im ZNA-Navi-Kurzbefehl „Aktuelle Leitstelle“: RD_Betten_… = Bettenkanal, RD_ILS_…/RD_1_… = Rettungsdienst,
-// Kurzwahl Ziffer für Ziffer (1913 → 1 9 1 3)
+// Kurzwahl Ziffer für Ziffer als Wörter mit Pausen (1913 → eins, neun, eins, drei)
+const ZIFFERN = ["null", "eins", "zwo", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun"];
 export function funkSprechtext(funk) {
   const f = (funk || []).filter(x => x && x.trim());
   if (!f.length) return "";
   return f.join(". ")
     .replace(/RD_Betten_[A-Za-z0-9]+/g, "Bettenkanal").replace(/RD_ILS_[A-Za-z0-9]+/g, "Rettungsdienst")
     .replace(/RD_[0-9]+_[A-Za-z0-9]+/g, "Rettungsdienst").replace(/\s*[–-]?\s*\(?Bettenanforderung\)?/g, "")
-    .replace(/[()]/g, "").replace(/\s*–\s*/g, ", ").replace(/_/g, " ").replace(/([0-9])(?=[0-9])/g, "$1 ") + ".";
+    .replace(/[()]/g, "").replace(/\s*–\s*/g, ", ").replace(/_/g, " ").replace(/([0-9])(?=[0-9])/g, "$1, ")
+    .replace(/[0-9]/g, z => ZIFFERN[z]) + ".";   // Ziffern als Wörter wie im Funk – sonst „3. Rettungsdienst“ = Aufzählung
 }
 
 export function vorlesetextFuer(e) {

@@ -118,7 +118,7 @@
      "text": "Telefonnummern und Funkgruppen ohne Gewähr – Stand der jeweiligen Quelle beachten und mit der aktuellen Funkgeräte-Programmierung / Wachen-Info abgleichen. Notruf immer 112."
     }
    ],
-   "sprechtext": "R D 1 M, Rettungsdienst Nord der Leitstelle München, Kurzwahl 2 5 1 3. Betten über R D Betten M, Kurzwahl 2 5 1 1, mit Status 5. Nach Transport zurück auf die Original-Gruppe, Status 1.",
+   "sprechtext": "R D 1 M, Rettungsdienst Nord der Leitstelle München, Kurzwahl zwo, fünf, eins, drei. Betten über R D Betten M, Kurzwahl zwo, fünf, eins, eins, mit Status 5. Nach Transport zurück auf die Original-Gruppe, Status 1.",
    "quelle": "ILS München: Taschenkarte Einsatzablauf Rettungsdienst (Stand Juni 2017, stadt.muenchen.de) · Kurzwahl: eigene Angabe (Geräteprogrammierung, Stand 11/2026)",
    "stand": "2026-11",
    "geo": {
@@ -165,7 +165,7 @@
      "text": "Telefonnummern und Funkgruppen ohne Gewähr – Stand der jeweiligen Quelle beachten und mit der aktuellen Funkgeräte-Programmierung / Wachen-Info abgleichen. Notruf immer 112."
     }
    ],
-   "sprechtext": "R D 2 M, Rettungsdienst Süd der Leitstelle München, Kurzwahl 2 5 1 4. Betten über R D Betten M, Kurzwahl 2 5 1 1, mit Status 5. Nach Transport zurück auf die Original-Gruppe, Status 1.",
+   "sprechtext": "R D 2 M, Rettungsdienst Süd der Leitstelle München, Kurzwahl zwo, fünf, eins, vier. Betten über R D Betten M, Kurzwahl zwo, fünf, eins, eins, mit Status 5. Nach Transport zurück auf die Original-Gruppe, Status 1.",
    "quelle": "ILS München: Taschenkarte Einsatzablauf Rettungsdienst (Stand Juni 2017, stadt.muenchen.de) · Kurzwahl: eigene Angabe (Geräteprogrammierung, Stand 11/2026)",
    "stand": "2026-11",
    "geo": {

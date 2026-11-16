@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.12.1 (Build 26) – 2026-11-16
+- Vorlesen: Kurzwahlen Ziffer für Ziffer als Wörter mit Pausen wie im Funk („zwo, fünf, eins, drei“) – letzte Ziffer klang vorher wie eine Aufzählung
+
 ## v1.12.0 (Build 25) – 2026-11-16
 - Leitstellen: Funkgruppen, zuständige Landkreise und Ort der ILS im Editor bearbeitbar; Funkgruppen oben im Eintrag, beim Vorlesen (Kurzwahl Ziffer für Ziffer) und in der Siri-Anzeige; Bettenkanal München RD_Betten_M Kurzwahl 2511; veraltete Kurzwahlen FFB/Oberland aus dem Vorlesetext entfernt; Titel nicht mehr doppelt vorgelesen
 
