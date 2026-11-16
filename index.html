@@ -20,9 +20,14 @@
     <div class="kopf-zeile">
       <a href="#/" id="zurueck" class="zurueck" title="Zurück" aria-label="Zurück" hidden>‹</a>
       <a href="#/" class="logo"><img src="icons/icon.svg" alt=""> <span>Wissen RD</span></a>
-      <input id="suche" type="search" placeholder="Suchen …" autocomplete="off" autocapitalize="off" enterkeyhint="search">
-      <a href="#/einstellungen" class="zahnrad" title="Einstellungen" aria-label="Einstellungen">⚙️</a>
+      <div class="suchbox" id="suchbox">
+        <input id="suche" type="search" placeholder="Suchen …" autocomplete="off" autocapitalize="off" enterkeyhint="search">
+        <div id="verlauf" class="verlauf" hidden></div>
+      </div>
+      <button id="such-knopf" class="rund lupe" type="button" title="Suchen" aria-label="Suchen"></button>
+      <a href="#/einstellungen" class="zahnrad rund" title="Einstellungen" aria-label="Einstellungen">⚙️</a>
     </div>
+    <nav id="bereichsleiste" class="bereichsleiste" hidden></nav>
   </header>
 
   <button id="update" class="update" hidden>🔄 Neue Version verfügbar – tippen zum Aktualisieren</button>

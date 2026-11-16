@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.6.0 (Build 14) – 2026-11-16
+- Feinschliff: Suche nur als Lupe (öffnet schmales Feld), Suchverlauf mit Löschen nach Heute/Gestern/7 Tage/Alles (auch in den Einstellungen), Bereichsleiste zum direkten Wechsel zwischen den Bereichen, schmalere Kacheln (3 Spalten), Telefonnummern ohne Zeilenumbruch
+
 ## v1.5.0 (Build 13) – 2026-11-16
 - Neues Design: frische Farben (Türkis → Indigo, Farbe je Bereich), kompakte Kopfzeile mit kleiner Suche und Zurück-Button, schlanke Kacheln und Buttons, schwebender Plus-Button, „Zuletzt geändert“ eingeklappt
 

@@ -130,6 +130,8 @@ function route() {
   const sucheFeld = $("#suche");
   if (teil !== "suche" && document.activeElement !== sucheFeld) sucheFeld.value = "";
   setzeZurueck(teil, rest);
+  setzeBereichsleiste(teil, rest);
+  if (teil === "suche" && rest) oeffneSuche(false); else if (document.activeElement !== sucheFeld) schliesseSuche();
   if (!st.geladen) { inhalt.innerHTML = `<p class="leise mitte">Lade Wissen …</p>`; return; }
   switch (teil) {
     case "": return zeigeStart();
@@ -157,11 +159,133 @@ function setzeZurueck(teil, rest) {
   z.hidden = !teil;
 }
 
+// ---------------- Bereichsleiste: direkt in jeden Bereich springen ----------------
+const KURZNAME = { diagnose: "Diagnosen", algorithmus: "Algorithmen" };
+function setzeBereichsleiste(teil, rest) {
+  const nav = $("#bereichsleiste");
+  if (!nav) return;
+  const zeigen = ["b", "e", "suche", "neu", "bearbeiten"].includes(teil);
+  nav.hidden = !zeigen;
+  if (!zeigen) return;
+  let aktiv = "";
+  if (teil === "b") aktiv = rest;
+  else if (teil === "e" || teil === "bearbeiten") aktiv = st.eintraege.find(x => x.id === rest)?.bereich || "";
+  else if (teil === "neu") aktiv = rest;
+  nav.innerHTML = Object.entries(BEREICHE).map(([k, b]) =>
+    `<a class="bchip${k === aktiv ? " aktiv" : ""}" data-b="${k}" href="#/b/${k}"><span>${b.icon}</span>${esc(KURZNAME[k] || b.name)}</a>`).join("");
+  const a = nav.querySelector(".aktiv");
+  if (a) a.scrollIntoView({ block: "nearest", inline: "center" });
+}
+
+// ---------------- Suche: Lupe → Feld, Suchverlauf ----------------
+const kopf = $(".kopf");
+const VERLAUF = "wrd-suchverlauf";
+const TAG = 864e5;
+function verlaufLaden() {
+  try { return JSON.parse(localStorage.getItem(VERLAUF)) || []; } catch { return []; }
+}
+function verlaufSpeichern(l) {
+  try { localStorage.setItem(VERLAUF, JSON.stringify(l.slice(0, 40))); } catch { /* egal */ }
+}
+function merkeSuche(q) {
+  q = String(q || "").trim();
+  if (norm(q).length < 2) return;
+  const l = verlaufLaden().filter(x => norm(x.q) !== norm(q));
+  l.unshift({ q, t: Date.now() });
+  verlaufSpeichern(l);
+}
+function tagesbeginn(versatz = 0) {
+  const d = new Date(); d.setHours(0, 0, 0, 0);
+  return d.getTime() - versatz * TAG;
+}
+// art: "heute" | "gestern" | "7tage" | "alles" → Anzahl gelöschter Einträge
+function loescheVerlauf(art) {
+  const l = verlaufLaden(), heute = tagesbeginn(0), gestern = tagesbeginn(1), sieben = Date.now() - 7 * TAG;
+  const weg = {
+    heute: x => x.t >= heute,
+    gestern: x => x.t >= gestern && x.t < heute,
+    "7tage": x => x.t >= sieben,
+    alles: () => true
+  }[art];
+  const rest = l.filter(x => !weg(x));
+  verlaufSpeichern(rest);
+  return l.length - rest.length;
+}
+const VERLAUF_ARTEN = [["heute", "Heute"], ["gestern", "Gestern"], ["7tage", "Letzte 7 Tage"], ["alles", "Alles"]];
+function verlaufLoeschenFragen(art) {
+  const name = VERLAUF_ARTEN.find(a => a[0] === art)[1];
+  if (!confirm(`Suchverlauf „${name}“ löschen?`)) return false;
+  const n = loescheVerlauf(art);
+  hinweis(n ? `${n} Suche${n === 1 ? "" : "n"} gelöscht` : "Nichts zu löschen");
+  return true;
+}
+function zeitText(t) {
+  const d = new Date(t);
+  if (t >= tagesbeginn(0)) return "heute " + d.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" });
+  if (t >= tagesbeginn(1)) return "gestern";
+  return d.toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit" });
+}
+function zeigeVerlauf() {
+  const box = $("#verlauf");
+  if (!box) return;
+  if ($("#suche").value.trim()) { box.hidden = true; return; }
+  const l = verlaufLaden().slice(0, 8);
+  box.innerHTML = (l.length ? `<div class="v-titel">Zuletzt gesucht</div>` + l.map(x =>
+      `<button type="button" class="v-zeile" data-q="${esc(x.q)}"><span>🕘 ${esc(x.q)}</span><small>${zeitText(x.t)}</small></button>`).join("")
+      : `<div class="v-leer">Noch kein Suchverlauf</div>`) +
+    `<div class="v-loeschen"><span>Löschen:</span>${VERLAUF_ARTEN.map(([k, n]) =>
+      `<button type="button" class="v-weg" data-art="${k}">${n}</button>`).join("")}</div>`;
+  box.hidden = false;
+}
+function oeffneSuche(fokus = true) {
+  kopf.classList.add("sucht");
+  if (fokus) { $("#suche").focus(); zeigeVerlauf(); }
+}
+function schliesseSuche() {
+  if ($("#suche").value.trim()) return;
+  kopf.classList.remove("sucht");
+  $("#verlauf").hidden = true;
+}
+$("#such-knopf").onclick = () => oeffneSuche(true);
+$("#suche").addEventListener("focus", zeigeVerlauf);
+$("#suche").addEventListener("blur", () => setTimeout(() => {
+  if (document.activeElement !== $("#suche")) { $("#verlauf").hidden = true; schliesseSuche(); }
+}, 150));
+// Klicks im Verlauf dürfen das Suchfeld nicht schließen
+$("#verlauf").addEventListener("pointerdown", ev => ev.preventDefault());
+$("#verlauf").addEventListener("click", ev => {
+  const z = ev.target.closest(".v-zeile"), w = ev.target.closest(".v-weg");
+  if (z) {
+    const q = z.dataset.q;
+    $("#suche").value = q;
+    merkeSuche(q);
+    $("#verlauf").hidden = true;
+    location.hash = "#/suche/" + encodeURIComponent(q);
+  } else if (w) {
+    if (verlaufLoeschenFragen(w.dataset.art)) zeigeVerlauf();
+  }
+});
+
+let merkTimer;
 $("#suche").addEventListener("input", ev => {
   const q = ev.target.value;
   history.replaceState(null, "", "#/suche/" + encodeURIComponent(q));
+  zeigeVerlauf();
   zeigeSuche(q);
+  clearTimeout(merkTimer);
+  merkTimer = setTimeout(() => merkeSuche(q), 2000);   // nach kurzer Tipp-Pause merken
 });
+$("#suche").addEventListener("keydown", ev => {
+  if (ev.key === "Enter") { clearTimeout(merkTimer); merkeSuche(ev.target.value); ev.target.blur(); }
+  if (ev.key === "Escape") { ev.target.value = ""; ev.target.blur(); location.hash = "#/"; }
+});
+// Treffer aus der Suche geöffnet → Suchbegriff merken
+document.addEventListener("click", ev => {
+  if (ev.target.closest("#inhalt .zeile") && location.hash.startsWith("#/suche/")) {
+    clearTimeout(merkTimer); merkeSuche($("#suche").value);
+  }
+});
+if (startParam) merkeSuche(startParam);
 
 // ---------------- Ansichten ----------------
 function eintragZeile(e, mitBereich = true) {
@@ -176,7 +300,7 @@ function zeigeStart() {
   const kacheln = Object.entries(BEREICHE).map(([k, b]) => {
     const n = st.eintraege.filter(e => e.bereich === k).length;
     return `<a class="kachel" data-b="${k}" href="#/b/${k}"><span class="k-icon">${b.icon}</span>
-      <span class="k-name">${b.name}</span><small>${n}</small></a>`;
+      <span class="k-name">${b.name.replace("Verdachtsdiagnosen", "Verdachts\u00ADdiagnosen").replace("Abkürzungen", "Abkür\u00ADzungen")}</span><small>${n}</small></a>`;
   }).join("");
   const zuletzt = [...st.eintraege]
     .sort((a, b) => (b.geaendert?.seconds || 0) - (a.geaendert?.seconds || 0)).slice(0, 5);
@@ -446,6 +570,11 @@ function zeigeEinstellungen() {
       <label>Stimme<select id="stimme"></select></label>
       <button id="test-stimme" class="sekundaer">🔊 Test</button>
 
+      <h3>Suchverlauf</h3>
+      <p class="leise" id="verlauf-anzahl">${verlaufLaden().length} gespeicherte Suchen (nur auf diesem Gerät)</p>
+      <div class="aktionen">${VERLAUF_ARTEN.map(([k, n]) =>
+        `<button class="sekundaer v-weg-e" data-art="${k}">🗑 ${n}</button>`).join("")}</div>
+
       <h3>Daten</h3>
       <div class="aktionen">
         <button id="export" class="sekundaer">⬇️ Export (JSON)</button>
@@ -465,6 +594,10 @@ function zeigeEinstellungen() {
       <button id="abmelden" class="gefahr">Abmelden</button>
     </section>`;
 
+  inhalt.querySelectorAll(".v-weg-e").forEach(b => (b.onclick = () => {
+    if (verlaufLoeschenFragen(b.dataset.art))
+      $("#verlauf-anzahl").textContent = `${verlaufLaden().length} gespeicherte Suchen (nur auf diesem Gerät)`;
+  }));
   $("#rate").oninput = ev => { localStorage.setItem("rate", ev.target.value); $("#rate-w").textContent = ev.target.value; };
   const fuelleStimmen = () => {
     const sel = $("#stimme"); if (!sel) return;
