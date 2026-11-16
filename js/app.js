@@ -129,6 +129,7 @@ function route() {
   const [, teil, rest = ""] = h.split("/");
   const sucheFeld = $("#suche");
   if (teil !== "suche" && document.activeElement !== sucheFeld) sucheFeld.value = "";
+  setzeZurueck(teil, rest);
   if (!st.geladen) { inhalt.innerHTML = `<p class="leise mitte">Lade Wissen …</p>`; return; }
   switch (teil) {
     case "": return zeigeStart();
@@ -142,6 +143,20 @@ function route() {
   }
 }
 
+// Zurück-Button: Eintrag → sein Bereich (bzw. Bearbeiten → Eintrag), alles andere → Startseite
+function setzeZurueck(teil, rest) {
+  const z = $("#zurueck");
+  if (!z) return;
+  let ziel = "#/";
+  if (teil === "e") {
+    const e = st.eintraege.find(x => x.id === rest);
+    if (e && BEREICHE[e.bereich]) ziel = "#/b/" + e.bereich;
+  } else if (teil === "bearbeiten" && rest) ziel = "#/e/" + rest;
+  else if (teil === "neu" && BEREICHE[rest]) ziel = "#/b/" + rest;
+  z.href = ziel;
+  z.hidden = !teil;
+}
+
 $("#suche").addEventListener("input", ev => {
   const q = ev.target.value;
   history.replaceState(null, "", "#/suche/" + encodeURIComponent(q));
@@ -149,27 +164,28 @@ $("#suche").addEventListener("input", ev => {
 });
 
 // ---------------- Ansichten ----------------
-function eintragZeile(e) {
+function eintragZeile(e, mitBereich = true) {
   const b = BEREICHE[e.bereich] || { icon: "📌", name: e.bereich };
-  return `<a class="zeile" href="#/e/${esc(e.id)}">
+  return `<a class="zeile" data-b="${esc(e.bereich)}" href="#/e/${esc(e.id)}">
     <span class="z-icon">${b.icon}</span>
     <span class="z-text"><strong>${esc(e.titel)}</strong>${e.kurz && e.kurz !== e.titel ? ` <span class="kurz">${esc(e.kurz)}</span>` : ""}
-    <small>${esc(b.name)}</small></span><span class="pfeil">›</span></a>`;
+    ${mitBereich ? `<small>${esc(b.name)}</small>` : ""}</span><span class="pfeil">›</span></a>`;
 }
 
 function zeigeStart() {
   const kacheln = Object.entries(BEREICHE).map(([k, b]) => {
     const n = st.eintraege.filter(e => e.bereich === k).length;
-    return `<a class="kachel" href="#/b/${k}"><span class="k-icon">${b.icon}</span>
-      <span>${b.name}</span><small>${n}</small></a>`;
+    return `<a class="kachel" data-b="${k}" href="#/b/${k}"><span class="k-icon">${b.icon}</span>
+      <span class="k-name">${b.name}</span><small>${n}</small></a>`;
   }).join("");
   const zuletzt = [...st.eintraege]
     .sort((a, b) => (b.geaendert?.seconds || 0) - (a.geaendert?.seconds || 0)).slice(0, 5);
   inhalt.innerHTML = `
     <section class="kacheln">${kacheln}</section>
-    <a class="primaer breit" href="#/neu/">＋ Neuer Eintrag</a>
-    <h3>Zuletzt geändert</h3>
-    <section class="liste">${zuletzt.map(eintragZeile).join("") || `<p class="leise">Noch keine Einträge – lege den ersten an oder importiere die Beispieldaten (⚙️).</p>`}</section>`;
+    ${zuletzt.length ? `<details class="zuletzt"><summary>🕘 Zuletzt geändert</summary>
+      <section class="liste">${zuletzt.map(eintragZeile).join("")}</section></details>`
+      : `<p class="leise">Noch keine Einträge – lege den ersten an oder importiere Daten (⚙️).</p>`}
+    <a class="fab" href="#/neu/" title="Neuer Eintrag" aria-label="Neuer Eintrag">＋</a>`;
 }
 
 function zeigeSuche(q) {
@@ -190,7 +206,7 @@ function zeigeSuche(q) {
     <section class="liste">${t.map(eintragZeile).join("")}</section>
     ${t.length ? "" : `<p class="leise">Nichts gefunden.</p>`}
     ${!vonSiri && lernen ? `<details class="lernen-klein"><summary>„${esc(q)}“ einem Eintrag als Suchbegriff zuordnen</summary>${lernen}</details>` : ""}
-    <a class="primaer breit" id="neu-aus-suche" href="#/neu/">＋ „${esc(q)}“ als neuen Eintrag anlegen</a>`;
+    <a class="sekundaer breit" id="neu-aus-suche" href="#/neu/">＋ „${esc(q)}“ neu anlegen</a>`;
   $("#neu-aus-suche").onclick = () => { sessionStorage.setItem("neuTitel", q); };
   inhalt.querySelectorAll("button.lern").forEach(b => (b.onclick = () => lerneBegriff(b.dataset.id, q)));
   const ok = $("#lern-ok");
@@ -237,9 +253,9 @@ function zeigeBereich(k) {
   if (!b) return zeigeStart();
   const liste = st.eintraege.filter(e => e.bereich === k);
   inhalt.innerHTML = `
-    <h2>${b.icon} ${b.name}</h2>
-    <section class="liste">${liste.map(eintragZeile).join("") || `<p class="leise">Noch leer.</p>`}</section>
-    <a class="primaer breit" href="#/neu/${k}">＋ Neuer Eintrag in ${b.name}</a>`;
+    <h2>${b.icon} ${b.name} <span class="kurz">${liste.length}</span></h2>
+    <section class="liste">${liste.map(e => eintragZeile(e, false)).join("") || `<p class="leise">Noch leer.</p>`}</section>
+    <a class="fab" href="#/neu/${k}" title="Neuer Eintrag in ${esc(b.name)}" aria-label="Neuer Eintrag">＋</a>`;
 }
 
 function zeigeEintrag(id) {

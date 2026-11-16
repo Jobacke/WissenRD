@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.5.0 (Build 13) – 2026-11-16
+- Neues Design: frische Farben (Türkis → Indigo, Farbe je Bereich), kompakte Kopfzeile mit kleiner Suche und Zurück-Button, schlanke Kacheln und Buttons, schwebender Plus-Button, „Zuletzt geändert“ eingeklappt
+
 ## v1.4.0 (Build 12) – 2026-11-15
 - Offline: Anzeige „offline (Stand …)“, Firebase-SDK wird für den Offline-Start vorgeladen. Daten: 19 Kliniken (München, Ebersberg, Starnberg, Erding, Agatharied, kbo Haar) plus 7 Übersichten nach Versorgungsmöglichkeit (Stroke, Chest Pain, Trauma, Kinder, CAC, Neurochirurgie, Geburtshilfe)
 

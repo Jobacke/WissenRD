@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Wissen RD</title>
   <meta name="description" content="Persönliche Wissensdatenbank Rettungsdienst – per Siri abrufbar">
-  <meta name="theme-color" content="#1a365d">
+  <meta name="theme-color" content="#0ea5a4">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Wissen RD">
@@ -18,10 +18,11 @@
 <body>
   <header class="kopf">
     <div class="kopf-zeile">
+      <a href="#/" id="zurueck" class="zurueck" title="Zurück" aria-label="Zurück" hidden>‹</a>
       <a href="#/" class="logo"><img src="icons/icon.svg" alt=""> <span>Wissen RD</span></a>
-      <a href="#/einstellungen" class="zahnrad" title="Einstellungen">⚙️</a>
+      <input id="suche" type="search" placeholder="Suchen …" autocomplete="off" autocapitalize="off" enterkeyhint="search">
+      <a href="#/einstellungen" class="zahnrad" title="Einstellungen" aria-label="Einstellungen">⚙️</a>
     </div>
-    <input id="suche" type="search" placeholder="🔎 Thema, Abkürzung, Klinik …" autocomplete="off" autocapitalize="off">
   </header>
 
   <button id="update" class="update" hidden>🔄 Neue Version verfügbar – tippen zum Aktualisieren</button>
