@@ -1,0 +1,2134 @@
+{
+ "app": "Wissen RD",
+ "titel": "Import Abkürzungen Rettungsdienst",
+ "hinweis": "Abkürzungen und Merkhilfen. Bedeutung nach allgemeiner Fachsprache; Bayern-Bezug nur mit ÄLRD-Beleg. Siri: „<Abkürzung> Abkürzung“ findet immer den Abkürzungs-Eintrag.",
+ "eintraege": [
+  {
+   "id": "abk-stemi",
+   "bereich": "abkuerzung",
+   "titel": "STEMI",
+   "kurz": "",
+   "suchbegriffe": [
+    "STEMI Abkürzung",
+    "Abkürzung STEMI",
+    "ST-Hebungsinfarkt",
+    "ST Hebungsinfarkt"
+   ],
+   "siehe": [
+    "Akutes Koronarsyndrom",
+    "NSTEMI",
+    "ACS (Abkürzung)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "ST-Elevation Myocardial Infarction – ST-Hebungsinfarkt"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Form des akuten Koronarsyndroms mit ST-Strecken-Hebungen im 12-Kanal-EKG\n- Abgrenzung: **NSTEMI** (Infarkt ohne ST-Hebung) und instabile Angina pectoris"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-krimp",
+   "bereich": "abkuerzung",
+   "titel": "KRIMP",
+   "kurz": "",
+   "suchbegriffe": [
+    "KRIMP Abkürzung",
+    "Abkürzung KRIMP",
+    "KRIMP-Schema",
+    "Krimp Pupillen",
+    "Pupillenbeurteilung"
+   ],
+   "siehe": [
+    "PERLA",
+    "xABCDE (Abkürzung)",
+    "GCS"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Merkhilfe zur Pupillenbeurteilung"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- **K**onsensuell – beide Pupillen reagieren gleichsinnig, auch wenn nur in ein Auge geleuchtet wird\n- **R**und – Pupillen rund und gleichmäßig geformt\n- **I**sokor – beide Pupillen gleich groß (Gegenteil: anisokor)\n- **M**ydriasis / **M**iosis – weite bzw. enge Pupillen\n- **P**rompt – prompte (zügige) Lichtreaktion\n- Gehört zum D (Disability) der Untersuchung nach xABCDE"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Notfallmedizinische Lehrinhalte zur Pupillenbeurteilung (u. a. SMEDEX-Lerneinheit „Strukturierte Untersuchung von Notfallpatienten“)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-perla",
+   "bereich": "abkuerzung",
+   "titel": "PERLA",
+   "kurz": "",
+   "suchbegriffe": [
+    "PERLA Abkürzung",
+    "Abkürzung PERLA",
+    "PERRLA",
+    "PERL",
+    "Perla Pupillen"
+   ],
+   "siehe": [
+    "KRIMP"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Pupils Equal, (Round,) reactive to Light and Accommodation – Pupillen gleich (rund), licht- und akkommodationsreagibel"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Englische Merkhilfe zur Pupillenbeurteilung, Varianten: **PERL** (ohne Akkommodation), **PERRLA** (mit „Round“)\n- **P**upils – Pupillen\n- **E**qual – gleich groß (isokor)\n- **R**ound – rund\n- **R**eactive to **L**ight – lichtreagibel\n- **A**ccommodation – Engstellung beim Blick in die Nähe\n- Deutschsprachige Entsprechung im Rettungsdienst: KRIMP"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Cleveland Clinic: PERRLA Eye Exam · GPnotebook: PERLA",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-zops",
+   "bereich": "abkuerzung",
+   "titel": "ZOPS",
+   "kurz": "",
+   "suchbegriffe": [
+    "ZOPS Abkürzung",
+    "Abkürzung ZOPS",
+    "ZÖPS",
+    "ZOPS-Schema",
+    "Orientierung",
+    "WAO zu ZOPS"
+   ],
+   "siehe": [
+    "WAO",
+    "GCS",
+    "AVPU"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Orientierung zu Zeit, Ort, Person und Situation"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- **Z**eit – Welcher Tag, Monat, welches Jahr? Wie spät ist es?\n- **O**rt – Wo sind Sie?\n- **P**erson – Wie heißen Sie? Wie alt sind Sie?\n- **S**ituation – Was ist passiert?\n- Dokumentation z. B. „WAO zu ZOPS“ = wach, ansprechbar, zu allen vier Qualitäten orientiert\n- Synonym: ZÖPS"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "DocCheck Flexikon: ZOPS-Schema, WAO-Schema",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-iv",
+   "bereich": "abkuerzung",
+   "titel": "i.v.",
+   "kurz": "",
+   "suchbegriffe": [
+    "i.v. Abkürzung",
+    "Abkürzung i.v.",
+    "intravenös",
+    "intravenoes"
+   ],
+   "siehe": [
+    "Applikationstechniken für Medikamente und Infusionen",
+    "i.o.",
+    "i.m."
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "intravenös – in die Vene"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Applikationsweg über einen peripheren Venenzugang (Venenverweilkanüle)\n- Im Abkürzungsverzeichnis der ÄLRD Bayern: **IV = intravenös**"
+    },
+    {
+     "titel": "Bayern-Bezug (ÄLRD)",
+     "text": "- Eskalierende Reihenfolge der Applikationswege (2a-Checkliste „Applikationstechniken“): Inhalation → i.m.-Injektion → i.v.-Zugang → nasale Medikamentengabe → i.o.-Zugang. Je invasiver die Maßnahme, umso strenger die Indikation.\n- In den 2c-Algorithmen: IV-Zugang max. 2 Versuche, **kein IO-Zugang** im Rahmen der 2c-Delegation"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: 2a-Checklisten (Stand 25.07.2024), Applikationstechniken für Medikamente und Infusionen · ÄLRD Bayern: Delegationsalgorithmen 2c (gültig ab 01.11.2025)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-im",
+   "bereich": "abkuerzung",
+   "titel": "i.m.",
+   "kurz": "",
+   "suchbegriffe": [
+    "i.m. Abkürzung",
+    "Abkürzung i.m.",
+    "intramuskulär",
+    "intramuskulaer"
+   ],
+   "siehe": [
+    "Applikationstechniken für Medikamente und Infusionen",
+    "Epinephrin (Adrenalin)",
+    "Anaphylaktischer Schock"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "intramuskulär – in den Muskel"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Injektion in einen Muskel, z. B. in die Außenseite des Oberschenkels"
+    },
+    {
+     "titel": "Bayern-Bezug (ÄLRD)",
+     "text": "- Eskalierende Reihenfolge der Applikationswege (2a-Checkliste „Applikationstechniken“): Inhalation → i.m.-Injektion → i.v.-Zugang → nasale Medikamentengabe → i.o.-Zugang. Je invasiver die Maßnahme, umso strenger die Indikation.\n- Beispiel ÄLRD-Medikamentenliste: Epinephrin (Adrenalin) i.m. bei Anaphylaxie – Dosierung siehe dort"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: 2a-Checklisten (Stand 25.07.2024), Applikationstechniken für Medikamente und Infusionen · ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5 (22.10.2025)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-io",
+   "bereich": "abkuerzung",
+   "titel": "i.o.",
+   "kurz": "",
+   "suchbegriffe": [
+    "i.o. Abkürzung",
+    "Abkürzung i.o.",
+    "intraossärer Zugang"
+   ],
+   "siehe": [
+    "Applikationstechniken für Medikamente und Infusionen",
+    "i.v."
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "intraossär – in den Knochen (Markraum)"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Gefäßzugang über eine spezielle Nadel in den Knochenmarkraum, wenn ein i.v.-Zugang nicht (rechtzeitig) gelingt\n- In den ÄLRD-Dosierungen oft als „i.v. (i.o.)“ angegeben"
+    },
+    {
+     "titel": "Bayern-Bezug (ÄLRD)",
+     "text": "- Eskalierende Reihenfolge der Applikationswege (2a-Checkliste „Applikationstechniken“): Inhalation → i.m.-Injektion → i.v.-Zugang → nasale Medikamentengabe → i.o.-Zugang. Je invasiver die Maßnahme, umso strenger die Indikation.\n- 2c-Delegation: **kein IO-Zugang** (IV-Zugang max. 2 Versuche)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: 2a-Checklisten (Stand 25.07.2024), Applikationstechniken für Medikamente und Infusionen · ÄLRD Bayern: Delegationsalgorithmen 2c (gültig ab 01.11.2025)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-acs",
+   "bereich": "abkuerzung",
+   "titel": "ACS (Abkürzung)",
+   "kurz": "",
+   "suchbegriffe": [
+    "ACS Abkürzung",
+    "Abkürzung ACS"
+   ],
+   "siehe": [
+    "Akutes Koronarsyndrom",
+    "STEMI",
+    "NSTEMI"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Acute Coronary Syndrome – Akutes Koronarsyndrom"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Oberbegriff für instabile Angina pectoris, NSTEMI und STEMI"
+    },
+    {
+     "titel": "Bayern-Bezug (ÄLRD)",
+     "text": "- Vorgehen bei V. a. ACS: siehe Eintrag „Akutes Koronarsyndrom“ (ÄLRD Bayern)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-cpr",
+   "bereich": "abkuerzung",
+   "titel": "CPR (Abkürzung)",
+   "kurz": "",
+   "suchbegriffe": [
+    "CPR Abkürzung",
+    "Abkürzung CPR",
+    "HLW",
+    "Herz-Lungen-Wiederbelebung"
+   ],
+   "siehe": [
+    "Kreislaufstillstand / Reanimation",
+    "ROSC",
+    "AED",
+    "ALS (Abkürzung)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Cardiopulmonary Resuscitation – kardiopulmonale Reanimation"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Deutsche Entsprechung: **HLW** (Herz-Lungen-Wiederbelebung)\n- Thoraxkompressionen und Beatmung bei Kreislaufstillstand\n- mCPR = mechanische Thoraxkompression"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-nstemi",
+   "bereich": "abkuerzung",
+   "titel": "NSTEMI",
+   "kurz": "",
+   "suchbegriffe": [
+    "NSTEMI Abkürzung",
+    "Abkürzung NSTEMI"
+   ],
+   "siehe": [
+    "ACS (Abkürzung)",
+    "STEMI",
+    "Akutes Koronarsyndrom"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Non-ST-Elevation Myocardial Infarction – Myokardinfarkt ohne ST-Hebung"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Form des akuten Koronarsyndroms ohne ST-Strecken-Hebung im EKG"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-ap",
+   "bereich": "abkuerzung",
+   "titel": "AP",
+   "kurz": "",
+   "suchbegriffe": [
+    "AP Abkürzung",
+    "Abkürzung AP"
+   ],
+   "siehe": [
+    "ACS (Abkürzung)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Angina pectoris – Brustenge"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Anfallsartiger Brustschmerz/Engegefühl durch Minderdurchblutung des Herzmuskels\n- Instabile AP gehört zum ACS"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-lae",
+   "bereich": "abkuerzung",
+   "titel": "LAE",
+   "kurz": "",
+   "suchbegriffe": [
+    "LAE Abkürzung",
+    "Abkürzung LAE",
+    "Lungenembolie",
+    "LE"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Lungenarterienembolie"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Verschluss einer Lungenarterie, meist durch ein Blutgerinnsel (Thrombus) aus den Beinvenen\n- Synonym: Lungenembolie (LE)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-tvt",
+   "bereich": "abkuerzung",
+   "titel": "TVT",
+   "kurz": "",
+   "suchbegriffe": [
+    "TVT Abkürzung",
+    "Abkürzung TVT"
+   ],
+   "siehe": [
+    "LAE"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Tiefe Venenthrombose"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Blutgerinnsel in einer tiefen Vene, meist im Bein/Becken; Hauptquelle der Lungenembolie"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-sht",
+   "bereich": "abkuerzung",
+   "titel": "SHT",
+   "kurz": "",
+   "suchbegriffe": [
+    "SHT Abkürzung",
+    "Abkürzung SHT"
+   ],
+   "siehe": [
+    "GCS",
+    "HWS"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Schädel-Hirn-Trauma"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Verletzung des Schädels mit Beteiligung des Gehirns"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-hws",
+   "bereich": "abkuerzung",
+   "titel": "HWS",
+   "kurz": "",
+   "suchbegriffe": [
+    "HWS Abkürzung",
+    "Abkürzung HWS",
+    "BWS",
+    "LWS"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Halswirbelsäule"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Ebenso: **BWS** Brustwirbelsäule, **LWS** Lendenwirbelsäule"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-icb",
+   "bereich": "abkuerzung",
+   "titel": "ICB",
+   "kurz": "",
+   "suchbegriffe": [
+    "ICB Abkürzung",
+    "Abkürzung ICB"
+   ],
+   "siehe": [
+    "SAB",
+    "TIA"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Intrazerebrale Blutung – Hirnblutung"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Blutung in das Hirngewebe; Ursache eines hämorrhagischen Schlaganfalls"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-sab",
+   "bereich": "abkuerzung",
+   "titel": "SAB",
+   "kurz": "",
+   "suchbegriffe": [
+    "SAB Abkürzung",
+    "Abkürzung SAB"
+   ],
+   "siehe": [
+    "ICB",
+    "PZC"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Subarachnoidalblutung"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Blutung in den Raum zwischen Spinnwebenhaut und weicher Hirnhaut, typisch: schlagartiger, stärkster Kopfschmerz"
+    },
+    {
+     "titel": "Bayern-Bezug (ÄLRD)",
+     "text": "- ÄLRD-Bayern-Empfehlung: Nutzung des PZC „Kopf-/Gesichtsschmerz“ bei Verdacht auf akute Subarachnoidalblutung (08.10.2026)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: Empfehlungen (RDA-Dokumente)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-tia",
+   "bereich": "abkuerzung",
+   "titel": "TIA",
+   "kurz": "",
+   "suchbegriffe": [
+    "TIA Abkürzung",
+    "Abkürzung TIA"
+   ],
+   "siehe": [
+    "BE-FAST",
+    "ICB"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Transitorische ischämische Attacke"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Vorübergehende neurologische Ausfälle durch kurzzeitige Minderdurchblutung des Gehirns; Warnzeichen für einen Schlaganfall"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-copd",
+   "bereich": "abkuerzung",
+   "titel": "COPD (Abkürzung)",
+   "kurz": "",
+   "suchbegriffe": [
+    "COPD Abkürzung",
+    "Abkürzung COPD"
+   ],
+   "siehe": [
+    "Kritische Bronchospastik (Asthma / COPD)",
+    "LTOT",
+    "NIV (Abkürzung)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Chronic Obstructive Pulmonary Disease – chronisch obstruktive Lungenerkrankung"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-ltot",
+   "bereich": "abkuerzung",
+   "titel": "LTOT",
+   "kurz": "",
+   "suchbegriffe": [
+    "LTOT Abkürzung",
+    "Abkürzung LTOT"
+   ],
+   "siehe": [
+    "COPD (Abkürzung)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Long-Term Oxygen Therapy – Langzeit-Sauerstofftherapie"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Dauerhafte Sauerstoffgabe zu Hause, z. B. bei schwerer COPD"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: Delegationsalgorithmen 2c (gültig ab 01.11.2025)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-dd",
+   "bereich": "abkuerzung",
+   "titel": "DD",
+   "kurz": "",
+   "suchbegriffe": [
+    "DD Abkürzung",
+    "Abkürzung DD"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Differenzialdiagnose"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Andere in Frage kommende Erkrankung mit ähnlichem Erscheinungsbild"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-va",
+   "bereich": "abkuerzung",
+   "titel": "V. a.",
+   "kurz": "",
+   "suchbegriffe": [
+    "V. a. Abkürzung",
+    "Abkürzung V. a.",
+    "Verdacht auf"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Verdacht auf"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Vor einer Diagnose, die noch nicht gesichert ist, z. B. „V. a. Sepsis“"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-zn",
+   "bereich": "abkuerzung",
+   "titel": "Z. n.",
+   "kurz": "",
+   "suchbegriffe": [
+    "Z. n. Abkürzung",
+    "Abkürzung Z. n.",
+    "Zustand nach"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Zustand nach"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Kennzeichnet eine frühere Erkrankung oder Operation, z. B. „Z. n. Herzinfarkt“"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-xabcde",
+   "bereich": "abkuerzung",
+   "titel": "xABCDE (Abkürzung)",
+   "kurz": "",
+   "suchbegriffe": [
+    "xABCDE Abkürzung",
+    "Abkürzung xABCDE",
+    "cABCDE",
+    "ABCDE-Schema"
+   ],
+   "siehe": [
+    "Ersteinschätzung und initiale Beurteilung xABCDE",
+    "KRIMP",
+    "GCS"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Strukturierte Ersteinschätzung: eXsanguination, Airway, Breathing, Circulation, Disability, Exposure/Environment"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- **x** – lebensbedrohliche (katastrophale) Blutung\n- **A** – Atemweg\n- **B** – Atmung\n- **C** – Kreislauf\n- **D** – neurologischer Status (z. B. GCS, Pupillen, BZ)\n- **E** – Entkleiden/Untersuchen, Umgebung, Wärmeerhalt\n- Varianten: ABCDE, cABCDE (c = critical bleeding)"
+    },
+    {
+     "titel": "Bayern-Bezug (ÄLRD)",
+     "text": "- ÄLRD Bayern: 2a-Checkliste „Ersteinschätzung und initiale Beurteilung Patient xABCDE“ – je Buchstabe: Notarzt alarmiert? invasive Maßnahmen NotSan nach Checkliste"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: 2a-Checklisten (Stand 25.07.2024), Ersteinschätzung und initiale Beurteilung Patient xABCDE",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-sampler",
+   "bereich": "abkuerzung",
+   "titel": "SAMPLER",
+   "kurz": "",
+   "suchbegriffe": [
+    "SAMPLER Abkürzung",
+    "Abkürzung SAMPLER",
+    "SAMPLE",
+    "SAMPLER-Schema",
+    "Anamnese"
+   ],
+   "siehe": [
+    "OPQRST"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Anamnese-Schema"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- **S**ymptome\n- **A**llergien\n- **M**edikamente\n- **P**atientenvorgeschichte (Vorerkrankungen)\n- **L**etzte Mahlzeit (auch letzte Ausscheidung, Menstruation)\n- **E**reignis – was ist passiert?\n- **R**isikofaktoren"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-opqrst",
+   "bereich": "abkuerzung",
+   "titel": "OPQRST",
+   "kurz": "",
+   "suchbegriffe": [
+    "OPQRST Abkürzung",
+    "Abkürzung OPQRST",
+    "OPQRST-Schema",
+    "Schmerzanamnese"
+   ],
+   "siehe": [
+    "SAMPLER",
+    "NRS"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Schmerzanamnese"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- **O**nset – Beginn (plötzlich/allmählich)\n- **P**rovocation/Palliation – was verstärkt, was lindert?\n- **Q**uality – Art des Schmerzes\n- **R**egion/Radiation – Ort und Ausstrahlung\n- **S**everity – Stärke (z. B. NRS 0–10)\n- **T**ime – Dauer, Verlauf"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-befast",
+   "bereich": "abkuerzung",
+   "titel": "BE-FAST",
+   "kurz": "",
+   "suchbegriffe": [
+    "BE-FAST Abkürzung",
+    "Abkürzung BE-FAST",
+    "FAST",
+    "FAST-Test"
+   ],
+   "siehe": [
+    "Übersicht Stroke Units",
+    "TIA"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Schlaganfall-Erkennung"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- **B**alance – Gleichgewicht/Schwindel\n- **E**yes – Sehstörung\n- **F**ace – Gesicht (hängender Mundwinkel)\n- **A**rms – Armschwäche\n- **S**peech – Sprachstörung\n- **T**ime – Zeitpunkt des Symptombeginns / keine Zeit verlieren\n- Kurzform ohne B und E: **FAST**"
+    },
+    {
+     "titel": "Bayern-Bezug (ÄLRD)",
+     "text": "- ÄLRD-Bayern-Empfehlung „Präklinische Versorgung von Patienten mit akutem Schlaganfall“ (23.03.2021) – Inhalt hier nicht übernommen"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: Empfehlungen (RDA-Dokumente)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-gcs",
+   "bereich": "abkuerzung",
+   "titel": "GCS",
+   "kurz": "",
+   "suchbegriffe": [
+    "GCS Abkürzung",
+    "Abkürzung GCS",
+    "Glasgow Coma Scale",
+    "Glasgow-Koma-Skala"
+   ],
+   "siehe": [
+    "AVPU",
+    "WAO",
+    "ZOPS",
+    "SHT"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Glasgow Coma Scale"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Bewertung der Bewusstseinslage in drei Kategorien: **Augenöffnen** 1–4, **verbale Reaktion** 1–5, **motorische Reaktion** 1–6\n- Summe 3 (tiefe Bewusstlosigkeit) bis 15 (wach, orientiert)\n- Bei Kindern: angepasste pädiatrische GCS"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: Delegationsalgorithmen 2c (gültig ab 01.11.2025)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-avpu",
+   "bereich": "abkuerzung",
+   "titel": "AVPU",
+   "kurz": "",
+   "suchbegriffe": [
+    "AVPU Abkürzung",
+    "Abkürzung AVPU"
+   ],
+   "siehe": [
+    "GCS",
+    "WAO"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Alert, Verbal, Pain, Unresponsive – Schnellbeurteilung der Bewusstseinslage"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- **A** – wach\n- **V** – reagiert auf Ansprache\n- **P** – reagiert auf Schmerzreiz\n- **U** – reagiert nicht"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-wao",
+   "bereich": "abkuerzung",
+   "titel": "WAO",
+   "kurz": "",
+   "suchbegriffe": [
+    "WAO Abkürzung",
+    "Abkürzung WAO",
+    "WAO-Schema"
+   ],
+   "siehe": [
+    "ZOPS",
+    "AVPU"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "wach, ansprechbar, orientiert"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- **W** – Patient ist wach\n- **A** – reagiert auf Ansprache\n- **O** – orientiert (weitere Beurteilung mit ZOPS)\n- Dokumentation z. B. „WAO zu ZOPS“"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "DocCheck Flexikon: WAO-Schema",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-news2",
+   "bereich": "abkuerzung",
+   "titel": "NEWS2 (Abkürzung)",
+   "kurz": "",
+   "suchbegriffe": [
+    "NEWS2 Abkürzung",
+    "Abkürzung NEWS2",
+    "News Score"
+   ],
+   "siehe": [
+    "2c Sepsis",
+    "2c NEWS"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "National Early Warning Score 2"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Punktesystem aus Vitalparametern zur Einschätzung des Risikos einer Zustandsverschlechterung"
+    },
+    {
+     "titel": "Bayern-Bezug (ÄLRD)",
+     "text": "- ÄLRD Bayern verwendet einen **vereinfachten NEWS-2** in den 2c-Algorithmen „V. a. Sepsis“ und „Risiko für relevante Zustandsverschlechterung“ – Punktetabelle siehe dort"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: Delegationsalgorithmen 2c (gültig ab 01.11.2025)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-nrs",
+   "bereich": "abkuerzung",
+   "titel": "NRS",
+   "kurz": "",
+   "suchbegriffe": [
+    "NRS Abkürzung",
+    "Abkürzung NRS",
+    "Schmerzskala"
+   ],
+   "siehe": [
+    "OPQRST",
+    "Kritischer Schmerzzustand (Analgesie-Übersicht)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Numerische Rating-Skala"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Schmerzstärke von 0 (kein Schmerz) bis 10 (stärkster vorstellbarer Schmerz)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-bz",
+   "bereich": "abkuerzung",
+   "titel": "BZ",
+   "kurz": "",
+   "suchbegriffe": [
+    "BZ Abkürzung",
+    "Abkürzung BZ",
+    "Blutzucker",
+    "BZ-Messung"
+   ],
+   "siehe": [
+    "Hypoglykämie",
+    "Hyperglykämie"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Blutzucker"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Blutglukosewert, Angabe in mg/dl oder mmol/l"
+    },
+    {
+     "titel": "Bayern-Bezug (ÄLRD)",
+     "text": "- ÄLRD Bayern (2c Hypoglykämie): BZ-Umrechnung 70 mg/dl = 3,9 mmol/l"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: Delegationsalgorithmen 2c (gültig ab 01.11.2025)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-rr",
+   "bereich": "abkuerzung",
+   "titel": "RR",
+   "kurz": "",
+   "suchbegriffe": [
+    "RR Abkürzung",
+    "Abkürzung RR",
+    "Blutdruck",
+    "NIBP",
+    "Riva-Rocci"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Blutdruck nach Riva-Rocci"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Nicht-invasive Blutdruckmessung mit Manschette; Angabe systolisch/diastolisch in mmHg\n- Ebenso: **NIBP** (non-invasive blood pressure)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-hf",
+   "bereich": "abkuerzung",
+   "titel": "HF",
+   "kurz": "",
+   "suchbegriffe": [
+    "HF Abkürzung",
+    "Abkürzung HF",
+    "Herzfrequenz",
+    "Puls"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Herzfrequenz"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Schläge pro Minute; Puls = tastbare Herzfrequenz"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-af",
+   "bereich": "abkuerzung",
+   "titel": "AF",
+   "kurz": "",
+   "suchbegriffe": [
+    "AF Abkürzung",
+    "Abkürzung AF",
+    "Atemfrequenz",
+    "VHF",
+    "Vorhofflimmern"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Atemfrequenz"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Atemzüge pro Minute\n- **Achtung:** AF steht im kardiologischen Kontext auch für **Atrial Fibrillation** = Vorhofflimmern (VHF)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-spo2",
+   "bereich": "abkuerzung",
+   "titel": "SpO2",
+   "kurz": "",
+   "suchbegriffe": [
+    "SpO2 Abkürzung",
+    "Abkürzung SpO2",
+    "Sauerstoffsättigung",
+    "Sättigung",
+    "Pulsoxymetrie"
+   ],
+   "siehe": [
+    "Hypoxie / Hypoxämie",
+    "2c Sauerstoff"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Periphere (pulsoxymetrisch gemessene) Sauerstoffsättigung"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Anteil des mit Sauerstoff beladenen Hämoglobins in %"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-etco2",
+   "bereich": "abkuerzung",
+   "titel": "etCO2",
+   "kurz": "",
+   "suchbegriffe": [
+    "etCO2 Abkürzung",
+    "Abkürzung etCO2",
+    "endtidales CO2",
+    "Kapnografie",
+    "Kapnometrie"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Endtidales Kohlendioxid"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- CO2-Konzentration am Ende der Ausatmung, gemessen per Kapnometrie/Kapnografie (Lage-/Beatmungskontrolle, Reanimation)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-o2",
+   "bereich": "abkuerzung",
+   "titel": "O2 (Abkürzung)",
+   "kurz": "",
+   "suchbegriffe": [
+    "O2 Abkürzung",
+    "Abkürzung O2"
+   ],
+   "siehe": [
+    "2c Sauerstoff",
+    "Hypoxie / Hypoxämie"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Sauerstoff"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: Delegationsalgorithmen 2c (gültig ab 01.11.2025)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-ekg",
+   "bereich": "abkuerzung",
+   "titel": "EKG",
+   "kurz": "",
+   "suchbegriffe": [
+    "EKG Abkürzung",
+    "Abkürzung EKG",
+    "12-Kanal-EKG",
+    "Zwölf-Kanal-EKG"
+   ],
+   "siehe": [
+    "STEMI",
+    "ACS (Abkürzung)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Elektrokardiogramm"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Ableitung der elektrischen Herzaktivität; **12-Kanal-EKG** zur Infarktdiagnostik"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-rosc",
+   "bereich": "abkuerzung",
+   "titel": "ROSC",
+   "kurz": "",
+   "suchbegriffe": [
+    "ROSC Abkürzung",
+    "Abkürzung ROSC"
+   ],
+   "siehe": [
+    "CPR (Abkürzung)",
+    "Kreislaufstillstand / Reanimation"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Return of Spontaneous Circulation – Wiederkehr eines Spontankreislaufs"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Nach erfolgreicher Reanimation"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-kg",
+   "bereich": "abkuerzung",
+   "titel": "KG",
+   "kurz": "",
+   "suchbegriffe": [
+    "KG Abkürzung",
+    "Abkürzung KG"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Körpergewicht"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- In Dosierungen: „mg/kg KG“ = Milligramm pro Kilogramm Körpergewicht"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: Delegationsalgorithmen 2c (gültig ab 01.11.2025)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-sc",
+   "bereich": "abkuerzung",
+   "titel": "s.c.",
+   "kurz": "",
+   "suchbegriffe": [
+    "s.c. Abkürzung",
+    "Abkürzung s.c.",
+    "subkutan"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "subkutan – unter die Haut"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-in",
+   "bereich": "abkuerzung",
+   "titel": "i.n.",
+   "kurz": "",
+   "suchbegriffe": [
+    "i.n. Abkürzung",
+    "Abkürzung i.n.",
+    "intranasal",
+    "nasal"
+   ],
+   "siehe": [
+    "Applikationstechniken für Medikamente und Infusionen"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "intranasal – über die Nase"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Gabe meist über einen Zerstäuber (Mucosal Atomization Device)"
+    },
+    {
+     "titel": "Bayern-Bezug (ÄLRD)",
+     "text": "- Eskalierende Reihenfolge der Applikationswege (2a-Checkliste „Applikationstechniken“): Inhalation → i.m.-Injektion → i.v.-Zugang → nasale Medikamentengabe → i.o.-Zugang. Je invasiver die Maßnahme, umso strenger die Indikation."
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: 2a-Checklisten (Stand 25.07.2024), Applikationstechniken für Medikamente und Infusionen",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-po",
+   "bereich": "abkuerzung",
+   "titel": "p.o.",
+   "kurz": "",
+   "suchbegriffe": [
+    "p.o. Abkürzung",
+    "Abkürzung p.o.",
+    "per os",
+    "oral"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "per os – über den Mund (zum Schlucken)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-sl",
+   "bereich": "abkuerzung",
+   "titel": "s.l.",
+   "kurz": "",
+   "suchbegriffe": [
+    "s.l. Abkürzung",
+    "Abkürzung s.l.",
+    "sublingual"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "sublingual – unter die Zunge"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-ki",
+   "bereich": "abkuerzung",
+   "titel": "KI",
+   "kurz": "",
+   "suchbegriffe": [
+    "KI Abkürzung",
+    "Abkürzung KI",
+    "Kontraindikation",
+    "Gegenanzeige"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Kontraindikation – Gegenanzeige"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Umstand, bei dem ein Medikament oder eine Maßnahme nicht angewendet werden darf"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-uaw",
+   "bereich": "abkuerzung",
+   "titel": "UAW",
+   "kurz": "",
+   "suchbegriffe": [
+    "UAW Abkürzung",
+    "Abkürzung UAW",
+    "NW",
+    "Nebenwirkung"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Unerwünschte Arzneimittelwirkung – Nebenwirkung"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Auch: **NW** (Nebenwirkung)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-btm",
+   "bereich": "abkuerzung",
+   "titel": "BtM",
+   "kurz": "",
+   "suchbegriffe": [
+    "BtM Abkürzung",
+    "Abkürzung BtM",
+    "Betäubungsmittel"
+   ],
+   "siehe": [
+    "2c Trauma-Schmerz",
+    "2c Abdominalschmerz"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Betäubungsmittel"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Medikamente, die dem Betäubungsmittelgesetz unterliegen (z. B. Opioide wie Fentanyl, Morphin)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: Delegationsalgorithmen 2c (gültig ab 01.11.2025)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-vel",
+   "bereich": "abkuerzung",
+   "titel": "VEL",
+   "kurz": "",
+   "suchbegriffe": [
+    "VEL Abkürzung",
+    "Abkürzung VEL"
+   ],
+   "siehe": [
+    "Balancierte Elektrolytlösung (Acetat/Malat)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Vollelektrolytlösung"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Kristalloide Infusionslösung mit plasmaähnlicher Elektrolytzusammensetzung"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-sga",
+   "bereich": "abkuerzung",
+   "titel": "SGA (Abkürzung)",
+   "kurz": "",
+   "suchbegriffe": [
+    "SGA Abkürzung",
+    "Abkürzung SGA",
+    "SAD",
+    "supraglottischer Atemweg"
+   ],
+   "siehe": [
+    "Supraglottische Atemwegssicherung"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Supraglottische Atemwegshilfe"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Atemwegshilfe, die oberhalb der Stimmritze liegt (z. B. Larynxtubus, Larynxmaske)\n- Ebenso: **SAD** (supraglottic airway device)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: 2a-Checklisten (Stand 25.07.2024), Ersteinschätzung und initiale Beurteilung Patient xABCDE",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-itn",
+   "bereich": "abkuerzung",
+   "titel": "ITN",
+   "kurz": "",
+   "suchbegriffe": [
+    "ITN Abkürzung",
+    "Abkürzung ITN",
+    "Intubationsnarkose"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Intubationsnarkose"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Narkose mit endotrachealer Intubation (Beatmungsschlauch in der Luftröhre); ärztliche Maßnahme"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-bmv",
+   "bereich": "abkuerzung",
+   "titel": "BMV (Abkürzung)",
+   "kurz": "",
+   "suchbegriffe": [
+    "BMV Abkürzung",
+    "Abkürzung BMV",
+    "Maskenbeatmung"
+   ],
+   "siehe": [
+    "Beutel-Masken-Beatmung"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Beutel-Masken-Beatmung"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: 2a-Checklisten (Stand 25.07.2024), Ersteinschätzung und initiale Beurteilung Patient xABCDE",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-cpap",
+   "bereich": "abkuerzung",
+   "titel": "CPAP (Abkürzung)",
+   "kurz": "",
+   "suchbegriffe": [
+    "CPAP Abkürzung",
+    "Abkürzung CPAP"
+   ],
+   "siehe": [
+    "NIV (Abkürzung)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Continuous Positive Airway Pressure – kontinuierlicher positiver Atemwegsdruck"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Atemunterstützung bei erhaltener Spontanatmung, z. B. bei Lungenödem"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-niv",
+   "bereich": "abkuerzung",
+   "titel": "NIV (Abkürzung)",
+   "kurz": "",
+   "suchbegriffe": [
+    "NIV Abkürzung",
+    "Abkürzung NIV"
+   ],
+   "siehe": [
+    "CPAP (Abkürzung)",
+    "COPD (Abkürzung)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Nicht-invasive Ventilation"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Beatmung über eine dicht sitzende Maske ohne Intubation"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-aed",
+   "bereich": "abkuerzung",
+   "titel": "AED",
+   "kurz": "",
+   "suchbegriffe": [
+    "AED Abkürzung",
+    "Abkürzung AED",
+    "Laiendefibrillator"
+   ],
+   "siehe": [
+    "CPR (Abkürzung)",
+    "Manuelle Defibrillation"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Automatisierter externer Defibrillator"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Analysiert den Herzrhythmus und gibt bei Bedarf nach Aufforderung einen Schock ab; auch für Laien"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-als",
+   "bereich": "abkuerzung",
+   "titel": "ALS (Abkürzung)",
+   "kurz": "",
+   "suchbegriffe": [
+    "ALS Abkürzung",
+    "Abkürzung ALS",
+    "BLS",
+    "Basic Life Support"
+   ],
+   "siehe": [
+    "CPR (Abkürzung)",
+    "Kreislaufstillstand / Reanimation"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Advanced Life Support – erweiterte Reanimationsmaßnahmen"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Gegenstück: **BLS** (Basic Life Support) = Basismaßnahmen"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-na",
+   "bereich": "abkuerzung",
+   "titel": "NA",
+   "kurz": "",
+   "suchbegriffe": [
+    "NA Abkürzung",
+    "Abkürzung NA",
+    "Notarzt"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Notarzt / Notärztin"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-nef",
+   "bereich": "abkuerzung",
+   "titel": "NEF",
+   "kurz": "",
+   "suchbegriffe": [
+    "NEF Abkürzung",
+    "Abkürzung NEF",
+    "Notarzteinsatzfahrzeug"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Notarzteinsatzfahrzeug"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Bringt den Notarzt zum Einsatzort (Rendezvous-System)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-rtw",
+   "bereich": "abkuerzung",
+   "titel": "RTW",
+   "kurz": "",
+   "suchbegriffe": [
+    "RTW Abkürzung",
+    "Abkürzung RTW",
+    "Rettungswagen"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Rettungswagen"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Fahrzeug zur Notfallrettung und zum Transport von Notfallpatienten"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-ktw",
+   "bereich": "abkuerzung",
+   "titel": "KTW",
+   "kurz": "",
+   "suchbegriffe": [
+    "KTW Abkürzung",
+    "Abkürzung KTW",
+    "Krankentransportwagen",
+    "Krankentransport"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Krankentransportwagen"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Fahrzeug für den qualifizierten Krankentransport"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-rth",
+   "bereich": "abkuerzung",
+   "titel": "RTH",
+   "kurz": "",
+   "suchbegriffe": [
+    "RTH Abkürzung",
+    "Abkürzung RTH",
+    "Rettungshubschrauber",
+    "ITH",
+    "Christoph"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Rettungshubschrauber"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Ebenso: **ITH** Intensivtransporthubschrauber"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-itw",
+   "bereich": "abkuerzung",
+   "titel": "ITW",
+   "kurz": "",
+   "suchbegriffe": [
+    "ITW Abkürzung",
+    "Abkürzung ITW",
+    "Intensivtransportwagen"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Intensivtransportwagen"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Für Verlegungen intensivpflichtiger Patienten"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-notsan",
+   "bereich": "abkuerzung",
+   "titel": "NotSan",
+   "kurz": "",
+   "suchbegriffe": [
+    "NotSan Abkürzung",
+    "Abkürzung NotSan",
+    "Notfallsanitäter",
+    "NFS"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Notfallsanitäter/in"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Höchste nichtärztliche Qualifikation im Rettungsdienst, geregelt im Notfallsanitätergesetz (NotSanG)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-rettsan",
+   "bereich": "abkuerzung",
+   "titel": "RettSan",
+   "kurz": "",
+   "suchbegriffe": [
+    "RettSan Abkürzung",
+    "Abkürzung RettSan",
+    "Rettungssanitäter",
+    "RS"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Rettungssanitäter/in"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-notsang",
+   "bereich": "abkuerzung",
+   "titel": "NotSanG",
+   "kurz": "",
+   "suchbegriffe": [
+    "NotSanG Abkürzung",
+    "Abkürzung NotSanG"
+   ],
+   "siehe": [
+    "2c-Delegation – Grundsätze",
+    "Kompetenzmatrix NotSan Bayern (§ 2a)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Notfallsanitätergesetz"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- **§ 2a**: eigenverantwortliche heilkundliche Maßnahmen bei Lebensgefahr oder drohenden wesentlichen Folgeschäden bis zum Eintreffen des Notarztes\n- **§ 4 Abs. 2 Nr. 2c**: Maßnahmen nach vom ÄLRD vorgegebenen Algorithmen (Delegation)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5 (22.10.2025) · ÄLRD Bayern: Delegationsalgorithmen 2c (gültig ab 01.11.2025)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-aelrd",
+   "bereich": "abkuerzung",
+   "titel": "ÄLRD",
+   "kurz": "",
+   "suchbegriffe": [
+    "ÄLRD Abkürzung",
+    "Abkürzung ÄLRD",
+    "ÄLRD Bayern",
+    "Ärztlicher Leiter Rettungsdienst",
+    "ÄLBRD",
+    "ÄBRD"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Ärztlicher Leiter Rettungsdienst"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Ärztlich verantwortlich für die medizinische Qualität im Rettungsdienstbereich; gibt u. a. die 2c-Algorithmen vor"
+    },
+    {
+     "titel": "Bayern-Bezug (ÄLRD)",
+     "text": "- In den ÄLRD-Bayern-Dokumenten außerdem: **ÄLBRD** = Ärztlicher Landesbeauftragter Rettungsdienst, **ÄBRD** = Ärztlicher Bezirksbeauftragter Rettungsdienst, **StMI** = Staatsministerium des Innern"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: Delegationsalgorithmen 2c (gültig ab 01.11.2025)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-ils",
+   "bereich": "abkuerzung",
+   "titel": "ILS (Abkürzung)",
+   "kurz": "",
+   "suchbegriffe": [
+    "ILS Abkürzung",
+    "Abkürzung ILS",
+    "Integrierte Leitstelle"
+   ],
+   "siehe": [
+    "Übersicht Leitstellen"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Integrierte Leitstelle"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Bearbeitet in Bayern Notrufe für Rettungsdienst und Feuerwehr gemeinsam (eine ILS je Rettungsdienstbereich)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-ivena",
+   "bereich": "abkuerzung",
+   "titel": "IVENA",
+   "kurz": "",
+   "suchbegriffe": [
+    "IVENA Abkürzung",
+    "Abkürzung IVENA"
+   ],
+   "siehe": [
+    "PZC"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Interdisziplinärer Versorgungsnachweis"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Webbasiertes System, das freie Behandlungskapazitäten der Kliniken anzeigt und die Anmeldung von Patienten unterstützt"
+    },
+    {
+     "titel": "Bayern-Bezug (ÄLRD)",
+     "text": "- Bayernweite Nutzung laut ÄLRD-Empfehlungen (u. a. Patientenzuweisungscodes, Behandlungsprioritäten, MANV-Modul)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: Empfehlungen (RDA-Dokumente)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-pzc",
+   "bereich": "abkuerzung",
+   "titel": "PZC",
+   "kurz": "",
+   "suchbegriffe": [
+    "PZC Abkürzung",
+    "Abkürzung PZC",
+    "Patientenzuweisungscode"
+   ],
+   "siehe": [
+    "IVENA"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Patientenzuweisungscode"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Code aus Fachgebiet/Diagnosegruppe, Alter und Dringlichkeit zur Anmeldung und Zuweisung über IVENA"
+    },
+    {
+     "titel": "Bayern-Bezug (ÄLRD)",
+     "text": "- Bayern: „Patientenzuweisungscodes Bayern“ auf Grundlage der bundeseinheitlichen PZC (ÄLRD-Empfehlung 17.06.2024)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: Empfehlungen (RDA-Dokumente)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-manv",
+   "bereich": "abkuerzung",
+   "titel": "MANV",
+   "kurz": "",
+   "suchbegriffe": [
+    "MANV Abkürzung",
+    "Abkürzung MANV",
+    "MAN",
+    "Massenanfall"
+   ],
+   "siehe": [
+    "SanEL",
+    "LNA"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Massenanfall von Verletzten (bzw. Erkrankten)"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Lage mit mehr Betroffenen, als mit den regulären Mitteln versorgt werden können"
+    },
+    {
+     "titel": "Bayern-Bezug (ÄLRD)",
+     "text": "- Bayern: Begriff **MAN** (Massenanfall), Richtlinie zur Bewältigung von Ereignissen mit einem Massenanfall (MAN-RL, 07.01.2025)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: Empfehlungen (RDA-Dokumente)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-sanel",
+   "bereich": "abkuerzung",
+   "titel": "SanEL",
+   "kurz": "",
+   "suchbegriffe": [
+    "SanEL Abkürzung",
+    "Abkürzung SanEL",
+    "Sanitätseinsatzleitung"
+   ],
+   "siehe": [
+    "LNA",
+    "OrgL",
+    "MANV"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Sanitätseinsatzleitung"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Führung des Sanitäts- und Rettungsdienstes bei Großschadenslagen, bestehend aus LNA und OrgL"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: Empfehlungen (RDA-Dokumente)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-lna",
+   "bereich": "abkuerzung",
+   "titel": "LNA",
+   "kurz": "",
+   "suchbegriffe": [
+    "LNA Abkürzung",
+    "Abkürzung LNA",
+    "Leitender Notarzt"
+   ],
+   "siehe": [
+    "SanEL",
+    "OrgL"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Leitender Notarzt"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Medizinische Führung bei MANV/Großschadenslagen"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-orgl",
+   "bereich": "abkuerzung",
+   "titel": "OrgL",
+   "kurz": "",
+   "suchbegriffe": [
+    "OrgL Abkürzung",
+    "Abkürzung OrgL",
+    "Organisatorischer Leiter",
+    "OLRD"
+   ],
+   "siehe": [
+    "SanEL",
+    "LNA"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Organisatorischer Leiter Rettungsdienst"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Organisatorische Führung bei MANV/Großschadenslagen"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-psnv",
+   "bereich": "abkuerzung",
+   "titel": "PSNV",
+   "kurz": "",
+   "suchbegriffe": [
+    "PSNV Abkürzung",
+    "Abkürzung PSNV",
+    "Krisenintervention",
+    "KIT"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Psychosoziale Notfallversorgung"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Betreuung von Betroffenen (z. B. Krisenintervention) und Einsatzkräften nach belastenden Einsätzen"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-sop",
+   "bereich": "abkuerzung",
+   "titel": "SOP",
+   "kurz": "",
+   "suchbegriffe": [
+    "SOP Abkürzung",
+    "Abkürzung SOP",
+    "SAA",
+    "Standardarbeitsanweisung",
+    "BPR"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Standard Operating Procedure – Standardvorgehensweise"
+    },
+    {
+     "titel": "Erklärung",
+     "text": "- Ebenso: **SAA** (Standardarbeitsanweisung), **BPR** (Behandlungspfad Rettungsdienst)"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: Delegationsalgorithmen 2c (gültig ab 01.11.2025)",
+   "stand": "2026-11"
+  },
+  {
+   "id": "abk-divi",
+   "bereich": "abkuerzung",
+   "titel": "DIVI",
+   "kurz": "",
+   "suchbegriffe": [
+    "DIVI Abkürzung",
+    "Abkürzung DIVI",
+    "DIVI-Kindernotfallkarte",
+    "Kindernotfallkarte"
+   ],
+   "siehe": [],
+   "abschnitte": [
+    {
+     "titel": "Bedeutung",
+     "text": "Deutsche Interdisziplinäre Vereinigung für Intensiv- und Notfallmedizin"
+    },
+    {
+     "titel": "Bayern-Bezug (ÄLRD)",
+     "text": "- ÄLRD Bayern verweist für Kinderdosierungen auf die **DIVI-Kindernotfallkarte**"
+    }
+   ],
+   "sprechtext": "",
+   "quelle": "Allgemeine notfallmedizinische Fachsprache · ÄLRD Bayern: Medikamente zur Anwendung nach § 2a NotSanG, Version 1.5 (22.10.2025) · ÄLRD Bayern: Empfehlungen (RDA-Dokumente)",
+   "stand": "2026-11"
+  }
+ ]
+}
