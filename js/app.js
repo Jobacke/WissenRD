@@ -491,11 +491,46 @@ function holePosition(maxAlter = POS_ALTER) {
       { enableHighAccuracy: true, timeout: 10000, maximumAge: 30000 });
   });
 }
+// Fahrstrecke und Fahrzeit über OSRM (OpenStreetMap-Straßennetz, Pkw, ohne Verkehr / Sonderrechte).
+// Ein Abruf liefert die Werte zu allen Kliniken; ohne Netz bleibt die Luftlinie als Notlösung.
+const ROUTER = ["https://routing.openstreetmap.de/routed-car", "https://router.project-osrm.org"];
+async function holeRouten(pos) {
+  if (st.routen?.key === pos.t) return st.routen.werte;
+  const ziele = st.eintraege.filter(e => e.bereich === "klinik" && !istUebersicht(e) && hatGeo(e));
+  if (!ziele.length) return {};
+  const coords = [pos, ...ziele.map(e => e.geo)].map(p => `${(+p.lon).toFixed(5)},${(+p.lat).toFixed(5)}`).join(";");
+  for (const basis of ROUTER) {
+    try {
+      const ctrl = new AbortController();
+      const uhr = setTimeout(() => ctrl.abort(), 7000);
+      const r = await fetch(`${basis}/table/v1/driving/${coords}?sources=0&annotations=distance,duration`, { signal: ctrl.signal });
+      clearTimeout(uhr);
+      const j = await r.json();
+      if (j.code !== "Ok") throw new Error(j.code);
+      const werte = {};
+      ziele.forEach((e, i) => {
+        const m = j.distances?.[0]?.[i + 1], sek = j.durations?.[0]?.[i + 1];
+        if (Number.isFinite(m) && Number.isFinite(sek)) werte[e.id] = { m, s: sek };
+      });
+      st.routen = { key: pos.t, werte };
+      return werte;
+    } catch { /* nächsten Router versuchen */ }
+  }
+  throw new Error("Fahrstrecke nicht abrufbar");
+}
+const fmtZeit = sek => sek < 3600 ? Math.max(1, Math.round(sek / 60)) + " min"
+  : `${Math.floor(sek / 3600)} h ${String(Math.round((sek % 3600) / 60)).padStart(2, "0")} min`;
+const routeFuer = e => (st.pos && st.routen?.key === st.pos.t) ? st.routen.werte[e.id] : null;
+
 function ermittleStandort(danach) {
   if (st.posLaeuft) return;
   st.posLaeuft = true; st.posVersuch = Date.now();
   holePosition(0)
-    .then(() => { st.posFehler = ""; })
+    .then(async pos => {
+      st.posFehler = "";
+      try { await holeRouten(pos); st.routenFehler = ""; }
+      catch (err) { st.routenFehler = err.message; }
+    })
     .catch(err => { st.posFehler = err.message; })
     .finally(() => { st.posLaeuft = false; danach(); });
 }
@@ -505,16 +540,28 @@ function zeigeKliniken(b, liste) {
   const mitGeo = liste.filter(e => !istUebersicht(e) && hatGeo(e));
   const ohneGeo = liste.filter(e => !istUebersicht(e) && !hatGeo(e));
   const uebersichten = liste.filter(istUebersicht);
-  if (pos) { mitGeo.forEach(e => (e._d = haversine(pos, e.geo))); mitGeo.sort((x, y) => x._d - y._d); }
-  const status = st.posLaeuft ? "📍 Standort wird ermittelt …"
-    : pos ? `📍 Nächste zuerst (Luftlinie) · Standort ±${Math.round(pos.acc)} m · <button class="link" id="pos-neu">aktualisieren</button>`
+  // Sortierung nach Fahrstrecke; fehlt sie (offline), vorläufig nach Luftlinie – klar gekennzeichnet
+  const label = {};
+  if (pos) {
+    mitGeo.forEach(e => {
+      const r = routeFuer(e);
+      e._d = r ? r.m : haversine(pos, e.geo);
+      label[e.id] = r ? `${fmtDist(r.m)} · ${fmtZeit(r.s)}` : `≈ ${fmtDist(e._d)} Luftlinie`;
+    });
+    mitGeo.sort((x, y) => x._d - y._d);
+  }
+  const mitRoute = pos && mitGeo.some(e => routeFuer(e));
+  const status = st.posLaeuft ? "📍 Standort und Fahrstrecken werden ermittelt …"
+    : pos ? (mitRoute
+        ? `🚗 Nächste zuerst nach Fahrstrecke (Straße, Pkw, ohne Verkehr und Sonderrechte) · Standort ±${Math.round(pos.acc)} m · <button class="link" id="pos-neu">aktualisieren</button>`
+        : `⚠️ Fahrstrecke nicht abrufbar (offline?) – vorläufig nach Luftlinie · <button class="link" id="pos-neu">nochmal versuchen</button>`)
     : st.posFehler ? `📍 ${esc(st.posFehler)} · <button class="link" id="pos-neu">nochmal versuchen</button>` : "";
   const hilfe = st.posFehler === "Standortzugriff verweigert"
     ? `<p class="standort-hilfe">Einschalten: iPhone-Einstellungen → Datenschutz & Sicherheit → Ortungsdienste → <b>Safari-Websites</b> → „Beim Verwenden der App“. Danach Wissen RD neu öffnen.</p>` : "";
   inhalt.innerHTML = `
     <h2>${b.icon} ${b.name} <span class="kurz">${liste.length}</span></h2>
     <p class="standort">${status}</p>${hilfe}
-    <section class="liste">${mitGeo.map(e => eintragZeile(e, false, pos ? fmtDist(e._d) : "")).join("")}${
+    <section class="liste">${mitGeo.map(e => eintragZeile(e, false, pos ? label[e.id] : "")).join("")}${
       ohneGeo.map(e => eintragZeile(e, false, pos ? "ohne Position" : "")).join("")}</section>
     ${uebersichten.length ? `<h3 class="zwischen">Übersichten</h3>
     <section class="liste">${uebersichten.map(e => eintragZeile(e, false)).join("")}</section>` : ""}
@@ -534,7 +581,9 @@ function geoZeile(e) {
   if (e.bereich !== "klinik" || istUebersicht(e)) return "";
   const teile = [];
   if (hatGeo(e)) {
-    if (st.pos) teile.push(`<span class="dist">📍 ${fmtDist(haversine(st.pos, e.geo))} Luftlinie</span>`);
+    const r = routeFuer(e);
+    if (r) teile.push(`<span class="dist">🚗 ${fmtDist(r.m)} · ${fmtZeit(r.s)} Fahrt</span>`);
+    else if (st.pos) teile.push(`<span class="dist">≈ ${fmtDist(haversine(st.pos, e.geo))} Luftlinie</span>`);
     teile.push(`<a class="pille" href="https://maps.apple.com/?daddr=${e.geo.lat},${e.geo.lon}&dirflg=d" target="_blank" rel="noopener">🧭 Route</a>`);
   }
   teile.push(`<button class="pille" id="geo-speichern">📍 ${hatGeo(e) ? "Position hier neu speichern" : "Position hier speichern"}</button>`);
@@ -552,6 +601,7 @@ async function speichereGeo(e) {
     b.set(doc(db, "eintraege", e.id), { geo }, { merge: true });
     b.set(doc(db, "meta", "stand"), { datenversion: increment(1), geaendert: serverTimestamp() }, { merge: true });
     await b.commit();
+    st.routen = null;
     hinweis("Position gespeichert");
   } catch (err) {
     hinweis("Position nicht gespeichert: " + (err.code === "permission-denied" ? "keine Schreibrechte" : err.message), true);

@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.8.1 (Build 19) – 2026-11-16
+- Kliniken: Entfernung jetzt als Fahrstrecke mit Fahrzeit (Straßennetz OpenStreetMap, Pkw, ohne Verkehr/Sonderrechte); Luftlinie nur noch als gekennzeichnete Notlösung ohne Netz
+
 ## v1.8.0 (Build 18) – 2026-11-16
 - Kliniken nach Entfernung: nächste Klinik zuerst (Luftlinie, Standort des iPhones), Entfernung je Klinik, Route-Knopf, Position vor Ort speichern
 
