@@ -651,6 +651,36 @@ uebersicht("geburt", "Übersicht Geburtshilfe / Kreißsaal", "Geburtskliniken",
   ("erding", "Gynäkologie und Geburtshilfe – Zentrale", "08122 59-0"),
   ("agatharied", "Gynäkologie und Geburtshilfe, Kinder- und Jugendmedizin – Zentrale", "08026 393-0")])
 
+# ------------------------------------------------------------------ Positionen (für „nächste Klinik zuerst“)
+# Vorrang: eigene Zielpunkte aus der ZNA-Navi (Notaufnahme-Anfahrt, what3words, Stand 15.11.2026);
+# sonst Hubschrauberlandeplatz der Klinik. Fehlende Positionen lassen sich in der App vor Ort speichern.
+Q_ZNA = "eigener Zielpunkt Notaufnahme (ZNA-Navi, what3words)"
+GEO = {
+ "lmu-grosshadern":     (48.112427, 11.469578, Q_ZNA + " „Großhadern“"),
+ "lmu-innenstadt":      (48.132748, 11.561045, Q_ZNA + " „Portalklinik“"),
+ "rechts-der-isar":     (48.136225, 11.601095, Q_ZNA + " „Rechts“"),
+ "mk-bogenhausen":      (48.154579, 11.624333, Q_ZNA + " „Bogenhausen“"),
+ "mk-harlaching":       (48.086446, 11.556827, Q_ZNA + " „Harlaching“"),
+ "mk-neuperlach":       (48.094909, 11.655342, Q_ZNA + " „Neuperlach“"),
+ "mk-schwabing":        (48.170972, 11.577569, "Hubschrauberlandeplatz Dach Klinikum Schwabing, Kölner Platz 1 (helis.com)"),
+ "rotkreuzklinikum":    (48.154067, 11.531503, Q_ZNA + " „RK1“"),
+ "dritter-orden":       (48.165575, 11.505153, Q_ZNA + " „Dritter Orden“"),
+ "barmherzige-brueder": (48.155846, 11.510649, Q_ZNA + " „Barmherzige Brüder“"),
+ "helios-west":         (48.143906, 11.453463, Q_ZNA + " „Pasing“"),
+ "helios-perlach":      (48.102267, 11.629260, Q_ZNA + " „Perlach“"),
+ "dhz":                 (48.152288, 11.548759, Q_ZNA + " „Herzzentrum“"),
+ "ebersberg":           (48.076717, 11.960774, Q_ZNA + " „Ebersberg“"),
+ "kbo-haar":            (48.117198, 11.746346, Q_ZNA + " „Haar Stroke“"),
+ "erding":              (48.294140, 11.895600, "Hubschrauberlandeplatz Klinikum Erding (OurAirports DE-0871)"),
+ "agatharied":          (47.768412, 11.828240, "Hubschrauberlandeplatz Krankenhaus Agatharied (OurAirports DE-0505)"),
+ # martha-maria, starnberg: keine belastbare Position ermittelt – vor Ort in der App speichern
+}
+for e in E:
+    k = e["id"].removeprefix("klinik-")
+    if k in GEO:
+        lat, lon, q = GEO[k]
+        e["geo"] = {"lat": lat, "lon": lon, "quelle": q}
+
 if __name__ == "__main__":
     ids = [e["id"] for e in E]
     assert len(ids) == len(set(ids)), "doppelte IDs"

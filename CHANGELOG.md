@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.8.0 (Build 18) – 2026-11-16
+- Kliniken nach Entfernung: nächste Klinik zuerst (Luftlinie, Standort des iPhones), Entfernung je Klinik, Route-Knopf, Position vor Ort speichern
+
 ## v1.7.2 (Build 17) – 2026-11-16
 - Farbkonzept Nachtblau & Gold; Bereiche per langem Drücken anordnen, speichert sofort; Standard-Reihenfolge in den Einstellungen
 

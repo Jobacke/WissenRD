@@ -306,12 +306,12 @@ document.addEventListener("click", ev => {
 if (startParam) merkeSuche(startParam);
 
 // ---------------- Ansichten ----------------
-function eintragZeile(e, mitBereich = true) {
+function eintragZeile(e, mitBereich = true, rechts = "") {
   const b = BEREICHE[e.bereich] || { icon: "📌", name: e.bereich };
   return `<a class="zeile" data-b="${esc(e.bereich)}" href="#/e/${esc(e.id)}">
     <span class="z-icon">${b.icon}</span>
     <span class="z-text"><strong>${esc(e.titel)}</strong>${e.kurz && e.kurz !== e.titel ? ` <span class="kurz">${esc(e.kurz)}</span>` : ""}
-    ${mitBereich ? `<small>${esc(b.name)}</small>` : ""}</span><span class="pfeil">›</span></a>`;
+    ${mitBereich ? `<small>${esc(b.name)}</small>` : ""}</span>${rechts ? `<span class="dist">${esc(rechts)}</span>` : ""}<span class="pfeil">›</span></a>`;
 }
 
 function zeigeStart() {
@@ -326,7 +326,7 @@ function zeigeStart() {
   inhalt.innerHTML = `
     <section class="kacheln" id="kacheln">${kacheln}</section>
     ${zuletzt.length ? `<div class="start-leiste"><details class="zuletzt"><summary>🕘 Zuletzt geändert</summary>
-        <section class="liste">${zuletzt.map(eintragZeile).join("")}</section></details></div>`
+        <section class="liste">${zuletzt.map(e => eintragZeile(e)).join("")}</section></details></div>`
       : `<p class="leise">Noch keine Einträge – lege den ersten an oder importiere Daten (⚙️).</p>`}
     <a class="fab" href="#/neu/" title="Neuer Eintrag" aria-label="Neuer Eintrag">＋</a>`;
   aktiviereZiehen($("#kacheln"));
@@ -413,7 +413,7 @@ function zeigeSuche(q) {
   inhalt.innerHTML = `
     ${vonSiri ? lernen : ""}
     <h3>${t.length} Treffer für „${esc(q)}“</h3>
-    <section class="liste">${t.map(eintragZeile).join("")}</section>
+    <section class="liste">${t.map(e => eintragZeile(e)).join("")}</section>
     ${t.length ? "" : `<p class="leise">Nichts gefunden.</p>`}
     ${!vonSiri && lernen ? `<details class="lernen-klein"><summary>„${esc(q)}“ einem Eintrag als Suchbegriff zuordnen</summary>${lernen}</details>` : ""}
     <a class="sekundaer breit" id="neu-aus-suche" href="#/neu/">＋ „${esc(q)}“ neu anlegen</a>`;
@@ -462,10 +462,100 @@ function zeigeBereich(k) {
   const b = BEREICHE[k];
   if (!b) return zeigeStart();
   const liste = st.eintraege.filter(e => e.bereich === k);
+  if (k === "klinik") return zeigeKliniken(b, liste);
   inhalt.innerHTML = `
     <h2>${b.icon} ${b.name} <span class="kurz">${liste.length}</span></h2>
     <section class="liste">${liste.map(e => eintragZeile(e, false)).join("") || `<p class="leise">Noch leer.</p>`}</section>
     <a class="fab" href="#/neu/${k}" title="Neuer Eintrag in ${esc(b.name)}" aria-label="Neuer Eintrag">＋</a>`;
+}
+
+// ---------------- Standort: Kliniken nach Entfernung (Luftlinie) ----------------
+const hatGeo = e => Number.isFinite(e?.geo?.lat) && Number.isFinite(e?.geo?.lon);
+const istUebersicht = e => (e.id || "").startsWith("klinik-uebersicht");
+function haversine(a, b) {
+  const R = 6371000, rad = x => x * Math.PI / 180;
+  const dLat = rad(b.lat - a.lat), dLon = rad(b.lon - a.lon);
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+const fmtDist = m => m < 1000 ? Math.round(m / 10) * 10 + " m"
+  : (m / 1000).toLocaleString("de-DE", { maximumFractionDigits: m < 10000 ? 1 : 0 }) + " km";
+const POS_ALTER = 60000;   // Standort 1 Minute wiederverwenden
+function holePosition(maxAlter = POS_ALTER) {
+  if (st.pos && Date.now() - st.pos.t < maxAlter) return Promise.resolve(st.pos);
+  return new Promise((res, rej) => {
+    if (!navigator.geolocation) return rej(new Error("Standort wird nicht unterstützt"));
+    navigator.geolocation.getCurrentPosition(
+      p => { st.pos = { lat: p.coords.latitude, lon: p.coords.longitude, acc: p.coords.accuracy, t: Date.now() }; res(st.pos); },
+      e => rej(new Error(e.code === 1 ? "Standortzugriff verweigert" : "Standort nicht verfügbar")),
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 30000 });
+  });
+}
+function ermittleStandort(danach) {
+  if (st.posLaeuft) return;
+  st.posLaeuft = true; st.posVersuch = Date.now();
+  holePosition(0)
+    .then(() => { st.posFehler = ""; })
+    .catch(err => { st.posFehler = err.message; })
+    .finally(() => { st.posLaeuft = false; danach(); });
+}
+
+function zeigeKliniken(b, liste) {
+  const pos = st.pos;
+  const mitGeo = liste.filter(e => !istUebersicht(e) && hatGeo(e));
+  const ohneGeo = liste.filter(e => !istUebersicht(e) && !hatGeo(e));
+  const uebersichten = liste.filter(istUebersicht);
+  if (pos) { mitGeo.forEach(e => (e._d = haversine(pos, e.geo))); mitGeo.sort((x, y) => x._d - y._d); }
+  const status = st.posLaeuft ? "📍 Standort wird ermittelt …"
+    : pos ? `📍 Nächste zuerst (Luftlinie) · Standort ±${Math.round(pos.acc)} m · <button class="link" id="pos-neu">aktualisieren</button>`
+    : st.posFehler ? `📍 ${esc(st.posFehler)} · <button class="link" id="pos-neu">nochmal versuchen</button>` : "";
+  const hilfe = st.posFehler === "Standortzugriff verweigert"
+    ? `<p class="standort-hilfe">Einschalten: iPhone-Einstellungen → Datenschutz & Sicherheit → Ortungsdienste → <b>Safari-Websites</b> → „Beim Verwenden der App“. Danach Wissen RD neu öffnen.</p>` : "";
+  inhalt.innerHTML = `
+    <h2>${b.icon} ${b.name} <span class="kurz">${liste.length}</span></h2>
+    <p class="standort">${status}</p>${hilfe}
+    <section class="liste">${mitGeo.map(e => eintragZeile(e, false, pos ? fmtDist(e._d) : "")).join("")}${
+      ohneGeo.map(e => eintragZeile(e, false, pos ? "ohne Position" : "")).join("")}</section>
+    ${uebersichten.length ? `<h3 class="zwischen">Übersichten</h3>
+    <section class="liste">${uebersichten.map(e => eintragZeile(e, false)).join("")}</section>` : ""}
+    <a class="fab" href="#/neu/klinik" title="Neuer Eintrag in ${esc(b.name)}" aria-label="Neuer Eintrag">＋</a>`;
+  const neuZeichnen = () => { if (location.hash === "#/b/klinik") zeigeBereich("klinik"); };
+  const knopf = $("#pos-neu");
+  if (knopf) knopf.onclick = () => { st.pos = null; st.posFehler = ""; ermittleStandort(neuZeichnen); neuZeichnen(); };
+  const veraltet = !pos || Date.now() - pos.t > POS_ALTER;
+  if (veraltet && !st.posLaeuft && Date.now() - (st.posVersuch || 0) > POS_ALTER) {
+    ermittleStandort(neuZeichnen);
+    neuZeichnen();
+  }
+}
+
+// Klinik-Eintrag: Entfernung, Route, Position vor Ort speichern
+function geoZeile(e) {
+  if (e.bereich !== "klinik" || istUebersicht(e)) return "";
+  const teile = [];
+  if (hatGeo(e)) {
+    if (st.pos) teile.push(`<span class="dist">📍 ${fmtDist(haversine(st.pos, e.geo))} Luftlinie</span>`);
+    teile.push(`<a class="pille" href="https://maps.apple.com/?daddr=${e.geo.lat},${e.geo.lon}&dirflg=d" target="_blank" rel="noopener">🧭 Route</a>`);
+  }
+  teile.push(`<button class="pille" id="geo-speichern">📍 ${hatGeo(e) ? "Position hier neu speichern" : "Position hier speichern"}</button>`);
+  const q = hatGeo(e) ? `Position: ${esc(e.geo.quelle || "ohne Angabe")}` : "Noch keine Position – direkt an der Notaufnahme speichern, dann wird die Klinik nach Entfernung einsortiert.";
+  return `<div class="geo-zeile">${teile.join("")}<span class="q">${q}</span></div>`;
+}
+async function speichereGeo(e) {
+  if (!confirm(`Aktuellen Standort als Position von „${e.titel}“ speichern?\nNur direkt an der Notaufnahme / Anfahrt verwenden.`)) return;
+  try {
+    const p = await holePosition(0);
+    if (p.acc > 100 && !confirm(`Standort ist ungenau (±${Math.round(p.acc)} m). Trotzdem speichern?`)) return;
+    const geo = { lat: +p.lat.toFixed(6), lon: +p.lon.toFixed(6),
+      quelle: `vor Ort gespeichert ${new Date().toLocaleDateString("de-DE")} (±${Math.round(p.acc)} m)` };
+    const b = writeBatch(db);
+    b.set(doc(db, "eintraege", e.id), { geo }, { merge: true });
+    b.set(doc(db, "meta", "stand"), { datenversion: increment(1), geaendert: serverTimestamp() }, { merge: true });
+    await b.commit();
+    hinweis("Position gespeichert");
+  } catch (err) {
+    hinweis("Position nicht gespeichert: " + (err.code === "permission-denied" ? "keine Schreibrechte" : err.message), true);
+  }
 }
 
 function zeigeEintrag(id) {
@@ -485,11 +575,14 @@ function zeigeEintrag(id) {
         <button id="vorlesen" class="primaer">🔊 Vorlesen</button>
         <a class="sekundaer" href="#/bearbeiten/${esc(e.id)}">✏️ Bearbeiten</a>
       </div>
+      ${geoZeile(e)}
       ${abschnitte || `<p class="leise">Noch kein Inhalt.</p>`}
       ${siehe ? `<section class="abschnitt"><h4>Siehe auch</h4><div class="chips">${siehe}</div></section>` : ""}
       <footer class="meta">${e.quelle ? "Quelle: " + esc(e.quelle) + "<br>" : ""}
         ${e.stand ? "Stand: " + esc(e.stand) + " · " : ""}Rev. ${e.revision || 1}${geaendert ? " · geändert " + geaendert : ""}</footer>
     </article>`;
+  const gs = $("#geo-speichern");
+  if (gs) gs.onclick = () => speichereGeo(e);
   $("#vorlesen").onclick = () => {
     if (speechSynthesis.speaking) { stoppeVorlesen(); return; }
     vorlesen(e.vorlesen || vorlesetextFuer(e));
@@ -607,7 +700,8 @@ function bereinigt(e) {
     bereich: e.bereich, titel: e.titel, kurz: e.kurz || "",
     suchbegriffe: e.suchbegriffe || [], siehe: e.siehe || [],
     abschnitte: (e.abschnitte || []).map(a => ({ titel: a.titel || "", text: a.text || "" })),
-    sprechtext: e.sprechtext || "", quelle: e.quelle || "", stand: e.stand || ""
+    sprechtext: e.sprechtext || "", quelle: e.quelle || "", stand: e.stand || "",
+    ...(hatGeo(e) ? { geo: { lat: +e.geo.lat, lon: +e.geo.lon, quelle: e.geo.quelle || "" } } : {})
   };
 }
 
@@ -727,6 +821,8 @@ function zeigeEinstellungen() {
           const alt = roh.id ? st.eintraege.find(x => x.id === roh.id) : null;
           // eigene / per Siri gelernte Suchbegriffe beim Überschreiben behalten
           if (alt) roh.suchbegriffe = [...new Set([...(roh.suchbegriffe || []), ...(alt.suchbegriffe || [])])];
+          // vor Ort gespeicherte Klinik-Positionen haben Vorrang vor importierten
+          if (alt?.geo?.quelle?.startsWith("vor Ort") || (alt && hatGeo(alt) && !hatGeo(roh))) roh.geo = alt.geo;
           await speichere(roh, alt, b);
         }
         b.set(doc(db, "meta", "stand"), { datenversion: increment(1), geaendert: serverTimestamp() }, { merge: true });

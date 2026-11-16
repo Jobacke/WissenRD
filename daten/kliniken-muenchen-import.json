@@ -46,7 +46,12 @@
    ],
    "sprechtext": "LMU Klinikum Großhadern, Marchioninistraße 15. Zentrale Notaufnahme 089 4400 44800. Schockraum 089 4400 44878. Chest Pain Telefon 089 4400 75227. Stroke Telefon 0174 3489381. Überregionales Traumazentrum.",
    "quelle": "DKG Deutsches Krankenhausverzeichnis, Kurzprofil LMU Klinikum Campus Großhadern (QB 2024) · lmu-klinikum.de – ZNA Campus Großhadern, Notfallversorgung, MUM, Anästhesiologie/Notfallmedizin",
-   "stand": "2026-11"
+   "stand": "2026-11",
+   "geo": {
+    "lat": 48.112427,
+    "lon": 11.469578,
+    "quelle": "eigener Zielpunkt Notaufnahme (ZNA-Navi, what3words) „Großhadern“"
+   }
   },
   {
    "id": "klinik-lmu-innenstadt",
@@ -93,7 +98,12 @@
    ],
    "sprechtext": "LMU Klinikum Innenstadt, Ziemssenstraße 5. Zentrale Notaufnahme 089 4400 31100. Chirurgische Notaufnahme 089 4400 52611. Kindernotfälle im Haunerschen Kinderspital, Lindwurmstraße 4. Augennotfälle in der Augenklinik.",
    "quelle": "DKG Deutsches Krankenhausverzeichnis, Kurzprofil LMU Klinikum Standort Innenstadt (QB 2024) · lmu-klinikum.de – ZNA Campus Innenstadt, Notfallversorgung, MUM, KIPS · muenchen.de – Medizinische Notdienste München (Stand 23.12.2025)",
-   "stand": "2026-11"
+   "stand": "2026-11",
+   "geo": {
+    "lat": 48.132748,
+    "lon": 11.561045,
+    "quelle": "eigener Zielpunkt Notaufnahme (ZNA-Navi, what3words) „Portalklinik“"
+   }
   },
   {
    "id": "klinik-rechts-der-isar",
@@ -137,7 +147,12 @@
    ],
    "sprechtext": "TUM Klinikum Rechts der Isar, Ismaninger Straße 22. Zentrale interdisziplinäre Notaufnahme 089 4140 2222. Kreißsaal 089 4140 2400. Überregionales Traumazentrum, Cardiac Arrest Center, Stroke Unit.",
    "quelle": "DKG Deutsches Krankenhausverzeichnis, Kurzprofil Klinikum rechts der Isar – Stammgelände (QB 2024) · tumklinikum.de / frauenklinik.mri.tum.de – Notfall, Wegweiser 06/2025 · neurologie.mri.tum.de – Flyer Stroke Unit L1b",
-   "stand": "2026-11"
+   "stand": "2026-11",
+   "geo": {
+    "lat": 48.136225,
+    "lon": 11.601095,
+    "quelle": "eigener Zielpunkt Notaufnahme (ZNA-Navi, what3words) „Rechts“"
+   }
   },
   {
    "id": "klinik-mk-bogenhausen",
@@ -184,7 +199,12 @@
    ],
    "sprechtext": "München Klinik Bogenhausen, Englschalkinger Straße 77. Interdisziplinäre Notaufnahme 089 9270 2151. Stroke Unit, Herzchirurgie, Thoraxchirurgie, Verbrennungschirurgie.",
    "quelle": "DKG Deutsches Krankenhausverzeichnis, Kurzprofil München Klinik Bogenhausen (QB 2024) · muenchen.de – Medizinische Notdienste München (Stand 23.12.2025) · Stadtratsvorlage Bürgerversammlung Schwabing-West 10.10.2019 (risi.muenchen.de)",
-   "stand": "2026-11"
+   "stand": "2026-11",
+   "geo": {
+    "lat": 48.154579,
+    "lon": 11.624333,
+    "quelle": "eigener Zielpunkt Notaufnahme (ZNA-Navi, what3words) „Bogenhausen“"
+   }
   },
   {
    "id": "klinik-mk-harlaching",
@@ -227,7 +247,12 @@
    ],
    "sprechtext": "München Klinik Harlaching, Sanatoriumsplatz 2. Zentrale Notaufnahme Erwachsene 089 6210 6666. Kinderklinik und Neonatologie im Haus. Neurologie mit TEMPiS.",
    "quelle": "DKG Deutsches Krankenhausverzeichnis, Kurzprofil München Klinik Harlaching (QB 2024) · muenchen.de – Medizinische Notdienste München (Stand 23.12.2025) · Stadtratsvorlage 2019 (risi.muenchen.de) · lmu-klinikum.de – KIPS / Kindernotarzt",
-   "stand": "2026-11"
+   "stand": "2026-11",
+   "geo": {
+    "lat": 48.086446,
+    "lon": 11.556827,
+    "quelle": "eigener Zielpunkt Notaufnahme (ZNA-Navi, what3words) „Harlaching“"
+   }
   },
   {
    "id": "klinik-mk-neuperlach",
@@ -269,7 +294,12 @@
    ],
    "sprechtext": "München Klinik Neuperlach, Oskar-Maria-Graf-Ring 51, Notaufnahme Haus A Ebene 1. Chirurgisch über die Zentrale 089 6794 0, internistisch 089 6794 2572.",
    "quelle": "DKG Deutsches Krankenhausverzeichnis, Kurzprofil München Klinik Neuperlach (QB 2024) · muenchen.de – Medizinische Notdienste München (Stand 23.12.2025) · Stadtratsvorlage 2019 (risi.muenchen.de) · kliniken.de",
-   "stand": "2026-11"
+   "stand": "2026-11",
+   "geo": {
+    "lat": 48.094909,
+    "lon": 11.655342,
+    "quelle": "eigener Zielpunkt Notaufnahme (ZNA-Navi, what3words) „Neuperlach“"
+   }
   },
   {
    "id": "klinik-mk-schwabing",
@@ -313,7 +343,12 @@
    ],
    "sprechtext": "München Klinik Schwabing, Kölner Platz 1, Notaufnahme Haus 5, Anfahrt Tor 1 Isoldenstraße. Chirurgie 089 3068 2600, Innere Medizin 089 3068 2210. Kinderklinik und Kinderchirurgie in der Parzivalstraße 16.",
    "quelle": "DKG Deutsches Krankenhausverzeichnis, Kurzprofil München Klinik Schwabing (QB 2024) · muenchen.de – Medizinische Notdienste München (Stand 23.12.2025) · Stadtratsvorlage 2019 (risi.muenchen.de) · lmu-klinikum.de – KIPS / Kindernotarzt",
-   "stand": "2026-11"
+   "stand": "2026-11",
+   "geo": {
+    "lat": 48.170972,
+    "lon": 11.577569,
+    "quelle": "Hubschrauberlandeplatz Dach Klinikum Schwabing, Kölner Platz 1 (helis.com)"
+   }
   },
   {
    "id": "klinik-rotkreuzklinikum",
@@ -356,7 +391,12 @@
    ],
    "sprechtext": "Rotkreuzklinikum München, Nymphenburger Straße 163. Zentrale Notaufnahme 089 1303 2502. Lokales Traumazentrum.",
    "quelle": "DKG Deutsches Krankenhausverzeichnis, Kurzprofil Rotkreuzklinikum München (QB 2024) · DKG – Fachabteilung Zentrale Notaufnahme · krankenhaus.de – Selbstdarstellung der Klinik",
-   "stand": "2026-11"
+   "stand": "2026-11",
+   "geo": {
+    "lat": 48.154067,
+    "lon": 11.531503,
+    "quelle": "eigener Zielpunkt Notaufnahme (ZNA-Navi, what3words) „RK1“"
+   }
   },
   {
    "id": "klinik-dritter-orden",
@@ -399,7 +439,12 @@
    ],
    "sprechtext": "Klinikum Dritter Orden, Menzinger Straße 44. Notaufnahme Erwachsene 089 1795 1450, Kinder 089 1795 1187. Chest Pain Unit 089 1795 1449. Traumatelefon 089 1795 1122.",
    "quelle": "DKG Deutsches Krankenhausverzeichnis, Kurzprofil Klinikum Dritter Orden (QB 2023) · Klinikum Dritter Orden – Medizinisches Leistungsspektrum · muenchen.de – Medizinische Notdienste München (Stand 23.12.2025)",
-   "stand": "2026-11"
+   "stand": "2026-11",
+   "geo": {
+    "lat": 48.165575,
+    "lon": 11.505153,
+    "quelle": "eigener Zielpunkt Notaufnahme (ZNA-Navi, what3words) „Dritter Orden“"
+   }
   },
   {
    "id": "klinik-barmherzige-brueder",
@@ -441,7 +486,12 @@
    ],
    "sprechtext": "Krankenhaus Barmherzige Brüder, Romanstraße 93. Notaufnahme rund um die Uhr, über die Zentrale 089 1797 0. Chest Pain Unit.",
    "quelle": "DKG Deutsches Krankenhausverzeichnis, Kurzprofil Barmherzige Brüder Krankenhaus München (QB 2024) · Flyer Innere Medizin II (2016) · Flyer Sektion Unfallchirurgie (2022)",
-   "stand": "2026-11"
+   "stand": "2026-11",
+   "geo": {
+    "lat": 48.155846,
+    "lon": 11.510649,
+    "quelle": "eigener Zielpunkt Notaufnahme (ZNA-Navi, what3words) „Barmherzige Brüder“"
+   }
   },
   {
    "id": "klinik-helios-west",
@@ -485,7 +535,12 @@
    ],
    "sprechtext": "Helios Klinikum München West in Pasing, Steinerweg 5. Notaufnahme über die Zentrale 089 8892 0. Chest Pain Unit, überregionale Stroke Unit, regionales Traumazentrum.",
    "quelle": "DKG Deutsches Krankenhausverzeichnis, Kurzprofil Helios Klinikum München West (QB 2024) · kliniken.de – Fachabteilungen Helios Klinikum München West",
-   "stand": "2026-11"
+   "stand": "2026-11",
+   "geo": {
+    "lat": 48.143906,
+    "lon": 11.453463,
+    "quelle": "eigener Zielpunkt Notaufnahme (ZNA-Navi, what3words) „Pasing“"
+   }
   },
   {
    "id": "klinik-helios-perlach",
@@ -527,7 +582,12 @@
    ],
    "sprechtext": "Helios Klinik München Perlach, Schmidbauerstraße 44. Notaufnahme über die Zentrale 089 67802 1. Lokales Traumazentrum und Alterstraumazentrum.",
    "quelle": "DKG Deutsches Krankenhausverzeichnis, Kurzprofil Helios Klinik München Perlach (QB 2024) · G-BA Qualitätsbericht 2024 (Referenzbericht) · kliniken.de",
-   "stand": "2026-11"
+   "stand": "2026-11",
+   "geo": {
+    "lat": 48.102267,
+    "lon": 11.62926,
+    "quelle": "eigener Zielpunkt Notaufnahme (ZNA-Navi, what3words) „Perlach“"
+   }
   },
   {
    "id": "klinik-martha-maria",
@@ -613,7 +673,12 @@
    ],
    "sprechtext": "TUM Klinikum Deutsches Herzzentrum, Lazarettstraße 36. Chest Pain Unit rund um die Uhr, 089 1218 4552. Nur kardiale Notfälle.",
    "quelle": "DKG Deutsches Krankenhausverzeichnis, Kurzprofil TUM Klinikum Deutsches Herzzentrum (QB 2023) · deutsches-herzzentrum-muenchen.de – Notfall / Chest Pain Unit",
-   "stand": "2026-11"
+   "stand": "2026-11",
+   "geo": {
+    "lat": 48.152288,
+    "lon": 11.548759,
+    "quelle": "eigener Zielpunkt Notaufnahme (ZNA-Navi, what3words) „Herzzentrum“"
+   }
   },
   {
    "id": "klinik-ebersberg",
@@ -656,7 +721,12 @@
    ],
    "sprechtext": "Klinikum Ebersberg, ehemals Kreisklinik, Pfarrer-Guggetzer-Straße 3. Notaufnahme über die Zentrale 08092 82 0. Regionales Traumazentrum, Chest Pain Unit, Cardiac Arrest Center, Stroke Unit.",
    "quelle": "DKG Deutsches Krankenhausverzeichnis, Kurzprofil Kreisklinik Ebersberg (QB 2024, Zertifikate) · klinik-ebe.de · privat-patienten.de – Fachabteilungsangaben",
-   "stand": "2026-11"
+   "stand": "2026-11",
+   "geo": {
+    "lat": 48.076717,
+    "lon": 11.960774,
+    "quelle": "eigener Zielpunkt Notaufnahme (ZNA-Navi, what3words) „Ebersberg“"
+   }
   },
   {
    "id": "klinik-starnberg",
@@ -742,7 +812,12 @@
    ],
    "sprechtext": "Klinikum Landkreis Erding, Bajuwarenstraße 5. Notaufnahme rund um die Uhr, über die Zentrale 08122 59 0. Regionales Traumazentrum, Chest Pain Unit, Stroke Unit.",
    "quelle": "DKG Deutsches Krankenhausverzeichnis, Kurzprofil Klinikum Landkreis Erding (QB 2024, Zertifikate) · Landkreis Erding – Pressemitteilungen 2024 und 2025 · kliniken.de",
-   "stand": "2026-11"
+   "stand": "2026-11",
+   "geo": {
+    "lat": 48.29414,
+    "lon": 11.8956,
+    "quelle": "Hubschrauberlandeplatz Klinikum Erding (OurAirports DE-0871)"
+   }
   },
   {
    "id": "klinik-agatharied",
@@ -786,7 +861,12 @@
    ],
    "sprechtext": "Krankenhaus Agatharied in Hausham, Norbert-Kerkel-Platz 1. Notaufnahme über die Zentrale 08026 393 0. Stroke Unit, Neurologie und Kinderklinik im Haus.",
    "quelle": "DKG Deutsches Krankenhausverzeichnis, Kurzprofil Krankenhaus Agatharied (QB 2024, Zertifikate) · DKG Deutsches Krankenhausverzeichnis, Kurzprofil kbo-Lech-Mangfall-Klinik Agatharied",
-   "stand": "2026-11"
+   "stand": "2026-11",
+   "geo": {
+    "lat": 47.768412,
+    "lon": 11.82824,
+    "quelle": "Hubschrauberlandeplatz Krankenhaus Agatharied (OurAirports DE-0505)"
+   }
   },
   {
    "id": "klinik-kbo-haar",
@@ -835,7 +915,12 @@
    ],
    "sprechtext": "kbo Isar-Amper-Klinikum Haar, Vockestraße 72. Psychiatrische Aufnahme rund um die Uhr 089 4562 0. Stroke Unit und neurologische Intensivstation 089 4562 3441.",
    "quelle": "DKG Deutsches Krankenhausverzeichnis, Kurzprofil kbo-Isar-Amper-Klinikum Haar (QB 2024, Zertifikate) · kbo-iak.de – Telefonkontakte Neurologie, Flyer Klinik Nord und Suchtmedizin · Landratsamt München – Unterbringung psychisch kranker Menschen · DKG Deutsches Krankenhausverzeichnis, Kurzprofil kbo-Heckscher-Klinikum Haar · muenchen.de – Medizinische Notdienste München (Stand 23.12.2025)",
-   "stand": "2026-11"
+   "stand": "2026-11",
+   "geo": {
+    "lat": 48.117198,
+    "lon": 11.746346,
+    "quelle": "eigener Zielpunkt Notaufnahme (ZNA-Navi, what3words) „Haar Stroke“"
+   }
   },
   {
    "id": "klinik-uebersicht-stroke",

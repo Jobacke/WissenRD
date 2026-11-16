@@ -288,3 +288,18 @@ details.lernen-klein summary { cursor: pointer; color: var(--leise); margin: 12p
 }
 @keyframes wackeln { from { transform: rotate(-.8deg); } to { transform: rotate(.8deg); } }
 @media (prefers-reduced-motion: reduce) { .kacheln.ordnet .kachel { animation: none; } }
+
+/* Kliniken nach Entfernung */
+.zeile .dist, .geo-zeile .dist { font-size: .76rem; font-weight: 700; color: var(--akzent-dunkel); white-space: nowrap; margin-left: 6px; }
+.standort { font-size: .76rem; color: var(--leise); margin: -6px 0 8px; }
+.standort .link { font-size: .76rem; padding: 0; }
+.standort-hilfe { font-size: .76rem; color: var(--leise); background: var(--akzent-weich); border-radius: 10px; padding: 8px 10px; margin: 0 0 10px; }
+h3.zwischen { font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; color: var(--leise); margin: 18px 0 6px; }
+.geo-zeile { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin: 4px 0 12px; }
+.geo-zeile .dist { margin-left: 0; font-size: .85rem; }
+.geo-zeile .q { flex-basis: 100%; font-size: .7rem; color: var(--leise); }
+.pille {
+  font-size: .78rem; font-weight: 600; color: var(--text); padding: 4px 10px; border-radius: 99px;
+  border: 1px solid var(--linie); background: var(--karte); text-decoration: none;
+}
+
