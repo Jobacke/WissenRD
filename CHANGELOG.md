@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.10.0 (Build 23) – 2026-11-16
+- Leitstellen: zuständige ILS am eigenen Standort (Landkreis über OpenStreetMap, Zuordnung nach AVBayRDG Anlage 1), alle 25 ILS Bayerns, Sortierung nächste zuerst
+
 ## v1.9.2 (Build 22) – 2026-11-16
 - Symptom-Check: Sortierung nach Anzahl passender Symptome, dann alphabetisch
 

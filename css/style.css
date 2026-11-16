@@ -322,3 +322,13 @@ button.sym.an { background: var(--akzent); border-color: var(--akzent); color: #
 }
 button.sym.gesperrt { opacity: .4; text-decoration: line-through; text-decoration-thickness: 1px; }
 
+/* Leitstellen: zuständige ILS */
+.zust-karte {
+  display: flex; flex-direction: column; gap: 2px; margin: 0 0 10px; padding: 12px 14px; border-radius: var(--radius);
+  background: var(--kopf); color: #fff; text-decoration: none; box-shadow: var(--schatten);
+}
+.zust-karte small { font-size: .72rem; opacity: .85; }
+.zust-karte strong { font-size: 1.02rem; }
+.zust-karte span { font-size: .78rem; opacity: .85; }
+.zeile.zustaendig { border-color: var(--akzent); }
+

@@ -63,8 +63,17 @@
     }
    ],
    "sprechtext": "Integrierte Leitstelle München. Rettungsdienst Nord R D 1 M, Kurzwahl 2513. Rettungsdienst Süd R D 2 M, Kurzwahl 2514. Betten über R D Betten M, Status 5. Notfallrettung 089 515191 66943. Betten und MANV 089 515191 66666.",
-   "quelle": "ILS München: Taschenkarte Einsatzablauf Rettungsdienst (Stand Juni 2017, stadt.muenchen.de) · stadt.muenchen.de – Integrierte Leitstelle · bayern.de – Einweihung ILS München 27.07.2017 · lmu-klinikum.de – Notfallmedizin (KITH)",
-   "stand": "2026-11"
+   "quelle": "ILS München: Taschenkarte Einsatzablauf Rettungsdienst (Stand Juni 2017, stadt.muenchen.de) · stadt.muenchen.de – Integrierte Leitstelle · bayern.de – Einweihung ILS München 27.07.2017 · lmu-klinikum.de – Notfallmedizin (KITH) · AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026)",
+   "stand": "2026-11",
+   "geo": {
+    "lat": 48.156007,
+    "lon": 11.555468,
+    "quelle": "Feuerwache 4, eigener Zielpunkt (ZNA-Navi)"
+   },
+   "kreise": [
+    "München (Stadt)",
+    "München (Landkreis)"
+   ]
   },
   {
    "id": "leitstelle-rd1m",
@@ -106,7 +115,12 @@
    ],
    "sprechtext": "R D 1 M, Rettungsdienst Nord der Leitstelle München, Kurzwahl 2 5 1 3. Betten über R D Betten M mit Status 5. Nach Transport zurück auf die Original-Gruppe, Status 1.",
    "quelle": "ILS München: Taschenkarte Einsatzablauf Rettungsdienst (Stand Juni 2017, stadt.muenchen.de) · Kurzwahl: eigene Angabe (Geräteprogrammierung, Stand 11/2026)",
-   "stand": "2026-11"
+   "stand": "2026-11",
+   "geo": {
+    "lat": 48.156007,
+    "lon": 11.555468,
+    "quelle": "ILS München, Feuerwache 4"
+   }
   },
   {
    "id": "leitstelle-rd2m",
@@ -148,7 +162,12 @@
    ],
    "sprechtext": "R D 2 M, Rettungsdienst Süd der Leitstelle München, Kurzwahl 2 5 1 4. Betten über R D Betten M mit Status 5. Nach Transport zurück auf die Original-Gruppe, Status 1.",
    "quelle": "ILS München: Taschenkarte Einsatzablauf Rettungsdienst (Stand Juni 2017, stadt.muenchen.de) · Kurzwahl: eigene Angabe (Geräteprogrammierung, Stand 11/2026)",
-   "stand": "2026-11"
+   "stand": "2026-11",
+   "geo": {
+    "lat": 48.156007,
+    "lon": 11.555468,
+    "quelle": "ILS München, Feuerwache 4"
+   }
   },
   {
    "id": "leitstelle-ffb",
@@ -194,8 +213,19 @@
     }
    ],
    "sprechtext": "Integrierte Leitstelle Fürstenfeldbruck, seit 2026 in Maisach. Zuständig für Dachau, Fürstenfeldbruck, Landsberg und Starnberg. Telefon 08141 22700 600. Funkgruppe R D F F B, Kurzwahl 2063.",
-   "quelle": "Verbandssatzung ZRF Fürstenfeldbruck (Oberbayerisches Amtsblatt 2020) · Landratsamt Fürstenfeldbruck – Einweihung ILS Maisach (Mai 2026) · KFV Landsberg – Taschenkarte Digitalfunk (12/2018, 04/2021) · Kreisbote – Fusion ILS Oberland/FFB abgesagt",
-   "stand": "2026-11"
+   "quelle": "Verbandssatzung ZRF Fürstenfeldbruck (Oberbayerisches Amtsblatt 2020) · Landratsamt Fürstenfeldbruck – Einweihung ILS Maisach (Mai 2026) · KFV Landsberg – Taschenkarte Digitalfunk (12/2018, 04/2021) · Kreisbote – Fusion ILS Oberland/FFB abgesagt · AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026)",
+   "stand": "2026-11",
+   "geo": {
+    "lat": 48.217,
+    "lon": 11.258,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Maisach"
+   },
+   "kreise": [
+    "Dachau",
+    "Fürstenfeldbruck",
+    "Landsberg am Lech",
+    "Starnberg"
+   ]
   },
   {
    "id": "leitstelle-erding",
@@ -239,8 +269,18 @@
     }
    ],
    "sprechtext": "Integrierte Leitstelle Erding. Zuständig für Erding, Freising und Ebersberg. Krankentransport 08123 19222.",
-   "quelle": "EU-Ausschreibung Fachplanung Leitstellentechnik ILS Erding (TED 2022 und 2023) · Landkreis Erding – Amtsblatt Nr. 22 vom 27.05.2015",
-   "stand": "2026-11"
+   "quelle": "EU-Ausschreibung Fachplanung Leitstellentechnik ILS Erding (TED 2022 und 2023) · Landkreis Erding – Amtsblatt Nr. 22 vom 27.05.2015 · AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026)",
+   "stand": "2026-11",
+   "geo": {
+    "lat": 48.306,
+    "lon": 11.907,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Erding"
+   },
+   "kreise": [
+    "Ebersberg",
+    "Erding",
+    "Freising"
+   ]
   },
   {
    "id": "leitstelle-oberland",
@@ -278,8 +318,18 @@
     }
    ],
    "sprechtext": "Integrierte Leitstelle Oberland in Weilheim. Zuständig für Bad Tölz Wolfratshausen, Garmisch Partenkirchen und Weilheim Schongau. Telefon 08861 9258 5100. Funkgruppe R D W M, Kurzwahl 3073.",
-   "quelle": "Landkreis Weilheim-Schongau – Antworten zur ILS / Pressemitteilung 177/2024 · Bayerischer Landtag Drucksache 19/4346 · Kreisbote – Fusion ILS Oberland/FFB abgesagt · KFV Landsberg – Taschenkarte Digitalfunk (12/2018)",
-   "stand": "2026-11"
+   "quelle": "Landkreis Weilheim-Schongau – Antworten zur ILS / Pressemitteilung 177/2024 · Bayerischer Landtag Drucksache 19/4346 · Kreisbote – Fusion ILS Oberland/FFB abgesagt · KFV Landsberg – Taschenkarte Digitalfunk (12/2018) · AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026)",
+   "stand": "2026-11",
+   "geo": {
+    "lat": 47.84,
+    "lon": 11.142,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Weilheim i. OB"
+   },
+   "kreise": [
+    "Bad Tölz-Wolfratshausen",
+    "Garmisch-Partenkirchen",
+    "Weilheim-Schongau"
+   ]
   },
   {
    "id": "leitstelle-rosenheim",
@@ -322,7 +372,898 @@
     }
    ],
    "sprechtext": "Integrierte Leitstelle Rosenheim. Zuständig für Stadt und Landkreis Rosenheim sowie Landkreis Miesbach.",
-   "quelle": "Pressemitteilung daxenfeuer.de (Landratsamt Rosenheim) · Stadt Rosenheim – Organigramm Stand 01.01.2026",
+   "quelle": "Pressemitteilung daxenfeuer.de (Landratsamt Rosenheim) · Stadt Rosenheim – Organigramm Stand 01.01.2026 · AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026)",
+   "stand": "2026-11",
+   "geo": {
+    "lat": 47.856,
+    "lon": 12.128,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Rosenheim"
+   },
+   "kreise": [
+    "Miesbach",
+    "Rosenheim (Stadt)",
+    "Rosenheim (Landkreis)"
+   ]
+  },
+  {
+   "id": "leitstelle-traunstein",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Traunstein",
+   "kurz": "ILS Traunstein",
+   "suchbegriffe": [
+    "Leitstelle Traunstein",
+    "ILS Traunstein",
+    "Leitstelle Traunstein"
+   ],
+   "siehe": [],
+   "geo": {
+    "lat": 47.868,
+    "lon": 12.643,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Traunstein"
+   },
+   "kreise": [
+    "Altötting",
+    "Berchtesgadener Land",
+    "Mühldorf a.Inn",
+    "Traunstein"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Rettungsdienstbereich Traunstein (Oberbayern):\n- Altötting\n- Berchtesgadener Land\n- Mühldorf a.Inn\n- Traunstein"
+    },
+    {
+     "titel": "Sitz",
+     "text": "Traunstein"
+    },
+    {
+     "titel": "Telefon / Funk",
+     "text": "nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Traunstein, Sitz Traunstein. Zuständig für Altötting, Berchtesgadener Land, Mühldorf a.Inn, Traunstein.",
+   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-ingolstadt",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Region Ingolstadt",
+   "kurz": "ILS Region Ingolstadt",
+   "suchbegriffe": [
+    "Leitstelle Region Ingolstadt",
+    "ILS Ingolstadt",
+    "Leitstelle Ingolstadt"
+   ],
+   "siehe": [],
+   "geo": {
+    "lat": 48.766,
+    "lon": 11.426,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Ingolstadt"
+   },
+   "kreise": [
+    "Eichstätt",
+    "Ingolstadt",
+    "Neuburg-Schrobenhausen",
+    "Pfaffenhofen a.d.Ilm"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Rettungsdienstbereich Region Ingolstadt (Oberbayern):\n- Eichstätt\n- Ingolstadt\n- Neuburg-Schrobenhausen\n- Pfaffenhofen a.d.Ilm"
+    },
+    {
+     "titel": "Sitz",
+     "text": "Ingolstadt"
+    },
+    {
+     "titel": "Telefon / Funk",
+     "text": "nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Region Ingolstadt, Sitz Ingolstadt. Zuständig für Eichstätt, Ingolstadt, Neuburg-Schrobenhausen, Pfaffenhofen a.d.Ilm.",
+   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-landshut",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Landshut",
+   "kurz": "ILS Landshut",
+   "suchbegriffe": [
+    "Leitstelle Landshut",
+    "ILS Landshut",
+    "Leitstelle Landshut"
+   ],
+   "siehe": [],
+   "geo": {
+    "lat": 48.537,
+    "lon": 12.152,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Landshut"
+   },
+   "kreise": [
+    "Dingolfing-Landau",
+    "Kelheim",
+    "Landshut (Stadt)",
+    "Landshut (Landkreis)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Rettungsdienstbereich Landshut (Niederbayern):\n- Dingolfing-Landau\n- Kelheim\n- Landshut (Stadt)\n- Landshut (Landkreis)"
+    },
+    {
+     "titel": "Sitz",
+     "text": "Landshut"
+    },
+    {
+     "titel": "Telefon / Funk",
+     "text": "nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Landshut, Sitz Landshut. Zuständig für Dingolfing-Landau, Kelheim, Landshut Stadt, Landshut Landkreis.",
+   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-passau",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Passau",
+   "kurz": "ILS Passau",
+   "suchbegriffe": [
+    "Leitstelle Passau",
+    "ILS Passau",
+    "Leitstelle Passau"
+   ],
+   "siehe": [],
+   "geo": {
+    "lat": 48.575,
+    "lon": 13.461,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Passau"
+   },
+   "kreise": [
+    "Freyung-Grafenau",
+    "Passau (Stadt)",
+    "Passau (Landkreis)",
+    "Rottal-Inn"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Rettungsdienstbereich Passau (Niederbayern):\n- Freyung-Grafenau\n- Passau (Stadt)\n- Passau (Landkreis)\n- Rottal-Inn"
+    },
+    {
+     "titel": "Sitz",
+     "text": "Passau"
+    },
+    {
+     "titel": "Telefon / Funk",
+     "text": "nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Passau, Sitz Passau. Zuständig für Freyung-Grafenau, Passau Stadt, Passau Landkreis, Rottal-Inn.",
+   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-straubing",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Straubing",
+   "kurz": "ILS Straubing",
+   "suchbegriffe": [
+    "Leitstelle Straubing",
+    "ILS Straubing",
+    "Leitstelle Straubing"
+   ],
+   "siehe": [],
+   "geo": {
+    "lat": 48.881,
+    "lon": 12.574,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Straubing"
+   },
+   "kreise": [
+    "Deggendorf",
+    "Regen",
+    "Straubing",
+    "Straubing-Bogen"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Rettungsdienstbereich Straubing (Niederbayern):\n- Deggendorf\n- Regen\n- Straubing\n- Straubing-Bogen"
+    },
+    {
+     "titel": "Sitz",
+     "text": "Straubing"
+    },
+    {
+     "titel": "Telefon / Funk",
+     "text": "nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Straubing, Sitz Straubing. Zuständig für Deggendorf, Regen, Straubing, Straubing-Bogen.",
+   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-oberpfalz-nord",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Oberpfalz-Nord",
+   "kurz": "ILS Oberpfalz-Nord",
+   "suchbegriffe": [
+    "Leitstelle Oberpfalz-Nord",
+    "ILS Amberg",
+    "Leitstelle Amberg"
+   ],
+   "siehe": [],
+   "geo": {
+    "lat": 49.445,
+    "lon": 11.858,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Amberg"
+   },
+   "kreise": [
+    "Amberg",
+    "Amberg-Sulzbach",
+    "Neustadt a.d.Waldnaab",
+    "Schwandorf",
+    "Tirschenreuth",
+    "Weiden i.d.OPf."
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Rettungsdienstbereich Oberpfalz-Nord (Oberpfalz):\n- Amberg\n- Amberg-Sulzbach\n- Neustadt a.d.Waldnaab\n- Schwandorf\n- Tirschenreuth\n- Weiden i.d.OPf."
+    },
+    {
+     "titel": "Sitz",
+     "text": "Amberg"
+    },
+    {
+     "titel": "Telefon / Funk",
+     "text": "nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Oberpfalz-Nord, Sitz Amberg. Zuständig für Amberg, Amberg-Sulzbach, Neustadt a.d.Waldnaab, Schwandorf, Tirschenreuth, Weiden i.d.OPf..",
+   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-regensburg",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Regensburg",
+   "kurz": "ILS Regensburg",
+   "suchbegriffe": [
+    "Leitstelle Regensburg",
+    "ILS Regensburg",
+    "Leitstelle Regensburg"
+   ],
+   "siehe": [],
+   "geo": {
+    "lat": 49.013,
+    "lon": 12.101,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Regensburg"
+   },
+   "kreise": [
+    "Cham",
+    "Neumarkt i.d.OPf.",
+    "Regensburg (Stadt)",
+    "Regensburg (Landkreis)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Rettungsdienstbereich Regensburg (Oberpfalz):\n- Cham\n- Neumarkt i.d.OPf.\n- Regensburg (Stadt)\n- Regensburg (Landkreis)"
+    },
+    {
+     "titel": "Sitz",
+     "text": "Regensburg"
+    },
+    {
+     "titel": "Telefon / Funk",
+     "text": "nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Regensburg, Sitz Regensburg. Zuständig für Cham, Neumarkt i.d.OPf., Regensburg Stadt, Regensburg Landkreis.",
+   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-bamberg-forchheim",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Bamberg-Forchheim",
+   "kurz": "ILS Bamberg-Forchheim",
+   "suchbegriffe": [
+    "Leitstelle Bamberg-Forchheim",
+    "ILS Bamberg",
+    "Leitstelle Bamberg"
+   ],
+   "siehe": [],
+   "geo": {
+    "lat": 49.892,
+    "lon": 10.887,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Bamberg"
+   },
+   "kreise": [
+    "Bamberg (Stadt)",
+    "Bamberg (Landkreis)",
+    "Forchheim"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Rettungsdienstbereich Bamberg-Forchheim (Oberfranken):\n- Bamberg (Stadt)\n- Bamberg (Landkreis)\n- Forchheim"
+    },
+    {
+     "titel": "Sitz",
+     "text": "Bamberg"
+    },
+    {
+     "titel": "Telefon / Funk",
+     "text": "nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Bamberg-Forchheim, Sitz Bamberg. Zuständig für Bamberg Stadt, Bamberg Landkreis, Forchheim.",
+   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-bayreuth-kulmbach",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Bayreuth/Kulmbach",
+   "kurz": "ILS Bayreuth/Kulmbach",
+   "suchbegriffe": [
+    "Leitstelle Bayreuth/Kulmbach",
+    "ILS Bayreuth",
+    "Leitstelle Bayreuth"
+   ],
+   "siehe": [],
+   "geo": {
+    "lat": 49.945,
+    "lon": 11.576,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Bayreuth"
+   },
+   "kreise": [
+    "Bayreuth (Stadt)",
+    "Bayreuth (Landkreis)",
+    "Kulmbach"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Rettungsdienstbereich Bayreuth/Kulmbach (Oberfranken):\n- Bayreuth (Stadt)\n- Bayreuth (Landkreis)\n- Kulmbach"
+    },
+    {
+     "titel": "Sitz",
+     "text": "Bayreuth"
+    },
+    {
+     "titel": "Telefon / Funk",
+     "text": "nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Bayreuth/Kulmbach, Sitz Bayreuth. Zuständig für Bayreuth Stadt, Bayreuth Landkreis, Kulmbach.",
+   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-coburg",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Coburg",
+   "kurz": "ILS Coburg",
+   "suchbegriffe": [
+    "Leitstelle Coburg",
+    "ILS Coburg",
+    "Leitstelle Coburg"
+   ],
+   "siehe": [],
+   "geo": {
+    "lat": 50.258,
+    "lon": 10.965,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Coburg"
+   },
+   "kreise": [
+    "Coburg (Stadt)",
+    "Coburg (Landkreis)",
+    "Kronach",
+    "Lichtenfels"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Rettungsdienstbereich Coburg (Oberfranken):\n- Coburg (Stadt)\n- Coburg (Landkreis)\n- Kronach\n- Lichtenfels"
+    },
+    {
+     "titel": "Sitz",
+     "text": "Coburg"
+    },
+    {
+     "titel": "Telefon / Funk",
+     "text": "nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Coburg, Sitz Coburg. Zuständig für Coburg Stadt, Coburg Landkreis, Kronach, Lichtenfels.",
+   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-hochfranken",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Hochfranken",
+   "kurz": "ILS Hochfranken",
+   "suchbegriffe": [
+    "Leitstelle Hochfranken",
+    "ILS Hof",
+    "Leitstelle Hof"
+   ],
+   "siehe": [],
+   "geo": {
+    "lat": 50.313,
+    "lon": 11.912,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Hof"
+   },
+   "kreise": [
+    "Hof (Stadt)",
+    "Hof (Landkreis)",
+    "Wunsiedel i.Fichtelgebirge"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Rettungsdienstbereich Hochfranken (Oberfranken):\n- Hof (Stadt)\n- Hof (Landkreis)\n- Wunsiedel i.Fichtelgebirge"
+    },
+    {
+     "titel": "Sitz",
+     "text": "Hof"
+    },
+    {
+     "titel": "Telefon / Funk",
+     "text": "nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Hochfranken, Sitz Hof. Zuständig für Hof Stadt, Hof Landkreis, Wunsiedel i.Fichtelgebirge.",
+   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-ansbach",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Ansbach",
+   "kurz": "ILS Ansbach",
+   "suchbegriffe": [
+    "Leitstelle Ansbach",
+    "ILS Ansbach",
+    "Leitstelle Ansbach"
+   ],
+   "siehe": [],
+   "geo": {
+    "lat": 49.302,
+    "lon": 10.572,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Ansbach"
+   },
+   "kreise": [
+    "Ansbach (Stadt)",
+    "Ansbach (Landkreis)",
+    "Neustadt a.d.Aisch-Bad Windsheim"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Rettungsdienstbereich Ansbach (Mittelfranken):\n- Ansbach (Stadt)\n- Ansbach (Landkreis)\n- Neustadt a.d.Aisch-Bad Windsheim"
+    },
+    {
+     "titel": "Sitz",
+     "text": "Ansbach"
+    },
+    {
+     "titel": "Telefon / Funk",
+     "text": "nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Ansbach, Sitz Ansbach. Zuständig für Ansbach Stadt, Ansbach Landkreis, Neustadt a.d.Aisch-Bad Windsheim.",
+   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-mittelfranken-sued",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Mittelfranken Süd",
+   "kurz": "ILS Mittelfranken Süd",
+   "suchbegriffe": [
+    "Leitstelle Mittelfranken Süd",
+    "ILS Schwabach",
+    "Leitstelle Schwabach"
+   ],
+   "siehe": [],
+   "geo": {
+    "lat": 49.329,
+    "lon": 11.022,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Schwabach"
+   },
+   "kreise": [
+    "Roth",
+    "Schwabach",
+    "Weißenburg-Gunzenhausen"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Rettungsdienstbereich Mittelfranken Süd (Mittelfranken):\n- Roth\n- Schwabach\n- Weißenburg-Gunzenhausen"
+    },
+    {
+     "titel": "Sitz",
+     "text": "Schwabach"
+    },
+    {
+     "titel": "Telefon / Funk",
+     "text": "nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Mittelfranken Süd, Sitz Schwabach. Zuständig für Roth, Schwabach, Weißenburg-Gunzenhausen.",
+   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-nuernberg",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Nürnberg",
+   "kurz": "ILS Nürnberg",
+   "suchbegriffe": [
+    "Leitstelle Nürnberg",
+    "ILS Nürnberg",
+    "Leitstelle Nürnberg"
+   ],
+   "siehe": [],
+   "geo": {
+    "lat": 49.454,
+    "lon": 11.077,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Nürnberg"
+   },
+   "kreise": [
+    "Erlangen",
+    "Erlangen-Höchstadt",
+    "Fürth (Stadt)",
+    "Fürth (Landkreis)",
+    "Nürnberg",
+    "Nürnberger Land"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Rettungsdienstbereich Nürnberg (Mittelfranken):\n- Erlangen\n- Erlangen-Höchstadt\n- Fürth (Stadt)\n- Fürth (Landkreis)\n- Nürnberg\n- Nürnberger Land"
+    },
+    {
+     "titel": "Sitz",
+     "text": "Nürnberg"
+    },
+    {
+     "titel": "Telefon / Funk",
+     "text": "nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Nürnberg, Sitz Nürnberg. Zuständig für Erlangen, Erlangen-Höchstadt, Fürth Stadt, Fürth Landkreis, Nürnberg, Nürnberger Land.",
+   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-untermain",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Bayerischer Untermain",
+   "kurz": "ILS Bayerischer Untermain",
+   "suchbegriffe": [
+    "Leitstelle Bayerischer Untermain",
+    "ILS Aschaffenburg",
+    "Leitstelle Aschaffenburg"
+   ],
+   "siehe": [],
+   "geo": {
+    "lat": 49.977,
+    "lon": 9.152,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Aschaffenburg (Feuerwache)"
+   },
+   "kreise": [
+    "Aschaffenburg (Stadt)",
+    "Aschaffenburg (Landkreis)",
+    "Miltenberg"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Rettungsdienstbereich Bayerischer Untermain (Unterfranken):\n- Aschaffenburg (Stadt)\n- Aschaffenburg (Landkreis)\n- Miltenberg"
+    },
+    {
+     "titel": "Sitz",
+     "text": "Aschaffenburg (Feuerwache)"
+    },
+    {
+     "titel": "Telefon / Funk",
+     "text": "nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Bayerischer Untermain, Sitz Aschaffenburg. Zuständig für Aschaffenburg Stadt, Aschaffenburg Landkreis, Miltenberg.",
+   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-schweinfurt",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Schweinfurt",
+   "kurz": "ILS Schweinfurt",
+   "suchbegriffe": [
+    "Leitstelle Schweinfurt",
+    "ILS Schweinfurt",
+    "Leitstelle Schweinfurt"
+   ],
+   "siehe": [],
+   "geo": {
+    "lat": 50.049,
+    "lon": 10.234,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Schweinfurt"
+   },
+   "kreise": [
+    "Bad Kissingen",
+    "Haßberge",
+    "Rhön-Grabfeld",
+    "Schweinfurt (Stadt)",
+    "Schweinfurt (Landkreis)"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Rettungsdienstbereich Schweinfurt (Unterfranken):\n- Bad Kissingen\n- Haßberge\n- Rhön-Grabfeld\n- Schweinfurt (Stadt)\n- Schweinfurt (Landkreis)"
+    },
+    {
+     "titel": "Sitz",
+     "text": "Schweinfurt"
+    },
+    {
+     "titel": "Telefon / Funk",
+     "text": "nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Schweinfurt, Sitz Schweinfurt. Zuständig für Bad Kissingen, Haßberge, Rhön-Grabfeld, Schweinfurt Stadt, Schweinfurt Landkreis.",
+   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-wuerzburg",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Würzburg",
+   "kurz": "ILS Würzburg",
+   "suchbegriffe": [
+    "Leitstelle Würzburg",
+    "ILS Würzburg",
+    "Leitstelle Würzburg"
+   ],
+   "siehe": [],
+   "geo": {
+    "lat": 49.791,
+    "lon": 9.953,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Würzburg"
+   },
+   "kreise": [
+    "Würzburg (Stadt)",
+    "Würzburg (Landkreis)",
+    "Kitzingen",
+    "Main-Spessart"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Rettungsdienstbereich Würzburg (Unterfranken):\n- Würzburg (Stadt)\n- Würzburg (Landkreis)\n- Kitzingen\n- Main-Spessart"
+    },
+    {
+     "titel": "Sitz",
+     "text": "Würzburg"
+    },
+    {
+     "titel": "Telefon / Funk",
+     "text": "nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Würzburg, Sitz Würzburg. Zuständig für Würzburg Stadt, Würzburg Landkreis, Kitzingen, Main-Spessart.",
+   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-allgaeu",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Allgäu",
+   "kurz": "ILS Allgäu",
+   "suchbegriffe": [
+    "Leitstelle Allgäu",
+    "ILS Kempten",
+    "Leitstelle Kempten"
+   ],
+   "siehe": [],
+   "geo": {
+    "lat": 47.728,
+    "lon": 10.315,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Kempten"
+   },
+   "kreise": [
+    "Kempten (Allgäu)",
+    "Kaufbeuren",
+    "Lindau (Bodensee)",
+    "Oberallgäu",
+    "Ostallgäu"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Rettungsdienstbereich Allgäu (Schwaben):\n- Kempten (Allgäu)\n- Kaufbeuren\n- Lindau (Bodensee)\n- Oberallgäu\n- Ostallgäu"
+    },
+    {
+     "titel": "Sitz",
+     "text": "Kempten"
+    },
+    {
+     "titel": "Telefon / Funk",
+     "text": "nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Allgäu, Sitz Kempten. Zuständig für Kempten (Allgäu), Kaufbeuren, Lindau (Bodensee), Oberallgäu, Ostallgäu.",
+   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-augsburg",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Augsburg",
+   "kurz": "ILS Augsburg",
+   "suchbegriffe": [
+    "Leitstelle Augsburg",
+    "ILS Augsburg",
+    "Leitstelle Augsburg"
+   ],
+   "siehe": [],
+   "geo": {
+    "lat": 48.371,
+    "lon": 10.898,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Augsburg"
+   },
+   "kreise": [
+    "Augsburg (Stadt)",
+    "Augsburg (Landkreis)",
+    "Aichach-Friedberg",
+    "Dillingen a.d.Donau",
+    "Donau-Ries"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Rettungsdienstbereich Augsburg (Schwaben):\n- Augsburg (Stadt)\n- Augsburg (Landkreis)\n- Aichach-Friedberg\n- Dillingen a.d.Donau\n- Donau-Ries"
+    },
+    {
+     "titel": "Sitz",
+     "text": "Augsburg"
+    },
+    {
+     "titel": "Telefon / Funk",
+     "text": "nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Augsburg, Sitz Augsburg. Zuständig für Augsburg Stadt, Augsburg Landkreis, Aichach-Friedberg, Dillingen a.d.Donau, Donau-Ries.",
+   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung",
+   "stand": "2026-11"
+  },
+  {
+   "id": "leitstelle-donau-iller",
+   "bereich": "leitstelle",
+   "titel": "Integrierte Leitstelle Donau-Iller",
+   "kurz": "ILS Donau-Iller",
+   "suchbegriffe": [
+    "Leitstelle Donau-Iller",
+    "ILS Krumbach",
+    "Leitstelle Krumbach"
+   ],
+   "siehe": [],
+   "geo": {
+    "lat": 48.244,
+    "lon": 10.364,
+    "quelle": "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung – Krumbach"
+   },
+   "kreise": [
+    "Memmingen",
+    "Günzburg",
+    "Neu-Ulm",
+    "Unterallgäu"
+   ],
+   "abschnitte": [
+    {
+     "titel": "Zuständigkeitsbereich",
+     "text": "Rettungsdienstbereich Donau-Iller (Schwaben):\n- Memmingen\n- Günzburg\n- Neu-Ulm\n- Unterallgäu"
+    },
+    {
+     "titel": "Sitz",
+     "text": "Krumbach"
+    },
+    {
+     "titel": "Telefon / Funk",
+     "text": "nicht ermittelt – bei der ILS bzw. Wache erfragen"
+    },
+    {
+     "titel": "Hinweis",
+     "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."
+    }
+   ],
+   "sprechtext": "Integrierte Leitstelle Donau-Iller, Sitz Krumbach. Zuständig für Memmingen, Günzburg, Neu-Ulm, Unterallgäu.",
+   "quelle": "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026) · Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung",
    "stand": "2026-11"
   },
   {
@@ -354,7 +1295,7 @@
     },
     {
      "titel": "Merke",
-     "text": "- Starnberg → ILS FFB · Ebersberg → ILS Erding · Miesbach / Agatharied → ILS Rosenheim\n- In Bayern gibt es eine Integrierte Leitstelle je Rettungsdienstbereich"
+     "text": "- Starnberg → ILS FFB · Ebersberg → ILS Erding · Miesbach / Agatharied → ILS Rosenheim\n- In Bayern gibt es eine Integrierte Leitstelle je Rettungsdienstbereich (25 Rettungsdienstbereiche, AVBayRDG Anlage 1)\n- Alle 25 ILS sind als eigene Einträge enthalten; im Bereich „Leitstellen“ zeigt die App die am Standort zuständige ILS an"
     },
     {
      "titel": "Hinweis",

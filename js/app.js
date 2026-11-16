@@ -463,6 +463,7 @@ function zeigeBereich(k) {
   if (!b) return zeigeStart();
   const liste = st.eintraege.filter(e => e.bereich === k);
   if (k === "klinik") return zeigeKliniken(b, liste);
+  if (k === "leitstelle") return zeigeLeitstellen(b, liste);
   if (k === "symptom" && liste.some(e => e.kategorie)) return zeigeSymptomCheck(b, liste);
   inhalt.innerHTML = `
     <h2>${b.icon} ${b.name} <span class="kurz">${liste.length}</span></h2>
@@ -523,18 +524,39 @@ const fmtZeit = sek => sek < 3600 ? Math.max(1, Math.round(sek / 60)) + " min"
   : `${Math.floor(sek / 3600)} h ${String(Math.round((sek % 3600) / 60)).padStart(2, "0")} min`;
 const routeFuer = e => (st.pos && st.routen?.key === st.pos.t) ? st.routen.werte[e.id] : null;
 
-function ermittleStandort(danach) {
+// art: "klinik" → Fahrstrecken holen, "leitstelle" → zuständigen Landkreis holen
+function ermittleStandort(danach, art = "klinik") {
   if (st.posLaeuft) return;
   st.posLaeuft = true; st.posVersuch = Date.now();
   holePosition(0)
     .then(async pos => {
       st.posFehler = "";
-      try { await holeRouten(pos); st.routenFehler = ""; }
-      catch (err) { st.routenFehler = err.message; }
+      if (art === "leitstelle") await ladeKreis(pos);
+      else await ladeRouten(pos);
     })
     .catch(err => { st.posFehler = err.message; })
     .finally(() => { st.posLaeuft = false; danach(); });
 }
+
+async function ladeRouten(pos) {
+  st.routenVersuch = pos.t;
+  try { await holeRouten(pos); st.routenFehler = ""; } catch (err) { st.routenFehler = err.message; }
+}
+async function ladeKreis(pos) {
+  st.kreisVersuch = pos.t;
+  try { await holeKreis(pos); st.kreisFehler = ""; } catch { st.kreisFehler = "Zuständige ILS nicht abrufbar (offline?)"; }
+}
+// Standort aus einem anderen Bereich (< 1 Min. alt) wiederverwenden, fehlende Zusatzdaten nachladen
+function ergaenzeStandort(pos, art, danach) {
+  if (!pos || st.posLaeuft) return;
+  const fehlt = art === "leitstelle" ? (st.kreis?.key !== pos.t && st.kreisVersuch !== pos.t)
+                                     : (st.routen?.key !== pos.t && st.routenVersuch !== pos.t);
+  if (!fehlt) return;
+  st.posLaeuft = true;
+  (art === "leitstelle" ? ladeKreis(pos) : ladeRouten(pos)).finally(() => { st.posLaeuft = false; danach(); });
+  danach();
+}
+const POS_HILFE = `<p class="standort-hilfe">Einschalten: iPhone-Einstellungen → Datenschutz & Sicherheit → Ortungsdienste → <b>Safari-Websites</b> → „Beim Verwenden der App“. Danach Wissen RD neu öffnen.</p>`;
 
 function zeigeKliniken(b, liste) {
   const pos = st.pos;
@@ -557,8 +579,7 @@ function zeigeKliniken(b, liste) {
         ? `🚗 Nächste zuerst nach Fahrstrecke (Straße, Pkw, ohne Verkehr und Sonderrechte) · Standort ±${Math.round(pos.acc)} m · <button class="link" id="pos-neu">aktualisieren</button>`
         : `⚠️ Fahrstrecke nicht abrufbar (offline?) – vorläufig nach Luftlinie · <button class="link" id="pos-neu">nochmal versuchen</button>`)
     : st.posFehler ? `📍 ${esc(st.posFehler)} · <button class="link" id="pos-neu">nochmal versuchen</button>` : "";
-  const hilfe = st.posFehler === "Standortzugriff verweigert"
-    ? `<p class="standort-hilfe">Einschalten: iPhone-Einstellungen → Datenschutz & Sicherheit → Ortungsdienste → <b>Safari-Websites</b> → „Beim Verwenden der App“. Danach Wissen RD neu öffnen.</p>` : "";
+  const hilfe = st.posFehler === "Standortzugriff verweigert" ? POS_HILFE : "";
   inhalt.innerHTML = `
     <h2>${b.icon} ${b.name} <span class="kurz">${liste.length}</span></h2>
     <p class="standort">${status}</p>${hilfe}
@@ -574,7 +595,75 @@ function zeigeKliniken(b, liste) {
   if (veraltet && !st.posLaeuft && Date.now() - (st.posVersuch || 0) > POS_ALTER) {
     ermittleStandort(neuZeichnen);
     neuZeichnen();
+  } else if (!veraltet) ergaenzeStandort(pos, "klinik", neuZeichnen);
+}
+
+// ---------------- Leitstellen: zuständige ILS am Standort + nächste zuerst ----------------
+// Landkreis über OpenStreetMap (Nominatim) ermitteln, dann über die Zuständigkeitsliste (AVBayRDG Anlage 1) zuordnen.
+const kreisSchluessel = name => norm(String(name || "")
+  .replace(/^(Landkreis|Kreisfreie Stadt|Stadt|Kreis)\s+/i, "")
+  .replace(/\s*\((Stadt|Landkreis)\)\s*$/i, "")
+  .replace(/\ba\.\s*d\.\s*/gi, "an der ").replace(/\bi\.\s*d\.\s*/gi, "in der ")
+  .replace(/\ba\.\s*/gi, "am ").replace(/\bi\.\s*/gi, "im ").replace(/OPf\./g, "Oberpfalz"));
+async function holeKreis(pos) {
+  if (st.kreis?.key === pos.t) return st.kreis;
+  const ctrl = new AbortController();
+  const uhr = setTimeout(() => ctrl.abort(), 7000);
+  const r = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${pos.lat.toFixed(4)}&lon=${pos.lon.toFixed(4)}&zoom=10&addressdetails=1&accept-language=de`, { signal: ctrl.signal });
+  clearTimeout(uhr);
+  if (!r.ok) throw new Error("HTTP " + r.status);
+  const a = (await r.json()).address || {};
+  st.kreis = { key: pos.t, name: a.county || a.city || a.town || a.municipality || "", land: a.state || "" };
+  return st.kreis;
+}
+function zustaendigeILS(kreisName) {
+  const k = kreisSchluessel(kreisName);
+  if (!k) return null;
+  const ils = st.eintraege.filter(e => e.bereich === "leitstelle" && Array.isArray(e.kreise));
+  return ils.find(e => e.kreise.some(x => kreisSchluessel(x) === k))
+    || ils.find(e => e.kreise.some(x => { const y = kreisSchluessel(x); return y.length >= 4 && (k.startsWith(y) || y.startsWith(k)); }))
+    || null;
+}
+
+function zeigeLeitstellen(b, liste) {
+  const pos = st.pos;
+  const mitGeo = liste.filter(e => hatGeo(e));
+  const rest = liste.filter(e => !hatGeo(e));
+  if (pos) {
+    mitGeo.forEach(e => (e._d = haversine(pos, e.geo)));
+    mitGeo.sort((x, y) => x._d - y._d || x.titel.localeCompare(y.titel, "de"));
   }
+  const kreis = pos && st.kreis?.key === pos.t ? st.kreis : null;
+  const inBayern = kreis && /bayern/i.test(kreis.land);
+  const zust = inBayern ? zustaendigeILS(kreis.name) : null;
+  let kopf = "";
+  if (st.posLaeuft) kopf = `<p class="standort">📍 Standort und zuständige ILS werden ermittelt …</p>`;
+  else if (pos) {
+    if (zust) kopf = `<a class="zust-karte" href="#/e/${esc(zust.id)}"><small>📍 An deinem Standort zuständig</small>
+        <strong>${esc(zust.titel)}</strong><span>${esc(kreis.name)}</span></a>`;
+    else if (kreis && !inBayern) kopf = `<p class="standort-hilfe">Standort außerhalb Bayerns (${esc(kreis.name || kreis.land || "unbekannt")}) – dafür sind keine Leitstellen hinterlegt.</p>`;
+    else if (kreis) kopf = `<p class="standort-hilfe">Für „${esc(kreis.name || "unbekannt")}“ wurde keine ILS gefunden.</p>`;
+    else if (st.kreisFehler) kopf = `<p class="standort-hilfe">⚠️ ${esc(st.kreisFehler)}</p>`;
+    kopf += `<p class="standort">📍 Nächste zuerst (Luftlinie zum Ort der ILS) · Standort ±${Math.round(pos.acc)} m · <button class="link" id="pos-neu">aktualisieren</button></p>`;
+  } else if (st.posFehler) {
+    kopf = `<p class="standort">📍 ${esc(st.posFehler)} · <button class="link" id="pos-neu">nochmal versuchen</button></p>`
+      + (st.posFehler === "Standortzugriff verweigert" ? POS_HILFE : "");
+  }
+  inhalt.innerHTML = `
+    <h2>${b.icon} ${b.name} <span class="kurz">${liste.length}</span></h2>
+    ${kopf}
+    <section class="liste">${mitGeo.map(e => eintragZeile(e, false, pos ? "≈ " + fmtDist(e._d) : "")).join("")}${
+      rest.map(e => eintragZeile(e, false)).join("")}</section>
+    <a class="fab" href="#/neu/leitstelle" title="Neuer Eintrag in ${esc(b.name)}" aria-label="Neuer Eintrag">＋</a>`;
+  if (zust) inhalt.querySelector(`.liste a[href="#/e/${CSS.escape(zust.id)}"]`)?.classList.add("zustaendig");
+  const neuZeichnen = () => { if (location.hash === "#/b/leitstelle") zeigeBereich("leitstelle"); };
+  const knopf = $("#pos-neu");
+  if (knopf) knopf.onclick = () => { st.pos = null; st.posFehler = ""; ermittleStandort(neuZeichnen, "leitstelle"); neuZeichnen(); };
+  const veraltet = !pos || Date.now() - pos.t > POS_ALTER;
+  if (veraltet && !st.posLaeuft && Date.now() - (st.posVersuch || 0) > POS_ALTER) {
+    ermittleStandort(neuZeichnen, "leitstelle");
+    neuZeichnen();
+  } else if (!veraltet) ergaenzeStandort(pos, "leitstelle", neuZeichnen);
 }
 
 // ---------------- Symptom-Check: Symptome antippen → mögliche Verdachtsdiagnosen ----------------
@@ -849,7 +938,8 @@ function bereinigt(e) {
     ...(Array.isArray(e.symptome) ? { symptome: e.symptome.filter(x => typeof x === "string") } : {}),
     ...(Array.isArray(e.gegenteil) ? { gegenteil: e.gegenteil.filter(x => typeof x === "string") } : {}),
     ...(e.kategorie ? { kategorie: String(e.kategorie) } : {}),
-    ...(Number.isFinite(e.reihe) ? { reihe: e.reihe } : {})
+    ...(Number.isFinite(e.reihe) ? { reihe: e.reihe } : {}),
+    ...(Array.isArray(e.kreise) ? { kreise: e.kreise.filter(x => typeof x === "string") } : {})
   };
 }
 

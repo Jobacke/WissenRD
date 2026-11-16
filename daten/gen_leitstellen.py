@@ -134,17 +134,73 @@ ls("rosenheim", "Integrierte Leitstelle Rosenheim", "ILS Rosenheim",
  ["Pressemitteilung daxenfeuer.de (Landratsamt Rosenheim)", "Stadt Rosenheim – Organigramm Stand 01.01.2026"],
  "Integrierte Leitstelle Rosenheim. Zuständig für Stadt und Landkreis Rosenheim sowie Landkreis Miesbach.")
 
+# ------------------------------------------------------------------ alle 25 ILS Bayerns: Zuständigkeit + Ort
+# Zuständigkeit: AVBayRDG Anlage 1 (Rettungsdienstbereiche), Text gilt ab 15.04.2026 – je Rettungsdienstbereich genau eine ILS.
+# Position: Ort der ILS (Ortsmitte, ungefähr) – reicht für die Sortierung „nächste zuerst“. München: Feuerwache 4 (ZNA-Navi).
+Q_ANL1 = "AVBayRDG Anlage 1 – Rettungsdienstbereiche und Rettungsdienstbezirke (gesetze-bayern.de, Text gilt ab 15.04.2026)"
+Q_ORT = "Ort der ILS: Ortsmitte (ungefähr) für die Entfernungssortierung"
+ILS = [
+ # id, Name, Sitz, lat, lon, Regierungsbezirk, Landkreise / kreisfreie Städte
+ ("erding", "Erding", "Erding", 48.306, 11.907, "Oberbayern", ["Ebersberg", "Erding", "Freising"]),
+ ("oberland", "Oberland", "Weilheim i. OB", 47.840, 11.142, "Oberbayern", ["Bad Tölz-Wolfratshausen", "Garmisch-Partenkirchen", "Weilheim-Schongau"]),
+ ("rosenheim", "Rosenheim", "Rosenheim", 47.856, 12.128, "Oberbayern", ["Miesbach", "Rosenheim (Stadt)", "Rosenheim (Landkreis)"]),
+ ("traunstein", "Traunstein", "Traunstein", 47.868, 12.643, "Oberbayern", ["Altötting", "Berchtesgadener Land", "Mühldorf a.Inn", "Traunstein"]),
+ ("ffb", "Fürstenfeldbruck", "Maisach", 48.217, 11.258, "Oberbayern", ["Dachau", "Fürstenfeldbruck", "Landsberg am Lech", "Starnberg"]),
+ ("muenchen", "München", "München (Feuerwache 4)", 48.156007, 11.555468, "Oberbayern", ["München (Stadt)", "München (Landkreis)"]),
+ ("ingolstadt", "Region Ingolstadt", "Ingolstadt", 48.766, 11.426, "Oberbayern", ["Eichstätt", "Ingolstadt", "Neuburg-Schrobenhausen", "Pfaffenhofen a.d.Ilm"]),
+ ("landshut", "Landshut", "Landshut", 48.537, 12.152, "Niederbayern", ["Dingolfing-Landau", "Kelheim", "Landshut (Stadt)", "Landshut (Landkreis)"]),
+ ("passau", "Passau", "Passau", 48.575, 13.461, "Niederbayern", ["Freyung-Grafenau", "Passau (Stadt)", "Passau (Landkreis)", "Rottal-Inn"]),
+ ("straubing", "Straubing", "Straubing", 48.881, 12.574, "Niederbayern", ["Deggendorf", "Regen", "Straubing", "Straubing-Bogen"]),
+ ("oberpfalz-nord", "Oberpfalz-Nord", "Amberg", 49.445, 11.858, "Oberpfalz", ["Amberg", "Amberg-Sulzbach", "Neustadt a.d.Waldnaab", "Schwandorf", "Tirschenreuth", "Weiden i.d.OPf."]),
+ ("regensburg", "Regensburg", "Regensburg", 49.013, 12.101, "Oberpfalz", ["Cham", "Neumarkt i.d.OPf.", "Regensburg (Stadt)", "Regensburg (Landkreis)"]),
+ ("bamberg-forchheim", "Bamberg-Forchheim", "Bamberg", 49.892, 10.887, "Oberfranken", ["Bamberg (Stadt)", "Bamberg (Landkreis)", "Forchheim"]),
+ ("bayreuth-kulmbach", "Bayreuth/Kulmbach", "Bayreuth", 49.945, 11.576, "Oberfranken", ["Bayreuth (Stadt)", "Bayreuth (Landkreis)", "Kulmbach"]),
+ ("coburg", "Coburg", "Coburg", 50.258, 10.965, "Oberfranken", ["Coburg (Stadt)", "Coburg (Landkreis)", "Kronach", "Lichtenfels"]),
+ ("hochfranken", "Hochfranken", "Hof", 50.313, 11.912, "Oberfranken", ["Hof (Stadt)", "Hof (Landkreis)", "Wunsiedel i.Fichtelgebirge"]),
+ ("ansbach", "Ansbach", "Ansbach", 49.302, 10.572, "Mittelfranken", ["Ansbach (Stadt)", "Ansbach (Landkreis)", "Neustadt a.d.Aisch-Bad Windsheim"]),
+ ("mittelfranken-sued", "Mittelfranken Süd", "Schwabach", 49.329, 11.022, "Mittelfranken", ["Roth", "Schwabach", "Weißenburg-Gunzenhausen"]),
+ ("nuernberg", "Nürnberg", "Nürnberg", 49.454, 11.077, "Mittelfranken", ["Erlangen", "Erlangen-Höchstadt", "Fürth (Stadt)", "Fürth (Landkreis)", "Nürnberg", "Nürnberger Land"]),
+ ("untermain", "Bayerischer Untermain", "Aschaffenburg (Feuerwache)", 49.977, 9.152, "Unterfranken", ["Aschaffenburg (Stadt)", "Aschaffenburg (Landkreis)", "Miltenberg"]),
+ ("schweinfurt", "Schweinfurt", "Schweinfurt", 50.049, 10.234, "Unterfranken", ["Bad Kissingen", "Haßberge", "Rhön-Grabfeld", "Schweinfurt (Stadt)", "Schweinfurt (Landkreis)"]),
+ ("wuerzburg", "Würzburg", "Würzburg", 49.791, 9.953, "Unterfranken", ["Würzburg (Stadt)", "Würzburg (Landkreis)", "Kitzingen", "Main-Spessart"]),
+ ("allgaeu", "Allgäu", "Kempten", 47.728, 10.315, "Schwaben", ["Kempten (Allgäu)", "Kaufbeuren", "Lindau (Bodensee)", "Oberallgäu", "Ostallgäu"]),
+ ("augsburg", "Augsburg", "Augsburg", 48.371, 10.898, "Schwaben", ["Augsburg (Stadt)", "Augsburg (Landkreis)", "Aichach-Friedberg", "Dillingen a.d.Donau", "Donau-Ries"]),
+ ("donau-iller", "Donau-Iller", "Krumbach", 48.244, 10.364, "Schwaben", ["Memmingen", "Günzburg", "Neu-Ulm", "Unterallgäu"]),
+]
+assert len(ILS) == 25
+vorhanden = {e["id"]: e for e in E}
+for iid, name, sitz, lat, lon, bez, kreise in ILS:
+    geo = {"lat": lat, "lon": lon, "quelle": "Feuerwache 4, eigener Zielpunkt (ZNA-Navi)" if iid == "muenchen" else Q_ORT + f" – {sitz}"}
+    e = vorhanden.get("leitstelle-" + iid)
+    if e:
+        e.update(geo=geo, kreise=kreise)
+        if Q_ANL1 not in e["quelle"]: e["quelle"] += " · " + Q_ANL1
+        continue
+    E.append({"id": "leitstelle-" + iid, "bereich": "leitstelle", "titel": f"Integrierte Leitstelle {name}", "kurz": f"ILS {name}",
+              "suchbegriffe": [f"Leitstelle {name}", f"ILS {sitz.split(' (')[0]}", f"Leitstelle {sitz.split(' (')[0]}"],
+              "siehe": [], "geo": geo, "kreise": kreise,
+              "abschnitte": [
+                {"titel": "Zuständigkeitsbereich", "text": f"Rettungsdienstbereich {name} ({bez}):\n" + "\n".join("- " + k for k in kreise)},
+                {"titel": "Sitz", "text": sitz},
+                {"titel": "Telefon / Funk", "text": NE},
+                {"titel": "Hinweis", "text": "Eintrag nur zur Zuordnung „welche ILS ist hier zuständig“. Notruf immer 112."}],
+              "sprechtext": f"Integrierte Leitstelle {name}, Sitz {sitz.split(' (')[0]}. Zuständig für " + ", ".join(k.replace(" (Stadt)", " Stadt").replace(" (Landkreis)", " Landkreis") for k in kreise) + ".",
+              "quelle": Q_ANL1 + " · " + Q_ORT, "stand": STAND})
+# RD-Kanäle der ILS München an deren Ort einsortieren
+for rid in ("leitstelle-rd1m", "leitstelle-rd2m"):
+    if rid in vorhanden: vorhanden[rid]["geo"] = {"lat": 48.156007, "lon": 11.555468, "quelle": "ILS München, Feuerwache 4"}
+
 # ------------------------------------------------------------------ Übersicht
 E.append({"id": "leitstelle-uebersicht", "bereich": "leitstelle", "titel": "Übersicht Leitstellen", "kurz": "Leitstellen",
  "suchbegriffe": ["Leitstellen", "ILS", "Integrierte Leitstellen", "Welche Leitstelle", "Leitstelle Landkreis", "Leitstellenbereiche"],
- "siehe": [e["titel"] for e in E],
+ "siehe": [e["titel"] for e in E if e["id"] in ("leitstelle-muenchen", "leitstelle-rd1m", "leitstelle-rd2m", "leitstelle-ffb", "leitstelle-erding", "leitstelle-oberland", "leitstelle-rosenheim")],
  "abschnitte": [
   {"titel": "Welcher Landkreis – welche ILS", "text": """- **ILS München:** Stadt München, Landkreis München (Rettungsdienst) – RD_1_M (Nord, 2513), RD_2_M (Süd, 2514)
 - **ILS Fürstenfeldbruck (Maisach):** Dachau, Fürstenfeldbruck, Landsberg am Lech, Starnberg
 - **ILS Erding:** Erding, Freising, Ebersberg
 - **ILS Oberland (Weilheim):** Bad Tölz-Wolfratshausen, Garmisch-Partenkirchen, Weilheim-Schongau
 - **ILS Rosenheim:** Stadt und Landkreis Rosenheim, Landkreis Miesbach"""},
-  {"titel": "Merke", "text": "- Starnberg → ILS FFB · Ebersberg → ILS Erding · Miesbach / Agatharied → ILS Rosenheim\n- In Bayern gibt es eine Integrierte Leitstelle je Rettungsdienstbereich"},
+  {"titel": "Merke", "text": "- Starnberg → ILS FFB · Ebersberg → ILS Erding · Miesbach / Agatharied → ILS Rosenheim\n- In Bayern gibt es eine Integrierte Leitstelle je Rettungsdienstbereich (25 Rettungsdienstbereiche, AVBayRDG Anlage 1)\n- Alle 25 ILS sind als eigene Einträge enthalten; im Bereich „Leitstellen“ zeigt die App die am Standort zuständige ILS an"},
   {"titel": "Hinweis", "text": HINWEIS}],
  "sprechtext": "Leitstellen. München: Stadt und Landkreis München. Fürstenfeldbruck in Maisach: Dachau, Fürstenfeldbruck, Landsberg, Starnberg. "
                "Erding: Erding, Freising, Ebersberg. Oberland in Weilheim: Bad Tölz Wolfratshausen, Garmisch Partenkirchen, Weilheim Schongau. "
