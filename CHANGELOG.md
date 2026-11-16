@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.7.2 (Build 17) – 2026-11-16
+- Farbkonzept Nachtblau & Gold; Bereiche per langem Drücken anordnen, speichert sofort; Standard-Reihenfolge in den Einstellungen
+
 ## v1.7.1 (Build 16) – 2026-11-16
 - Farbkonzept Nachtblau & Gold; Bereiche per langem Drücken anordnen, speichert sofort; Standard-Reihenfolge in den Einstellungen
 
