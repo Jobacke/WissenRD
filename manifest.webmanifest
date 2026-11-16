@@ -6,7 +6,7 @@
   "scope": ".",
   "display": "standalone",
   "background_color": "#1b1d20",
-  "theme_color": "#ee7b5c",
+  "theme_color": "#1e2747",
   "orientation": "portrait-primary",
   "lang": "de-DE",
   "categories": ["medical", "health"],

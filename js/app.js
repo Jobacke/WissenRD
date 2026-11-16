@@ -24,7 +24,7 @@ const db = initializeFirestore(app, {
 const $ = s => document.querySelector(s);
 const inhalt = $("#inhalt");
 const st = { user: null, eintraege: [], geladen: false, datenversion: 0, abmelden: [],
-  reihenfolge: lokaleReihenfolge(), anordnen: false };
+  reihenfolge: lokaleReihenfolge(), anordnen: false };   // anordnen = gerade wird eine Kachel gezogen
 
 // ---------------- Reihenfolge der Bereiche (frei anordnbar, in meta/einstellungen gespeichert) ----------------
 function lokaleReihenfolge() {
@@ -147,7 +147,6 @@ function route() {
   const [, teil, rest = ""] = h.split("/");
   const sucheFeld = $("#suche");
   if (teil !== "suche" && document.activeElement !== sucheFeld) sucheFeld.value = "";
-  if (teil) st.anordnen = false;
   setzeZurueck(teil, rest);
   setzeBereichsleiste(teil, rest);
   if (teil === "suche" && rest) oeffneSuche(false); else if (document.activeElement !== sucheFeld) schliesseSuche();
@@ -316,58 +315,46 @@ function eintragZeile(e, mitBereich = true) {
 }
 
 function zeigeStart() {
-  const liste = st.anordnen ? st.anordnenListe.map(k => [k, BEREICHE[k]]) : bereicheSortiert();
-  const kacheln = liste.map(([k, b]) => {
+  const kacheln = bereicheSortiert().map(([k, b]) => {
     const n = st.eintraege.filter(e => e.bereich === k).length;
     const name = b.name.replace("Verdachtsdiagnosen", "Verdachts\u00ADdiagnosen").replace("Abkürzungen", "Abkür\u00ADzungen");
-    return `<a class="kachel" data-b="${k}" ${st.anordnen ? "" : `href="#/b/${k}"`}><span class="k-icon">${b.icon}</span>
-      <span class="k-name">${name}</span><small>${st.anordnen ? "⠿" : n}</small></a>`;
+    return `<a class="kachel" data-b="${k}" href="#/b/${k}"><span class="k-icon">${b.icon}</span>
+      <span class="k-name">${name}</span><small>${n}</small></a>`;
   }).join("");
   const zuletzt = [...st.eintraege]
     .sort((a, b) => (b.geaendert?.seconds || 0) - (a.geaendert?.seconds || 0)).slice(0, 5);
-  if (st.anordnen) {
-    inhalt.innerHTML = `
-      <p class="anordnen-hinweis">Kacheln an die gewünschte Stelle ziehen</p>
-      <section class="kacheln anordnen" id="kacheln">${kacheln}</section>
-      <div class="start-leiste">
-        <button id="ord-fertig" class="primaer">✓ Fertig</button>
-        <button id="ord-reset" class="sekundaer">Standard</button>
-        <button id="ord-abbruch" class="link">Abbrechen</button>
-      </div>`;
-    aktiviereZiehen($("#kacheln"));
-    $("#ord-fertig").onclick = speichereReihenfolge;
-    $("#ord-reset").onclick = () => { st.anordnenListe = Object.keys(BEREICHE); zeigeStart(); };
-    $("#ord-abbruch").onclick = () => { st.anordnen = false; zeigeStart(); };
-    return;
-  }
   inhalt.innerHTML = `
-    <section class="kacheln">${kacheln}</section>
-    <div class="start-leiste">
-      ${zuletzt.length ? `<details class="zuletzt"><summary>🕘 Zuletzt geändert</summary>
-        <section class="liste">${zuletzt.map(eintragZeile).join("")}</section></details>` : ""}
-      <button id="anordnen" class="pille">↕ Anordnen</button>
-    </div>
-    ${zuletzt.length ? "" : `<p class="leise">Noch keine Einträge – lege den ersten an oder importiere Daten (⚙️).</p>`}
+    <section class="kacheln" id="kacheln">${kacheln}</section>
+    ${zuletzt.length ? `<div class="start-leiste"><details class="zuletzt"><summary>🕘 Zuletzt geändert</summary>
+        <section class="liste">${zuletzt.map(eintragZeile).join("")}</section></details></div>`
+      : `<p class="leise">Noch keine Einträge – lege den ersten an oder importiere Daten (⚙️).</p>`}
     <a class="fab" href="#/neu/" title="Neuer Eintrag" aria-label="Neuer Eintrag">＋</a>`;
-  $("#anordnen").onclick = () => {
-    st.anordnen = true;
-    st.anordnenListe = bereicheSortiert().map(([k]) => k);
-    zeigeStart();
-  };
+  aktiviereZiehen($("#kacheln"));
 }
 
-// Ziehen per Finger oder Maus (Pointer-Events), ohne Bibliothek
+// Kachel gedrückt halten (≈0,45 s) → anheben und verschieben; Loslassen speichert sofort.
+// Kurzes Tippen öffnet wie gewohnt den Bereich, normales Wischen scrollt.
 function aktiviereZiehen(box) {
-  let zieht = null;
+  const HALTEN = 450, TOLERANZ = 10;
+  let timer = null, start = null, zieht = null, vorher = "", klickSperre = false;
+  const abbrechen = () => { clearTimeout(timer); timer = null; start = null; };
   box.addEventListener("pointerdown", ev => {
     const k = ev.target.closest(".kachel");
-    if (!k) return;
-    ev.preventDefault();
-    zieht = k;
-    k.classList.add("zieht");
-    k.setPointerCapture(ev.pointerId);
+    if (!k || (ev.pointerType === "mouse" && ev.button !== 0)) return;
+    start = { x: ev.clientX, y: ev.clientY, id: ev.pointerId };
+    timer = setTimeout(() => {
+      timer = null;
+      zieht = k;
+      st.anordnen = true;            // Live-Updates während des Ziehens nicht neu zeichnen
+      vorher = [...box.children].map(x => x.dataset.b).join();
+      k.classList.add("zieht");
+      box.classList.add("ordnet");
+      try { k.setPointerCapture(start.id); } catch { /* egal */ }
+      if (navigator.vibrate) navigator.vibrate(15);
+    }, HALTEN);
   });
   box.addEventListener("pointermove", ev => {
+    if (timer && start && Math.hypot(ev.clientX - start.x, ev.clientY - start.y) > TOLERANZ) abbrechen();
     if (!zieht) return;
     const unter = document.elementFromPoint(ev.clientX, ev.clientY)?.closest(".kachel");
     if (!unter || unter === zieht || unter.parentNode !== box) return;
@@ -375,27 +362,37 @@ function aktiviereZiehen(box) {
     if (kinder.indexOf(zieht) < kinder.indexOf(unter)) unter.after(zieht); else unter.before(zieht);
     if (navigator.vibrate) navigator.vibrate(8);
   });
+  // Während des Ziehens darf die Seite nicht scrollen (iPhone)
+  box.addEventListener("touchmove", ev => { if (zieht) ev.preventDefault(); }, { passive: false });
+  // Kein Kontextmenü / keine Link-Vorschau beim langen Drücken
+  box.addEventListener("contextmenu", ev => ev.preventDefault());
+  box.addEventListener("dragstart", ev => ev.preventDefault());
   const ende = () => {
+    abbrechen();
     if (!zieht) return;
     zieht.classList.remove("zieht");
+    box.classList.remove("ordnet");
     zieht = null;
-    st.anordnenListe = [...box.children].map(k => k.dataset.b);
+    st.anordnen = false;
+    klickSperre = true;              // den Klick nach dem Loslassen nicht als „Bereich öffnen“ werten
+    setTimeout(() => (klickSperre = false), 400);
+    const r = [...box.children].map(x => x.dataset.b);
+    if (r.join() !== vorher) speichereReihenfolge(r);
   };
   box.addEventListener("pointerup", ende);
   box.addEventListener("pointercancel", ende);
+  box.addEventListener("click", ev => { if (klickSperre) { ev.preventDefault(); ev.stopPropagation(); } }, true);
 }
 
-async function speichereReihenfolge() {
-  const r = [...st.anordnenListe];
+async function speichereReihenfolge(r) {
   st.reihenfolge = r;
-  st.anordnen = false;
   try { localStorage.setItem("wrd-reihenfolge", JSON.stringify(r)); } catch { /* egal */ }
-  zeigeStart();
+  setzeBereichsleiste("", "");
   try {
     const b = writeBatch(db);
     b.set(doc(db, "meta", "einstellungen"), { bereichReihenfolge: r, geaendert: serverTimestamp() }, { merge: true });
     await b.commit();
-    hinweis("Reihenfolge gespeichert – gilt auf allen Geräten");
+    hinweis(r.length ? "Reihenfolge gespeichert" : "Standard-Reihenfolge wiederhergestellt");
   } catch (err) {
     hinweis("Nur auf diesem Gerät gespeichert: " + err.message, true);
   }
@@ -659,6 +656,10 @@ function zeigeEinstellungen() {
       <label>Stimme<select id="stimme"></select></label>
       <button id="test-stimme" class="sekundaer">🔊 Test</button>
 
+      <h3>Bereiche</h3>
+      <p class="leise">Reihenfolge ändern: Kachel auf der Startseite gedrückt halten und verschieben.</p>
+      <div class="aktionen"><button id="ord-standard" class="sekundaer">↺ Standard-Reihenfolge</button></div>
+
       <h3>Suchverlauf</h3>
       <p class="leise" id="verlauf-anzahl">${verlaufLaden().length} gespeicherte Suchen (nur auf diesem Gerät)</p>
       <div class="aktionen">${VERLAUF_ARTEN.map(([k, n]) =>
@@ -683,6 +684,9 @@ function zeigeEinstellungen() {
       <button id="abmelden" class="gefahr">Abmelden</button>
     </section>`;
 
+  $("#ord-standard").onclick = () => {
+    if (confirm("Bereiche wieder in der Standard-Reihenfolge anzeigen?")) speichereReihenfolge([]);
+  };
   inhalt.querySelectorAll(".v-weg-e").forEach(b => (b.onclick = () => {
     if (verlaufLoeschenFragen(b.dataset.art))
       $("#verlauf-anzahl").textContent = `${verlaufLaden().length} gespeicherte Suchen (nur auf diesem Gerät)`;
