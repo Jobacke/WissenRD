@@ -11,7 +11,7 @@ import {
 import { firebaseConfig } from "./firebase-config.js";
 import { BEREICHE } from "./bereiche.js";
 import {
-  norm, schluesselFuer, slugFuer, markdownFuer, vorlesetextFuer, htmlAusText, suche
+  norm, schluesselFuer, slugFuer, markdownFuer, vorlesetextFuer, htmlAusText, suche, funkListe
 } from "./text.js";
 
 const VERSION = `v${self.APP_VERSION} (Build ${self.APP_BUILD})`;
@@ -852,6 +852,8 @@ function zeigeEintrag(id) {
   const tel = !!b.telefon;
   const abschnitte = (e.abschnitte || []).filter(a => a.text && a.text.trim()).map(a => `
     <section class="abschnitt"><h4>${esc(a.titel)}</h4>${htmlAusText(a.text, tel)}</section>`).join("");
+  const funk = funkListe(e).length ? `<section class="abschnitt"><h4>📻 Funkgruppen</h4><ul>${
+    funkListe(e).map(f => `<li>${esc(f)}</li>`).join("")}</ul></section>` : "";
   const siehe = (e.siehe || []).map(s => {
     const z = sieheZiel(s, e.id);
     return `<a class="chip" href="${z ? "#/e/" + encodeURIComponent(z.id) : "#/suche/" + encodeURIComponent(s)}">${esc(s)}</a>`;
@@ -866,7 +868,8 @@ function zeigeEintrag(id) {
         <a class="sekundaer" href="#/bearbeiten/${esc(e.id)}">✏️ Bearbeiten</a>
       </div>
       ${geoZeile(e)}
-      ${abschnitte || `<p class="leise">Noch kein Inhalt.</p>`}
+      ${funk}
+      ${abschnitte || (funk ? "" : `<p class="leise">Noch kein Inhalt.</p>`)}
       ${siehe ? `<section class="abschnitt"><h4>Siehe auch</h4><div class="chips">${siehe}</div></section>` : ""}
       <footer class="meta">${e.quelle ? "Quelle: " + esc(e.quelle) + "<br>" : ""}
         ${e.stand ? "Stand: " + esc(e.stand) + " · " : ""}Rev. ${e.revision || 1}${geaendert ? " · geändert " + geaendert : ""}</footer>
@@ -902,6 +905,14 @@ function zeigeEditor(id, bereichVorgabe) {
       <label>Kurzform / Abkürzung<input id="f-kurz" value="${esc(e.kurz)}" placeholder="z. B. ACS"></label>
       <label>Weitere Suchbegriffe <small>(kommagetrennt – so, wie du es zu Siri sagen würdest)</small>
         <input id="f-such" value="${esc((e.suchbegriffe || []).join(", "))}" placeholder="Herzinfarkt, STEMI, Brustschmerz"></label>
+      <div id="f-ils" ${e.bereich === "leitstelle" ? "" : "hidden"}>
+        <label>📻 Funkgruppen <small>(eine pro Zeile, z. B. „RD_ILS_ED – Kurzwahl 1913“ – erscheinen oben im Eintrag, in der Standort-Karte, bei der Wechselmeldung und beim Vorlesen)</small>
+          <textarea id="f-funk" rows="3" autocapitalize="off" autocorrect="off" spellcheck="false">${esc(funkListe(e).join("\n"))}</textarea></label>
+        <label>Zuständige Landkreise / kreisfreie Städte <small>(einer pro Zeile, nur bei Integrierten Leitstellen – daraus ermittelt die App die zuständige ILS, z. B. „Mühldorf a.Inn“, „Rosenheim (Stadt)“)</small>
+          <textarea id="f-kreise" rows="4">${esc((Array.isArray(e.kreise) ? e.kreise : []).join("\n"))}</textarea></label>
+        <label>Ort der ILS <small>(Breite, Länge – für „nächste zuerst“)</small>
+          <input id="f-geo" value="${hatGeo(e) ? e.geo.lat + ", " + e.geo.lon : ""}" placeholder="48.156007, 11.555468" autocapitalize="off" autocorrect="off" spellcheck="false"></label>
+      </div>
       <div id="f-abschnitte"></div>
       <button id="f-plus" class="sekundaer">＋ Abschnitt</button>
       <p class="leise">Formatierung: Zeile mit „- “ = Aufzählung, **fett**.</p>
@@ -948,6 +959,7 @@ function zeigeEditor(id, bereichVorgabe) {
   $("#f-plus").onclick = () => { e.abschnitte.push({ titel: "Neuer Abschnitt", text: "" }); zeichne(); };
   $("#f-bereich").onchange = ev => {
     e.bereich = ev.target.value;
+    $("#f-ils").hidden = e.bereich !== "leitstelle";
     if (!abschnitteBeruehrt) {
       e.abschnitte = BEREICHE[e.bereich].vorlage.map(t => ({ titel: t, text: "" }));
       zeichne();
@@ -964,6 +976,26 @@ function zeigeEditor(id, bereichVorgabe) {
     e.sprechtext = $("#f-sprech").value.trim();
     e.quelle = $("#f-quelle").value.trim();
     e.stand = $("#f-stand").value.trim();
+    if (e.bereich === "leitstelle") {
+      const zeilen = sel => $(sel).value.split(/\r?\n/).map(x => x.trim().replace(/\s+/g, " ")).filter(Boolean);
+      e.funk = zeilen("#f-funk");
+      const kreise = zeilen("#f-kreise");
+      if (kreise.length || Array.isArray(e.kreise)) e.kreise = kreise;
+      // Ein Landkreis darf nur bei einer ILS stehen
+      const andere = st.eintraege.filter(x => x.bereich === "leitstelle" && x.id !== alt?.id && Array.isArray(x.kreise));
+      for (const k of kreise) {
+        const d = andere.find(x => x.kreise.some(y => kreisSchluessel(y) === kreisSchluessel(k)));
+        if (d) return hinweis(`„${k}“ ist schon bei ${d.titel} eingetragen`, true);
+      }
+      const g = $("#f-geo").value.trim();
+      if (g) {
+        const m = g.match(/(-?\d{1,2}[.,]\d+)\s*[,;\s]\s*(-?\d{1,3}[.,]\d+)/);
+        if (!m) return hinweis("Ort nicht erkannt – Format: 48.123456, 11.654321", true);
+        const lat = +(+m[1].replace(",", ".")).toFixed(6), lon = +(+m[2].replace(",", ".")).toFixed(6);
+        if (!hatGeo(e) || e.geo.lat !== lat || e.geo.lon !== lon)
+          e.geo = { lat, lon, quelle: `eigene Angabe ${new Date().toLocaleDateString("de-DE")}` };
+      }
+    }
     try {
       const neueId = await speichere(e, alt);
       hinweis("Gespeichert");

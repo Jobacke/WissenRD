@@ -25,6 +25,8 @@ export function markdownFuer(e) {
   const b = BEREICHE[e.bereich] || { name: e.bereich, icon: "" };
   let md = `# ${e.titel}${e.kurz && e.kurz !== e.titel ? " (" + e.kurz + ")" : ""}\n`;
   md += `${b.icon} ${b.name}\n\n`;
+  const funk = funkListe(e);
+  if (funk.length) md += `## Funkgruppen\n${funk.map(f => "- " + f).join("\n")}\n\n`;
   for (const a of e.abschnitte || []) {
     if (!a.text || !a.text.trim()) continue;
     md += `## ${a.titel}\n${a.text.trim()}\n\n`;
@@ -67,9 +69,27 @@ export function sprechbar(text) {
   return t.replace(/(?:\.\s*){2,}/g, ". ").replace(/:\s*\.\s*/g, ": ").replace(/\s{2,}/g, " ").replace(/\s+([.,])/g, "$1").trim();
 }
 
+// ---------- Funkgruppen (Leitstellen) ----------
+export const funkListe = e => (Array.isArray(e?.funk) ? e.funk : []).filter(x => typeof x === "string" && x.trim());
+// Ansage wie im ZNA-Navi-Kurzbefehl „Aktuelle Leitstelle“: RD_Betten_… = Bettenkanal, RD_ILS_…/RD_1_… = Rettungsdienst,
+// Kurzwahl Ziffer für Ziffer (1913 → 1 9 1 3)
+export function funkSprechtext(funk) {
+  const f = (funk || []).filter(x => x && x.trim());
+  if (!f.length) return "";
+  return f.join(". ")
+    .replace(/RD_Betten_[A-Za-z0-9]+/g, "Bettenkanal").replace(/RD_ILS_[A-Za-z0-9]+/g, "Rettungsdienst")
+    .replace(/RD_[0-9]+_[A-Za-z0-9]+/g, "Rettungsdienst").replace(/\s*[–-]?\s*\(?Bettenanforderung\)?/g, "")
+    .replace(/[()]/g, "").replace(/\s*–\s*/g, ", ").replace(/_/g, " ").replace(/([0-9])(?=[0-9])/g, "$1 ") + ".";
+}
+
 export function vorlesetextFuer(e) {
-  if (e.sprechtext && e.sprechtext.trim()) return sprechbar(e.titel + ". " + e.sprechtext);
+  const funk = funkListe(e).length ? "Funkgruppen: " + funkSprechtext(funkListe(e)) : "";
+  if (e.sprechtext && e.sprechtext.trim()) {
+    const st = e.sprechtext.trim(), titel = st.startsWith(e.titel) ? "" : e.titel + ". ";   // Titel nicht doppelt
+    return sprechbar(titel + st + (funk ? " " + funk : ""));
+  }
   const teile = [e.titel + "."];
+  if (funk) teile.push(funk);
   for (const a of e.abschnitte || []) {
     if (!a.text || !a.text.trim()) continue;
     teile.push(a.titel + ":\n" + a.text.trim() + ".");

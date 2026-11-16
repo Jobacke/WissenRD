@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.12.0 (Build 25) – 2026-11-16
+- Leitstellen: Funkgruppen, zuständige Landkreise und Ort der ILS im Editor bearbeitbar; Funkgruppen oben im Eintrag, beim Vorlesen (Kurzwahl Ziffer für Ziffer) und in der Siri-Anzeige; Bettenkanal München RD_Betten_M Kurzwahl 2511; veraltete Kurzwahlen FFB/Oberland aus dem Vorlesetext entfernt; Titel nicht mehr doppelt vorgelesen
+
 ## v1.11.0 (Build 24) – 2026-11-16
 - Meldung bei Wechsel der zuständigen Leitstelle (solange die App geöffnet ist, abschaltbar in den Einstellungen); Funkgruppen je Leitstelle
 
