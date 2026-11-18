@@ -50,6 +50,61 @@ function hinweis(text, fehler = false) {
 // ---------------- Start & Anmeldung ----------------
 $("#version").textContent = VERSION;
 
+function passwortSchutzAn() {
+  return localStorage.getItem("wrd-passwort-schutz") === "an";
+}
+
+const LOKALE_DATEIEN = [
+  "daten/aelrd-bayern-import.json",
+  "daten/abkuerzungen-import.json",
+  "daten/ergaenzungen-import.json",
+  "daten/kliniken-muenchen-import.json",
+  "daten/leitstellen-import.json",
+  "daten/symptome-import.json"
+];
+
+async function ladeLokaleDatenbank() {
+  try {
+    const gespeicherteEdits = JSON.parse(localStorage.getItem("wrd-lokale-edits") || "{}");
+    let map = new Map();
+    const cacheRaw = localStorage.getItem("wrd-eintraege-cache");
+    if (cacheRaw) {
+      const parsed = JSON.parse(cacheRaw);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        parsed.forEach(e => map.set(e.id, e));
+      }
+    }
+    if (map.size === 0) {
+      const antworten = await Promise.all(
+        LOKALE_DATEIEN.map(u => fetch(u).then(r => r.ok ? r.json() : { eintraege: [] }).catch(() => ({ eintraege: [] })))
+      );
+      for (const paket of antworten) {
+        const liste = Array.isArray(paket) ? paket : (paket.eintraege || []);
+        for (const roh of liste) {
+          const daten = bereinigt(roh);
+          const id = roh.id || slugFuer(daten);
+          daten.id = id;
+          daten.schluessel = roh.schluessel || schluesselFuer(daten);
+          daten.markdown = roh.markdown || markdownFuer(daten);
+          daten.vorlesen = roh.vorlesen || vorlesetextFuer(daten);
+          map.set(id, daten);
+        }
+      }
+    }
+    for (const [id, ed] of Object.entries(gespeicherteEdits)) {
+      map.set(id, ed);
+    }
+    st.eintraege = [...map.values()].sort((a, b) => a.titel.localeCompare(b.titel, "de"));
+    st.geladen = true;
+    st.datenversion = st.datenversion || st.eintraege.length;
+    zeigeStand();
+    starteIlsWache();
+    route();
+  } catch (e) {
+    console.error("Lokales Laden fehlgeschlagen:", e);
+  }
+}
+
 // ?q=ACS aus dem Kurzbefehl → Suche
 const startParam = new URLSearchParams(location.search).get("q");
 if (startParam) {
@@ -57,12 +112,27 @@ if (startParam) {
 }
 
 setPersistence(auth, browserLocalPersistence).catch(() => {});
-onAuthStateChanged(auth, user => {
+onAuthStateChanged(auth, async user => {
   st.abmelden.forEach(f => f());
   st.abmelden = [];
+  if (!user) {
+    if (passwortSchutzAn() || st.forceLogin) {
+      st.user = null;
+      document.body.classList.remove("angemeldet");
+      st.eintraege = [];
+      st.geladen = false;
+      stoppeIlsWache();
+      zeigeLogin();
+      return;
+    }
+    st.user = { email: "backhaus.johannes@gmail.com", displayName: "Johannes", localMode: true };
+    document.body.classList.add("angemeldet");
+    await ladeLokaleDatenbank();
+    return;
+  }
+  st.forceLogin = false;
   st.user = user;
   document.body.classList.toggle("angemeldet", !!user);
-  if (!user) { st.eintraege = []; st.geladen = false; stoppeIlsWache(); zeigeLogin(); return; }
   st.syncGeprueft = false;
   setTimeout(() => { st.syncGeprueft = true; zeigeStand(); }, 4000);
   st.abmelden.push(onSnapshot(collection(db, "eintraege"), { includeMetadataChanges: true }, snap => {
@@ -73,6 +143,7 @@ onAuthStateChanged(auth, user => {
     if (st.geladen && snap.docChanges().length === 0) return; // nur Statuswechsel, nichts neu zeichnen
     st.eintraege = snap.docs.map(d => ({ id: d.id, ...d.data() }))
       .sort((a, b) => a.titel.localeCompare(b.titel, "de"));
+    try { localStorage.setItem("wrd-eintraege-cache", JSON.stringify(st.eintraege)); } catch { /* egal */ }
     const ersterLauf = !st.geladen;
     st.geladen = true;
     if (ersterLauf) starteIlsWache();
@@ -125,11 +196,19 @@ function zeigeLogin() {
       <label>E-Mail<input id="l-mail" type="email" autocomplete="username"></label>
       <label>Passwort<input id="l-pw" type="password" autocomplete="current-password"></label>
       <button id="l-go" class="primaer">Anmelden</button>
+      <button id="l-skip" class="link" style="margin-top:8px">Ohne Passwort direkt starten</button>
       <button id="l-reset" class="link">Passwort vergessen?</button>
     </section>`;
   $("#l-go").onclick = async () => {
     try { await signInWithEmailAndPassword(auth, $("#l-mail").value.trim(), $("#l-pw").value); }
     catch (e) { hinweis("Anmeldung fehlgeschlagen", true); }
+  };
+  $("#l-skip").onclick = async () => {
+    st.forceLogin = false;
+    localStorage.setItem("wrd-passwort-schutz", "aus");
+    st.user = { email: "backhaus.johannes@gmail.com", displayName: "Johannes", localMode: true };
+    document.body.classList.add("angemeldet");
+    await ladeLokaleDatenbank();
   };
   $("#l-pw").onkeydown = ev => { if (ev.key === "Enter") $("#l-go").click(); };
   $("#l-reset").onclick = async () => {
@@ -1154,6 +1233,19 @@ async function speichere(e, alt, batch = null) {
   daten.schluessel = schluesselFuer(daten);
   daten.markdown = markdownFuer(daten);
   daten.vorlesen = vorlesetextFuer(daten);
+  if (st.user?.localMode) {
+    const mitId = { id, ...daten };
+    const idx = st.eintraege.findIndex(x => x.id === id);
+    if (idx >= 0) st.eintraege[idx] = mitId;
+    else st.eintraege.push(mitId);
+    st.eintraege.sort((a, b) => a.titel.localeCompare(b.titel, "de"));
+    try {
+      const edits = JSON.parse(localStorage.getItem("wrd-lokale-edits") || "{}");
+      edits[id] = mitId;
+      localStorage.setItem("wrd-lokale-edits", JSON.stringify(edits));
+    } catch { /* egal */ }
+    return id;
+  }
   daten.geaendert = serverTimestamp();
   daten.geaendertVon = st.user?.email || "";
   if (!alt) daten.erstellt = serverTimestamp();
@@ -1188,6 +1280,8 @@ function zeigeEinstellungen() {
         <div class="g-titel">Anzeige &amp; Standort</div>
         <div class="reihe"><span>Leitstellenwechsel melden<small>nur bei geöffneter App · max. 1×/Min.</small></span>
           <label class="umschalter"><input type="checkbox" id="ils-wache" ${ilsWacheAn() ? "checked" : ""}><i></i></label></div>
+        <div class="reihe"><span>Passwortanmeldung beim Start<small>Optional · Standard: Direktstart ohne Passwort</small></span>
+          <label class="umschalter"><input type="checkbox" id="pw-schutz" ${passwortSchutzAn() ? "checked" : ""}><i></i></label></div>
         <div class="reihe"><span>Bereiche<small>Kachel gedrückt halten zum Verschieben</small></span><button id="ord-standard" class="mini">Standard</button></div>
       </div>
 
@@ -1212,10 +1306,14 @@ function zeigeEinstellungen() {
             <dt>App-URL</dt><dd><code>${esc(location.origin + location.pathname)}</code></dd>
           </dl></details>
         <details class="klapp"><summary>Änderungsprotokoll</summary><pre id="changelog" class="changelog">lädt …</pre></details>
-        <div class="reihe"><span class="leise-zeile">${esc(st.user.email)}</span><button id="abmelden" class="mini rot">Abmelden</button></div>
+        <div class="reihe"><span class="leise-zeile">${esc(st.user?.localMode ? "Johannes (Direktstart ohne Passwort)" : (st.user?.email || ""))}</span>${st.user?.localMode ? '<button id="cloud-login" class="mini">Cloud-Anmeldung</button>' : '<button id="abmelden" class="mini rot">Abmelden</button>'}</div>
       </div>
     </section>`;
 
+  $("#pw-schutz").onchange = ev => {
+    localStorage.setItem("wrd-passwort-schutz", ev.target.checked ? "an" : "aus");
+    hinweis(ev.target.checked ? "Passwortabfrage beim Start aktiviert" : "Passwortabfrage beim Start deaktiviert");
+  };
   $("#ils-wache").onchange = ev => {
     localStorage.setItem("wrd-ils-wache", ev.target.checked ? "an" : "aus");
     if (ev.target.checked) { st.ilsPruef = null; starteIlsWache(); } else stoppeIlsWache();
@@ -1276,7 +1374,8 @@ function zeigeEinstellungen() {
   fetch("CHANGELOG.md", { cache: "no-store" }).then(r => r.text())
     .then(t => { const c = $("#changelog"); if (c) c.textContent = t; })
     .catch(() => { const c = $("#changelog"); if (c) c.textContent = "offline nicht verfügbar"; });
-  $("#abmelden").onclick = () => signOut(auth);
+  if ($("#abmelden")) $("#abmelden").onclick = () => { st.forceLogin = true; signOut(auth); };
+  if ($("#cloud-login")) $("#cloud-login").onclick = () => { st.forceLogin = true; zeigeLogin(); };
 }
 
 // ---------------- Vorlesen ----------------

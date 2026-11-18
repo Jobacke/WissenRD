@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.15.0 (Build 31) – 2026-11-18
+- Passwortanmeldung beim Start optional (Standard: Direktstart ohne Passwort)
+
 ## v1.14.2 (Build 30) – 2026-11-16
 - KI fragen: Fenster bleibt nach Claude/Gemini offen (Zweitmeinung mit einem Tipp), Frage wird 15 Min. gemerkt; Gemini erhält sauberen Klartext über die Zwischenablage
 
