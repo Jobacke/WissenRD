@@ -1,5 +1,8 @@
 # Änderungsprotokoll Wissen RD
 
+## v1.15.1 (Build 32) – 2026-11-19
+- Vorlesen: RD_Sonderbetten als „Sonder-Betten“ (saubere Aussprache statt „Sonderbeten“)
+
 ## v1.15.0 (Build 31) – 2026-11-18
 - Passwortanmeldung beim Start optional (Standard: Direktstart ohne Passwort)
 

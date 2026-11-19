@@ -56,7 +56,8 @@ const SPRECH_ERSATZ = [
   [/\bSpO2\b/g, "Sauerstoffsättigung"], [/\bRR\b/g, "Blutdruck"], [/\bsyst\./g, "systolisch"],
   [/(\d)\s?mm\b/g, "$1 Millimeter"], [/\s\/\s/g, " oder "], [/(\w)–(\w)/g, "$1 bis $2"],
   [/≥/g, " mindestens "], [/≤/g, " höchstens "], [/>/g, " über "], [/</g, " unter "],
-  [/→|->/g, ", dann "], [/\+/g, " plus "], [/%/g, " Prozent"], [/&/g, " und "]
+  [/→|->/g, ", dann "], [/\+/g, " plus "], [/%/g, " Prozent"], [/&/g, " und "],
+  [/\bSonderbetten\b/gi, "Sonder-Betten"]
 ];
 
 export function sprechbar(text) {
@@ -78,9 +79,12 @@ export function funkSprechtext(funk) {
   const f = (funk || []).filter(x => x && x.trim());
   if (!f.length) return "";
   return f.join(". ")
+    .replace(/RD_Sonderbetten_[A-Za-z0-9]+/gi, "Sonder-Betten")
     .replace(/RD_Betten_[A-Za-z0-9]+/g, "Bettenkanal").replace(/RD_ILS_[A-Za-z0-9]+/g, "Rettungsdienst")
     .replace(/RD_[0-9]+_[A-Za-z0-9]+/g, "Rettungsdienst").replace(/\s*[–-]?\s*\(?Bettenanforderung\)?/g, "")
-    .replace(/[()]/g, "").replace(/\s*–\s*/g, ", ").replace(/_/g, " ").replace(/([0-9])(?=[0-9])/g, "$1, ")
+    .replace(/\s*[–-]?\s*\(Sonderbetten\)/gi, "").replace(/[()]/g, "")
+    .replace(/\s*–\s*|\s+-\s+/g, ", ").replace(/_/g, " ").replace(/\bSonderbetten\b/gi, "Sonder-Betten")
+    .replace(/([0-9])(?=[0-9])/g, "$1, ")
     .replace(/[0-9]/g, z => ZIFFERN[z]) + ".";   // Ziffern als Wörter wie im Funk – sonst „3. Rettungsdienst“ = Aufzählung
 }
 
